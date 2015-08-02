@@ -2,15 +2,15 @@
     Date: 2015-08-02T10:56:46
     Tags: introduction, point of view, simplicity
 
-# The Way Houyhnhnms Compute
+### Beyond the Sea of Potentiality
 
 I used to think humans wrote software the way they did
 because they knew what they were doing.
 Then I realized that they didn't really know,
-but adopted ways that seemed to work better than others.
-Or maybe rather humans were adopted by the ways that best knew how to survive.
+but adopted ways that seemed to work better than others
+— or maybe rather humans were adopted by the ways that best knew how to survive.
 In any case, I trusted "evolution", that is, ultimately, _other people_,
-to have figured out the best way that software could (if not should) be written.
+to have figured out the best way that software could and should be written.
 But everything I knew about computing changed when one day I met a
 [Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm),
 who told me how things were done in his faraway land.
@@ -22,7 +22,7 @@ had heard of a stranger who long ago visited his home country.
 So the legend said, the traveler, called
 [Gulliver](https://www.gutenberg.org/files/17157/17157-h/17157-h.htm),
 was a “Human”: a paradoxical creature that looked just like a Yahoo,
-yet who like Houyhnhnms possessed (to a point) the ability to reason and speak.
+yet who like a Houyhnhnm (to a point) possessed the ability to reason and speak.
 There were fantastic tales of a planet full of such humans,
 as attributed to this Gulliver;
 and the stories went that in the land of humans,
@@ -31,11 +31,11 @@ but like Yahoos couldn’t speak any language and were likely not fully sentient
 Ngnghm, immensely curious, had embarked on a journey of discovery
 to find and visit this fantasy land of Humans and Horses, if it existed at all.
 But while sailing the Sea of Potentiality, his transdimensional ship
-collided with débris caused by Human (or was it Yahoo) pollution—and he was shipwrecked.
+collided with débris caused by Human (or was it Yahoo) pollution — and he was shipwrecked.
 Now he was stranded onto our plane of existence.
 Not being able to communicate in human language,
 he was initially mistaken for an old horse; and he had but narrowly
-escaped being sent to the knacker—or worse, to a government research facility.
+escaped being sent to the knacker — or worse, to a government research facility.
 
 By the time I met him through a friend, though,
 Ngnghm had already learned to read and write our language, albeit imperfectly.
@@ -53,14 +53,14 @@ I was suddenly reminded of how I had always felt that
 there had to be better ways to engage in computing,
 but couldn't pin point exactly what was wrong.
 Now I had found a clearer vision
-of a world I was yearning for—a world I felt like I had lost,
-though I never had it—and a world that was within reach
+of a world I was yearning for — a world I felt like I had lost,
+though I never had it — and a world that was within reach
 if only I could build a suitable ship,
 to sail the Sea of Potentiality and reach
 the mysterious and enticing land of Houyhnhnm computing.
 
 
-# A Different Point of View
+### A Different Point of View
 
 The fundamental difference between Human computer systems and
 Houyhnhnm computing systems is one of _point of view_.
@@ -82,10 +82,10 @@ only accessorily the synthetic phenomena they induce (a.k.a. computing
 devices). Humans articulate their plans primarily in terms of logical
 and physical devices. Houyhnhnms weave their conversations foremost
 around the interactions they attempt to automate,
-in the ontologies that interest them—including the ontology of such conversations themselves.
+in the ontologies that interest them — including the ontology of such conversations themselves.
 
 You may dismiss all this as dreamy philosophy,
-empty words without any consequences—I certainly did so at first.
+empty words without any consequences — I certainly did so at first.
 Yet the difference in point of view that I am now attempting to distill
 leads to systems that are organized in very different ways,
 that are optimized for very different metrics,
@@ -95,7 +95,7 @@ resulting in a very different variety of artefacts of very different sizes,
 but most importantly, connected in very different ways.
 
 
-# Simplicity
+### Simplicity
 
 What made me most aware of this difference was when Ngnghm,
 discovered that, like him in his own world, I was trained in writing software,
@@ -134,7 +134,7 @@ constituted a very complex computing system, even though
 it looked small and simple once the support system was assumed.
 Functional programming languages like ML or Haskell yield much simpler systems
 if you take into account the verification tools and the development process;
-yet still neglected entire swaths of what makes a complete computing system,
+yet they still neglected entire swaths of what makes a complete computing system,
 such as IDE, Operating System, persistent storage usage conventions, schema upgrade, etc.,
 and so they ended up being overall still pretty complex.
 
@@ -152,11 +152,17 @@ especially so if multiple people are supposed to work on the same system;
 still such simplistic systems make sense for the isolated resource-starved programmers.
 
 Houyhnhnms certainly don't restrict themselves to using systems that are simple (according to their metric).
-But these simple systems play an essential role amongst Houyhnhnms:
-they are essential tools for programmers to learn how to develop computing systems,
-as well as for designers and managers to learn to think in terms of overall system architecture;
-but they also are instrumental in allowing to bootstrap more complex systems in a safe and _secure_ way.
+But these simple systems do play an essential role in the Houyhnhnm computing system ecology:
+first, they are an essential part of computing curricula,
+so programmers can get a grasp of all the parts that make a complete system;
+second, the ways to factor and evolve such systems is also studied by designers and managers
+so they may think in terms of overall system architecture
+(including the Houyhnhnm factor, of course);
+last but not least, they are also instrumental in the bootstrapping process
+by which more complex systems are built in a way that is
+[auditably _secure_](fare.tunes.org/computing/reclaim_your_computer.html).
 
 In any case, a change in point of view led to a completely different metric
 to assess the simplicity of computing systems.
-Just as it would change how to judge other qualities of computing systems in general.
+It would also change how to judge other qualities of computing systems in general
+— and thus change the approach to how computing is done and what artefacts it yields.
