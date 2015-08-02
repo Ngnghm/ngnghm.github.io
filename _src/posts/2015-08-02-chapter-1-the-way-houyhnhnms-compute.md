@@ -21,19 +21,19 @@ This adventurous Houyhnhnm, whose name was [Ngnghm](https://twitter.com/Ngnghm),
 had heard of a stranger who long ago visited his home country.
 So the legend said, the traveler, called
 [Gulliver](https://www.gutenberg.org/files/17157/17157-h/17157-h.htm),
-was a “Human”: a paradoxical creature that looked just like a Yahoo,
+was a "Human": a paradoxical creature that looked just like a Yahoo,
 yet who like a Houyhnhnm (to a point) possessed the ability to reason and speak.
-There were fantastic tales of a planet full of such humans,
+There were fantastic tales of a planet full of such Humans,
 as attributed to this Gulliver;
-and the stories went that in the land of humans,
-there were animals known as “Horses” that looked just like Houyhnhnms,
-but like Yahoos couldn’t speak any language and were likely not fully sentient.
+and the stories went that in the land of Humans,
+there were animals known as "Horses" that looked just like Houyhnhnms,
+but like Yahoos couldn't speak any language and were likely not fully sentient.
 Ngnghm, immensely curious, had embarked on a journey of discovery
 to find and visit this fantasy land of Humans and Horses, if it existed at all.
 But while sailing the Sea of Potentiality, his transdimensional ship
 collided with débris caused by Human (or was it Yahoo) pollution — and he was shipwrecked.
 Now he was stranded onto our plane of existence.
-Not being able to communicate in human language,
+Not being able to communicate in Human language,
 he was initially mistaken for an old horse; and he had but narrowly
 escaped being sent to the knacker — or worse, to a government research facility.
 
@@ -105,17 +105,17 @@ So I showed him simple programs I was writing in C;
 C is a relatively simple programming language
 with a somewhat familiar syntax and well defined enough formal semantics,
 but nevertheless a universal programming language capable of doing everything,
-and indeed used almost everywhere that humans have computers.
+and indeed used almost everywhere that Humans have computers.
 Yet, after he painfully assimilated enough of what I showed him, struggling all the way,
 he concluded me that no, I was obviously not programming in C,
-and that I couldn’t possibly be programming in C,
+and that I couldn't possibly be programming in C,
 because C was not a universal programming system at all,
 but could do next to nothing, and only very inefficiently so.
 Instead, what I was programming in was not just C, but
 a C compilation toolchain plus an IDE and an Operating System plus plenty of libraries and utilities, that
 all together constituted a very large computing system with incredibly complex formal semantics;
 what more, a large part of the interaction between these components depended on a large number of
-completely informal semi-conventions about how the filesystem was or wasn’t used by which process,
+completely informal semi-conventions about how the filesystem was or wasn't used by which process,
 and how these system and user processes themselves were managed.
 What to Humans looked simple because our _point of view_
 focuses on some aspects and neglects others,
@@ -138,9 +138,9 @@ yet they still neglected entire swaths of what makes a complete computing system
 such as IDE, Operating System, persistent storage usage conventions, schema upgrade, etc.,
 and so they ended up being overall still pretty complex.
 
-By Houyhnhnm standards, the simplest human computing systems, though far from ideal,
+By Houyhnhnm standards, the simplest Human computing systems, though far from ideal,
 would be more something like Smalltalk or the other systems
-built by Alan Kay’s [ViewPoint Research Institute](http://vpri.org/),
+built by Alan Kay's [ViewPoints Research Institute](http://vpri.org/),
 where the description for the entire system, including compiler, IDE, libraries, operating system,
 drivers, interactive graphical environment, font rendering, etc.,
 all fit in a few tens of thousands of lines of code.

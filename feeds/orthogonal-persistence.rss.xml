@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Houyhnhnm Computing: Houyhnhnm Computing</title>
- <link rel="self" href="http://ngnghm.github.io/feeds/all.atom.xml" />
- <link href="http://ngnghm.github.io/index.html" />
- <id>urn:http-ngnghm-github-io:-index-html</id>
- <updated>2015-08-03T05:10:00Z</updated>
- <entry>
-  <title type="text">Chapter 2: Save Our Souls</title>
-  <link rel="alternate" href="http://ngnghm.github.io/blog/2015/08/03/chapter-2-save-our-souls/?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:http-ngnghm-github-io:-blog-2015-08-03-chapter-2-save-our-souls</id>
-  <published>2015-08-03T05:10:00Z</published>
-  <updated>2015-08-03T05:10:00Z</updated>
-  <author>
-   <name>Ngnghm</name></author>
-  <content type="html">&lt;html&gt;
+<rss version="2.0">
+ <channel>
+  <title>Houyhnhnm Computing: Posts tagged 'orthogonal persistence'</title>
+  <description>Houyhnhnm Computing: Posts tagged 'orthogonal persistence'</description>
+  <link>http://ngnghm.github.io/tags/orthogonal-persistence.html</link>
+  <lastBuildDate>Mon, 03 Aug 2015 05:10:00 UT</lastBuildDate>
+  <pubDate>Mon, 03 Aug 2015 05:10:00 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Chapter 2: Save Our Souls</title>
+   <link>http://ngnghm.github.io/blog/2015/08/03/chapter-2-save-our-souls/?utm_source=orthogonal-persistence&amp;utm_medium=RSS</link>
+   <guid>urn:http-ngnghm-github-io:-blog-2015-08-03-chapter-2-save-our-souls</guid>
+   <pubDate>Mon, 03 Aug 2015 05:10:00 UT</pubDate>
+   <description>&lt;html&gt;
 &lt;h3 id="persistence-automated"&gt;Persistence, Automated&lt;/h3&gt;
 
 &lt;p&gt;Ngnghm was fascinated by our keyboards: because of physiological differences between our races, similar devices had never been imagined by &lt;a href="http://en.wikipedia.org/wiki/Houyhnhnm"&gt;Houyhnhnm&lt;/a&gt; computing engineers. As he was watching me closely, Ngnghm noticed that I was punctuating most of my typing with recurring combinations of key chords. I told him I had no idea what he meant; and so he had me record and review how, after every sentence or so, or before changing activities, I was composing the sequence 
@@ -52,41 +51,4 @@
 &lt;p&gt;Now, after Ngnghm made this painful first hoof experience of the persistence failure of Human computer systems, he started investigating how Human computer systems implemented persistence, or failed to. And he discovered to his dismay that beneath the &lt;a href="http://www.www.loper-os.org/?p=448"&gt;veneer of persistence&lt;/a&gt;, there was transience at every level he was looking at — not just transience, but &lt;a href="http://rationalwiki.org/wiki/Fractal_wrongness"&gt;fractal transience&lt;/a&gt;: this fundamental design difference between Human and Houyhnhnm computing systems is observable at every level of these systems. At every level, the user, the programmer, the library developer, the compiler writer, the operating system implementer, everyone, all the time, had to assume the software and hardware layers below him were fragile, supposed to work only a single computing domain; everyone would in turn provide a similarly fragile and non-transportable device to the users above him; and if you ever wanted to make a significant improvement to any component at any level, you pretty much had to rewrite the entire software &amp;ldquo;stack&amp;rdquo; above whichever level you were hoping to improve — in other words it required a significant world-changing event.&lt;/p&gt;
 
 &lt;p&gt;And yet, it runs! Ngnghm was in awe that Human computer systems could run at all; they clearly demonstrated some emerging order so powerful that it could survive despite ubiquitous design flaws — or could it possibly be surviving &lt;em&gt;thanks&lt;/em&gt; to what to this Houyhnhnm appeared as flaws? Ngnghm decided to pursue his investigations…&lt;/p&gt;
-&lt;!-- http://j.mp/NgnghmPersist--&gt;&lt;/html&gt;</content></entry>
- <entry>
-  <title type="text">Chapter 1: The Way Houyhnhnms Compute</title>
-  <link rel="alternate" href="http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:http-ngnghm-github-io:-blog-2015-08-02-chapter-1-the-way-houyhnhnms-compute</id>
-  <published>2015-08-02T14:56:46Z</published>
-  <updated>2015-08-02T14:56:46Z</updated>
-  <author>
-   <name>Ngnghm</name></author>
-  <content type="html">&lt;html&gt;
-&lt;h3 id="beyond-the-sea-of-potentiality"&gt;Beyond the Sea of Potentiality&lt;/h3&gt;
-
-&lt;p&gt;I used to think humans wrote software the way they did because they knew what they were doing. Then I realized that they didn&amp;rsquo;t really know, but adopted ways that seemed to work better than others — or maybe rather humans were adopted by the ways that best knew how to survive. In any case, I trusted &amp;ldquo;evolution&amp;rdquo;, that is, ultimately, &lt;em&gt;other people&lt;/em&gt;, to have figured out the best way that software could and should be written. But everything I knew about computing changed when one day I met a &lt;a href="http://en.wikipedia.org/wiki/Houyhnhnm"&gt;Houyhnhnm&lt;/a&gt;, who told me how things were done in his faraway land.&lt;/p&gt;
-&lt;!-- more--&gt;
-
-&lt;p&gt;This adventurous Houyhnhnm, whose name was &lt;a href="https://twitter.com/Ngnghm"&gt;Ngnghm&lt;/a&gt;, had heard of a stranger who long ago visited his home country. So the legend said, the traveler, called &lt;a href="https://www.gutenberg.org/files/17157/17157-h/17157-h.htm"&gt;Gulliver&lt;/a&gt;, was a &amp;ldquo;Human&amp;rdquo;: a paradoxical creature that looked just like a Yahoo, yet who like a Houyhnhnm (to a point) possessed the ability to reason and speak. There were fantastic tales of a planet full of such Humans, as attributed to this Gulliver; and the stories went that in the land of Humans, there were animals known as &amp;ldquo;Horses&amp;rdquo; that looked just like Houyhnhnms, but like Yahoos couldn&amp;rsquo;t speak any language and were likely not fully sentient. Ngnghm, immensely curious, had embarked on a journey of discovery to find and visit this fantasy land of Humans and Horses, if it existed at all. But while sailing the Sea of Potentiality, his transdimensional ship collided with débris caused by Human (or was it Yahoo) pollution — and he was shipwrecked. Now he was stranded onto our plane of existence. Not being able to communicate in Human language, he was initially mistaken for an old horse; and he had but narrowly escaped being sent to the knacker — or worse, to a government research facility.&lt;/p&gt;
-
-&lt;p&gt;By the time I met him through a friend, though, Ngnghm had already learned to read and write our language, albeit imperfectly. He was desperately looking for parts to build a new ship, so that he may some day sail back home. Since I know nothing of transdimensional travel, I instead showed him how to use the Internet to find all the support that mankind could offer him. He was stupefied by how similar yet how different our Human computer systems were from those of the Houyhnhnms; in some way, ours were so much more advanced, yet in other ways they were so desperately primitive. And as he was telling me of how Computing was done amongst Houyhnhnms, I was suddenly reminded of how I had always felt that there had to be better ways to engage in computing, but couldn&amp;rsquo;t pin point exactly what was wrong. Now I had found a clearer vision of a world I was yearning for — a world I felt like I had lost, though I never had it — and a world that was within reach if only I could build a suitable ship, to sail the Sea of Potentiality and reach the mysterious and enticing land of Houyhnhnm computing.&lt;/p&gt;
-
-&lt;h3 id="a-different-point-of-view"&gt;A Different Point of View&lt;/h3&gt;
-
-&lt;p&gt;The fundamental difference between Human computer systems and Houyhnhnm computing systems is one of &lt;em&gt;point of view&lt;/em&gt;. Houyhnhnms do not possess a different kind of logic, nor mathematics, nor physics; though they have discovered how to travel through many dimensions, they do not have quantum computers, logical oracles, or any magic means of computation beyond our own capabilities. But they approach computing in a way that is foreign to us Humans, and that leads to very different results.&lt;/p&gt;
-
-&lt;p&gt;Whereas Humans view computers as tools below them to which they give orders and that do their bidding, Houyhnhnms view computing as an interaction within a system around them that extends their consciousness. Humans view programs as blueprints to build artefacts in a separate and simpler universe of software and hardware. Houyhnhnms view programming as a conversation involving &lt;a href="https://en.wikipedia.org/wiki/Wetware_(brain)"&gt;wetware&lt;/a&gt; first, and only accessorily the synthetic phenomena they induce (a.k.a. computing devices). Humans articulate their plans primarily in terms of logical and physical devices. Houyhnhnms weave their conversations foremost around the interactions they attempt to automate, in the ontologies that interest them — including the ontology of such conversations themselves.&lt;/p&gt;
-
-&lt;p&gt;You may dismiss all this as dreamy philosophy, empty words without any consequences — I certainly did so at first. Yet the difference in point of view that I am now attempting to distill leads to systems that are organized in very different ways, that are optimized for very different metrics, and that engage users in very different processes, with role delineations according to very different criteria, resulting in a very different variety of artefacts of very different sizes, but most importantly, connected in very different ways.&lt;/p&gt;
-
-&lt;h3 id="simplicity"&gt;Simplicity&lt;/h3&gt;
-
-&lt;p&gt;What made me most aware of this difference was when Ngnghm, discovered that, like him in his own world, I was trained in writing software, and then asked me to demonstrate the working of some Human computing systems, starting with the the simplest I could find. So I showed him simple programs I was writing in C; C is a relatively simple programming language with a somewhat familiar syntax and well defined enough formal semantics, but nevertheless a universal programming language capable of doing everything, and indeed used almost everywhere that Humans have computers. Yet, after he painfully assimilated enough of what I showed him, struggling all the way, he concluded me that no, I was obviously not programming in C, and that I couldn&amp;rsquo;t possibly be programming in C, because C was not a universal programming system at all, but could do next to nothing, and only very inefficiently so. Instead, what I was programming in was not just C, but a C compilation toolchain plus an IDE and an Operating System plus plenty of libraries and utilities, that all together constituted a very large computing system with incredibly complex formal semantics; what more, a large part of the interaction between these components depended on a large number of completely informal semi-conventions about how the filesystem was or wasn&amp;rsquo;t used by which process, and how these system and user processes themselves were managed. What to Humans looked simple because our &lt;em&gt;point of view&lt;/em&gt; focuses on some aspects and neglects others, to the Houyhnhnms was an unmanaged and unmanageable mess because they see things from a different angle.&lt;/p&gt;
-
-&lt;p&gt;What Houyhnhnms considered to be a simple system was one that has a short description when you take into account the entire software system, including the compiler, interactive editor, formal verification tools, libraries, operating system, drivers, hardware blueprints, etc., and including the informal conventions used by isolated or cooperating users, or the chaotic lack thereof. C, because its underlying development environment necessitated huge and largely informal support structures, constituted a very complex computing system, even though it looked small and simple once the support system was assumed. Functional programming languages like ML or Haskell yield much simpler systems if you take into account the verification tools and the development process; yet they still neglected entire swaths of what makes a complete computing system, such as IDE, Operating System, persistent storage usage conventions, schema upgrade, etc., and so they ended up being overall still pretty complex.&lt;/p&gt;
-
-&lt;p&gt;By Houyhnhnm standards, the simplest Human computing systems, though far from ideal, would be more something like Smalltalk or the other systems built by Alan Kay&amp;rsquo;s &lt;a href="http://vpri.org/"&gt;ViewPoints Research Institute&lt;/a&gt;, where the description for the entire system, including compiler, IDE, libraries, operating system, drivers, interactive graphical environment, font rendering, etc., all fit in a few tens of thousands of lines of code. Note that FORTH has been used to build complete systems of even smaller overall software size; but being low-level, FORTH relies more on informal design patterns and manually enforced limitations, which according to Houyhnhnm criteria make the resulting system overall more complex, especially so if multiple people are supposed to work on the same system; still such simplistic systems make sense for the isolated resource-starved programmers.&lt;/p&gt;
-
-&lt;p&gt;Houyhnhnms certainly don&amp;rsquo;t restrict themselves to using systems that are simple (according to their metric). But these simple systems do play an essential role in the Houyhnhnm computing system ecology: first, they are an essential part of computing curricula, so programmers can get a grasp of all the parts that make a complete system; second, the ways to factor and evolve such systems is also studied by designers and managers so they may think in terms of overall system architecture (including the Houyhnhnm factor, of course); last but not least, they are also instrumental in the bootstrapping process by which more complex systems are built in a way that is &lt;a href="http://fare.tunes.org/computing/reclaim_your_computer.html"&gt;auditably &lt;em&gt;secure&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In any case, a change in point of view led to a completely different metric to assess the simplicity of computing systems. It would also change how to judge other qualities of computing systems in general — and thus change the approach to how computing is done and what artefacts it yields.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
+&lt;!-- http://j.mp/NgnghmPersist--&gt;&lt;/html&gt;</description></item></channel></rss>
