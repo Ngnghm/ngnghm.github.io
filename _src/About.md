@@ -5,8 +5,7 @@
 > ― Antoine de Saint-Exupéry, [creatively misquoted](https://en.wikiquote.org/wiki/Talk:Antoine_de_Saint_Exupéry).
 
 
-A TUNES Retrospective
----------------------
+## A TUNES Retrospective
 
 Decades ago, I started the [TUNES project](http://tunes.org/),
 to reinvent computing software according to a different _point of view_.
@@ -17,9 +16,9 @@ in a community that well predated [Lambda the Ultimate](http://lambda-the-ultima
 Reddit, or [Lobsters](https://lobste.rs/).
 Eventually, I decided to join the Software Industry,
 that I may learn how to build real commercial software
-that actually gets deployed and used—and incidentally earn a better living.
-Indeed I did learn a lot on how to build software—and,
-more often than not, on how _not_ to build software.
+that actually gets deployed and used — and incidentally earn a better living.
+Indeed I did learn a lot on how to build software
+— and, more often than not, on how _not_ to build software.
 My initial ambition was that having learned how to build software,
 I would apply this knowledge to building TUNES.
 Yet, though the dream of TUNES never left me, it moved to the back of my brain
@@ -39,11 +38,14 @@ So I decided to write a TUNES Retrospective:
 a document explaining what were the significant ideas in TUNES,
 which had been implemented successfully in the last 20 years,
 which had been tried and failed,
-and which were still waiting to be implemented—but mostly,
-a document to convey the _point of view_ of TUNES, its _vision_.
+and which were still waiting to be implemented
+— but mostly, a document to convey the _point of view_ of TUNES, its _vision_.
 
 Now, I quickly determined that there were too many ideas I wanted to mention
 to fit in a short document, especially if I had to do justice to them.
-It had to be a series of posts, told in a pleasant way that would keep its audience.
+It had to be a series of posts, weaved together with good storytelling,
+to keep the audience interested.
 
 And that's when I met Ngnghm the Houyhnhnm...
+
+> — [Faré](http://twitter.com/fare)
