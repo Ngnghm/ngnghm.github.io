@@ -4,14 +4,14 @@
   <title>Houyhnhnm Computing: Posts tagged 'introduction'</title>
   <description>Houyhnhnm Computing: Posts tagged 'introduction'</description>
   <link>http://ngnghm.github.io/tags/introduction.html</link>
-  <lastBuildDate>Sun, 02 Aug 2015 14:56:46 UT</lastBuildDate>
-  <pubDate>Sun, 02 Aug 2015 14:56:46 UT</pubDate>
+  <lastBuildDate>Sun, 02 Aug 2015 02:56:46 UT</lastBuildDate>
+  <pubDate>Sun, 02 Aug 2015 02:56:46 UT</pubDate>
   <ttl>1800</ttl>
   <item>
    <title>Chapter 1: The Way Houyhnhnms Compute</title>
    <link>http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/?utm_source=introduction&amp;utm_medium=RSS</link>
    <guid>urn:http-ngnghm-github-io:-blog-2015-08-02-chapter-1-the-way-houyhnhnms-compute</guid>
-   <pubDate>Sun, 02 Aug 2015 14:56:46 UT</pubDate>
+   <pubDate>Sun, 02 Aug 2015 02:56:46 UT</pubDate>
    <description>&lt;html&gt;
 &lt;h3 id="beyond-the-sea-of-potentiality"&gt;Beyond the Sea of Potentiality&lt;/h3&gt;
 
@@ -38,6 +38,6 @@
 
 &lt;p&gt;By Houyhnhnm standards, the simplest human computing systems, though far from ideal, would be more something like Smalltalk or the other systems built by Alan Kay’s &lt;a href="http://vpri.org/"&gt;ViewPoint Research Institute&lt;/a&gt;, where the description for the entire system, including compiler, IDE, libraries, operating system, drivers, interactive graphical environment, font rendering, etc., all fit in a few tens of thousands of lines of code. Note that FORTH has been used to build complete systems of even smaller overall software size; but being low-level, FORTH relies more on informal design patterns and manually enforced limitations, which according to Houyhnhnm criteria make the resulting system overall more complex, especially so if multiple people are supposed to work on the same system; still such simplistic systems make sense for the isolated resource-starved programmers.&lt;/p&gt;
 
-&lt;p&gt;Houyhnhnms certainly don&amp;rsquo;t restrict themselves to using systems that are simple (according to their metric). But these simple systems do play an essential role in the Houyhnhnm computing system ecology: first, they are an essential part of computing curricula, so programmers can get a grasp of all the parts that make a complete system; second, the ways to factor and evolve such systems is also studied by designers and managers so they may think in terms of overall system architecture (including the Houyhnhnm factor, of course); last but not least, they are also instrumental in the bootstrapping process by which more complex systems are built in a way that is &lt;a href="fare.tunes.org/computing/reclaim_your_computer.html"&gt;auditably &lt;em&gt;secure&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Houyhnhnms certainly don&amp;rsquo;t restrict themselves to using systems that are simple (according to their metric). But these simple systems do play an essential role in the Houyhnhnm computing system ecology: first, they are an essential part of computing curricula, so programmers can get a grasp of all the parts that make a complete system; second, the ways to factor and evolve such systems is also studied by designers and managers so they may think in terms of overall system architecture (including the Houyhnhnm factor, of course); last but not least, they are also instrumental in the bootstrapping process by which more complex systems are built in a way that is &lt;a href="http://fare.tunes.org/computing/reclaim_your_computer.html"&gt;auditably &lt;em&gt;secure&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;In any case, a change in point of view led to a completely different metric to assess the simplicity of computing systems. It would also change how to judge other qualities of computing systems in general — and thus change the approach to how computing is done and what artefacts it yields.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

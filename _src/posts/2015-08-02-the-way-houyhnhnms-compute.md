@@ -160,7 +160,7 @@ so they may think in terms of overall system architecture
 (including the Houyhnhnm factor, of course);
 last but not least, they are also instrumental in the bootstrapping process
 by which more complex systems are built in a way that is
-[auditably _secure_](fare.tunes.org/computing/reclaim_your_computer.html).
+[auditably _secure_](http://fare.tunes.org/computing/reclaim_your_computer.html).
 
 In any case, a change in point of view led to a completely different metric
 to assess the simplicity of computing systems.
