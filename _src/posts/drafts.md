@@ -1,39 +1,59 @@
-# XXXXXXXXXXXXXXXXXX NOT EVEN A DRAFT BELOW HERE XXXXXXXXXXXXXXXXXX
+# Random ideas for future posts
     Title: Kitchen Sink
     Date: 2015-08-03T00:00:00
     Tags: DRAFT
 
 <!--
 
-Chapter 2: Save Our Souls.
+Chapter 1: The Way Houyhnhnms Compute
+Introduction, Point of View, Simplicity
+
+Chapter 2: Save Our Souls
 Persistence, Automated. Orthogonal Persistence. Fractal Transience.
 
 
-
-# Purer Systems
-
-Following our discussion on Persistence,
-Ngnghm had plenty of questions about how Human computer systems are designed, and how they hold together,
-when they can't get basic persistence right.
-But I had even more questions about what the user interface was like for Houyhnhnm computing systems
-when all data persisted.
-Some answers were obvious: Houyhnhnm computing systems had infinite-depth undo for free,
-without any special effort from the developer, and without any limitation for the user
-— as opposed to Human systems, where implementing crippled versions of limited undo functionality
-were a major headache for application developers,
-whereas being limited to using them was another headache to use for end-users.
+Chapter 3: Salvation
 
 
-Some answers I couldn't figure out by myself, such as what it might mean
-to travel back in time then forward again,
-when other parts of the system by necessity were going simply forward,
-including the logging of what happened to the parts that were travelling in time.
+Chapter 4: They live!
+
+
+Chapter 4: Minding Your Turtles.
+
+"Full stack" developers: yet
+
+
+
+Chapter 5: Transformation
 
 
 CRDTs.
 
 
 
+Imaginary errors: they happen in a branch that is never merged into the "real" universe.
+Or are expunged from it...
+always jump into the "top" (bottom) universe and rebase reality.
+
+Internal control vs external control.
+
+
+having software run in multiple domains:
+though Humans had several times invented "virtualization" which they were using heroic techniques
+to implement in an awkward way that seemed to make people's life overall more miserable rather than less.
+
+
+
+cult-of-dead
+
+
+We discussed many hours, and eventually found that we could explain
+the difference in approaches by a Houyhnhnm comput_ing_ system being a _live system_
+based on the premise that the system stays always on
+and evolves in internal interaction between machines and programmers,
+whereas Human computer systems are [_cult of dead_](http://wiki.squeak.org/squeak/2950) systems
+in programs never change then die taking all their data with them,
+change happening as external commands from the programmer above.
 
 
 Ngnghm was interested in understanding how Human computer systems were or weren't implementing computing domains.
@@ -41,18 +61,7 @@ I was more interested in understanding how users of Houyhnhnm computing systems 
 
 
 
-# Towers and Stacks
-
 ### Many sizes fit all
-
-
-
-having software run in multiple domains:
-though Humans had several times invented "virtualization" which they were using heroic techniques
-to implement in an awkward way that seemed to make people's life overall more miserable rather than less.
-
-"Full stack" developers: yet
-
 
 
 Human computer systems have an inordinate amount of mutually incompatible “libraries”
@@ -77,6 +86,7 @@ Ngnghm hadn’t noticed at first this essential transience of all data in Human 
 
 Moreover, all data was bound to disappear eventually. Not only hardware, but also software, was often expected to be used until it failed, with no regular plan to transfer data to a replacement system until it had at least started to fail. Human applications are written in an extremely fragile way, where persistence and correctness are considered “non-functional” requirements and are dealt with as an afterthought. Therefore, it is expected that applications will crash, have a race condition with other applications, experience plain old bugs, or be subject to vulnerabilities, at which point users will irremediably lose configuration or session data, documents written or data entered. (Interestingly, while it is all too easy for data you care about to be deleted, yet it is very hard to make sure that some data you want forgotten is ever completely deleted.)
 
+# Towers and Stacks
 
 
 

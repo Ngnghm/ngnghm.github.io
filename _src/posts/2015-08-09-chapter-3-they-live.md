@@ -1,0 +1,228 @@
+    Title: Chapter 3: Salvation
+    Date: 2015-08-09T01:10:00
+    Tags: Persistence, Orthogonal Persistence, Files, Versioning, Monitor, DRAFT
+
+### When Data Persists
+
+Following our [discussion on Persistence](/blog/2015/08/03/chapter-2-save-our-souls/),
+Ngnghm had plenty of questions about how Human computer systems held together
+when they can't seem to get basic persistence right.
+But in return, I had even more questions about what Houyhnhnm computing systems could even be like,
+when all data persisted by default:
+What did the user interface look like?
+Was there no more save button? What happened when you copied or deleted files?
+Were there files at all?
+How did people deal with all the garbage? Were your mistakes forever?
+If you somehow hosed your machine, would it remain forever hosed?
+How did you test potentially dangerous changes?
+What happened to your data when you incompatibly modified a program?
+Could some guiding principle help predict the answers to these and other questions?
+
+<!-- more -->
+
+Thus, on a first approach, the interface to a Houyhnhnm computing system
+may look very similar to that of a Human computer system
+— and that's how Ngnghm had been fooled at first into thinking they were designed along the same principles.
+If you have a Human laptop that you usually put to sleep and don't turn off or restart,
+your setup might be similar to what it would be on a Houyhnhnm muzzletop.
+But even if your operating system is very stable,
+you must always be prepared for a catastrophic failure;
+and whenever you upgrade your software
+(which you _must_ do eventually if only to apply security patches),
+then you _must_ restart just to make sure
+the restart procedure will be working if the failure happens
+while you're disconnected from online help
+— even though your system is stable and doesn't really need it.
+And at that point you lose all your current working state.
+The eventuality of losing all your current working state is thus a Sword of Damocles
+hanging above any and all working state you weave, even on the most stable of systems.
+Note that a Houyhnhnm computing system
+may have to be restarted semi-periodically for the very same reason;
+the difference being that you don't lose any working state as you do —
+or else, your system administrator and/or your or his insurance will cover any damages caused.
+Impermanence is thus a pervasive assumption in all Human computer systems,
+around which all habits are built;
+the loss of working state can be mitigated
+by using "session managers" that automatically save your session,
+or "startup scripts" where you manually re-create your usual work session,
+but both approaches only save very partial session information,
+in addition to being quite fragile and unreliable in practice —
+and intensive in programmer effort to implement.
+By contrast, in a Houyhnhnm computing system, you never lose your session;
+moreover, you can extract a startup script to re-create a similar session on another system,
+by introspecting the state of the system
+(the support for which is necessarily present for the sake of persistence)
+or by selectively replaying the relevant parts of the system persistence log.
+
+
+### System-wide Versioning
+
+In Human computer systems, editors and other applications have a "save" button.
+In Houyhnhnm computing systems, there are no applications and no "save" buttons.
+Instead, there are components that each deal with the specific aspects of some kinds of documents or data,
+and otherwise share common system features for general aspects of data —
+including notions of versioning and releasing, i.e. making a stable version visible to other people,
+whereas intermediate changes and their inglorious details remain unpublished.
+Thus, instead of "text editors" and "picture editors",
+there are a "text editing components" and "picture-editing components",
+that are available anywhere that there are modifiable texts or pictures in the system
+— and pretty much any text or picture you see can be copied into an editable variant,
+or traced back to an editable fork of its source, if it's not directly editable already.
+In Human computer systems, programmers have to bundle a finite number of such components
+into the package-deal that is an "application",
+where you can't use the component you want without being stuck with those you don't like.
+In Houyhnhnm computing systems, users can individually configure the components
+or combinations of components they want to use for each type of data they are interested in.
+They all delegate their versioning aspect to the user's favorite versioning component,
+that will handle forking new branches of data, and branches off branches of data,
+merging data from multiple branches, atomically committing changes,
+releasing data from a subbranch to make its changes available to a wider branch, etc.
+
+Another advantage of system-wide versioning is that
+in Houyhnhnm computing systems, infinite undo comes for free on any kind of data,
+without any special effort from the developer, and without any limitation for the user;
+what more it is available atomically for all data in the system or any joint subset thereof.
+By contrast, in Human computer systems, the ability undo of a few steps
+for a few kinds of documents is a very costly, unreliable and/or error-prone operation
+requiring a lot of programming and a lot of maintenance, and working on one document at a time.
+Whereas reproducing bugs is very hard in Human computer systems,
+reproducing bugs in Houyhnhnm computing systems is much easier:
+the log of interaction events that led to the erroneous behavior
+was recorded and can be replayed until the behavior was narrowed down;
+the the error case can automatically be reduced to its essence,
+by shaking the tree of actually used dependencies as detected by
+re-running an instrumented version of the same code to achieve e.g. Omniscient Debugging;
+the test case is then ready for inclusion in a regression test suite.
+
+
+### Data at the Proper Level of Abstraction
+
+Because persistence in Human Computer Systems consists in communicating sequences of bytes
+to external processes and systems (whether disks or clouds of servers),
+all data they hold is ultimately defined in terms of sequences of bytes.
+Because persistence in Houyhnhnm Computing Systems applies to any data
+in whichever high-level language it was defined in,
+all Houyhnhnm computing data is defined in terms of Algebraic Data Types,
+independently from underyling encoding
+(which might automatically and atomically change later system-wide).
+For the sake of importing data in and out of independently evolving systems,
+as well as for the sake of keeping the data compressed to make the most of limited resources,
+some low-level encoding in terms of bytes may be defined for some data types;
+but on the one hand, this is the exception;
+on the other other, the data is still part of the regular Algebraic Data Type system,
+can still be used with type constructors (e.g. as part of sum, product or function types), etc.
+Whereas Human computer systems would require explicit serialization and deserialization,
+with ad hoc containers or protocol generators to allow larger objects to contain smaller ones,
+Houyhnhnm computing systems abstract those details away and generate all required code
+from type definitions.
+Low-level encodings can even be replaced by newer and improved ones,
+and all objects will be transparently upgraded in due time
+— and user-visible identities and relationship will be preserved across such changes in representation.
+
+Since objects are not defined in terms of sequences of bytes, the very notion of file doesn't apply.
+At the same time, accessing an object inside a data structure is often (though not always)
+conveniently represented as following an access path
+from the root of the data structure to the desired element.
+An "access path" is thus a natural notion in all computing systems
+<!-- see Clojure: assoc-in, update-in -->
+even though in general a path is not a sequence of strings separated by slashes,
+but a list of accessors, that may be symbols or strings (when accessing a dictionary),
+integers (when accessing a sequence by index), or arbitrary accessor functions.
+But few are the cases where the natural way to locate data is via
+a list of sequences of bytes containing neither ASCII slash nor ASCII NUL;
+or worse, sequences of Unicode code glyphs up to some subtle case-conversion,
+represented as UTF-8 code points in some normal form;
+or worse, the greatest common denominator between an underspecified set
+of several variants of the above.
+
+Thus, files are not the general case for persisting data, text files even less so.
+Still, a good text editor and good text-based diff tools
+can be handy way to view and modify data and view and act on modifications to data.
+Indeed, unless and until you have better tools to represent change between arbitrary data structures,
+it makes sense to translate otherwise unsupported data structures to and from
+a well supported generic data structure such as text.
+[_It is better to have 100 functions operate on one data structure
+than 10 functions on 10 data structures._](www.cs.yale.edu/homes/perlis-alan/quotes.html)
+Still, it is important to understand the distinction between a representation and the real thing;
+the text being presented is not "canonical", it is not usually "source".
+The source is the semantic state of the system, on which change happens,
+and from which the text is extracted if and when needed;
+the source isn't the text being presented, that is the locus of modification,
+and from which the system semantics are compiled.
+
+
+### Dealing with Bad Memories
+
+But, if they log everything and almost never forget anything, I inquired,
+don't Houyhnhnm computing system quickly get filled with garbage?
+No, replied Ngnghm. The amount of information that users enter through a keyboard and mouse (or their Houyhnhnm counterparts)
+is minute compared to the memory of modern computers, yet, starting from a well-determined state of the system,
+it fully determines the subsequent state of the system.
+Hence, the persistence log doesn't need to record anything else but these events with their proper timestamp.
+This however, requires that all sources of non-determinism are either eliminated or recorded
+— which Houyhnhnm computing systems do by construction.
+Of course, to save resources, you can also configure some computations
+so they are not recorded, or so their records aren't kept beyond some number of days.
+For instance, you might eschew long-term storage of your game sessions;
+or you might forget the awkward silences and the street noise from your always-on microphone;
+or you might drop data acquired by your surveillance camera when it didn't catch any robber;
+or you might delete uninteresting videos;
+or you might not keep old software installation backups from long gone computers;
+or you might preserve a complete log only for a day, then an hourly snapshot for a few days,
+and a daily snapshot for a few weeks, then a weekly snapshot for a few months, etc.;
+or you might obliterate logs and snapshots as fast as you can while still ensuring
+that the system will be able to withstand partial or total hardware failure of your personal device;
+or then again, given enough storage, you might decide to keep _everything_.
+It's your choice — as long as you pay for the storage.
+The decision doesn't have to be made by the programmer;
+and though he may provide hints, the end-user has the last say.
+Indeed, the interests of the programmer may not be aligned with those of the user,
+who will instead delegate his decisions to administrators he trusts and pays
+and who are liable in case of malpractice.
+
+Now, beyond clutter that you might not want to memorize,
+what about actively bad things that surely you don't want to memorize?
+Some mistake might cause your entire system to become unresponsive by resource exhaustion
+(a fork bomb on Unix, an out-of-memory situation on any system);
+something might trigger a system bug and cause
+a hardware crash, a Blue Screen Of Death or a kernel panic;
+even worse, some subtle combination of factors could generate
+a memory corruption that jeopardizes the integrity of the persistent data.
+Houyhnhnms computing systems may have more robust than Human computer systems,
+yet even Houyhnhnms are not perfect in avoiding catastrophic mistakes.
+If you detect such a situation, what do you do?
+Old Houyhnhnm engineers tell classic stories of catastrophic system modifications that were reverted
+by shutting down the computer before the modification was written to disk;
+but of course, as the latency of persistence goes down, the window of opportunity for such a feat goes away.
+The general answer is that to fix a system that has entered a bad state,
+you need an external system that can stop the other system, inspect it, fix it, and restart it.
+
+On a Human computer system, when things get that bad,
+you can often reboot in a special "failsafe" mode (that can usually handle but the simplest of situations),
+or you can use a USB key with a known stable version of the system (that can handle complex situations),
+or at worst if the hardware was damaged,
+you can disconnect the computer's mass memory unit and connect it into another computer.
+In a Houyhnhnm computing system, you can do as much, but you can also use a reserved input sequence
+(the equivalent of <kbd>Ctrl-Alt-Del</kbd> on Windows) to enter a _monitor_.
+The monitor is a _simple_ but complete computing system, as per the
+[Houyhnhnm criteria of simplicity](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/);
+it is universal and can do everything a computing system can do,
+and is often a bare-bones variant of a regular computing system,
+as used for secure bootstrapping purposes;
+it also specifically understands enough of the semantics of the regular system
+to inspect it, fix it, and restart it, using the full power of a complete computing system
+(though a simple one).
+A small amount of memory is reserved for the operation of the monitor;
+actually, if mass memory units are working and have some reserved space for the monitor
+(which is the case on a default installation),
+then the monitor will actually spawn a virtualized monitor;
+this allows it to have more memory available,
+as well as to still have a monitor (and possibly more virtualized monitors)
+in case you make mistakes in the virtualized monitor;
+as a result, it's safe to use dichotomy to determine which change broke the system.
+
+In the end, the necessity of dealing with common failure scenarios
+lead Houyhnhnms and Humans to take very different approaches to keeping their systems robust.
+Thinking like Houyhnhnms in terms of computing system, rather than like Humans in terms of computer system
+has far-ranging consequences in terms of software and hardware architecture.
+Persistence is but one aspect of it and ultimately cannot be separated from the rest of the design.

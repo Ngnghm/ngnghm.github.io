@@ -1,6 +1,6 @@
     Title: Chapter 1: The Way Houyhnhnms Compute
     Date: 2015-08-02T10:56:46
-    Tags: introduction, point of view, simplicity
+    Tags: Introduction, Point of View, Simplicity
 
 ### Beyond the Sea of Potentiality
 
@@ -71,18 +71,19 @@ or any magic means of computation beyond our own capabilities.
 But they approach computing in a way that is foreign to us Humans,
 and that leads to very different results.
 
-Whereas Humans view computers as tools below them to which they give
-orders and that do their bidding, Houyhnhnms view computing as an
-interaction within a system around them that extends their
-consciousness. Humans view programs as blueprints to build artefacts
-in a separate and simpler universe of software and
-hardware. Houyhnhnms view programming as a conversation involving
-[wetware](https://en.wikipedia.org/wiki/Wetware_(brain)) first, and
-only accessorily the synthetic phenomena they induce (a.k.a. computing
-devices). Humans articulate their plans primarily in terms of logical
-and physical devices. Houyhnhnms weave their conversations foremost
-around the interactions they attempt to automate,
-in the ontologies that interest them — including the ontology of such conversations themselves.
+Whereas Humans view computers as tools below them
+to which they give orders and that do their bidding,
+Houyhnhnms view computing as an interaction within a system around them
+that extends their consciousness.
+Humans articulate their plans primarily in terms of things:
+the logical and physical devices they build
+(sometimes including tools to make more tools),
+in the lower realms of software and hardware.
+Houyhnhnms weave their conversations foremost in terms of processes:
+the interactions they partake in that they attempt to automate
+(including these conversations themselves),
+which always involves [wetware](https://en.wikipedia.org/wiki/Wetware_(brain)) first.
+In short, Humans have comput_er_ systems, Houyhnhnms have comput_ing_ systems.
 
 You may dismiss all this as dreamy philosophy,
 empty words without any consequences — I certainly did so at first.
@@ -93,6 +94,8 @@ and that engage users in very different processes,
 with role delineations according to very different criteria,
 resulting in a very different variety of artefacts of very different sizes,
 but most importantly, connected in very different ways.
+It may all be but just so stories, but
+[stories have consequences](http://fare.tunes.org/computing/bal2009.pdf).
 
 
 ### Simplicity

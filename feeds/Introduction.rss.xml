@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Houyhnhnm Computing: Posts tagged 'point of view'</title>
- <link rel="self" href="http://ngnghm.github.io/feeds/point-of-view.atom.xml" />
- <link href="http://ngnghm.github.io/tags/point-of-view.html" />
- <id>urn:http-ngnghm-github-io:-tags-point-of-view-html</id>
- <updated>2015-08-02T14:56:46Z</updated>
- <entry>
-  <title type="text">Chapter 1: The Way Houyhnhnms Compute</title>
-  <link rel="alternate" href="http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/?utm_source=point-of-view&amp;utm_medium=Atom" />
-  <id>urn:http-ngnghm-github-io:-blog-2015-08-02-chapter-1-the-way-houyhnhnms-compute</id>
-  <published>2015-08-02T14:56:46Z</published>
-  <updated>2015-08-02T14:56:46Z</updated>
-  <author>
-   <name>Ngnghm</name></author>
-  <content type="html">&lt;html&gt;
+<rss version="2.0">
+ <channel>
+  <title>Houyhnhnm Computing: Posts tagged 'Introduction'</title>
+  <description>Houyhnhnm Computing: Posts tagged 'Introduction'</description>
+  <link>http://ngnghm.github.io/tags/Introduction.html</link>
+  <lastBuildDate>Sun, 02 Aug 2015 14:56:46 UT</lastBuildDate>
+  <pubDate>Sun, 02 Aug 2015 14:56:46 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Chapter 1: The Way Houyhnhnms Compute</title>
+   <link>http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/?utm_source=Introduction&amp;utm_medium=RSS</link>
+   <guid>urn:http-ngnghm-github-io:-blog-2015-08-02-chapter-1-the-way-houyhnhnms-compute</guid>
+   <pubDate>Sun, 02 Aug 2015 14:56:46 UT</pubDate>
+   <description>&lt;html&gt;
 &lt;h3 id="beyond-the-sea-of-potentiality"&gt;Beyond the Sea of Potentiality&lt;/h3&gt;
 
 &lt;p&gt;I used to think humans wrote software the way they did because they knew what they were doing. Then I realized that they didn&amp;rsquo;t really know, but adopted ways that seemed to work better than others — or maybe rather humans were adopted by the ways that best knew how to survive. In any case, I trusted &amp;ldquo;evolution&amp;rdquo;, that is, ultimately, &lt;em&gt;other people&lt;/em&gt;, to have figured out the best way that software could and should be written. But everything I knew about computing changed when one day I met a &lt;a href="http://en.wikipedia.org/wiki/Houyhnhnm"&gt;Houyhnhnm&lt;/a&gt;, who told me how things were done in his faraway land.&lt;/p&gt;
@@ -27,9 +26,9 @@
 
 &lt;p&gt;The fundamental difference between Human computer systems and Houyhnhnm computing systems is one of &lt;em&gt;point of view&lt;/em&gt;. Houyhnhnms do not possess a different kind of logic, nor mathematics, nor physics; though they have discovered how to travel through many dimensions, they do not have quantum computers, logical oracles, or any magic means of computation beyond our own capabilities. But they approach computing in a way that is foreign to us Humans, and that leads to very different results.&lt;/p&gt;
 
-&lt;p&gt;Whereas Humans view computers as tools below them to which they give orders and that do their bidding, Houyhnhnms view computing as an interaction within a system around them that extends their consciousness. Humans view programs as blueprints to build artefacts in a separate and simpler universe of software and hardware. Houyhnhnms view programming as a conversation involving &lt;a href="https://en.wikipedia.org/wiki/Wetware_(brain)"&gt;wetware&lt;/a&gt; first, and only accessorily the synthetic phenomena they induce (a.k.a. computing devices). Humans articulate their plans primarily in terms of logical and physical devices. Houyhnhnms weave their conversations foremost around the interactions they attempt to automate, in the ontologies that interest them — including the ontology of such conversations themselves.&lt;/p&gt;
+&lt;p&gt;Whereas Humans view computers as tools below them to which they give orders and that do their bidding, Houyhnhnms view computing as an interaction within a system around them that extends their consciousness. Humans articulate their plans primarily in terms of things: the logical and physical devices they build (sometimes including tools to make more tools), in the lower realms of software and hardware. Houyhnhnms weave their conversations foremost in terms of processes: the interactions they partake in that they attempt to automate (including these conversations themselves), which always involves &lt;a href="https://en.wikipedia.org/wiki/Wetware_(brain)"&gt;wetware&lt;/a&gt; first. In short, Humans have comput&lt;em&gt;er&lt;/em&gt; systems, Houyhnhnms have comput&lt;em&gt;ing&lt;/em&gt; systems.&lt;/p&gt;
 
-&lt;p&gt;You may dismiss all this as dreamy philosophy, empty words without any consequences — I certainly did so at first. Yet the difference in point of view that I am now attempting to distill leads to systems that are organized in very different ways, that are optimized for very different metrics, and that engage users in very different processes, with role delineations according to very different criteria, resulting in a very different variety of artefacts of very different sizes, but most importantly, connected in very different ways.&lt;/p&gt;
+&lt;p&gt;You may dismiss all this as dreamy philosophy, empty words without any consequences — I certainly did so at first. Yet the difference in point of view that I am now attempting to distill leads to systems that are organized in very different ways, that are optimized for very different metrics, and that engage users in very different processes, with role delineations according to very different criteria, resulting in a very different variety of artefacts of very different sizes, but most importantly, connected in very different ways. It may all be but just so stories, but &lt;a href="http://fare.tunes.org/computing/bal2009.pdf"&gt;stories have consequences&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="simplicity"&gt;Simplicity&lt;/h3&gt;
 
@@ -41,4 +40,4 @@
 
 &lt;p&gt;Houyhnhnms certainly don&amp;rsquo;t restrict themselves to using systems that are simple (according to their metric). But these simple systems do play an essential role in the Houyhnhnm computing system ecology: first, they are an essential part of computing curricula, so programmers can get a grasp of all the parts that make a complete system; second, the ways to factor and evolve such systems is also studied by designers and managers so they may think in terms of overall system architecture (including the Houyhnhnm factor, of course); last but not least, they are also instrumental in the bootstrapping process by which more complex systems are built in a way that is &lt;a href="http://fare.tunes.org/computing/reclaim_your_computer.html"&gt;auditably &lt;em&gt;secure&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;In any case, a change in point of view led to a completely different metric to assess the simplicity of computing systems. It would also change how to judge other qualities of computing systems in general — and thus change the approach to how computing is done and what artefacts it yields.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
+&lt;p&gt;In any case, a change in point of view led to a completely different metric to assess the simplicity of computing systems. It would also change how to judge other qualities of computing systems in general — and thus change the approach to how computing is done and what artefacts it yields.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

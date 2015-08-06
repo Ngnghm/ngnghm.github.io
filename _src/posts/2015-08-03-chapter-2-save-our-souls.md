@@ -1,10 +1,10 @@
     Title: Chapter 2: Save Our Souls
     Date: 2015-08-03T01:10:00
-    Tags: persistence, automation, orthogonal persistence, domains
+    Tags: Persistence, Automation, Orthogonal Persistence, Domains
 
 ### Persistence, Automated
 
-Ngnghm was fascinated by our keyboards:
+[Ngnghm](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/) was fascinated by our keyboards:
 because of physiological differences between our races, similar devices had never been imagined
 by [Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm) computing engineers.
 As he was watching me closely, Ngnghm noticed that I was punctuating most of my typing
@@ -88,7 +88,7 @@ or you open a interactive evaluation prompt and bind a value to a variable,
 or you make any kind of modification to any document or program,
 the change you made will remain in the system forever
 — that is, until Civilization itself crumbles,
-or you decide to delete it (an tricky operation, more below).
+or you decide to delete it (a tricky operation, more below).
 Everything you type remains in your automatic planet-wide backups,
 providing several layers of availability and of latency —
 kept private using several layers of cryptography.
@@ -127,12 +127,11 @@ the persistence of data is a property of the domain you're working in, as manage
 it is _not_ an aspect of data that programmers have to deal with in ordinary programs;
 unless of course they are programmers specifically working on a new abstraction for persistence,
 which is after all an ordinary program.
-But regular programmers just manipulate the data with full confidence that
-it will remain available as long as the user wants that data
-(and the code that manipulates it), no more and no less,
-with the consistency guarantees desired by the user;
-whereas they can make the same assumptions of robustness
-with respect to the data they use in the domain they use it.
+Regular programmers just manipulate the data with full confidence that
+the inputs they consume, the code that manipulates them, and the outputs they produce
+will each remain available as long as the user wants them,
+with the consistency guarantees specified by the user,
+as long as the user affords the associated costs.
 
 Actually, ordinary programs don't know and can't even possibly know
 which domain they will be running in,
@@ -175,11 +174,11 @@ full abstraction of program semantics from the underlying implementation,
 as Houyhnhnm computing systems do.
 When on the contrary, as in Human computer systems,
 the code is pegged to a particular implementation,
-then not only is all but impossible but migrate a program from one domain to another at runtime,
+then not only is it practically impossible
+to migrate a program from one domain to another at runtime,
 but programs may have to be completely rewritten from scratch
 before they may even be executed in a domain with slightly different constraints
 regarding persistence, privacy, performance, etc.
-And that's so extremely costly, that in practice it's as good as impossible.
 
 
 ### Fractal Transience
@@ -190,23 +189,24 @@ configuration settings, lists of open tabs, documents you manipulate
 — most user-visible application state, most of the time,
 seems to be preserved from one session to the next,
 without the user having to issue any explicit command to "save" anything.
-Desktop apps still tend o display a counter-productive "recovery" menu at startup, though.
+Desktop apps still tend to display a counter-productive "recovery" menu at startup, though.
 And more annoyingly, this apparent persistence still doesn't cover
 the most frequent case these days of people typing things:
 input forms and message boxes in web pages.
 Also, the "catastrophic" events are covered include
 so predictable the event as is the eventual death
-of each and every piece of hardware (and software, too!).
+of each and every piece of hardware
+— and of each and every software project and service-providing business.
 Yet, content with expectations from this _apparent_ persistence,
-users can easily be fooled, like Ngnghm was,
+users can easily be fooled, like Ngnghm was initially,
 into believing that Human computer systems
 are just as good as Houyhnhnm computing systems in this regard;
 and just like Ngnghm, they can be led to believe that failures
 are due to incompetence on their part,
-rather than to the part of the computing system developers.
+rather than on the part of the computing system developers.
 
 Well, at least, that's how the Houyhnhnm see things:
-whether or not you can assign blame to any one in particular
+whether or not you can assign blame to any person in particular
 for the situation of Human computer systems, this situation is deeply dysfunctional.
 Actually, the Houyhnhnm also have something to say if you cannot assign personal blame for it
 — and it doesn't look like you can:
@@ -217,10 +217,13 @@ when it comes to modifying and maintaining their software
 so it doesn't fail catastrophically and betray the customers?
 Even when they tout themselves as selling "software as a service",
 the vendors hide behind their "Intellectual Property" monopolies to actually make it
-"rotware as a racket" — it _will_ grow even more inadequate and die,
-and offer bad expensive service with no enforceable service level agreement,
-but you _will_ have to keep paying, and then
-pay again when you have to leave or be left behind.
+"rotware as a racket" —
+it offers bad expensive service with no enforceable service level agreement,
+it _will_ grow even more inadequate and die,
+yet you _will_ have to keep paying, and then
+pay again when you have to leave or be left behind;
+but you don't have much choice because patents and investment disincentives
+prevent any competition.
 By contrast, Houyhnhnms individually have full ultimate control over their own machines,
 and it is based on this control that they enjoy division of labour
 in delegating software maintenance of most (if they are programmers)
@@ -241,11 +244,13 @@ the compiler writer, the operating system implementer,
 everyone, all the time, had to assume the software and hardware layers below him were fragile,
 supposed to work only a single computing domain;
 everyone would in turn provide a similarly fragile and non-transportable device
-to the users above him;
+to the users above him.
+All the manual handling of this issue costs a significant fraction of software development
+(about 30% of all code written, an IBM study once counted);
 and if you ever wanted to make a significant improvement to any component at any level,
 you pretty much had to rewrite the entire software "stack"
 above whichever level you were hoping to improve
-— in other words it required a significant world-changing event.
+— in other words this requires a significant world-changing event.
 
 And yet, it runs! Ngnghm was in awe that Human computer systems could run at all;
 they clearly demonstrated some emerging order so powerful
