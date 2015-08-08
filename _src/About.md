@@ -21,7 +21,8 @@ Eventually, I decided to join the Software Industry,
 that I may learn how to build real commercial software
 that actually gets deployed and used — and incidentally earn a better living.
 Indeed I did learn a lot on how to build software
-— and, more often than not, on how _not_ to build software.
+— and, more often than not, on
+[how _not_ to build software](http://fare.livejournal.com/171998.html).
 My initial ambition was that having learned how to build software,
 I would apply this knowledge to building TUNES.
 Yet, though the dream of TUNES never left me, it moved to the back of my brain
@@ -46,8 +47,8 @@ and which were still waiting to be implemented
 
 Now, I quickly determined that there were too many ideas I wanted to mention
 to fit in a short document, especially if I had to do justice to them.
-It had to be a series of posts, weaved together with good storytelling,
-to keep the audience interested.
+It had to be a series of posts;
+and the posts should be weaved with good storytelling to keep the audience interested.
 
 And that's when I met Ngnghm the Houyhnhnm...
 
