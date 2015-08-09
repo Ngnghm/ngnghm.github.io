@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Chapter 3: The Houyhnhnm Version of Salvation</title>
+    <meta name="description" content="Following our discussion on Persistence, Ngnghm had plenty of questions about how Human computer systems held together when they can't seem to get basic persistence right. But in return, I had even more questions about what Houyhnhnm computing systems cou...">
+    <meta name="author"      content="Ngnghm">
+    <meta name="keywords"    content="Persistence, Orthogonal Persistence, Files, Versioning, Monitor">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="http://ngnghm.github.io/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/">
+    <link rel="next" href="/blog/2015/08/03/chapter-2-save-our-souls/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link ref="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link ref="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">Houyhnhnm Computing</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/Automation.html">Automation</a></li>
+
+<li><a href="/tags/Domains.html">Domains</a></li>
+
+<li><a href="/tags/Files.html">Files</a></li>
+
+<li><a href="/tags/Introduction.html">Introduction</a></li>
+
+<li><a href="/tags/Monitor.html">Monitor</a></li>
+
+<li><a href="/tags/Orthogonal-Persistence.html">Orthogonal Persistence</a></li>
+
+<li><a href="/tags/Persistence.html">Persistence</a></li>
+
+<li><a href="/tags/Point-of-View.html">Point of View</a></li>
+
+<li><a href="/tags/Simplicity.html">Simplicity</a></li>
+
+<li><a href="/tags/Versioning.html">Versioning</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Chapter 3: The Houyhnhnm Version of Salvation</h1>
+    <p class='date-and-tags'>
+<time datetime="2015-08-09" pubdate="true">2015-08-09</time> :: <span class="tags"><a href="/tags/Persistence.html">Persistence</a>, <a href="/tags/Orthogonal-Persistence.html">Orthogonal Persistence</a>, <a href="/tags/Files.html">Files</a>, <a href="/tags/Versioning.html">Versioning</a>, <a href="/tags/Monitor.html">Monitor</a></span></p>
+  </header>
+
+<p>Following our <a href="/blog/2015/08/03/chapter-2-save-our-souls/">discussion on Persistence</a>, Ngnghm had plenty of questions about how Human computer systems held together when they can&rsquo;t seem to get basic persistence right. But in return, I had even more questions about what Houyhnhnm computing systems could even be like, when all data persisted by default: What did the user interface look like? Was there no more save button? What happened when you copied or deleted files? Were there files at all? How did people deal with all the garbage? Were your mistakes forever? If you somehow hosed your machine, would it remain forever hosed? How did you test potentially dangerous changes?</p>
+<!-- more-->
+
+<h3 id="when-data-persists">When Data Persists</h3>
+
+<p>Thus, on a first approach, the interface to a Houyhnhnm computing system may look very similar to that of a Human computer system — and that&rsquo;s how Ngnghm had been fooled at first into thinking they were designed along the same principles. If you have a Human laptop that you usually put to sleep and don&rsquo;t turn off or restart, your setup might be similar to what it would be on a Houyhnhnm muzzletop. But even if your operating system is very stable, you must always be prepared for a catastrophic failure; and whenever you upgrade your software (which you <em>must</em> do eventually if only to apply security patches), then you <em>must</em> restart just to make sure the restart procedure will be working if the failure happens while you&rsquo;re disconnected from online help — even though your system is stable and doesn&rsquo;t really need it. And at that point you lose all your current working state. The eventuality of losing all your current working state is thus a Sword of Damocles hanging above any and all working state you weave, even on the most stable of systems. Note that a Houyhnhnm computing system may have to be restarted semi-periodically for the very same reason; the difference being that you don&rsquo;t lose any working state as you do — or else, your system administrator and/or your or his insurance will cover any damages caused. Impermanence is thus a pervasive assumption in all Human computer systems, around which all habits are built; the loss of working state can be mitigated by using &ldquo;session managers&rdquo; that automatically save your session, or &ldquo;startup scripts&rdquo; where you manually re-create your usual work session, but both approaches only save very partial session information, in addition to being quite fragile and unreliable in practice — and intensive in programmer effort to implement. By contrast, in a Houyhnhnm computing system, you never lose your session; moreover, you can extract a startup script to re-create a similar session on another system, by introspecting the state of the system (the support for which is necessarily present for the sake of persistence) or by selectively replaying the relevant parts of the system persistence log.</p>
+
+<h3 id="system-wide-versioning">System-wide Versioning</h3>
+
+<p>In Human computer systems, editors and other applications have a &ldquo;save&rdquo; button. In Houyhnhnm computing systems, there are no applications and no &ldquo;save&rdquo; buttons. Instead, there are components that each deal with the specific aspects of some kinds of documents or data, and otherwise share common system features for general aspects of data — including notions of versioning and releasing, i.e. making a stable version visible to other people, whereas intermediate changes and their inglorious details remain unpublished. Thus, instead of &ldquo;text editors&rdquo; and &ldquo;picture editors&rdquo;, there are a &ldquo;text editing components&rdquo; and &ldquo;picture-editing components&rdquo;, that are available anywhere that there are modifiable texts or pictures in the system — and pretty much any text or picture you see can be copied into an editable variant, or traced back to an editable fork of its source, if it&rsquo;s not directly editable already. In Human computer systems, programmers have to bundle a finite number of such components into the package-deal that is an &ldquo;application&rdquo;, where you can&rsquo;t use the component you want without being stuck with those you don&rsquo;t like. In Houyhnhnm computing systems, users can individually configure the components or combinations of components they want to use for each type of data they are interested in. They all delegate their versioning aspect to the user&rsquo;s favorite versioning component, that will handle forking new branches of data, and branches off branches of data, merging data from multiple branches, atomically committing changes, releasing data from a subbranch to make its changes available to a wider branch, etc.</p>
+
+<p>Another advantage of system-wide versioning is that in Houyhnhnm computing systems, infinite undo comes for free on any kind of data, without any special effort from the developer, and without any limitation for the user; what more it is available atomically for all data in the system or any joint subset thereof. By contrast, in Human computer systems, the ability undo of a few steps for a few kinds of documents is a very costly, unreliable and/or error-prone operation requiring a lot of programming and a lot of maintenance, and working on one document at a time; some applications maintain history, but it is optimized for data mining by spies, and useless for users to recover past sessions. One more feature made possible by system-wide versioning is the ability to easily reproduce and isolate bugs — an activity that consumes a lot of expensive programmer time in Human computer systems, and that is made much easier in Houyhnhnm computing systems, since the log of interaction events that led to the erroneous behavior was recorded and can be replayed until the behavior was narrowed down; then the error case can automatically be reduced to its essence, by shaking the tree of actually used dependencies as detected by re-running an instrumented version of the same code to achieve e.g. Omniscient Debugging; the test case is then ready for inclusion in a regression test suite.</p>
+
+<h3 id="data-at-the-proper-level-of-abstraction">Data at the Proper Level of Abstraction</h3>
+
+<p>Because persistence in Human Computer Systems consists in communicating sequences of bytes to external processes and systems (whether disks or clouds of servers), all data they hold is ultimately defined in terms of sequences of bytes, or files; when persisting these files, they are identified by file paths that themselves are short sequences of bytes interpreted as a series of names separated by slashes <code>/</code> (or on some systems, blashslashes <code>\</code>, or something else). Because persistence in Houyhnhnm Computing Systems applies to any data in whichever high-level language it was defined in, all Houyhnhnm computing data is defined in terms of <a href="https://en.wikipedia.org/wiki/Algebraic_data_type">Algebraic Data Types</a>, independently from underlying encoding (which might automatically and atomically change later system-wide). For the sake of importing data in and out of independently evolving systems, as well as for the sake of keeping the data compressed to make the most of limited resources, some low-level encoding in terms of bytes may be defined for some data types. But on the one hand, this is the exception; on the other other, the data is still part of the regular Algebraic Data Type system, can still be used with type constructors (e.g. as part of sum, product or function types), etc. Whereas Human computer systems would require explicit serialization and deserialization of data, and would require ad hoc containers or protocol generators to allow larger objects to contain smaller ones, Houyhnhnm computing systems abstract those details away and generate any required code from type definitions. Low-level encodings can even be replaced by newer and improved ones, and all objects will be transparently upgraded in due time — while preserving all user-visible identities and relationships across such changes in representation.</p>
+
+<p>Since objects are not defined in terms of sequences of bytes, the very notion of file doesn&rsquo;t apply to Houyhnhnm computing systems. At the same time, accessing an object inside a data structure is often (though not always) conveniently represented as following an access path from the root of the data structure to the desired element. An &ldquo;access path&rdquo; is thus a natural notion in all computing systems <!-- see Clojure: assoc-in, update-in--> even though in general a path is not a sequence of strings separated by slashes, but a list of accessors, that may be symbols or strings (when accessing a dictionary), integers (when accessing a sequence by index), or arbitrary accessor functions. But few are the cases where the natural way to locate data is via a list of sequences of bytes containing neither ASCII slash nor ASCII NUL; or worse, sequences of Unicode code glyphs up to some subtle case-conversion, represented as UTF&ndash;8 code points in some normal form; or even worse, the greatest common denominator between an underspecified set of several variants of the above, with unspecified separators.</p>
+
+<p>Thus, files are not the general case for persisting data; text files even less so. Still, a good text editor and good text-based diff tools can provide a handy way to view and modify data and view and act on modifications to data. Indeed, unless and until you have better tools to represent change between arbitrary data structures, it makes sense to translate otherwise unsupported data structures to and from a well supported generic data structure such as text. <a href="www.cs.yale.edu/homes/perlis-alan/quotes.html"><em>It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.</em></a> Now, it is important to understand the distinction between a representation and the real thing; the text being presented is not &ldquo;canonical&rdquo;, it is not usually &ldquo;source&rdquo;. In Houyhnhnm computing systems, the source is the semantic state of the system, on which change happens, and from which the text is extracted if and when needed; this is in sharp contrast with typical Human computer systems, where the source (that is, the locus of modification by sentients) is text files that are compiled, disconnected from the state of the system.</p>
+
+<h3 id="dealing-with-bad-memories">Dealing with Bad Memories</h3>
+
+<p>But, I inquired, if they log everything and almost never forget anything, don&rsquo;t Houyhnhnm computing system quickly get filled with garbage? No, replied Ngnghm. The amount of information that users enter through a keyboard and mouse (or their Houyhnhnm counterparts) is minute compared to the memory of modern computers, yet, starting from a well-determined state of the system, it fully determines the subsequent state of the system. Hence, the persistence log doesn&rsquo;t need to record anything else but these events with their proper timestamp. This however, requires that all sources of non-determinism are either eliminated or recorded — which Houyhnhnm computing systems do by construction. Of course, to save resources, you can also configure some computations so they are not recorded, or so their records aren&rsquo;t kept beyond some number of days. For instance, you might adopt a <em>model-view-controller</em> approach, and consider the view as transient while only logging changes to the controller, or even only to the model; or you might eschew long-term storage of your game sessions; or you might forget the awkward silences and the street noise from your always-on microphone; or you might drop data acquired by your surveillance camera when it didn&rsquo;t catch any robber; or you might delete uninteresting videos; or you might expunge old software installation backups from long gone computers; or you might preserve a complete log only for a day, then an hourly snapshot for a few days, and a daily snapshot for a few weeks, a weekly snapshot for a few months, etc.; or you might obliterate logs and snapshots as fast as you can while still ensuring that the system will be able to withstand partial or total hardware failure of your personal device; or then again, given enough storage, you might decide to keep <em>everything</em>. It&rsquo;s your choice — as long as you pay for the storage. The decision doesn&rsquo;t have to be made by the programmer; and though he may provide hints, the end-user has the last say. Indeed, the interests of the programmer may not be aligned with those of the user, who will instead delegate his decisions to administrators he trusts and pays and who are liable in case of malpractice.</p>
+
+<p>Now, beyond clutter that useless filly up memory, what about actively bad things that surely you don&rsquo;t want to memorize? Some mistake might cause your entire system to become unresponsive by resource exhaustion (a fork bomb on Unix, an out-of-memory situation on any system); something might trigger a system bug and cause a hardware crash, a Blue Screen Of Death or a kernel panic; even worse, some subtle combination of factors could generate a memory corruption that jeopardizes the integrity of the persistent data. Houyhnhnms computing systems may be more robust than Human computer systems in this regard, yet even Houyhnhnms are not perfect in avoiding catastrophic mistakes. If you detect such a situation, what do you do? Old Houyhnhnm engineers tell classic stories of catastrophic system modifications that were reverted by shutting down the computer before the modification was written to disk; but of course, as the latency of persistence goes down, the window of opportunity for such a feat goes away. The general answer is that to fix a system that has entered a bad state, you need an <em>external</em> system that can stop the other system, inspect it, fix it, and restart it.</p>
+
+<p>On a Human computer system, when things get that bad, you can often reboot in a special &ldquo;failsafe&rdquo; mode (that can usually handle but the simplest of situations), or you can use a USB key with a known stable version of the system (with which experts can handle complex situations), or at worst if the hardware was damaged, you can disconnect the computer&rsquo;s mass memory unit and connect it into another computer. In a Houyhnhnm computing system, you can do as much, but you can also use a reserved input sequence (the equivalent of 
+ <kbd>Ctrl-Alt-Del</kbd> on Windows) to enter a <em>monitor</em>. The monitor is a <em>simple</em> but complete computing system, as per the <a href="/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/">Houyhnhnm criteria of simplicity</a>; it is universal and can do everything a computing system can do, and is often a bare-bones variant of a regular computing system, as used for secure bootstrapping purposes; it also specifically understands enough of the semantics of the regular system to inspect it, fix it, and restart it, using the full power of a complete computing system (though a simple one). A small amount of memory is reserved for the operation of the monitor; actually, if mass memory units are working (as they should be) and have some reserved space for the monitor (as is the case on a default installation), then the monitor will actually spawn a virtualized monitor; this allows monitor operations to have more memory available, so they can for instance merge in a lot of the system state (up to some point deemed safe by the user); but this also makes it possible to still have a monitor (and possibly more virtualized monitors) in case you make mistakes in the virtualized monitor; as a result, it is safe to use dichotomy to determine which change broke the system.</p>
+
+<h3 id="virtualization-as-branching">Virtualization as Branching</h3>
+
+<p>More generally, a Houyhnhnm can use virtualization and system rollback while conducting any kinds of experiments, so he never has to hesitate about doing anything risky, half-baked, downright stupid, or otherwise dangerous. But virtualization doesn&rsquo;t mean the same thing in a Houyhnhnm computing system as in a Human computer system. In a Human computer system, virtualization is an <em>ad hoc</em> tool for system administrators allowing the deployment of specially prepared servers by faking an entire physical computer at the level of abstraction of CPU instructions and memory accesses. In a Houyhnhnm computing system, virtualization is merely the ability to branch the history of changes in the system, and derives naturally from the fact that the entire system is under version control; it is available at whichever level of abstraction the users and programmers specify their computations, which is most usually at a much higher level of abstraction than that of CPU instructions (though a naive, fallback strategy is indeed always available that consists in going down to that low level).</p>
+
+<p>Thus, all destructive or catastrophic experiments happen in branches that are never merged into the official reality — the errors remain imaginary. Aternatively, when bad things happen in said official reality, they can be <a href="http://www.jargon.net/jargonfile/r/retcon.html">retcon</a>&rsquo;ed into having been but a bad dream, as the bad reality is demoted into being a mere unmerged error branch while a nicer reality becomes the master copy. Of course, it may be too late to undo bad communications with external systems, if they were let happen; some of them may be cancelled or compensated with new transactions; some of them may have to be accepted as losses or errors: you can&rsquo;t unprint a pile of garbled characters, and you won&rsquo;t get your bitcoins back. Even Houyhnhnm computing systems can&rsquo;t protect you from yourself; but they can make it easy to try things in a virtualized environment, and to only merge into reality those transactions that pass all checks.</p>
+
+<p>It is also possible to branch only part of the system while the rest of the system remains shared; and of course you can merge two branches back together, somehow fusing changes. Thus, there is no need to specially prepare an image for virtualization; any system and any subsystem, any program and any subprogram, can be forked at any time; any ongoing I/O with other systems can be redirected to one fork or the other, or multiplexed to/from both, or filtered, etc., and the user can dynamically re-wire all these connections from a monitor outside the virtualized system, that can itself be virtualized, etc.</p>
+
+<p>Version control should be familiar to developers of Human computer systems; but these days, they apply it only to source code; and so live, interactive data is not covered by the version control, or at best only in a very indirect way, if the programmers make large, contrived and expensive efforts to check in every change. Houyhnhnms think of code and data as coming together, part of the same interaction with the Sentient user, with data and code being useless without the other, or out of synch with the other; and thus Houyhnhnm computing systems casually apply version control to the entire state of the system.</p>
+
+<p>In the end, thinking like Houyhnhnms in terms of comput<em>ing</em> systems, rather than like Humans in terms of comput<em>er</em> systems has far-ranging consequences in terms of software and hardware architecture. Persistence is but one aspect of this architecture; ultimately, it cannot be separated from the rest. And on this aspect like on others, from the necessity of dealing with the same basic needs and failure scenarios, the change in <em>point of view</em> leads to very different approaches to making and keeping the systems working.</p>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://ngnghm.github.io/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://ngnghm.github.io/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/"></g:plusone>
+    <script type="text/javascript">
+      var disqus_shortname = 'ngnghm';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <div id="disqus_thread"></div>
+    <ul class="pager">
+
+    <li class="next">
+      <a href="/blog/2015/08/03/chapter-2-save-our-souls/"><em>Chapter 2: Save Our Souls</em> &rarr;</a>
+    </li>
+    </ul>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p><a href="https://twitter.com/Ngnghm"
+              class="twitter-follow-button"
+              data-show-count="false"
+              data-lang="en">
+             "Follow ngnghm"
+           </a>
+           <script type="text/javascript">
+             !function(d,s,id){
+                 var js,fjs=d.getElementsByTagName(s)[0];
+                 if(!d.getElementById(id)){
+                     js=d.createElement(s);
+                     js.id=id;
+                     js.src="//platform.twitter.com/widgets.js";
+                     fjs.parentNode.insertBefore(js,fjs);
+                 }
+             }(document,"script","twitter-wjs");
+           </script></p>
+        <p>Site created with
+          <a href="http://www.racket-lang.org">Racket</a>,
+          <a href="http://github.com/greghendershott/frog">Frog</a>,
+          <a href="http://www.gnu.org/software/emacs/">Emacs</a>, and
+          <a href="http://twitter.github.io/bootstrap">Bootstrap</a></p>
+        <p><em>Copyright &copy; Houyhnhnm Computing</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
