@@ -4,14 +4,14 @@
   <title>Houyhnhnm Computing: Posts tagged 'Versioning'</title>
   <description>Houyhnhnm Computing: Posts tagged 'Versioning'</description>
   <link>http://ngnghm.github.io/tags/Versioning.html</link>
-  <lastBuildDate>Sat, 08 Aug 2015 23:10:00 UT</lastBuildDate>
-  <pubDate>Sat, 08 Aug 2015 23:10:00 UT</pubDate>
+  <lastBuildDate>Sun, 09 Aug 2015 05:10:00 UT</lastBuildDate>
+  <pubDate>Sun, 09 Aug 2015 05:10:00 UT</pubDate>
   <ttl>1800</ttl>
   <item>
    <title>Chapter 3: The Houyhnhnm Version of Salvation</title>
    <link>http://ngnghm.github.io/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/?utm_source=Versioning&amp;utm_medium=RSS</link>
    <guid>urn:http-ngnghm-github-io:-blog-2015-08-09-chapter-3-the-houyhnhnm-version-of-salvation</guid>
-   <pubDate>Sat, 08 Aug 2015 23:10:00 UT</pubDate>
+   <pubDate>Sun, 09 Aug 2015 05:10:00 UT</pubDate>
    <description>&lt;html&gt;
 &lt;p&gt;Following our &lt;a href="/blog/2015/08/03/chapter-2-save-our-souls/"&gt;discussion on persistence&lt;/a&gt;, Ngnghm had plenty of questions about how Human computer systems held together when they can&amp;rsquo;t seem to get basic persistence right. But in return, I had even more questions about what Houyhnhnm computing systems could even be like, when all data persisted by default: What did the user interface look like? Was there no more save button? What happened when you copied or deleted files? Were there files at all? How did people deal with all the garbage? Were your mistakes forever? If you somehow hosed your machine, would it remain forever hosed? How did you test potentially dangerous changes?&lt;/p&gt;
 &lt;!-- more--&gt;
@@ -45,7 +45,7 @@
 
 &lt;h3 id="virtualization-as-branching"&gt;Virtualization as Branching&lt;/h3&gt;
 
-&lt;p&gt;More generally, a Houyhnhnm can use virtualization and system rollback while conducting any kinds of experiments, so he never has to hesitate about doing anything risky, half-baked, downright stupid, or otherwise dangerous. But virtualization doesn&amp;rsquo;t mean the same thing in a Houyhnhnm computing system as in a Human computer system. In a Human computer system, virtualization is an &lt;em&gt;ad hoc&lt;/em&gt; tool for system administrators allowing the deployment of specially prepared servers by faking an entire physical computer at the level of abstraction of CPU instructions and memory accesses. In a Houyhnhnm computing system, virtualization is merely the ability to branch the history of changes in the system, and derives naturally from the fact that the entire system is under version control; it is available at whichever level of abstraction the users and programmers specify their computations, which is most usually at a much higher level of abstraction than that of CPU instructions (though a naive, fallback strategy is indeed always available that consists in going down to that low level).&lt;/p&gt;
+&lt;p&gt;More generally, a Houyhnhnm can use virtualization and system rollback while conducting any kinds of experiments, so he never has to hesitate about doing anything risky, half-baked, downright stupid, or otherwise dangerous. But virtualization doesn&amp;rsquo;t mean the same thing in a Houyhnhnm computing system as in a Human computer system. In a Human computer system, virtualization is an &lt;em&gt;ad hoc&lt;/em&gt; tool for system administrators, that allows the deployment of specially prepared servers; it is implemented using heroic techniques, by faking an entire physical computer at the level of abstraction of CPU instructions and memory accesses; the awkward result requires extra care and makes the users&amp;rsquo; life overall more miserable rather than less, though it is sometimes an economic necessity. In a Houyhnhnm computing system, virtualization is merely the ability to branch the history of changes in the system, and derives naturally from the fact that the entire system is under version control; it is available at whichever level of abstraction the users and programmers specify their computations, which is most usually at a much higher level of abstraction than that of CPU instructions (though a naive, fallback strategy is indeed always available that consists in going down to that low level).&lt;/p&gt;
 
 &lt;p&gt;Thus, all destructive or catastrophic experiments happen in branches that are never merged into the official reality — the errors remain imaginary. Aternatively, when bad things happen in said official reality, they can be &lt;a href="http://www.jargon.net/jargonfile/r/retcon.html"&gt;retcon&lt;/a&gt;&amp;rsquo;ed into having been but a bad dream, as the bad reality is demoted into being a mere unmerged error branch while a nicer reality becomes the master copy. Of course, it may be too late to undo bad communications with external systems, if they were let happen; some of them may be cancelled or compensated with new transactions; some of them may have to be accepted as losses or errors: you can&amp;rsquo;t unprint a pile of garbled characters, and you won&amp;rsquo;t get your bitcoins back. Even Houyhnhnm computing systems can&amp;rsquo;t protect you from yourself; but they can make it easy to try things in a virtualized environment, and to only merge into reality those transactions that pass all checks.&lt;/p&gt;
 
