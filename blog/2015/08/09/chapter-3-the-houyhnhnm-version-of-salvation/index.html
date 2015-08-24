@@ -11,7 +11,7 @@
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://ngnghm.github.io/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/">
     <link rel="next" href="/blog/2015/08/03/chapter-2-save-our-souls/">
-
+    <link rel="prev" href="/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -67,6 +67,8 @@
 
 <li><a href="/tags/Introduction.html">Introduction</a></li>
 
+<li><a href="/tags/Meta.html">Meta</a></li>
+
 <li><a href="/tags/Monitor.html">Monitor</a></li>
 
 <li><a href="/tags/Orthogonal-Persistence.html">Orthogonal Persistence</a></li>
@@ -75,7 +77,15 @@
 
 <li><a href="/tags/Point-of-View.html">Point of View</a></li>
 
+<li><a href="/tags/Quality.html">Quality</a></li>
+
 <li><a href="/tags/Simplicity.html">Simplicity</a></li>
+
+<li><a href="/tags/Strategies.html">Strategies</a></li>
+
+<li><a href="/tags/Transience.html">Transience</a></li>
+
+<li><a href="/tags/Turtles.html">Turtles</a></li>
 
 <li><a href="/tags/Versioning.html">Versioning</a></li>
               </ul>
@@ -123,7 +133,8 @@
 
 <p>Because persistence in Human Computer Systems consists in communicating sequences of bytes to external processes and systems (whether disks or clouds of servers), all data they hold is ultimately defined in terms of sequences of bytes, or files; when persisting these files, they are identified by file paths that themselves are short sequences of bytes interpreted as a series of names separated by slashes <code>/</code> (or on some systems, blashslashes <code>\</code>, or something else). Because persistence in Houyhnhnm Computing Systems applies to any data in whichever high-level language it was defined in, all Houyhnhnm computing data is defined in terms of <a href="https://en.wikipedia.org/wiki/Algebraic_data_type">Algebraic Data Types</a>, independently from underlying encoding (which might automatically and atomically change later system-wide). For the sake of importing data in and out of independently evolving systems, as well as for the sake of keeping the data compressed to make the most of limited resources, some low-level encoding in terms of bytes may be defined for some data types. But on the one hand, this is the exception; on the other other, the data is still part of the regular Algebraic Data Type system, can still be used with type constructors (e.g. as part of sum, product or function types), etc. Whereas Human computer systems would require explicit serialization and deserialization of data, and would require ad hoc containers or protocol generators to allow larger objects to contain smaller ones, Houyhnhnm computing systems abstract those details away and generate any required code from type definitions. Low-level encodings can even be replaced by newer and improved ones, and all objects will be transparently upgraded in due time — while preserving all user-visible identities and relationships across such changes in representation.</p>
 
-<p>Since objects are not defined in terms of sequences of bytes, the very notion of file doesn&rsquo;t apply to Houyhnhnm computing systems. At the same time, accessing an object inside a data structure is often (though not always) conveniently represented as following an access path from the root of the data structure to the desired element. An &ldquo;access path&rdquo; is thus a natural notion in all computing systems <!-- see Clojure: assoc-in, update-in--> even though in general a path is not a sequence of strings separated by slashes, but a list of accessors, that may be symbols or strings (when accessing a dictionary), integers (when accessing a sequence by index), or arbitrary accessor functions. But few are the cases where the natural way to locate data is via a list of sequences of bytes containing neither ASCII slash nor ASCII NUL; or worse, sequences of Unicode code glyphs up to some subtle case-conversion, represented as UTF&ndash;8 code points in some normal form; or even worse, the greatest common denominator between an underspecified set of several variants of the above, with unspecified separators.</p>
+<p>Since objects are not defined in terms of sequences of bytes, the very notion of file doesn&rsquo;t apply to Houyhnhnm computing systems. At the same time, accessing an object inside a data structure is often (though not always) conveniently represented as following an access path from the root of the data structure to the desired element. An &ldquo;access path&rdquo; is thus a natural notion in all computing systems <!--
+see Clojure: assoc-in, update-in--> even though in general a path is not a sequence of strings separated by slashes, but a list of accessors, that may be symbols or strings (when accessing a dictionary), integers (when accessing a sequence by index), or arbitrary accessor functions. But few are the cases where the natural way to locate data is via a list of sequences of bytes containing neither ASCII slash nor ASCII NUL; or worse, sequences of Unicode code glyphs up to some subtle case-conversion, represented as UTF&ndash;8 code points in some normal form; or even worse, the greatest common denominator between an underspecified set of several variants of the above, with unspecified separators.</p>
 
 <p>Thus, files are not the general case for persisting data; text files even less so. Still, a good text editor and good text-based diff tools can provide a handy way to view and modify data and view and act on modifications to data. Indeed, unless and until you have better tools to represent change between arbitrary data structures, it makes sense to translate otherwise unsupported data structures to and from a well supported generic data structure such as text. <a href="www.cs.yale.edu/homes/perlis-alan/quotes.html"><em>It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.</em></a> Now, it is important to understand the distinction between a representation and the real thing; the text being presented is not &ldquo;canonical&rdquo;, it is not usually &ldquo;source&rdquo;. In Houyhnhnm computing systems, the source is the semantic state of the system, on which change happens, and from which the text is extracted if and when needed; this is in sharp contrast with typical Human computer systems, where the source (that is, the locus of modification by sentients) is text files that are compiled, disconnected from the state of the system.</p>
 
@@ -178,7 +189,9 @@
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-
+    <li class="previous">
+      <a href="/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/">&larr; <em>Chapter 4: Turtling down the Tower of Babel</em></a>
+    </li>
     <li class="next">
       <a href="/blog/2015/08/03/chapter-2-save-our-souls/"><em>Chapter 2: Save Our Souls</em> &rarr;</a>
     </li>
