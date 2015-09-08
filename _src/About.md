@@ -46,7 +46,8 @@ and which were still waiting to be implemented
 — but mostly, a document to convey the _point of view_ of TUNES, its _vision_.
 
 Now, I quickly determined that there were too many ideas I wanted to mention
-to fit in a short document, especially if I had to do justice to them.
+to fit in a short document, especially if I had to do justice to them,
+rather than merely mention them by their obscure name.
 It had to be a series of posts;
 and the posts should be weaved with good storytelling to keep the audience interested.
 
