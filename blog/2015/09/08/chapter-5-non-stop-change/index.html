@@ -11,7 +11,7 @@
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://ngnghm.github.io/blog/2015/09/08/chapter-5-non-stop-change/">
     <link rel="next" href="/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/">
-
+    <link rel="prev" href="/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -59,13 +59,19 @@
               <ul class="dropdown-menu">
                 <li><a href="/index.html">All Posts</a></li>
 
+<li><a href="/tags/Abstraction.html">Abstraction</a></li>
+
 <li><a href="/tags/Automation.html">Automation</a></li>
 
 <li><a href="/tags/Domains.html">Domains</a></li>
 
+<li><a href="/tags/Enforcement.html">Enforcement</a></li>
+
 <li><a href="/tags/Files.html">Files</a></li>
 
 <li><a href="/tags/Introduction.html">Introduction</a></li>
+
+<li><a href="/tags/Kernel.html">Kernel</a></li>
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
 
@@ -81,7 +87,11 @@
 
 <li><a href="/tags/Quality.html">Quality</a></li>
 
+<li><a href="/tags/Resource-Management.html">Resource Management</a></li>
+
 <li><a href="/tags/Schema.html">Schema</a></li>
+
+<li><a href="/tags/Security.html">Security</a></li>
 
 <li><a href="/tags/Simplicity.html">Simplicity</a></li>
 
@@ -129,7 +139,7 @@
 
 <h3 id="the-best-laid-schemas-of-houyhnhnms-and-men">The Best Laid Schemas of Houyhnhnms and Men</h3>
 
-<p>I challenged Ngngnhm to explain to me how Houyhnhnm systems dealt with code and data upgrade, because they were some of the hardest problems I had faced while working with Human computer systems. Ngnghm wasn&rsquo;t sure what I meant, or why whatever he suspected I meant would be particularly difficult. That surprised me, so I started by stating that any software that survives long enough has to change its code as the software became obsolete, in a phenomenon humorously known as <a href="http://www.jargon.net/jargonfile/b/bitrot.html"><em>bitrot</em></a>: as time goes by, the software becomes no good anymore, as if it were being degraded by some kind of rot; of course, and that&rsquo;s the joke, no external force can possibly cause the bits that compose the software to change and degrade — on the contrary, the problem is precisely that the software fails to change when the world around does and requires the software to adapt so as to remain relevant. Ngnghm told me that the analogy makes sense to Houyhnhnms but isn&rsquo;t as humorous: it isn&rsquo;t the software, but the <em>relationship of the software with the world</em>, that rots; the degradation thus applies not to the <em>computer</em> system, but to the <em>computing</em> system, as constituted not just by the computer, but also by the sentient programmers and users, and by the larger context in which the computation happens. To a Human focused on the software artefact, it may be a funny paradox; but to a Houyhnhnm focused on the softwaring process, it&rsquo;s a painful truism.</p>
+<p>I challenged Ngngnhm to explain to me how Houyhnhnm systems dealt with code and data upgrade, because they were some of the hardest problems I had faced while working with Human computer systems. Ngnghm wasn&rsquo;t sure what I meant, or why whatever he suspected I meant would be particularly difficult. That surprised me, so I started by stating that any software that survives long enough has to change its code as the software became obsolete, in a phenomenon humorously known as <a href="http://www.jargon.net/jargonfile/b/bitrot.html"><em>bitrot</em></a>: as time goes by, the software becomes no good anymore, as if it were being degraded by some kind of rot; of course, and that&rsquo;s the joke, no external force can possibly cause the bits that compose the software to change and degrade — on the contrary, the problem is precisely that the software fails to change when the world around does and requires the software to adapt so as to remain relevant. Ngnghm told me that the analogy makes sense to Houyhnhnms but isn&rsquo;t as humorous: it isn&rsquo;t the software, but the <em>relationship of the software with the world</em>, that rots; the degradation thus applies not to the <em>computer</em> system, but to the <em>computing</em> system, as constituted not just by the computer, but also by the sentient programmers and users, and by the larger context in which the computation happens. To a Human focused on the software artifact, it may be a funny paradox; but to a Houyhnhnm focused on the softwaring process, it&rsquo;s a painful truism.</p>
 
 <p>I was intrigued, but I went on. As a program evolves, the way that it organizes data, its <em>schema</em>, will eventually be found wanting, as well designed as it might once have been for its original purpose. New <em>data types</em>, new <em>file formats</em>, new <em>database schemas</em>, will be needed, as the old one becomes insufficient and inadapted to newly required kinds of computations. Now, the correspondances between old and new data is often non-trivial, and upgrading data from the old format to the new format is hard; what more, upgrading <em>all</em> the data, consistently, without any race condition between old and new data processors, was even harder. And if the upgrade has to happen without any down time from the system as it keeps processing data, then achieving it without a hitch becomes a feat of virtuosity. Finally, bugs in such an upgrade process are both all too easy to introduce and all too hard to recover from. Therefore, Human computer systems shun these <em>schema upgrades</em> as much as possible, and some companies pay people full time just to manage the writing and/or smooth running of upgrade scripts that keep their data up to date, and to maintain the expensive database servers capable of doing it all dependably. However, humans are lucky enough to be able to avoid these difficult data upgrades altogether in most cases, precisely because Humans were not persisting data but throwing it away, so it didn&rsquo;t need to be upgraded. When they really have to deal with the hard case, the best tools available to regular Humans, like <a href="https://github.com/google/protobuf">protocol buffers</a> or its successor <a href="https://capnproto.org/">Cap&rsquo;n&rsquo;Proto</a>, are not very expressive in terms of types and leave a whole lot to the programmers in terms of managing upgrades; but at least they provide a framework for data to survive and be upgraded beyond the short life of a program that by necessity can only handle one version of the schema. And yet even these tools are only so good for their cost, and most people just do upgrades the hard way: either with completely disjoint old and new schemas, duplicated code, and big ad hoc functions to translate between them; or with ad hoc sharing of code and data between the schemas, a complexity that increases with each new version, and plenty of corner cases that are never considered, much less tested.</p>
 
@@ -143,7 +153,7 @@
 
 <p>Second, since the &ldquo;canonical&rdquo; representation of data is not low-level bytes, but high-level data types, a whole lot of the extrinsic complexity that Human computer systems have to deal with can instead be automated away: When the schema change is merely a change in low-level representation with identical high-level data types, then a trivial strategy is always available for upgrade — decompile and recompile. Moreover, the system can automatically track which object currently uses which underlying representation; it can therefore manage the upgrade without sentient oversight. The sentient programmers can then focus on the actual intrinsic issues of schema upgrade: non-trivial data transformations into semantically non-equivalent data types; and even then, the system provides a framework that automates a lot.</p>
 
-<p>Third, and more importantly, upgrade is inevitable indeed; but the problem with Human computer systems is that since they both focus on software as a finished artefact and define things at a low-level, they drop all the data that matters about upgrade when it&rsquo;s readily available, only to desperately try to reconstitute it the hard way after it&rsquo;s too late. Upgrade automation is thus almost inexistent in Human computer systems, because it comes as an afterthought. By contrast, it comes naturally in Houyhnhnm computing systems, because it is part and parcel of how they conceive software development.</p>
+<p>Third, and more importantly, upgrade is inevitable indeed; but the problem with Human computer systems is that since they both focus on software as a finished artifact and define things at a low-level, they drop all the data that matters about upgrade when it&rsquo;s readily available, only to desperately try to reconstitute it the hard way after it&rsquo;s too late. Upgrade automation is thus almost inexistent in Human computer systems, because it comes as an afterthought. By contrast, it comes naturally in Houyhnhnm computing systems, because it is part and parcel of how they conceive software development.</p>
 
 <h3 id="change-comes-from-the-inside">Change Comes from the Inside</h3>
 
@@ -215,7 +225,9 @@
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-
+    <li class="previous">
+      <a href="/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/">&larr; <em>Chapter 6: Kernel Is As Kernel Does</em></a>
+    </li>
     <li class="next">
       <a href="/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/"><em>Chapter 4: Turtling down the Tower of Babel</em> &rarr;</a>
     </li>
