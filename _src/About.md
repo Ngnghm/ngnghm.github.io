@@ -3,10 +3,11 @@
 <img src="/img/Ngnghm.jpg"
 alt="Ngnghm" title="Ngnghm" align="right" />
 
-> If you want to build a ship, don’t drum up the men to gather wood, divide the work, and give orders.
-> Instead, teach them to yearn for the vast and endless sea.
-> ― Antoine de Saint-Exupéry, [creatively misquoted](https://en.wikiquote.org/wiki/Talk:Antoine_de_Saint_Exupéry).
-
+<p><blockquote>
+If you want to build a ship, don’t drum up the men to gather wood, divide the work, and give orders.
+Instead, teach them to yearn for the vast and endless sea.
+<div align="right">― Antoine de Saint-Exupéry, <a href="https://en.wikiquote.org/wiki/Talk:Antoine_de_Saint_Exupéry">creatively misquoted</a></div>
+</blockquote></p>
 
 ## A TUNES Retrospective
 
