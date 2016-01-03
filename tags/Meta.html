@@ -67,6 +67,12 @@
 
 <li><a href="/tags/Automation.html">Automation</a></li>
 
+<li><a href="/tags/Communication.html">Communication</a></li>
+
+<li><a href="/tags/Copy-Paste.html">Copy-Paste</a></li>
+
+<li><a href="/tags/Declarative.html">Declarative</a></li>
+
 <li><a href="/tags/Division-of-Labour.html">Division of Labour</a></li>
 
 <li><a href="/tags/Domains.html">Domains</a></li>
@@ -80,6 +86,10 @@
 <li><a href="/tags/Extension.html">Extension</a></li>
 
 <li><a href="/tags/Files.html">Files</a></li>
+
+<li><a href="/tags/Free-Software.html">Free Software</a></li>
+
+<li><a href="/tags/Implicit.html">Implicit</a></li>
 
 <li><a href="/tags/Incentives.html">Incentives</a></li>
 
@@ -150,12 +160,26 @@
           <hr /><p />
 <article>
   <header>
+    <h2><a href='/blog/2016/01/03/chapter-8-inter-process-communication/'>Chapter 8: Inter-process Communication</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2016-01-03" pubdate="true">2016-01-03</time> :: <span class="tags"><a href="/tags/Implicit.html">Implicit</a>, <a href="/tags/Declarative.html">Declarative</a>, <a href="/tags/Communication.html">Communication</a>, <a href="/tags/Copy-Paste.html">Copy-Paste</a>, <a href="/tags/Meta.html">Meta</a>, <a href="/tags/Free-Software.html">Free Software</a>, <a href="/tags/Abstraction.html">Abstraction</a>, <a href="/tags/Enforcement.html">Enforcement</a>, <a href="/tags/Security.html">Security</a>, <a href="/tags/Meta.html">Meta</a></span></p>
+  </header>
+
+<p>In our discussion about the difference between <a href="/blog/2015/12/25/chapter-7-platforms-not-applications/">Human applications and their Houyhnhnm counterparts</a>, I was intrigued by claims Ngnghm made that communication was much easier between activities of a Houyhnhnm computing system than between applications of a Human computer system. I asked Ngnghm to elaborate on this topic.</p>
+
+<p>It was easy to agree that Human computer systems made communication something much lower level than it could be. But Ngnghm also argued that Humans had very poor algebras and interfaces for users to combine processes. Just what <em>kinds</em> of communication could there even exist besides the ones that already existed on Human computer systems?</p>
+<footer class="read-more"><a href="/blog/2016/01/03/chapter-8-inter-process-communication/">&hellip;more&hellip;</a></footer>
+</article>
+<p />
+<hr /><p />
+<article>
+  <header>
     <h2><a href='/blog/2015/12/25/chapter-7-platforms-not-applications/'>Chapter 7: Platforms not Applications</a></h2>
     <p class='date-and-tags'>
 <time datetime="2015-12-25" pubdate="true">2015-12-25</time> :: <span class="tags"><a href="/tags/Meta.html">Meta</a>, <a href="/tags/Application.html">Application</a>, <a href="/tags/Autistic.html">Autistic</a>, <a href="/tags/Platform.html">Platform</a>, <a href="/tags/Extension.html">Extension</a>, <a href="/tags/Language.html">Language</a>, <a href="/tags/Expertise.html">Expertise</a>, <a href="/tags/Economics.html">Economics</a>, <a href="/tags/Incentives.html">Incentives</a>, <a href="/tags/Division-of-Labour.html">Division of Labour</a>, <a href="/tags/Specialization.html">Specialization</a></span></p>
   </header>
 
-<p>My previous discussion with Ngnghm left me baffled: I could somehow understand that Houyhnhnms don&rsquo;t have the concept of an Operating System Kernel; and I could vaguely guess how each of the many aspects of a Human kernel could correspond to a family of software patterns in a Houyhnhnm computing system, at various levels of abstractions. But while I could visualize these patterns individually, it was less clear to me what the big picture was when these smaller compile-time, link-time and runtime abstractions were put together. So I decided to approach their software architecture from the other end: what do end-user applications look like in Houyhnhnm computing systems?</p>
+<p>My previous discussion with Ngnghm left me baffled: I could somehow understand that <a href="/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/">Houyhnhnms don&rsquo;t have the concept of an Operating System Kernel</a>; and I could vaguely guess how each of the many aspects of a Human kernel could correspond to a family of software patterns in a Houyhnhnm computing system, at various levels of abstractions. But while I could visualize these patterns individually, it was less clear to me what the big picture was when these smaller compile-time, link-time and runtime abstractions were put together. So I decided to approach their software architecture from the other end: what do end-user applications look like in Houyhnhnm computing systems?</p>
 
 <p>I was baffled again, but not surprised anymore, to find that Houyhnhnms don&rsquo;t have a notion of application. Granted, there are simple cases where Human applications have direct counterparts in Houyhnhnm computing systems. But in the general case, Houyhnhnms don&rsquo;t think in terms of standalone applications; they think in terms of platforms that they extend with new functionality.</p>
 <footer class="read-more"><a href="/blog/2015/12/25/chapter-7-platforms-not-applications/">&hellip;more&hellip;</a></footer>
@@ -169,7 +193,7 @@
 <time datetime="2015-11-28" pubdate="true">2015-11-28</time> :: <span class="tags"><a href="/tags/Kernel.html">Kernel</a>, <a href="/tags/Resource-Management.html">Resource Management</a>, <a href="/tags/Abstraction.html">Abstraction</a>, <a href="/tags/Enforcement.html">Enforcement</a>, <a href="/tags/Security.html">Security</a>, <a href="/tags/Meta.html">Meta</a></span></p>
   </header>
 
-<p>I admitted to Ngnghm that I was baffled by Houyhnhnm computing systems; to better understand them, I wanted to know what their kernels, libraries and applications looked like. There again, he surprised me by having no notion of what I called kernel or application: the way Houyhnhnm systems are architected leads to widely different concepts; and for the most part there isn&rsquo;t a direct one-to-one correspondance between our notions and theirs. And so I endeavored to discover what in Houyhnhnm computing systems replaces what in Human computer systems is embodied by the operating system kernel.</p>
+<p>I admitted to Ngnghm that I was perplexed by Houyhnhnm computing systems; to better understand them, I wanted to know what their kernels, libraries and applications looked like. There again, he surprised me by having no notion of what I called kernel or application: the way Houyhnhnm systems are architected leads to widely different concepts; and for the most part there isn&rsquo;t a direct one-to-one correspondance between our notions and theirs. And so I endeavored to discover what in Houyhnhnm computing systems replaces what in Human computer systems is embodied by the operating system kernel.</p>
 <footer class="read-more"><a href="/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/">&hellip;more&hellip;</a></footer>
 </article>
 <p />
