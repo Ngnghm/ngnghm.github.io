@@ -1,9 +1,9 @@
-http://ngnghm.github.io/blog/2016/01/03/chapter-8-inter-process-communication/
 http://ngnghm.github.io/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/
-http://ngnghm.github.io/blog/2015/09/08/chapter-5-non-stop-change/
-http://ngnghm.github.io/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/
-http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/
-http://ngnghm.github.io/blog/2015/12/25/chapter-7-platforms-not-applications/
+http://ngnghm.github.io/blog/2016/01/03/chapter-8-inter-process-communication/
 http://ngnghm.github.io/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/
 http://ngnghm.github.io/blog/2015/08/03/chapter-2-save-our-souls/
+http://ngnghm.github.io/blog/2015/12/25/chapter-7-platforms-not-applications/
+http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/
+http://ngnghm.github.io/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/
+http://ngnghm.github.io/blog/2015/09/08/chapter-5-non-stop-change/
 http://ngnghm.github.io/About.html
