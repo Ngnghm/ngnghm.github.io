@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Chapter 9: Build Systems</title>
+    <meta name="description" content="In my various professional endeavors, I had to deal a lot with build systems: programs like Unix Make, Common Lisp's ASDF, or Google's Bazel, but also package managers like rpm, dpkg or Nix, with which developers describe how to build executable software ...">
+    <meta name="author"      content="Ngnghm">
+    <meta name="keywords"    content="Build, Meta, Developing, Division of Labor, In The Large">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/img/favicon.ico">
+    <link rel="canonical" href="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems/">
+    <link rel="next" href="/blog/2016/01/03/chapter-8-inter-process-communication/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link ref="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link ref="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">Houyhnhnm Computing</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/Abstraction.html">Abstraction</a></li>
+
+<li><a href="/tags/Application.html">Application</a></li>
+
+<li><a href="/tags/Autistic.html">Autistic</a></li>
+
+<li><a href="/tags/Automation.html">Automation</a></li>
+
+<li><a href="/tags/Build.html">Build</a></li>
+
+<li><a href="/tags/Communication.html">Communication</a></li>
+
+<li><a href="/tags/Copy-Paste.html">Copy-Paste</a></li>
+
+<li><a href="/tags/Declarative.html">Declarative</a></li>
+
+<li><a href="/tags/Developing.html">Developing</a></li>
+
+<li><a href="/tags/Division-of-Labor.html">Division of Labor</a></li>
+
+<li><a href="/tags/Division-of-Labour.html">Division of Labour</a></li>
+
+<li><a href="/tags/Domains.html">Domains</a></li>
+
+<li><a href="/tags/Economics.html">Economics</a></li>
+
+<li><a href="/tags/Enforcement.html">Enforcement</a></li>
+
+<li><a href="/tags/Expertise.html">Expertise</a></li>
+
+<li><a href="/tags/Extension.html">Extension</a></li>
+
+<li><a href="/tags/Files.html">Files</a></li>
+
+<li><a href="/tags/Free-Software.html">Free Software</a></li>
+
+<li><a href="/tags/Implicit.html">Implicit</a></li>
+
+<li><a href="/tags/In-The-Large.html">In The Large</a></li>
+
+<li><a href="/tags/Incentives.html">Incentives</a></li>
+
+<li><a href="/tags/Introduction.html">Introduction</a></li>
+
+<li><a href="/tags/Kernel.html">Kernel</a></li>
+
+<li><a href="/tags/Language.html">Language</a></li>
+
+<li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
+
+<li><a href="/tags/Meta.html">Meta</a></li>
+
+<li><a href="/tags/Monitor.html">Monitor</a></li>
+
+<li><a href="/tags/Orthogonal-Persistence.html">Orthogonal Persistence</a></li>
+
+<li><a href="/tags/Persistence.html">Persistence</a></li>
+
+<li><a href="/tags/Platform.html">Platform</a></li>
+
+<li><a href="/tags/Point-of-View.html">Point of View</a></li>
+
+<li><a href="/tags/Quality.html">Quality</a></li>
+
+<li><a href="/tags/Resource-Management.html">Resource Management</a></li>
+
+<li><a href="/tags/Schema.html">Schema</a></li>
+
+<li><a href="/tags/Security.html">Security</a></li>
+
+<li><a href="/tags/Simplicity.html">Simplicity</a></li>
+
+<li><a href="/tags/Specialization.html">Specialization</a></li>
+
+<li><a href="/tags/Strategies.html">Strategies</a></li>
+
+<li><a href="/tags/Transience.html">Transience</a></li>
+
+<li><a href="/tags/Turtles.html">Turtles</a></li>
+
+<li><a href="/tags/Types.html">Types</a></li>
+
+<li><a href="/tags/Upgrade.html">Upgrade</a></li>
+
+<li><a href="/tags/Versioning.html">Versioning</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Chapter 9: Build Systems</h1>
+    <p class='date-and-tags'>
+<time datetime="2016-04-26" pubdate="true">2016-04-26</time> :: <span class="tags"><a href="/tags/Build.html">Build</a>, <a href="/tags/Meta.html">Meta</a>, <a href="/tags/Developing.html">Developing</a>, <a href="/tags/Division-of-Labor.html">Division of Labor</a>, <a href="/tags/In-The-Large.html">In The Large</a></span></p>
+  </header>
+
+<p>In my various professional endeavors, I had to deal a lot with build systems: programs like Unix <a href="https://en.wikipedia.org/wiki/Make%20%28software%29">Make</a>, Common Lisp&rsquo;s <a href="http://common-lisp.net/project/asdf/">ASDF</a>, or Google&rsquo;s <a href="http://bazel.io/">Bazel</a>, but also package managers like <a href="https://en.wikipedia.org/wiki/RPM_Package_Manager">rpm</a>, <a href="https://en.wikipedia.org/wiki/Dpkg">dpkg</a> or <a href="http://nixos.org/nix/">Nix</a>, with which developers describe how to build executable software from source files. As the builds grew larger and more complex and had to fit a wider diversity of configurations, I particularly had to deal with configuration scripts to configure the builds, configuration script generation systems, build extensions to abstract over build complexity, and build extension languages to write these build extensions. Since the experience had left me confused, frustrated, and yearning for a better solution, I asked Ngnghm how Houyhnhnms dealt with these issues. Could they somehow keep their builds always simple, or did they have some elegant solution to deal with large complex builds?</p>
+
+<p>Once again, Ngnghm wasn&rsquo;t sure what I meant, and I had to explain him at length the kind of situations I had to deal with and the kind of actions I took, before Ngnghm could map them to processes and interactions that happened in Houyhnhnm computing systems. And his conclusion was that while Houyhnhnms computing systems certainly could express large builds, they didn&rsquo;t possess a &ldquo;build system&rdquo; separate and distinguished from their normal development system; rather their &ldquo;build system&rdquo; was simply to use their regular development system at the meta-level, while respecting certain common constraints usually enforced on meta-programs.</p>
+<!-- more-->
+
+<h3 id="division-of-labor">Division of labor</h3>
+
+<p>From what Ngnghm understood, the fundamental interaction supported by what I called a build system was <em>division of labor</em> while <em>developing software</em>: The entire point of it all is that large software endeavors can be broken down in smaller pieces, such that each piece is small enough to fit in a mindful, and can be hacked into shape by a sentient developer. Thus, a complex process way too large to be tackled by any single sentient being has been reduced to a number of processes simple enough to be addressed by one or more sentients; and thus the reach of what sentient beings can achieve through automation has been extended.</p>
+
+<p>Also note this division of labor takes place in a larger process of <em>developing software</em>: unlike many Humans, Houyhnhnms do not think of software as a <em>solution</em> to a &ldquo;problem&rdquo;, that comes into existence by a single act of creation <em>ex nihilo</em>; they see developing software as an interactive process of iterative <a href="http://fare.tunes.org/computing/evolutionism.html">evolution</a>, that <em>addresses</em> on-going &ldquo;issues&rdquo; that sentients experience. Sentient developers will thus continually modify, grow and shrink existing software, in ways not completely random yet mostly not predictable — at least, not predictable in advance by those same sentients, who can&rsquo;t have written the software before they have written it, and have written it as soon as they have written it.</p>
+
+<p>A build system is thus just a part or aspect of a larger interaction. Therefore, a good build system will integrate smoothly with the rest of this interaction; and a better build system will be one that further simplifies the overall interaction, rather than one that displaces complexity from what is somehow counted as &ldquo;part of the build&rdquo; to other unaccounted parts of the overall software development process (such as e.g. &ldquo;configuration&rdquo;, or &ldquo;distribution&rdquo;).</p>
+
+<h3 id="modularity">Modularity</h3>
+
+<p>The smaller pieces into which software is broken are typically called <em>modules</em>. A notable unit of modularity is often the <em>source file</em>, which groups together related software definitions. Source files can sometimes be subdivided into smaller modules (every definition, every syntactic entity, can be viewed as a software module); and source files can often be grouped into ever larger modules: directories, libraries, systems, projects, repositories, distributions, etc. The names and specifics vary depending on the programming languages and software communities that deal with those modules; but generally, a <em>module</em> can be composed of <em>submodules</em> and be part of larger <em>supermodules</em>.</p>
+
+<p>Each of these <em>modules</em> partakes in three quite distinct interactions: authoring the module, using it (and its submodules) from another module, and integrating it together with other modules into a complete application. In each interaction the sentient developer has one of three distinct roles:</p>
+
+<ol>
+ <li>
+  <p><em>Authors</em> write and modify the code (&ldquo;authors&rdquo; is meant in a  broad sense, including maintainers and contributors).</p></li>
+ <li>
+  <p><em>Users</em> refer to the code by name while abstracting over its  exact contents (&ldquo;users&rdquo; is meant in a narrow sense, including only  programmers of modules that use the referred module, not  end-users).</p></li>
+ <li>
+  <p><em>Integrators</em> assemble a collection of modules into an  overall application, set of applications, virtual machine image, or  other deliverable (&ldquo;integrators&rdquo; is meant in a broad sense, including  developers who put together their development environment).</p></li></ol>
+
+<p>Note that for the purpose of his own applications, as well as for his personal testing needs, a <em>user</em> may himself be an <em>integrator</em> of many modules (though he may rely on other people such as team members to handle integration for him); but his personal integration usually doesn&rsquo;t bind other integrators, who may use different versions of the same modules, or different combinations of modules altogether.</p>
+
+<h3 id="pure-functional-reactive-programming">Pure Functional Reactive Programming</h3>
+
+<p>Given this context, a good build system at heart is a <em>Pure</em> <a href="https://en.wikipedia.org/wiki/Functional_Reactive_programming"><em>Functional Reactive Programming</em></a> (FRP) language: its input signals are source files in the version control system and intermediate outputs, and its output signals are intermediate or final build artifacts. Computations from inputs to outputs, constitute a <em>build graph</em>: a directed acyclic graph where individual nodes are called <em>actions</em>, and arcs are called <em>dependencies</em>. The signals are called <em>artifacts</em>, and the inputs to the action that generate one of them are also called its dependencies by abuse of language.</p>
+
+<p>Actions in a good build system happen without side-effects: no action may interfere with another action, even less so with outside event sources outside the declared inputs. Actions are thus <em>reproducible</em>. Thence it follows that they can be parallelized and distributed, and their results can be cached and shared. A good build system is thus integrated with the version-control system that manages the changes in source files and the deployment systems that controls the changes in running artifacts. By analogy with content-addressed storage where the name for a file is the digest of its contents, the cache of a good build system can then be said to be <em>source-addressed</em>, where the name of a file is a digest of source code sufficient to rebuild the cached value.</p>
+
+<p>For the sake of reproducibility, a good build system must therefore be <em>hermetic</em>: when designating and caching a computation, the system takes into account <em>all</em> inputs necessary and sufficient to reproduce the computation; no source file outside of source-control should be used, even less so an opaque binary file, or worst of all, an external service beyond the control of the people responsible for the build. Thus, when caching results from previous builds, there won&rsquo;t be false positives whereby some relevant hidden input has changed but the build system fails to notice.</p>
+
+<p>Ideally, all computations should also be <em>deterministic</em>: repeating the same computation on two different computers at different times should yield equivalent result. Ideally that result should be bit for bit identical; any noise that could cause some discrepancy should be eliminated before it happens or normalized away after it does: this noise notably includes timestamps, PRNGs (unless with a controlled deterministic initial state), race conditions, address-based hashing, etc. To make this easier, all (or most) metaprograms should be written in a language where all computations are deterministic <em>by construction</em>. For instance, concurrency if allowed should only be offered through <em>convergent</em> abstractions that guarantee that the final result doesn&rsquo;t depend on the order of concurrent effects.</p>
+
+<h3 id="demanding-quality">Demanding Quality</h3>
+
+<p>Because computing power is limited, and because it doesn&rsquo;t make sense to rebuild further artifacts from defective pieces known to fail their tests, computation of artifacts generally follows a <em>pull</em> model where computations happen lazily when demanded by some client reading an output signal, rather than a <em>push</em> model where computations happen eagerly everytime an input signal changes: the model is thus <a href="https://awelonblue.wordpress.com/">Reactive Demand Programming</a>.</p>
+
+<p>Now, quality assurance processes will pull in new changes as often as affordable; and when they find errors they will automatically use a binary search to locate the initial failure (unless and until issues are fixed). A good build system includes testing, and supports the release cycle individual modules as well as their integration into larger module aggregates and ultimately entire running production systems.</p>
+
+<p>Because of those cycles are out of synch, the source control system must enable developers to create branches for individual modules, assemble them into branches for larger modules, for entire subsystems and applications, for the complete system. Of course, inasmuch as user feedback from (publicly or privately) released software is required to get a feature exactly right, the length of the <a href="https://en.wikipedia.org/wiki/OODA_loop">OODA loop</a> determining how fast quality can improve in a software development process is the duration from feature request or bug report to user report after use of the released feature, not the distance between two releases. Closer releases can pipeline multiple changes and reduce latency due to the release process itself, but don&rsquo;t as such make the overall feedback loop shorter. In other words, the release process introduces latency and granularity in the overall development loop that adds up to other factors; the delays it contributes can be reduced, but remain positive, and at some point improving the release process as such cannot help much and other parts of the development loop are where slowness needs to be addressed.</p>
+
+<h3 id="dynamic-higher-order-staged-evaluation">Dynamic, higher-order, staged evaluation</h3>
+
+<p>By examining the kinds of interactions that a build system is meant to address we can identify some of the features it will sport as a <a href="https://en.wikipedia.org/wiki/Reactive%20programming"><em>Reactive Programming</em></a> system and as a programming system in general.</p>
+
+<p>The build graph is the result from evaluating build files, and on many build systems, also from examining source files. These files themselves are signals that change with time; and their build recipes and mutual relationships also change accordingly. Yet the names of the inputs and outputs that the builders care about are often stable across these changes. Therefore, considering the build as a FRP system, it is one with a <em>dynamic</em> flow graph that changes depending on the inputs.</p>
+
+<p>Now, building software happens at many scales, from small programs to entire OS distributions. When the build gets very large and complex, it itself has to be broken down into bits. A bad build system will only handle part of the build and introduce some impedance mismatch with the other build systems necessarily introduced to handle the other parts of the build that it is incapable to handle itself. A good build system will scale along the entire range of possible builds and offer <em>higher order</em> reactive programming where the build information itself in its full generality can be computed as the result of previous build actions. In particular the build system can be &ldquo;extended&rdquo; with the full power of a general purpose programming language, and for simplicity and robustness might as well be completely implemented in that same language.</p>
+
+<p>Now, intermediate as well as final build outputs are often programs that get evaluated at a latter time, in a different environment that the build system needs to be able to describe: for these programs may need to refer to programming language modules, to entities bound to programming language identifiers or to filenames, where the module names, identifiers and file names themselves might be computed build outputs. Therefore, a build system in its full generality may have to deal with first-class namespaces and environments, to serve as seeds of evaluation in first-class virtual machines. This means that a good build system supports a general form of <em>staged evaluation</em>. And not only can it manipulate quoted programs for later stages of evaluation, but it can also actually evaluate them, each in their own isolated virtualized environment (to preserve purity, determinism, hermeticity, reproducibility, etc.).</p>
+
+<p>Yet, a good build system will automatically handle the usual case for tracking the meaning of identifiers and filenames across these stages of evaluation with minimal administrative overhead on the part of the build developers. In other words, a good build system will manage <em>hygiene</em> in dealing with identifiers across stages of evaluation, notably including when program is to refer to files created in a different (earlier or later) stage of evaluation! Simple text-substitution engines are not appropriate, and lead to aliasing, complex yet fragile developer-intensive context maintenance, or manual namespace management with various unexamined and unenforced limitations.</p>
+
+<h3 id="building-in-the-large">Building In The Large</h3>
+
+<p>Humans often start growing their build system <a href="https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small"><em>in the small</em></a>, so it initially is only designed to work (at a time) only on one module, in one company, out of one source repository. They thus tend not to realize the nature of the larger build of software; they cope with the complexities of a larger build separately in each module by having it use some kind of configuration mechanism: a <code>./configure</code> script, sometimes itself generated by tools like <code>autoconf</code>, that may use <em>ad hoc</em> techniques to probe the environment for various bits of meta-information. However, these solutions of course utterly fail as systems get build with hundreds or thousands of such individual modules, where each build-time configuration item contributes to a combinatorial explosion of configurations and superlinear increase in the amount of work for each developer, integrator, system administrator or end-user who has to deal with this complexity.</p>
+
+<p>Humans then create completely separate tools for those larger builds: they call these larger builds &ldquo;software distributions&rdquo;, and these tools &ldquo;package managers&rdquo;. The first modern package managers, like <a href="https://en.wikipedia.org/wiki/RPM_Package_Manager">rpm</a> and <a href="https://en.wikipedia.org/wiki/Dpkg">dpkg</a>, pick a single compile-time configuration and try to guide the end-users through a restricted number of runtime configuration knobs while leaving advanced system administrators able to use each &ldquo;package&rdquo;&rsquo;s full configuration language. But administrators who manage large installations with many machines still have to use tools on top of that to actually deal with configuration, all the while being susceptible to discrepancies manually introduced in system configuration.</p>
+
+<p>More advanced package managers, like <a href="http://nixos.org/nix/">Nix</a>, its variant <a href="https://www.gnu.org/software/guix/">Guix</a>, or its extension <a href="https://nixos.org/disnix/">Disnix</a>, lets administrators direct the entire build and configuration of one or many machines from one master configuration file, that can import code from other files, all of which can all be kept under source control. Systems like that are probably the way of the future, but the current incarnations still introduce a gap between how people build software <em>in the small</em> and how they build it <em>in the large</em>, with a high price to pay to cross that gap.</p>
+
+<p>Houyhnhnms understand that their build systems have to scale, and can be kept much simpler by adopting the correct paradigm early on: in this case, FRP, etc. Humans have a collection of build systems that don&rsquo;t interoperate well, that each cost a lot of effort to build from scratch yet ends up under powered in terms of robustness, debuggability and extensibility. Houyhnhnms grow one build system as an extension to their platform, and with much fewer efforts achieve a unified system that inherits from the rest of the platform its robustness, debuggability and extensibility, for free.</p>
+
+<h3 id="global-namespace">Global Namespace</h3>
+
+<p>When you start to build <em>in the large</em>, you realize that the names people give to their modules constitute a <em>Global Namespace</em>, or rather, a collection of global namespaces, one per build system: indeed, the whole point of module names is that authors, users and integrators can refer to the same thing without being part of the same project, without one-to-one coordination, but precisely picking modules written largely by other people who you don&rsquo;t know and don&rsquo;t know you. Global namespaces enable division of labor on a large scale, where there is no local context for names. Each namespace corresponds to a <em>community</em> that uses that namespace and has its own rules to avoid or resolve any conflicts in naming.</p>
+
+<p>Thus, for instance, when Humans build Java software in the small, they deal with the hierarchical namespace of Java packages; and when they build it in the large, they <em>also</em> deal with the namespace of maven jar files. In Common Lisp, in the small they deal with hierarchical modules and files within a system, whereas in the large they deal with the global namespace of ASDF systems (but at least here these two naming are mostly orthogonal). In C, there is the namespace of symbols, and the namespace of libraries you may link against. But in the larger than all these languages&rsquo; respective build systems, there is the namespace of packages managed by the &ldquo;operating system distribution&rdquo; (whether via <code>rpm</code>, <code>dpkg</code>, <code>nix</code> or otherwise). Note how these many namespaces often overlap somewhat, with more or less complex partial mappings or hierarchical inclusions between them.</p>
+
+<p>The name of a module carries <em>intent</em> that is supposed to remain as its <em>content</em> varies with time or with configuration. Humans, who like to see <em>things</em> even where there aren&rsquo;t, tend to look at intent as a platonic ideal state of what the module &ldquo;should&rdquo; be doing; but Houyhnhnms, who prefer to see <em>processes</em>, see them as a <a href="https://en.wikipedia.org/wiki/Focal%20point%20%28game%20theory%29">Schelling point</a> where the plans of sentient beings meet, based on which they can divide their own and each other&rsquo;s labor.</p>
+
+<p>Note that a name, which is a fixed <em>intent</em>, may refer to varying <em>content</em>. Indeed, this is the whole of having a name: to abstract away from those changes that necessarily occur to adapt to various contingencies as the context changes. Even if a module ever reaches its &ldquo;perfect&rdquo; ideal, final, state, no one may ever be fully certain when this has actually happened, for an unexpected future change in its wider usage context may make it imperfect again and it may still have to change due to &ldquo;bitrot&rdquo;. Not only will content vary with time, an intent may deliberately name some &ldquo;virtual&rdquo; module to be determined from context (such as a choice of compiler, or of <code>libc</code>, etc.); in this an other cases, you may thus have mutually incompatible modules, such that some combinations of two or more of them cannot be present in a same build at the same time. And yet, a &ldquo;same&rdquo; larger build may recursively include multiple virtualized system images that are each built while binding some common names to different contents: for instance, an embedded client or boot image might use a lightweight <code>libc</code> while a full-fledged system image might use a full-featured one, both being part of the same larger build.</p>
+
+<p>A good build system makes it easy to manage its global namespaces. To remain simple, it will not unnecessarily multiply unnecessary namespaces; instead it will leverage existing namespaces and their communities, starting with the namespace of identifiers in the FRP language; and it will hierarchically include other namespaces into its main namespace, and in particular it will adequately map its namespaces to the filesystem or source control namespaces, etc.</p>
+
+<h3 id="out-of-dll-hell">Out of DLL Hell</h3>
+
+<p>When building <em>in the large</em>, you have to integrate together many modules that each evolve at their own pace. Unhappily, they do not always work well together. Actually, most versions of most modules may not even work well by themselves: they do not behave as they are intended to.</p>
+
+<p>One naive approach to development is to let each module author be his own integrator, and have to release his software with a set of other modules at exact versions known to work together with it. Not only is it more work for each author to release their software, it also leads to multiple copies of the same modules being present on each machine, in tens of subtly different versions. Precious space resources are wasted; important security bug fixes are not propagated in a timely fashion; sometimes some software uses wrong version of a module; or multiple subtly incompatible versions get to share the same data and corrupt it or do the wrong thing based on it. This is called DLL hell.</p>
+
+<p>Proprietary software, such as Windows or MacOS, encourages this hell, because they make any coordination impossible: each author is also an integrator and distributor — a vendor. And vendors have to deal with all the active versions of the operating system, but can&rsquo;t rely on the end-user either having or not having installed any other software from anyone else. A few vendors may coordinate with each other, but it would be an overall liability where the modest benefits in terms of sharing space would be dwarfed by the costs in terms of having to significantly complexify your release process to synchronize with others, without saving on the overall costs of being a vendor or being able to promise much additional reliability to users who install any software from a vendor outside the cartel.</p>
+
+<p>Free software, by decoupling the roles of author and integrator, make it possible to solve DLL hell. Authors just don&rsquo;t have to worry about integration, whereas integrators can indeed gather software from all authors and beat it into shape as required to make it work with the rest of the system. Integrators can also manage the basic safety of the system, and even those remaining proprietary software vendors have less to worry about as most of the system is well-managed.</p>
+
+<p>Houyhnhnms understand that software is better built not just from source code, but from source control. Indeed they reject the Human focus on a static artifact being build from source that can be audited, and instead insist on focusing on the dynamic process of continually building software; and that process includes importing changes, making local changes, merging changes, sending some improvements upstream, and auditing the changes, etc.</p>
+
+<p>They thus realize that whereas a module name denotes a global <em>intent</em>, the value it will be bound to reflects some local context, which is characterized by the set of branches or tags that the integrator follows. Within these branches, each new version committed says &ldquo;use me, not any previous version&rdquo;; but then branches are subject to filtering at the levels of various modules and their supermodules: a module that doesn&rsquo;t pass its test doesn&rsquo;t get promoted to the certified branch; if a module does pass its tests, then supermodules containing that module can in turn be tested and hopefully certified, etc. Now note that, to solve the DLL hell, modules present in several supermodules must all be chosen at the same version; therefore, all tests must happen based on a coherent snapshot of all modules.</p>
+
+<p>This approach can be seen as a generalization of Google&rsquo;s official strategy of &ldquo;building from HEAD&rdquo;, where what Google calls &ldquo;HEAD&rdquo; would be the collection of branches for modules that pass their unit tests. In this more general approach, &ldquo;HEAD&rdquo; is just one step in a larger network of branches, where some development branches feed into HEAD when they pass their narrow unit tests, and HEAD feeds into more widely tested integration branches. The testing and vetting process can be fully automated, tests at each level being assumed sufficient to assess the quality of the wider module; actually, from the point of view of the process, manual tests can be also be considered part of the automation, just a slow, unreliable part implemented in wetware: <em>from a programmer&rsquo;s point of view, the user is a peripheral that types when you issue a read request.</em> (P. Williams).</p>
+
+<h3 id="code-instrumentation">Code Instrumentation</h3>
+
+<p>To assess the quality of your tests, an important tool is <em>code coverage</em>: code is instrumented to track which parts are exercised; then after running all tests, you can determine that some parts of the code weren&rsquo;t tested, and improve your tests to cover more of your code, or to remove or replace redundant tests that slow down the release process or over-constrain the codebase. Some parts of the code might be <em>supposed</em> not to be tested, such as cases that only exist because the type system can&rsquo;t express that it&rsquo;s provably impossible, or redundant protections against internal errors and security vulnerabilities; a good development system will let developers express such assumption, and it will, conversely, raise a flag if those parts of the system are exercised during test.</p>
+
+<p>Sometimes, proofs are used instead of tests; they make it possible to verify a property of the code as applies to an infinite set of possible inputs, rather than just on a small finite number of input situations. Coverage can also be used in the context of proofs, using variants of relevance logic.</p>
+
+<p>Interestingly, a variant of this coverage instrumentation can be used to automatically track which dependencies are used by an action (as <a href="http://www.vestasys.org/">vestasys</a> used to do). In other words, dependency tracking is a form of code coverage at the meta-level for the build actions. A developer can thus &ldquo;just&rdquo; build his code interactively, and automatically extract from the session log a build script properly annotated with the dependencies actually used. Assuming the developer is using a deterministic dialect (as he should when building software), the instrumentation and tracking can even be done after the fact, with the system redoing parts of the computation in an instrumented context when it is asked to extract a build script.</p>
+
+<p>Instrumenting code on demand also offers solution for debugging. When a build or test error is found, the system can automatically re-run the failing action with a variant of the failing code generated with higher instrumentation settings, possibly <a href="http://www.drdobbs.com/tools/omniscient-debugging/184406101">omniscient debugging</a>, enabled shortly before the failure. The developer can then easily track down the chain of causes of the failure in his code. Now, omniscient debugging might be too slow or too big for some tests; then the developer may have to start with instrumentation at some coarse granularity, and explicitly zoom in and out to determine with more precision the location of the bug. There again, using deterministic programming languages means that bugs are inherently reproducible, and tracking them can be semi-automated. Separating code and debug information can also make caching more useful, since code once stripped of debugging information is likely to be more stable than with it, and thus a lot of code won&rsquo;t have to be re-tested just because a line of comment was added.</p>
+
+<h3 id="reinventing-the-wheel-and-making-it-square">Reinventing the Wheel and Making it Square</h3>
+
+<p>At that point, it may become obvious that what we&rsquo;ve been calling &ldquo;a good build system&rdquo; has all the advanced features of a complete development system, and more: It includes features ranging from a reactive programming core to general purpose extension languages to control support for targets in arbitrary new programming languages or mappings between arbitrary namespaces. It has higher-order structures for control flow and data flow, staged evaluation with hygiene across multiple namespaces. It supports modularity at various granularities in tight cooperation with the source control system. It has a rich set of instrumentation strategies for programs used while building, and another rich set of instrumentation strategies for target programs being tested. It scales from small interactive programs in a process&rsquo;s memory to large distributed software with a global cache. How can such a thing even exist?</p>
+
+<p>Human programmers might think that such a system is a practical impossibility, out of reach of even the bestest and largest software companies, that can&rsquo;t afford the development of such a software Behemoth — and indeed demonstrate as much by their actual choice of build systems. So Human programmers would typically set their expectations lower, whenever they&rsquo;d start writing a new build system, they would just pick one more of the properties above than the competition possesses, and develop around it a &ldquo;minimal viable product&rdquo;, then keep reaching for whichever low-hanging fruits they can reach without any consideration for an end goal. Admittedly, that&rsquo;s probably the correct approach for the pioneers who don&rsquo;t yet know where they tread. But for those who come after the pioneers, it&rsquo;s actually wilful blindness, the refusal to open one&rsquo;s eyes and see.</p>
+
+<p>Human programmers thus devise some <em>ad hoc</em> domain specific language for build configuration; this language can barely express simple builds, and the underlying execution infrastructure can barely build incrementally, either through timestamps (like <code>Make</code>) or through content digests (like <code>Bazel</code>). Then, Humans painstakingly tuck new <em>ad hoc</em> DSLs and DSL modifications to it to support more advanced features: add a string substitution preprocessing phase or two to <code>Make</code>, or an extension mechanism or two to <code>Bazel</code>; call external programs (or reimplement them internally) to extract dependency information from programs in each supported language; etc. However, because each feature is added without identifying the full envelope of the interactions that their system ought to address, each new feature that Humans add introduces its own layer of complexity and badly interacts with past and future features, making further progress exponentially harder as the product progresses. Humans thus tend to reinvent the wheel all the time, and most of the time they make it square — because they are not wheel specialists but in this case build specialists looking for an expedient that happens to be wheelish.</p>
+
+<p>Houyhnhnms have a completely different approach to developing a build system (or any software project). They don&rsquo;t think of build software as a gadget separate from the rest of the programming system, with its own evaluation infrastructure, its own <em>ad hoc</em> programming languages; rather it is a library for meta-level build activities, written in an appropriate deterministic reactive style, in the same general purpose programming language as the rest of the system. At the same time, most build activities are actually trivial: one module depends on a few other modules, the dependency is obvious from a cursory look at the module&rsquo;s source; and it all can be compiled without any non-default compiler option. But of course, the activities are only trivial after the build infrastructure was developed, and support for the language properly added.</p>
+
+<p>Thus, Houyhnhnms also start small (there is no other way to start), but early on (or at least some time after pioneering new territories but before going to production on a very large scale) they seek to identify the interactions they want to address and obtain a big picture of where the software will go. Thus, when they grow their software, they do it in ways that do not accumulate new complexity, but instead improve the overall simplicity of the interaction, by integrating into their automation aspects that were previously dealt with manually. Also, what counts as &ldquo;small&rdquo; to Houyhnhnms is not the same as for Humans: as <a href="/blog/2015/12/25/chapter-7-platforms-not-applications/">previously discussed</a>, they do not write &ldquo;standalone programs&rdquo;, but natural extensions to their programming platform. Therefore each extension itself is small, but it can reuse and leverage the power of the entire platform. Thus, Houyhnhnmms do not need to invent new <em>ad hoc</em> programming languages for configuration and extension, then face the dilemma of either investing a lot in tooling and support using these languages or leave developers having to deal with these aspects of their software without much tooling if at all. Instead, they refine their &ldquo;normal&rdquo; programming languages, and any improvement made while working on the &ldquo;application&rdquo; becomes available to programs at large, whereas in the other way around any improvement made available to programs at large becomes available when modifying the application (in this case, a build system).</p>
+
+<p>Consequently, a Houyhnhnm develops a build system by making sure his normal language can express modules in arbitrary target languages, programmable mapping between language identifiers and filesystem objects, pure functional computations, determinism, reactive programming paradigm with push and pull, dynamic execution flow, higher-order functions, virtualization of execution, staged evaluation, hygiene, etc. Not all features may be available to begin with; but growing the system happens by enriching the normal programming language with these features not by building a new minilanguage from scratch for each combination of feature, whereby build programs won&rsquo;t be able to interoperate when new features are added.</p>
+
+<p>Another advantage of the Houyhnhnm platform approach is that since programming language features are themselves largely modular, they can be reused independently in different combinations and with future replacements of other features. Thus, if you realize you made a design mistake, that you can improve some feature at the cost of some incompatibility, etc., then you don&rsquo;t have to throw away the entire code base: you can reuse most of the code, and you might even build bridges to keep supporting users of the old code until they migrate to the new one, while sharing a common base that enforces shared invariants. Thus, for instance you might start with a system that does not provide proper hygiene, add hygiene later, and keep the non-hygienic bits running while you migrate your macros to support the new system, and maybe even still afterwards. Each time, writing &ldquo;the next&rdquo; build system does not involve starting an even larger behemoth from scratch, but adding a feature to the existing code base.</p>
+
+<p>In conclusion: to Humans, a build system is a complex collection of build utilities disconnected from the rest of the development environment, that can never fully address all build issues. To Houyhnhnms, the build system is just the regular system used at the meta-level, and what we learn by analyzing what a build system should do is the structure of the regular system&rsquo;s programming language, or what it evolves toward as it matures. Once again, a different in <em>point of view</em> leads to completely different software architecture, with very different results.</p>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems/"></g:plusone>
+    <script type="text/javascript">
+      var disqus_shortname = 'ngnghm';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <div id="disqus_thread"></div>
+    <ul class="pager">
+
+    <li class="next">
+      <a href="/blog/2016/01/03/chapter-8-inter-process-communication/"><em>Chapter 8: Inter-process Communication</em> &rarr;</a>
+    </li>
+    </ul>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p><a href="https://twitter.com/Ngnghm"
+              class="twitter-follow-button"
+              data-show-count="false"
+              data-lang="en">
+             "Follow ngnghm"
+           </a>
+           <script type="text/javascript">
+             !function(d,s,id){
+                 var js,fjs=d.getElementsByTagName(s)[0];
+                 if(!d.getElementById(id)){
+                     js=d.createElement(s);
+                     js.id=id;
+                     js.src="//platform.twitter.com/widgets.js";
+                     fjs.parentNode.insertBefore(js,fjs);
+                 }
+             }(document,"script","twitter-wjs");
+           </script></p>
+        <p>Site created with
+          <a href="http://www.racket-lang.org/">Racket</a>,
+          <a href="http://github.com/greghendershott/frog">Frog</a>,
+          <a href="http://www.gnu.org/software/emacs/">Emacs</a>, and
+          <a href="http://twitter.github.io/bootstrap">Bootstrap</a></p>
+        <p><em>♡ 2015-2016 Houyhnhnm Computing</em>.
+          <a href="http://copyheart.org/">♡ Copying is an act of love. Please copy and share.</a></p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
