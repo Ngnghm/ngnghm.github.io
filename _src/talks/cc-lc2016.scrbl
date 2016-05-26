@@ -49,6 +49,7 @@ on what software development best practices are, on what software business can b
 
 ;;; Definitions
 
+(define-syntax NOP (syntax-rules () ((_ ...) #f)))
 (define (color-named name) (send the-color-database find-color name))
 (define *blue* (color-named "blue"))
 (define *red* (color-named "red"))
@@ -100,13 +101,13 @@ Computing vs Computers
 
 (xlide
  #:title "The Take Home Points"
- @para{Interactions around us, not devices below us}
+ @para{Interactions around us, not artifact below us}
  ~
  @para{Simplicity, Orthogonal Persistence, Platforms...}
  ~
  @para{Reflective Systems: First-class Computation}
  ~
- @para{A change in point of view changes architecture})
+ @bt{A change in point of view changes architecture})
 
 (xlide
  #:title "Plan of the Talk"
@@ -124,6 +125,7 @@ Computing vs Computers
 A alien point of view.
 "))
 
+#;
 (xlide
  #:title "An Installation Story"
  @para{Installing @tt{overtone} on N's Windows laptop}
@@ -136,7 +138,7 @@ A alien point of view.
  @para{Issue: 32-bit SuperCollider vs 64-bit JVM}
  'next
  @para{Linux (Ubuntu): I had made it worked earlier}
- @para{Issues: manual configuration, @tt{pulseaudio} vs @tt{jackd}}
+ @para{Issues: manual config, @tt{pulseaudio} vs @tt{jackd}}
  @para{No @it{solution} — but @it{scriptable workaround}}
  (comment "\
 At least maybe NixOS or Qubes is working towards a solution, \
@@ -147,6 +149,7 @@ Not an indictment of any of the pieces of software in particular.
 But then this predicament only makes it worse for software in general.
 "))
 
+#;
 (xlide
  #:title "N wonders"
  @para{How do you trust random programs?}
@@ -161,6 +164,7 @@ But then this predicament only makes it worse for software in general.
  (comment "\
 "))
 
+#;
 (xlide
  #:title "N is ignorant"
  @para{N is obviously ignorant}
@@ -270,14 +274,17 @@ on how Humans compute vs how Houyhnhnms compute.
  ~
  @para{Houyhnhnms: maths yes, but foremost, meat})
 
+#;
 (xlide
  #:title "Please Draw me a Sheep"
  (figure "petit_prince.gif"))
 
+#;
 (xlide
  #:title "Please Draw me a Sheep"
  @para{N: Show me a @bt{simple} Human Computing System})
 
+#;
 (xlide
  #:title "Simple Program"
  @tt{printf("hello, world\n");}
@@ -291,6 +298,7 @@ on how Humans compute vs how Houyhnhnms compute.
  ~
  @para{N: That's extremely complex!})
 
+#;
 (xlide
  #:title "Real Simple"
  @para{Smalltalk world}
@@ -302,7 +310,7 @@ on how Humans compute vs how Houyhnhnms compute.
  @para{Lower-level makes simpler computer systems,}
  @para{not simpler computing system})
 
-
+#;
 (xlide
  #:title "Why Simple?"
  @para{@it{Reasonable} software}
@@ -544,6 +552,7 @@ Will you accept Ngnghm as your personal data savior?
  @para{No startup scripts (but config diffs)}
  @para{No finite access rights (but domain capabilities)})
 
+#;
 (xlide
  #:title "Not source but semantics"
  @para{Yahoos: byte sequences, with explicit encoding;}
@@ -639,6 +648,7 @@ Will you accept Ngnghm as your personal data savior?
  ~
  @para{Houyhnhnm: dynamically relinking metaprograms})
 
+#;
 (xlide
  #:title "Rigid is Fragile"
  @para{Each leaky abstraction is a costly liability}
@@ -679,8 +689,11 @@ Will you accept Ngnghm as your personal data savior?
  ~
  @para{Building software @it{down}, not just @it{up}.}
  @para{That's why neither libraries nor servers will do.}
- ~
- @para{Not Tower of Babel, but computing algebra})
+ (comment "
+Not possible: inefficient, overly coupled, complex, slow,
+too much communication not enough expressiveness, etc.
+")
+ #; ~ #; @para{Not Tower of Babel, but computing algebra})
 
 (xlide
  #:title "No Kernel"
@@ -701,6 +714,7 @@ Will you accept Ngnghm as your personal data savior?
  ~
  @para{Each focuses on his specialty (division of labour)})
 
+#;
 (xlide
  #:title "Human Precedents"
  @para{T diagram: translate from A to B, running in C}
@@ -744,6 +758,7 @@ Will you accept Ngnghm as your personal data savior?
  ~
  @para{Metaprogramming is programming programming})
 
+#;
 (xlide
  #:title "Living as a Houyhnhnm, Not a Yahoo"
  @para{Apply the knowledge. Share it with colleagues. Change the project.}
@@ -754,6 +769,7 @@ Will you accept Ngnghm as your personal data savior?
  @para{@t{There is no path to Happiness.} @t{Happiness is the path.}}
  @para{Yet recognize the tree by its fruits.})
 
+#;
 (xlide
  #:title "Where to Start?"
  @para{Start Anywhere: not just from the "bare metal"}
@@ -763,6 +779,7 @@ Will you accept Ngnghm as your personal data savior?
  @para{Join forces: division of labor}
  @para{Go down, not just up})
 
+#;
 (xlide
  #:title "Ideas have consequences"
  @para{New PoV leads to new architecture}
@@ -802,6 +819,3 @@ Will you accept Ngnghm as your personal data savior?
  @para[#:align 'center]{Thanks!}
  ~
  @para[#:align 'center]{@it{Houyhnhnm Computing:} @url{http://ngnghm.github.io/}})
-
-;; Why not libraries or servers?
-;; Not really possible: inefficient, overly coupled, complex, slow, too much communication not enough expressiveness, etc.
