@@ -258,8 +258,10 @@ on how Humans compute vs how Houyhnhnms compute.
  @para{Just a different point of view}
  ~
  @bt{Computing vs Computers}
+ #; ~ #; @para{Human precedent: Cybernetics}
  ~
- @para{Human precedent: Cybernetics})
+ @para{@t{A distinction not about how to write software}
+       @t{but what software to write or not to write}})
 
 (xlide
  #:title "Computing vs Computers"
@@ -749,7 +751,7 @@ too much communication not enough expressiveness, etc.
  ~
  @para{The goal is a saner approach to computing}
  ~
- @para{Metaprogramming is programming programming})
+ @para{You can already do it, today, everyday})
 
 (xlide
  #:title "Living as a Houyhnhnm, Not a Yahoo (*)"
