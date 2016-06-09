@@ -17,9 +17,6 @@ What does it mean when these extensions are meta-programs?
 
 ### Extensibility through Reflection ###
 
-
-
-
 While there are a lot of autistic applications,
 most applications involve some communication with other applications.
 And that's the difference between Houyhnhnm and Human applications becomes obvious:
