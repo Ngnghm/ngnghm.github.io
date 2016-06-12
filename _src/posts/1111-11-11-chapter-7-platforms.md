@@ -1,6 +1,6 @@
     Title: Chapter 7: Platforms not Applications
     Date: 2015-12-25T22:33:44
-    Tags: Meta, Application, Autistic, Platform, Extension, Language, Expertise, Economics, Incentives, Division of Labour, Specialization
+    Tags: Meta, Application, Autistic, Platform, Extension, Language, Expertise, Economics, Incentives, Division of Labor, Specialization
 
 My previous discussion with Ngnghm left me baffled:
 I could somehow understand that

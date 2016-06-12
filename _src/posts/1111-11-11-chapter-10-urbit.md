@@ -1,6 +1,6 @@
     Title: Houyhnhnms vs Martians
-    Date: 2015-08-03T00:00:00
-    Tags: DRAFT
+    Date: 2016-06-11T20:34:38
+    Tags: Urbit, Martian, Impedance Mismatch, Orthogonal Persistence, Persistence, Meta, In The Large, Autistic, DRAFT
 
 What did Ngnghm think of [Urbit](http://urbit.org/)?
 Some elements in Ngnghm's descriptions of Houyhnhnm computing
@@ -518,6 +518,7 @@ This difficulty was beautifully evidenced and argued by Richard P. Gabriel in hi
 But the Urbit authors are not trying to be understood, trying their best not to be,
 and that's a shame, because whatever good and bad ideas exist in their paradigm
 deserve to be debated, which first requires that they should be understood.
+Instead they lock themselves into their own autistic planet.
 
 There is a natural tradeoff when designing computing systems,
 whereby a program can be easy to write, be easy to read, be fast to run,
@@ -548,17 +549,21 @@ without being able to reuse much of other people's code,
 except at a very high cost both in terms of
 implementation effort (doing things both in Nock and in u3)
 and integrity (ensuring the two things are equivalent, or cheating).
-It looks like the Urbit authors wrote a markdown processor in Hoon, for instance,
+For instance, it looks like the Urbit authors wrote a markdown processor in Hoon, for instance,
 and have a "jet" recognizing it and replacing it by some common Markdown library in C.
 Except the two pieces of code are not bug compatible, so it's all a lie.
 
 
 ### Urbit as a demo ###
 
-Urbit makes for a cool demo of an orthogonally persistent system;
-but only by sweeping under the rug the difficult issues,
-to be solved by the metasystem of Urbit;
-and unlike Nock, this metasystem, where most of the interesting things happen,
+Urbit has none of the support for modular design necessary for programming
+["in the large"](https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small).
+But its superficial simplicity of Nock makes it suitable
+as a cool demo of orthogonally persistent system.
+
+Of course, the demo only "works" by sweeping under the rug the difficult issues,
+to be solved by u3, the metasystem of Urbit;
+and unlike Nock, u3, where most of the interesting things happen,
 remains informal in its all-important side-effects,
 and not actually bound to behave as a faithful implementation
 as for the parts specified by the Nock machine.
@@ -579,10 +584,6 @@ Only a general purpose platform for people to build their own metaprograms
 can enable them to each solve the issues to their satisfaction.
 And once you have this platform, you don't need any of the Urbit operating system,
 because you already have a Houyhnhnm computing system.
-
-The apparent simplicity of Nock is suitable for building cool small self-contained demos.
-But Urbit has none of the support for modular design necessary for programming
-["in the large"](https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small).
 
 Houyhnhnms have no ill feelings towards either Martians or Humans.
 They hope that Urbit will be a great success, and demonstrate a lot of cool things
