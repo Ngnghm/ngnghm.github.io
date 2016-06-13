@@ -4,7 +4,7 @@
 
 What did Ngnghm think of [Urbit](http://urbit.org/)?
 Some elements in Ngnghm's descriptions of Houyhnhnm computing
-were remindful of the the famous martian system software stack Urbit:
+were remindful of the famous Martian system software stack Urbit:
 both computing worlds were alien to Human Computing;
 both had Orthogonal Persistence;
 and both relied heavily on
@@ -83,8 +83,8 @@ as contrasted with other indentation-sensitive languages, however, the indentati
 are cleverly designed to prevent extraneous indentation to the right as you nest expressions,
 by deindenting the last, tail position in a function call.
 Whereas Nock is trivially typed (some would say untyped or dynamically typed),
-Hoon as a static type system, although quite a primitive one,
-and a type inferencer that
+Hoon has a static type system, although quite a primitive one,
+with a type inferencer that
 requires more type hints than a language with e.g. Hindley-Milner type inference (such as ML),
 yet less than one without type inference (such as Java).
 
@@ -148,8 +148,13 @@ that the Urbit curators intend to sell to fund technological development.
 One of Urbit's innovations is to invent mappings from octet to pronounceable three-letter syllables,
 so that you can pronounce 8-, 16-, 32-, 64- or 128-bit addresses,
 making them memorable, though not meaningful.
-To decorrelate names with same address prefix and prevent confusion,
+So that names with the same address prefix shall _not_ sound the same,
 a simple bijective mangling function is applied to an address before to extract its pronounciation.
+This deemphasizes the signing authority behind an identity:
+the reputation of a person shouldn't too easily wash onto another
+just because they used the same registrar;
+and it's easier to avoid a "hash collision" in people's minds
+by having vaguely related but notably different identities have notably different names.
 This constitutes an interesting take on
 [Zooko's Triangle](https://en.wikipedia.org/wiki/Zooko%27s%5Ftriangle).
 Actually, care was taken so that the syllables would _not_ be too meaningful
@@ -181,9 +186,10 @@ at the same time, transient or loosely-persisted caches are useful for extra ind
 and for robustness, a number of replicas are required,
 with a continuum of potential synchronization policies.
 Therefore, Houyhnhnms provide a general framework for first-class computations,
-based on which users may select what persists with what modalities.
+based on which users may select what to persist under what modalities.
 
-One could imagine ways that Urbit could be modified so its persistence policies be configurable.
+One could imagine ways that Urbit could be modified
+so its persistence policies would become configurable.
 For instance, the underlying C runtime u3 could be sensitive to special side-effects,
 such as messages sent to a magic comet, and modify its evaluation and persistence strategies
 based on specified configuration.
@@ -194,7 +200,7 @@ It could remain as an awkward but standardized and future-proof way to represent
 However, unless great care is taken, using formal proofs and/or extensive testing,
 so that the semantics of the Nock code generated indeed implements the actual computations,
 while indeed being implemented by the underlying system,
-then at the least bug introduced or "shortcut" taken,
+then at the first bug introduced or "shortcut" taken,
 the entire Nock VM becomes a _sham_.
 
 Now, assuming Nock isn't a complete sham,
@@ -286,9 +292,10 @@ such schema changes happen (see section 2.0.3 Arvo).
 
 Where Martians get it just as wrong as Humans is in believing that
 solving one issue (e.g. persistence) at the system level is enough.
-But local "persistence" of low-level data achieved onerously yet that does not guarantee
-distributed persistence of high-level data at the level of service required
-(with enough replicas yet low-enough latency) is counter-productive.
+But onerous local "persistence" of low-level data can actually be counter-productive
+when what users require is distributed persistence of high-level data
+at some level of service involving enough replicas yet low-enough latency:
+it costs a lot and for no actual benefit may cause a large increase in latency.
 The entire point of computing is to support user programs,
 and solving an issue for some underlying system at a lower-level of abstraction
 without solving it at the higher-level that the user cares about
@@ -346,7 +353,7 @@ The concepts that underlie these issues cannot be expressed explicitly,
 yet programmers need to confront them
 and possess the knowledge of them implicitly
 to grasp, develop and debug the high-level program.
-The rejection of abstraction in general and metaprogramming in particular
+The rejection of abstraction in general, and metaprogramming in particular,
 prevents unimpeded clear thinking where it is the most sorely needed;
 it makes the easy harder and the hard nearly impossible,
 all for the benefit of giving random neophytes a false sense of comfort.
@@ -363,7 +370,7 @@ all the downsides of Turing-equivalence with none of the upsides.
 Note however that even though Urbit officially rejects abstraction,
 Hoon is at its core a functional programming language.
 Therefore, unlike Humans stuck with COBOL or Java,
-Martian programmers using Hoon can if they so choose leverage this core
+Martian programmers using Hoon can, if they so choose, leverage this core
 to develop their own set of high-level composable abstractions;
 and for that they can reuse or get inspired by all the work done
 in more advanced functional languages such as Haskell or Lisp.
@@ -406,10 +413,10 @@ Humans clearly understand that the ultimate starting point for building the comp
 is whatever cost efficient computer hardware is available.
 At the bottom of the software stack are thin portable abstractions over the hardware,
 that together constitute the operating system.
-Every layer you pile on top is costly and goes against the bottom line;
-that's part of the cost of doing business if it's a good intermediate abstraction
-in the cheapest path that leads from the available low-level hardware
-to the desired high-level application.
+Every layer you pile on top is costly and goes against the bottom line.
+If it's a good intermediate abstraction
+in the cheapest path from the low-level hardware to the desired high-level application,
+then it's part of the cost of doing business.
 Otherwise it's just useless overhead.
 
 Unhappily Martians seem to miss both points of view.
@@ -446,7 +453,7 @@ you must implement things twice, where you used to do it only once on Human or H
 you must implement your logic once as a slow interpreter in Nock;
 and you must implement it a second time in the Human system in which u3 jets are written.
 And how do you ensure the equivalence between those two implementations?
-You can fail to and lie, and then Urbit is all a sham;
+You can fail to, or lie, and then Urbit is all a sham;
 or you can spend a lot of time doing it, at which point you wasted a lot of effort,
 but didn't win anything as compared to implementing the human code without going through Urbit.
 What did the detour through Nock buy you? Nothing.
@@ -487,14 +494,14 @@ I have discussed some of these issues in a previous speech:
 The only valuable contribution of Urbit in this space is its naming scheme
 and its take on Zooko's triangle —
 which is extremely valuable, but a tiny part of Urbit
-(happily, that also makes it easy to duplicate in your own designs, if you wish)
+(happily, that also makes it easy to duplicate in your own designs, if you wish).
 The rest, in the end, is mostly a waste of time as far as ownership goes
 (but resurrecting the idea of orthogonal persistence is still independently cool,
 though its Urbit implementation is ultimately backwards).
 
 It could be argued that the Nock VM makes it easier to verify computations,
 and thus to ascertain that nobody is tampering with your computations
-(though of course it these verifications can't protect against
+(though of course these verifications can't protect against
 leakage of information at lower levels of the system).
 Certainly, Urbit makes this possible, where random Human systems can't do it.
 But if Humans wanted to verify computations they could do it much more easily than by using Urbit,
