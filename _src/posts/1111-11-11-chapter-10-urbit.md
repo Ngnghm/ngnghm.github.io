@@ -1,6 +1,6 @@
-    Title: Houyhnhnms vs Martians
+    Title: Chapter 10: Houyhnhnms vs Martians
     Date: 2016-06-11T20:34:38
-    Tags: Urbit, Martian, Impedance Mismatch, Orthogonal Persistence, Persistence, Meta, In The Large, Autistic, DRAFT
+    Tags: Urbit, Martian, Impedance Mismatch, Orthogonal Persistence, Persistence, Meta, In The Large, Autistic
 
 What did Ngnghm think of [Urbit](http://urbit.org/)?
 Some elements in Ngnghm's descriptions of Houyhnhnm computing
@@ -321,6 +321,9 @@ For Martians, unhappily, there is a conscious decision to eschew metaprogramming
 One recent Urbit presentation explicitly declares that DSLs are considered harmful;
 the rationale given is that the base programming language
 should have low cognitive overload on entry-level programmers.
+(Though there again, the very same Urbit authors
+who claim their programmers shouldn't do metaprogramming
+themselves spend most of their time at the meta-level — base-level for thee, meta-level for me.)
 To Martians, making the system deliberately simpler and less sophisticated
 makes it easier for people to understand and adopt it.
 Martians with Hoon commit the same error as the Humans systematically committed with COBOL,
