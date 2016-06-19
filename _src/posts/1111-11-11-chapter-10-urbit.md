@@ -390,7 +390,7 @@ as a fixed semantic tower on top of a provided common virtual machine.
 It's just that the virtual machine is very different between the Humans and Martians:
 the Martian VM is oriented towards persistence and determinism,
 the Human VM is just a low-level portability layer for families of cheap human hardware.
-As we explained in our [chapter 4](blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/)
+As we explained in our [chapter 4](/blog/2015/08/24/chapter-4-turtling-down-the-tower-of-babel/)
 and subsequent chapters, this makes for rigid, brittle and expensive development processes.
 
 

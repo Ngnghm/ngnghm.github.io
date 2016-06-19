@@ -11,7 +11,7 @@
     <link rel="icon"      href="/img/favicon.ico">
     <link rel="canonical" href="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems/">
     <link rel="next" href="/blog/2016/01/03/chapter-8-inter-process-communication/">
-    <link rel="prev" href="/blog/2016/06/11/houyhnhnms-vs-martians/">
+    <link rel="prev" href="/blog/2016/06/11/chapter-10-houyhnhnms-vs-martians/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -253,7 +253,7 @@
 
 <p>The name of a module carries <em>intent</em> that is supposed to remain as its <em>content</em> varies with time or with configuration. Humans, who like to see <em>things</em> even where there aren&rsquo;t, tend to look at intent as a platonic ideal state of what the module &ldquo;should&rdquo; be doing; but Houyhnhnms, who prefer to see <em>processes</em>, see intent as a <a href="https://en.wikipedia.org/wiki/Focal%20point%20%28game%20theory%29">Schelling point</a> where the plans of sentient beings meet with least coordination issues, based on which they can divide their own and each other&rsquo;s labor.</p>
 
-<p>Note that a name, which denotes a fixed <em>intent</em>, may refer to varying <em>content</em>. Indeed, the entire point of having a name is to abstract away from those changes that necessarily occur to adapt to various contingencies as the context changes. Even if a module ever reaches its &ldquo;perfect&rdquo; ideal, final, state, no one may ever be fully certain when this has actually happened, for an unexpected future change in its wider usage context may make it imperfect again and it may still have to change due to &ldquo;bitrot&rdquo;. Not only will content vary with time, an intent may deliberately name some &ldquo;virtual&rdquo; module to be determined from context (such as a choice of compiler, or of <code>libc</code>, etc.); in this and other cases, you may thus have mutually incompatible modules, such that some combinations of two or more of them cannot be present in a same build at the same time. And yet, a &ldquo;same&rdquo; larger build may recursively include multiple virtualized system images that are each built while binding some common names to different contents: for instance, an embedded client or boot image might use a lightweight <code>libc</code> while a full-fledged system image might use a full-featured one, both being part of the same larger build.</p>
+<p>Note that a name, which denotes a fixed <em>intent</em>, may refer to varying <em>content</em>. Indeed, the entire point of having a name is to abstract away from those changes that necessarily occur to adapt to various contingencies as the context changes. Even if a module ever reaches its &ldquo;perfect&rdquo; ideal, final, state, no one may ever be fully certain when this has actually happened, for an unexpected future change in its wider usage context may make it imperfect again and it may still have to change due to &ldquo;bitrot&rdquo;. Not only will content vary with time, an intent may deliberately name some &ldquo;virtual&rdquo; module to be determined from context (such as a choice of compiler, or of <code>libc</code>, etc.). In this and other cases, there may be mutually incompatible modules, that cannot be present in a same build at the same time (for instance, <code>glibc</code>, <code>uclibc</code> and <code>klibc</code> are mutually exclusive in a same program, and so are <code>libgif</code> and <code>libungif</code>). And yet, a &ldquo;same&rdquo; larger build may recursively include multiple virtualized system images that are each built while binding some common names to different contents: for instance, as part of a same installation, a boot disk might be generated using the lightweight <code>uclibc</code> whereas the main image would use the full-fledged <code>glibc</code>.</p>
 
 <p>A good build system makes it easy to manage its global namespaces. To remain simple, it will not unnecessarily multiply namespaces; instead it will leverage existing namespaces and their communities, starting with the namespace of identifiers in the FRP language; it will thus hierarchically include other namespaces into its main namespace, and in particular it will adequately map its namespaces to the filesystem or source control namespaces, etc.</p>
 
@@ -332,7 +332,7 @@
     <div id="disqus_thread"></div>
     <ul class="pager">
     <li class="previous">
-      <a href="/blog/2016/06/11/houyhnhnms-vs-martians/">&larr; <em>Houyhnhnms vs Martians</em></a>
+      <a href="/blog/2016/06/11/chapter-10-houyhnhnms-vs-martians/">&larr; <em>Chapter 10: Houyhnhnms vs Martians</em></a>
     </li>
     <li class="next">
       <a href="/blog/2016/01/03/chapter-8-inter-process-communication/"><em>Chapter 8: Inter-process Communication</em> &rarr;</a>

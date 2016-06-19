@@ -348,24 +348,24 @@ where the plans of sentient beings meet with least coordination
 issues, based on which they can divide their own and each other's
 labor.
 
-Note that a name, which denotes a fixed _intent_, may refer to varying
-_content_. Indeed, the entire point of having a name is to abstract
-away from those changes that necessarily occur to adapt to various
-contingencies as the context changes. Even if a module ever reaches
-its "perfect" ideal, final, state, no one may ever be fully certain
-when this has actually happened, for an unexpected future change in
-its wider usage context may make it imperfect again and it may still
-have to change due to "bitrot". Not only will content vary with time,
-an intent may deliberately name some "virtual" module to be determined
-from context (such as a choice of compiler, or of `libc`, etc.); in
-this and other cases, you may thus have mutually incompatible modules,
-such that some combinations of two or more of them cannot be present
-in a same build at the same time. And yet, a "same" larger build may
-recursively include multiple virtualized system images that are each
-built while binding some common names to different contents: for
-instance, an embedded client or boot image might use a lightweight
-`libc` while a full-fledged system image might use a full-featured
-one, both being part of the same larger build.
+Note that a name, which denotes a fixed _intent_, may refer to varying _content_.
+Indeed, the entire point of having a name is to abstract away from those changes
+that necessarily occur to adapt to various contingencies as the context changes.
+Even if a module ever reaches its "perfect" ideal, final, state,
+no one may ever be fully certain when this has actually happened,
+for an unexpected future change in its wider usage context
+may make it imperfect again and it may still have to change due to "bitrot".
+Not only will content vary with time, an intent may deliberately name
+some "virtual" module to be determined from context
+(such as a choice of compiler, or of `libc`, etc.).
+In this and other cases, there may be mutually incompatible modules,
+that cannot be present in a same build at the same time
+(for instance, `glibc`, `uclibc` and `klibc` are mutually exclusive in a same program,
+and so are `libgif` and `libungif`).
+And yet, a "same" larger build may recursively include multiple virtualized system images
+that are each built while binding some common names to different contents:
+for instance, as part of a same installation, a boot disk might be generated
+using the lightweight `uclibc` whereas the main image would use the full-fledged `glibc`.
 
 A good build system makes it easy to manage its global namespaces. To
 remain simple, it will not unnecessarily multiply namespaces; instead
