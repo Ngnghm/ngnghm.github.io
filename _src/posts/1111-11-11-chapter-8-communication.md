@@ -391,7 +391,7 @@ or a notification of network delay, or whatever its meta-level is configured to 
 the system owner ultimately controls all configuration.
 If the application is well-behaved, many unauthorized accesses may be optimized away;
 but even if it's not, it has no reliable way of telling whether it's running "for real",
-i.e. whether it's connected to some actual resource.
+i.e., whether it's connected to some actual resource.
 
 Allowing code to make the difference would be a huge security failure;
 and any time a monitor in a production system
@@ -411,7 +411,7 @@ Note that proper sandboxing at heart has
 to do with having "kernel" support for "containers"
 or hardware-accelerated "virtual machines";
 rather it is all about providing _full abstraction_,
-i.e. abstractions that don't leak.
+i.e., abstractions that don't leak.
 For instance, a user-interface should make it impossible to break the abstraction
 without intentionally going to the meta-level.
 You shouldn't be able to accidentally copy and paste
@@ -430,7 +430,7 @@ for copying and pasting without further confirmations.
 
 Houyhnhnm computing systems resolutely adopt the notion that
 some tasks are generally the responsibility of a series of (meta)programs
-that are separate from the ones computing the results; i.e.
+that are separate from the ones computing the results; i.e.,
 presenting computation results, combining communicating processes,
 choosing an implementation strategy for a declarative program, etc.
 Factoring out the interface at the meta level means that
