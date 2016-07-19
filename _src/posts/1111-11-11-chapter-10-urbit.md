@@ -43,7 +43,7 @@ Since the language is pure and applicative
 (and otherwise without cycle-creating primitives),
 there can be no cycle in this binary tree of integers.
 Since the only equality test is extensional, identical subtrees can be merged
-and the notional tree can be implemented as a DAG (Directed Acyclic Graph).
+and the notional tree can be implemented as a Directed Acyclic Graph (DAG).
 
 On top of those, the execution model of Nock is to interpret some of these trees
 as programs in a variant of combinatory logic, with additional primitives
@@ -161,7 +161,7 @@ Actually, care was taken so that the syllables would _not_ be too meaningful
 (and especially not offensive) in any human language that the author knew of.
 Non-alphanumerical characters are also given three-letter syllable names,
 though this time the names were chosen so that there were simple mnemonic rules
-to remember them (for instance, "wut" for the question mark "?");
+to remember them (for instance, “wut” for the question mark “?”);
 this makes it easier to read and learn digraphs
 (though you might also name them after the corresponding keywords).
 
@@ -242,7 +242,7 @@ without helping any of the real coordination problems that users actually have.
 
 A global consensus on deterministic computation semantics only matters
 if you want to replay and verify other random people's computations,
-i.e. for crypto-currencies with "smart contracts" like [Ethereum](https://www.ethereum.org/);
+i.e., for crypto-currencies with "smart contracts" like [Ethereum](https://www.ethereum.org/);
 but that's not at all what Urbit is about, and such computation replay in a hostile environment
 indeed has issues of its own (such as misincentives or for resource abuse)
 that Urbit doesn't even try to address.
@@ -405,7 +405,7 @@ is to support some kind of interaction with some sentient users
 (be it via a console, via a robot, via a wider institutional process
 involving other sentient beings, etc.).
 In other words, the computer system is an enabler, a means,
-and the computing system is the goal, i.e. the user interactions involving applications.
+and the computing system is the goal, i.e., the user interactions involving applications.
 If some computer system makes it harder (than others; than it can; than it used to)
 to write, use or maintain such applications, then it is (comparatively) failing at its goal.
 

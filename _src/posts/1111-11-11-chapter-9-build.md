@@ -79,7 +79,7 @@ Source files can sometimes be subdivided into smaller modules (every
 definition, every syntactic entity, can be viewed as a software
 module); and source files can often be grouped into ever larger
 modules: directories, libraries, systems, projects, repositories,
-distributions, etc. The names and specifics vary depending on the
+distributions, etc., The names and specifics vary depending on the
 programming languages and software communities that deal with those
 modules; but generally, a _module_ can be composed of _submodules_ and
 be part of larger _supermodules_.

@@ -62,7 +62,7 @@ Instead, there are components that each
 deal with the specific aspects of some kinds of documents or data,
 and otherwise share common system features for general aspects of data —
 including notions of versioning and releasing,
-i.e. publishing a stable version so it's visible to other people,
+i.e., publishing a stable version so it's visible to other people,
 whereas intermediate changes and their inglorious details remain unpublished.
 Thus, instead of "text editors" and "picture editors",
 there are "text editing components" and "picture-editing components",
