@@ -242,7 +242,7 @@ without helping any of the real coordination problems that users actually have.
 
 A global consensus on deterministic computation semantics only matters
 if you want to replay and verify other random people's computations,
-i.e. for crypto-currencies with "smart contracts" like [Ethereum](https://www.ethereum.org/);
+i.e., for crypto-currencies with "smart contracts" like [Ethereum](https://www.ethereum.org/);
 but that's not at all what Urbit is about, and such computation replay in a hostile environment
 indeed has issues of its own (such as misincentives or for resource abuse)
 that Urbit doesn't even try to address.
@@ -413,7 +413,7 @@ is to support some kind of interaction with some sentient users
 (be it via a console, via a robot, via a wider institutional process
 involving other sentient beings, etc.).
 In other words, the computer system is an enabler, a means,
-and the computing system is the goal, i.e. the user interactions involving applications.
+and the computing system is the goal, i.e., the user interactions involving applications.
 If some computer system makes it harder (than others; than it can; than it used to)
 to write, use or maintain such applications, then it is (comparatively) failing at its goal.
 
