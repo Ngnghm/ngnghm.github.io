@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <title>Chapter 8: Inter-process Communication</title>
-    <meta name="description" content="In our discussion about the difference between Human applications and their Houyhnhnm counterparts, I was intrigued by claims Ngnghm made that communication was much easier between activities of a Houyhnhnm computing system than between applications of a ...">
+    <meta name="description" content="In our discussion about the difference between Human applications and their Houyhnhnm counterparts (I often pronounce &quot;Houyhnhnm&quot; as &quot;Hunam&quot;), I was intrigued by claims Ngnghm made (I usually call her &quot;Ann&quot;) that communication was much easier between acti...">
     <meta name="author"      content="Ngnghm">
     <meta name="keywords"    content="Implicit, Declarative, Communication, Copy-Paste, Meta, Free Software, Abstraction, Enforcement, Security, Meta">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -79,8 +79,6 @@
 
 <li><a href="/tags/Division-of-Labor.html">Division of Labor</a></li>
 
-<li><a href="/tags/Division-of-Labour.html">Division of Labour</a></li>
-
 <li><a href="/tags/Domains.html">Domains</a></li>
 
 <li><a href="/tags/Economics.html">Economics</a></li>
@@ -95,6 +93,8 @@
 
 <li><a href="/tags/Free-Software.html">Free Software</a></li>
 
+<li><a href="/tags/Impedance-Mismatch.html">Impedance Mismatch</a></li>
+
 <li><a href="/tags/Implicit.html">Implicit</a></li>
 
 <li><a href="/tags/In-The-Large.html">In The Large</a></li>
@@ -108,6 +108,8 @@
 <li><a href="/tags/Language.html">Language</a></li>
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
+
+<li><a href="/tags/Martian.html">Martian</a></li>
 
 <li><a href="/tags/Meta.html">Meta</a></li>
 
@@ -143,6 +145,8 @@
 
 <li><a href="/tags/Upgrade.html">Upgrade</a></li>
 
+<li><a href="/tags/Urbit.html">Urbit</a></li>
+
 <li><a href="/tags/Versioning.html">Versioning</a></li>
               </ul>
             </li>
@@ -172,14 +176,14 @@
 <time datetime="2016-01-03" pubdate="true">2016-01-03</time> :: <span class="tags"><a href="/tags/Implicit.html">Implicit</a>, <a href="/tags/Declarative.html">Declarative</a>, <a href="/tags/Communication.html">Communication</a>, <a href="/tags/Copy-Paste.html">Copy-Paste</a>, <a href="/tags/Meta.html">Meta</a>, <a href="/tags/Free-Software.html">Free Software</a>, <a href="/tags/Abstraction.html">Abstraction</a>, <a href="/tags/Enforcement.html">Enforcement</a>, <a href="/tags/Security.html">Security</a>, <a href="/tags/Meta.html">Meta</a></span></p>
   </header>
 
-<p>In our discussion about the difference between <a href="/blog/2015/12/25/chapter-7-platforms-not-applications/">Human applications and their Houyhnhnm counterparts</a>, I was intrigued by claims Ngnghm made that communication was much easier between activities of a Houyhnhnm computing system than between applications of a Human computer system. I asked Ngnghm to elaborate on this topic.</p>
+<p>In our discussion about the difference between <a href="/blog/2015/12/25/chapter-7-platforms-not-applications/">Human applications and their Houyhnhnm counterparts</a> (I often pronounce &ldquo;Houyhnhnm&rdquo; as &ldquo;Hunam&rdquo;), I was intrigued by claims Ngnghm made (I usually call her &ldquo;Ann&rdquo;) that communication was much easier between activities of a Houyhnhnm computing system than between applications of a Human computer system. I asked Ann to elaborate on this topic.</p>
 
-<p>It was easy to agree that Human computer systems made communication something much lower level than it could be. But Ngnghm also argued that Humans had very poor algebras and interfaces for users to combine processes. Just what <em>kinds</em> of communication could there even exist besides the ones that already existed on Human computer systems?</p>
+<p>It was easy to agree that Human computer systems made communication something much lower level than it could be. But Ann also argued that Humans had very poor algebras and interfaces for users to combine processes. Just what <em>kinds</em> of communication could there even exist besides the ones that already existed on Human computer systems?</p>
 <!-- more-->
 
 <h3 id="implicit-communication">Implicit Communication</h3>
 
-<p>From my discussions with Ngnghm emerged the notion communications being explicit or implicit.</p>
+<p>From my discussions with Ann emerged the notion communications being explicit or implicit.</p>
 
 <p>In the case of explicit communication, a process specifically names another process, whether an existing one or a new one to be started; it then opens a communication channel with that other process, and proceeds to exchange data. Explicit communication does exactly what the programmers want (or at least <em>say</em>: even Houyhnhnms have no AI strong enough to <a href="http://www.jargon.net/jargonfile/d/DWIM.html">DWIM</a>); thus programmers control how much complexity they will afford; but it requires tight coupling between the programs (and thus programmers) on all sides of the communication, and is difficult to extend or adapt to suit the dynamic needs of the end-user.</p>
 
@@ -193,7 +197,7 @@
 
 <p>The kind of implicit communication most visible to end-users in Human computer systems is copy-paste: applications interact with a graphical interface, and may allow the user to either copy or cut part of a document being displayed; the clipping is then stored in a global clipboard (with space for a single clip). Another application interacting with the graphical interface may then allow the user to paste the clipping currently in the clipboard into its own document. The two programs may know nothing of each other; as long as they properly partake in the protocol, they will have communicated with each other as per the desires of the end-user. Copy-pasting alone provides user-controllable implicit communication between most applications, and is an essential feature in Human computer systems.</p>
 
-<p>Now, on Human computer systems, copy-paste requires every participating application to specially implement large chunks of graphical interface support. Every application then becomes somewhat bloated, having to include large graphical libraries (which in modern systems can happily be shared between applications); but also having to properly initialize them, follow their protocols, abide by the strictures of their event loop, etc. They have to be able to negotiate with the clipboard server the kinds of entities they can copy and paste, and/or convert between what the server supports and what they can directly handle. This architecture where all features are implemented at the same level of abstraction contributes significantly to the complexity of applications; applications are therefore hard to reason about, brittle and insecure. The overall graphical environment will in turn inherit the unreliability of the applications that partake in it. And despite all this complexity, often some application will fail to support copying for some of the information it displays (e.g. an error message); the feature is then sorely missed as the user needs to copy said information by hand.</p>
+<p>Now, on Human computer systems, copy-paste requires every participating application to specially implement large chunks of graphical interface support. Every application then becomes somewhat bloated, having to include large graphical libraries (which in modern systems can happily be shared between applications); but also having to properly initialize them, follow their protocols, abide by the strictures of their event loop, etc. They have to be able to negotiate with the clipboard server the kinds of entities they can copy and paste, and/or convert between what the server supports and what they can directly handle. This architecture where all features are implemented at the same level of abstraction contributes significantly to the complexity of applications; applications are therefore hard to reason about, brittle and insecure. The overall graphical environment will in turn inherit the unreliability of the applications that partake in it. And despite all this complexity, often some application will fail to support copying for some of the information it displays (e.g. an error message); the feature is then sorely missed as the user needs to copy said information by hand, or falls back to some low-level means of information capture such as screen copy (or memory dump, for more advanced developers).</p>
 
 <p>An interesting exception to the rule of the above paragraph is the case of &ldquo;console&rdquo; applications: these applications display simple text to a &ldquo;terminal emulator&rdquo; straight out of the 1970s, at which point all the output can be copied for further pasting. The terminal emulator thus serves as the meta-program responsible for presentation of the application output, and handling copy-paste. This comes with many limitations: only plain text is supported, not &ldquo;rich text&rdquo;, not images; lines longer than the terminal size may or may not be clipped, or have an end-of-line marker or escape character inserted; selecting more than a screenful may be an issue, though you can sometimes work around it by resizing the terminal or by switching to tiny fonts; standard output and error output may be mixed, and interspersed with output from background programs; layout artefacts may be included (such as spaces to end-of-line, or graphic characters that draw boxes in which text is displayed); etc. Still, the principle of a meta-program to handle display already exists in some Human computer systems; its protocol is just limited, baroque and antiquated.</p>
 
@@ -205,7 +209,7 @@
 
 <p>The parent here plays a bit of the role of a meta level, but this role is very limited and only influences the initial program configuration. (Actually, advanced tools may use <code>ptrace</code>, but it is very unwieldy, non-portable, and inefficient, which may explain why it remains uncommon outside its intended use as a debugging tool.) Still, even within this limitation, Unix pipes revolutionized the way software was written, by allowing independent, isolated programs to be composed, and the resulting compositions to be orchestrated into scripts written in some high-level programming language.</p>
 
-<p>Houyhnhnm computing systems very much acknowledge the power of composing programs; but they are not so restricted as with Unix pipes. They enable composition of programs of arbitrary types, with arbitrary numbers of inputs and outputs all of them properly typed according to some high-level object schema, rather than always low-level sequences of bytes. (Note that low-level sequences of bytes do constitute an acceptable type; they are just rarely used in practice except in a few low-level programs.) These typed inputs, outputs all provide natural communication points that can be used to compose programs together.</p>
+<p>Houyhnhnm computing systems very much acknowledge the power of composing programs; but they are not so restricted as with Unix pipes. They enable composition of programs of arbitrary types, with arbitrary numbers of inputs and outputs all of them properly typed according to some high-level object schema, rather than always low-level sequences of bytes. (Note that low-level sequences of bytes do constitute an acceptable type; they are just rarely used in practice except in a few low-level programs.) These typed inputs and outputs all provide natural communication points that can be used to compose programs together.</p>
 
 <p>Unlike the typical parent processes of Human computer systems, the meta-programs of Houyhnhnm computing systems can control more than the initial configuration of applications. They can at all time control the entire behavior of the base-level program being evaluated. In particular, side-effects as well as inputs and outputs are typed and can be injected or captured. Virtualization is a routine operation available to all users, not just an expensive privileged operation reserved to system administrators.</p>
 

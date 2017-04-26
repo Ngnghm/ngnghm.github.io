@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <title>Chapter 4: Turtling down the Tower of Babel</title>
-    <meta name="description" content="Ngnghm examined how manual persistence was managed underneath Human computer systems, and contrasted with how Houyhnhnms automated its implementation. This led him to more general remarks about the compared architectures of Human computer systems and Houy...">
+    <meta name="description" content="Ngnghm, or Ann, examined how manual persistence was managed underneath Human computer systems, and contrasted with how Houyhnhnms (pronounced &quot;Hunams&quot;) automated its implementation. This led her to more general remarks about the compared architectures of ...">
     <meta name="author"      content="Ngnghm">
     <meta name="keywords"    content="Persistence, Transience, Quality, Meta, Strategies, Turtles">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -79,8 +79,6 @@
 
 <li><a href="/tags/Division-of-Labor.html">Division of Labor</a></li>
 
-<li><a href="/tags/Division-of-Labour.html">Division of Labour</a></li>
-
 <li><a href="/tags/Domains.html">Domains</a></li>
 
 <li><a href="/tags/Economics.html">Economics</a></li>
@@ -95,6 +93,8 @@
 
 <li><a href="/tags/Free-Software.html">Free Software</a></li>
 
+<li><a href="/tags/Impedance-Mismatch.html">Impedance Mismatch</a></li>
+
 <li><a href="/tags/Implicit.html">Implicit</a></li>
 
 <li><a href="/tags/In-The-Large.html">In The Large</a></li>
@@ -108,6 +108,8 @@
 <li><a href="/tags/Language.html">Language</a></li>
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
+
+<li><a href="/tags/Martian.html">Martian</a></li>
 
 <li><a href="/tags/Meta.html">Meta</a></li>
 
@@ -143,6 +145,8 @@
 
 <li><a href="/tags/Upgrade.html">Upgrade</a></li>
 
+<li><a href="/tags/Urbit.html">Urbit</a></li>
+
 <li><a href="/tags/Versioning.html">Versioning</a></li>
               </ul>
             </li>
@@ -172,12 +176,12 @@
 <time datetime="2015-08-24" pubdate="true">2015-08-24</time> :: <span class="tags"><a href="/tags/Persistence.html">Persistence</a>, <a href="/tags/Transience.html">Transience</a>, <a href="/tags/Quality.html">Quality</a>, <a href="/tags/Meta.html">Meta</a>, <a href="/tags/Strategies.html">Strategies</a>, <a href="/tags/Turtles.html">Turtles</a></span></p>
   </header>
 
-<p>Ngnghm examined how manual persistence was managed underneath Human computer systems, and contrasted with how Houyhnhnms automated its implementation. This led him to more general remarks about the compared architectures of Human computer systems and Houyhnhnm computing systems: Houyhnhnm computing systems can and do go meta, which to them is notionally <em>down</em> (not <em>up</em>, as some Humans would have it). Going meta allows Houyhnhm computing systems to enjoy qualities not found in Human computer systems, that can&rsquo;t go meta.</p>
+<p>Ngnghm, or Ann, examined how manual persistence was managed underneath Human computer systems, and contrasted with how Houyhnhnms (pronounced &ldquo;Hunams&rdquo;) automated its implementation. This led her to more general remarks about the compared architectures of Human computer systems and Houyhnhnm computing systems: Houyhnhnm computing systems can and do go meta, which to them is notionally <em>down</em> (not <em>up</em>, as some Humans would have it). Going meta allows Houyhnhm computing systems to enjoy qualities not found in Human computer systems, that can&rsquo;t go meta.</p>
 <!-- more-->
 
 <h3 id="stacked-up-against-quality">Stacked up against Quality</h3>
 
-<p>Ngnghm wanted to know how Humans dealt with <a href="/blog/2015/08/03/chapter-2-save-our-souls/">manual persistence</a>. He found that we were using an large quantity of mutually incompatible and often fragile &ldquo;libraries&rdquo; in each of many loose categories that each implement some aspect of persistence: &ldquo;I/O&rdquo;, &ldquo;file formats&rdquo;, &ldquo;serialization&rdquo;, &ldquo;marshalling&rdquo;, &ldquo;markup languages&rdquo;, &ldquo;XML schemas&rdquo;, &ldquo;communication protocols&rdquo;, &ldquo;interchange formats&rdquo;, &ldquo;memory layout&rdquo;, &ldquo;database schema&rdquo;, &ldquo;database servers&rdquo;, &ldquo;query languages&rdquo;, &ldquo;object relational mapping&rdquo;, &ldquo;object request brokers&rdquo;, &ldquo;foreign function interface&rdquo;, and many &ldquo;wrappers&rdquo;, &ldquo;adapters&rdquo; and &ldquo;glue layers&rdquo; to make them work together. Indeed, some old IBM study had estimated that 30% of all application code written was related to the basic functions of saving data and restoring it — and at least my experience suggests that this estimate might still be valid to this day. Houyhnhnms, like Dijkstra, regard this as a huge cost: <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD10xx/EWD1036.html">if we wish to count lines of code, we should not regard them as &ldquo;lines produced&rdquo; but as &ldquo;lines spent&rdquo;: the current conventional wisdom is so foolish as to book that count on the wrong side of the ledger.</a></p>
+<p>Ann wanted to know how Humans dealt with <a href="/blog/2015/08/03/chapter-2-save-our-souls/">manual persistence</a>. She found that we were using a large quantity of mutually incompatible and often fragile &ldquo;libraries&rdquo; in each of many loose categories that each implement some aspect of persistence: &ldquo;I/O&rdquo;, &ldquo;file formats&rdquo;, &ldquo;serialization&rdquo;, &ldquo;marshalling&rdquo;, &ldquo;markup languages&rdquo;, &ldquo;XML schemas&rdquo;, &ldquo;communication protocols&rdquo;, &ldquo;interchange formats&rdquo;, &ldquo;memory layout&rdquo;, &ldquo;database schema&rdquo;, &ldquo;database servers&rdquo;, &ldquo;query languages&rdquo;, &ldquo;object relational mapping&rdquo;, &ldquo;object request brokers&rdquo;, &ldquo;foreign function interface&rdquo;, and many &ldquo;wrappers&rdquo;, &ldquo;adapters&rdquo; and &ldquo;glue layers&rdquo; to make them work together. Indeed, some old IBM study had estimated that 30% of all application code written was related to the basic functions of saving data and restoring it — and at least my experience suggests that this estimate might still be valid to this day. Houyhnhnms, like Dijkstra, regard this as a huge cost: <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD10xx/EWD1036.html">if we wish to count lines of code, we should not regard them as &ldquo;lines produced&rdquo; but as &ldquo;lines spent&rdquo;: the current conventional wisdom is so foolish as to book that count on the wrong side of the ledger.</a></p>
 
 <p>Unhappily, that huge cost also comes with limited benefits, because a program can only manipulate an object if it gets the entire large tower of libraries, the &ldquo;software stack&rdquo;, just right, and thus two objects built on top of incompatible &ldquo;software stacks&rdquo; cannot interoperate. Costly adapters can be written to bridge between the two towers, but this not only requires extra copying and management by programmers, this also loses any atomicity properties of transactions between the two object systems — and isn&rsquo;t accessible to casual users, who thus pain to manage their data.</p>
 
@@ -195,7 +199,7 @@
 
 <p>Of course, either at the time you start the program or later, you may decide to constrain the process to only use a given subset of strategies: this actually means that you really wanted a more specific program in a more specific language than initially declared. Not only is that fine, that&rsquo;s a common and recommended way of writing programs: always specify the program&rsquo;s behavior at as high-level as you can, to make it easier to reason about it; yet make sure the optimization strategies you require have been applied, so the performance profile isn&rsquo;t surprisingly bad. As a trivial example, the Fibonacci function would be specified with its usual equational definition, but would typically be annotated with a compile-time assertion that the linear recursion recognizer has kicked in, at which point the system guarantees that the function will be computed in constant time for small values, and polylog time for big ones — rather than exponential time, with a naive implementation.</p>
 
-<p>Formally speaking, if you wrote a program in abstract language <em>A</em>, and specify a given implementation <em>I</em> of language <em>A</em> generating code in concrete language <em>C</em>, then you actually specified a program in language <em>C</em>. And as long as you don&rsquo;t proceed to make modifications at the lower level of language <em>C</em> that invalidate the abstraction to language <em>A</em>, then you can remove the constraint, go back to the level of program <em>A</em>, and later choose a different implementation <em>I&rsquo;</em> targetting language <em>C&rsquo;</em>. That&rsquo;s how you migrate a process from one domain to another. (This ability to do generalized migration also requires having formalized the notion of an implementation such that you can interrupt and decompile a process, including running state, and not just source code, from its concrete implementation back to the level of abstraction at which the user has chosen to interact with it — but that&rsquo;s a topic for a future chapter.)</p>
+<p>Formally speaking, if you wrote a program in abstract language <em>A</em>, and specified a given implementation <em>I</em> of language <em>A</em> generating code in concrete language <em>C</em>, then you actually specified a program in language <em>C</em>. And as long as you don&rsquo;t proceed to make modifications at the lower level of language <em>C</em> that invalidate the abstraction to language <em>A</em>, then you can remove the constraint, go back to the level of program <em>A</em>, and later choose a different implementation <em>I&rsquo;</em> targetting language <em>C&rsquo;</em>. That&rsquo;s how you migrate a process from one domain to another. (This ability to do generalized migration also requires having formalized the notion of an implementation such that you can interrupt and decompile a process, including running state, and not just source code, from its concrete implementation back to the level of abstraction at which the user has chosen to interact with it — but that&rsquo;s a topic for a future chapter.)</p>
 
 <h3 id="anything-you-can-do-i-can-do-meta">Anything You Can Do I Can Do Meta</h3>
 

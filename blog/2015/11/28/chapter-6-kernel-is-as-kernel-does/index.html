@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <title>Chapter 6: Kernel Is As Kernel Does</title>
-    <meta name="description" content="I admitted to Ngnghm that I was perplexed by Houyhnhnm computing systems; to better understand them, I wanted to know what their kernels, libraries and applications looked like. There again, he surprised me by having no notion of what I called kernel or a...">
+    <meta name="description" content="I admitted to Ngnghm (whom I call &quot;Ann&quot;) that I was perplexed by Houyhnhnm computing systems (I pronounce &quot;Houyhnhnm&quot; like &quot;Hunam&quot;). To better understand them, I wanted to know what their kernels, libraries and applications looked like. There again, he su...">
     <meta name="author"      content="Ngnghm">
     <meta name="keywords"    content="Kernel, Resource Management, Abstraction, Enforcement, Security, Meta">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -79,8 +79,6 @@
 
 <li><a href="/tags/Division-of-Labor.html">Division of Labor</a></li>
 
-<li><a href="/tags/Division-of-Labour.html">Division of Labour</a></li>
-
 <li><a href="/tags/Domains.html">Domains</a></li>
 
 <li><a href="/tags/Economics.html">Economics</a></li>
@@ -95,6 +93,8 @@
 
 <li><a href="/tags/Free-Software.html">Free Software</a></li>
 
+<li><a href="/tags/Impedance-Mismatch.html">Impedance Mismatch</a></li>
+
 <li><a href="/tags/Implicit.html">Implicit</a></li>
 
 <li><a href="/tags/In-The-Large.html">In The Large</a></li>
@@ -108,6 +108,8 @@
 <li><a href="/tags/Language.html">Language</a></li>
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
+
+<li><a href="/tags/Martian.html">Martian</a></li>
 
 <li><a href="/tags/Meta.html">Meta</a></li>
 
@@ -143,6 +145,8 @@
 
 <li><a href="/tags/Upgrade.html">Upgrade</a></li>
 
+<li><a href="/tags/Urbit.html">Urbit</a></li>
+
 <li><a href="/tags/Versioning.html">Versioning</a></li>
               </ul>
             </li>
@@ -172,16 +176,16 @@
 <time datetime="2015-11-28" pubdate="true">2015-11-28</time> :: <span class="tags"><a href="/tags/Kernel.html">Kernel</a>, <a href="/tags/Resource-Management.html">Resource Management</a>, <a href="/tags/Abstraction.html">Abstraction</a>, <a href="/tags/Enforcement.html">Enforcement</a>, <a href="/tags/Security.html">Security</a>, <a href="/tags/Meta.html">Meta</a></span></p>
   </header>
 
-<p>I admitted to Ngnghm that I was perplexed by Houyhnhnm computing systems; to better understand them, I wanted to know what their kernels, libraries and applications looked like. There again, he surprised me by having no notion of what I called kernel or application: the way Houyhnhnm systems are architected leads to widely different concepts; and for the most part there isn&rsquo;t a direct one-to-one correspondance between our notions and theirs. And so I endeavored to discover what in Houyhnhnm computing systems replaces what in Human computer systems is embodied by the operating system kernel.</p>
+<p>I admitted to Ngnghm (whom I call &ldquo;Ann&rdquo;) that I was perplexed by Houyhnhnm computing systems (I pronounce &ldquo;Houyhnhnm&rdquo; like &ldquo;Hunam&rdquo;). To better understand them, I wanted to know what their kernels, libraries and applications looked like. There again, he surprised me by having no notion of what I called kernel or application: the way Houyhnhnm systems are architected leads to widely different concepts; and for the most part there isn&rsquo;t a direct one-to-one correspondance between our notions and theirs. And so I endeavored to discover what in Houyhnhnm computing systems replaces what in Human computer systems is embodied by the operating system kernel.</p>
 <!-- more-->
 
 <h3 id="kernels">Kernels</h3>
 
-<p>&ldquo;What does an Operating System Kernel look like in a Houyhnhnm computing system?&rdquo; I asked Ngnghm. He wasn&rsquo;t sure what I was calling either Operating System or Kernel.</p>
+<p>&ldquo;What does an Operating System Kernel look like in a Houyhnhnm computing system?&rdquo; I asked Ann. She wasn&rsquo;t sure what I was calling either Operating System or Kernel.</p>
 
 <p>I explained that in a Human computer system, the kernel is a piece of software that handled the hardware resources, and provided some uniform abstractions that isolated users from the hardware details that varied from machine to machine and across time. All the rest of the system is expressed in terms of those abstractions; modern computer hardware ensures through runtime checks that all programs beside the kernel run in a &ldquo;user mode&rdquo; that only sees these abstractions; the kernel alone runs in a &ldquo;kernel mode&rdquo; that gives it direct access to the hardware. The kernel can also use this hardware support to provide low-level isolation between &ldquo;processes&rdquo;: it allows multiple user programs to run at the same time while ensuring that none may interfere with other programs except through said abstractions.</p>
 
-<p>Ngnghm however had trouble distinguishing the kernel from any other program based on my description. The notion of kernel, like most concepts of Human computer systems, was too artifact-oriented and didn&rsquo;t fit the grid of interaction-oriented Houyhnhnm computing systems. &ldquo;What is it that a kernel <em>does</em>?&rdquo; Ngnghm asked me; when he&rsquo;d know that, he could tell me how their systems implement analogous <em>interactions</em>. And then I was at loss to distinguish exactly what kinds of interaction a kernel does that other pieces of software don&rsquo;t.</p>
+<p>Ann however had trouble distinguishing the kernel from any other program based on my description. The notion of kernel, like most concepts of Human computer systems, was too artifact-oriented and didn&rsquo;t fit the grid of interaction-oriented Houyhnhnm computing systems. &ldquo;What is it that a kernel <em>does</em>?&rdquo; Ann asked me; when she&rsquo;d know that, she could tell me how their systems implement analogous <em>interactions</em>. And then I was at loss to distinguish exactly what kinds of interaction a kernel does that other pieces of software don&rsquo;t.</p>
 
 <h3 id="resource-management">Resource Management</h3>
 
@@ -207,7 +211,7 @@
 
 <p>Houyhnhnms not only reckon that abstraction is an essential mechanism for expressing programs; Houyhnhnms also acknowledge that abstraction is not reserved to a one single &ldquo;system&rdquo; abstraction to be shared by all programmers in all circumstances. Rather, abstraction is an essential tool for the division of mental labor, and is available to all programmers who want to define the limits between their respective responsibilities. The program algebras used by Houyhnhnms thus have a notion of first-class programming system (which includes programming language as well as programming runtime), that programmers can freely define as well as use, in every case providing abstraction. Since they are first-class, they can also be parametrized and made from smaller blocks.</p>
 
-<p>Note, however, that when parametrizing programming systems, it is important to be able to express <em>full</em> abstraction, whereby programs are prevented from examining the data being abstracted over. A fully abstracted value may only be used according to the interface specified by the abstract variable type; thus, unless that abstract type explicitly includes some interface to inspect the actual value&rsquo;s type or to deconstruct its value according to specific match patterns, the client code won&rsquo;t be able to do any of these, even if in the end the actual value provided happens to be of a known type for which such operations are available. A dynamic language may implement it through opaque runtime proxies; a static language may provide this feature through static typing; some languages, just like <a href="http://www.csc.villanova.edu/~japaridz/CL/">computability logic</a>, may distinguish between &ldquo;blind&rdquo; quantifiers and regular &ldquo;parallel&rdquo; or &ldquo;choice&rdquo; quantifiers. In any case, the fragment of code in which a full abstraction holds is prevented from peering inside the abstraction, even if the language otherwise provides reflection mechanisms that can see through regular abstractions. Of course, when turtling down the tower of implementations, what is a completely opaque full abstraction at a higher level may be a fully transparent partial abstraction at a lower level; that&rsquo;s perfectly fine — the lower-level, which requires proper permissions to access and modify, is indeed responsible for properly implementing the invariants of the higher-level.</p>
+<p>Note, however, that when parametrizing programming systems, it is important to be able to express <em>full</em> abstraction, whereby programs are prevented from examining the data being abstracted over. A fully abstracted value may only be used according to the interface specified by the abstract variable type; thus, unless that abstract type explicitly includes some interface to inspect the actual value&rsquo;s type or to deconstruct its value according to specific match patterns, the client code won&rsquo;t be able to do any of these, even if in the end the actual value provided happens to be of a known type for which such operations are available. A dynamic language may implement it through opaque runtime proxies; a static language may provide this feature through static typing; some languages, just like <a href="http://www.csc.villanova.edu/~japaridz/CL/">computability logic</a>, may distinguish between &ldquo;blind&rdquo; quantifiers and regular &ldquo;parallel&rdquo; or &ldquo;choice&rdquo; quantifiers. In any case, the fragment of code in which a full abstraction holds is prevented from peering inside the abstraction, even if the language otherwise provides reflection mechanisms that can see through regular abstractions. Of course, when turtling down the tower of implementations, what is a completely opaque full abstraction at a higher level may be a fully transparent partial abstraction at a lower level; that&rsquo;s perfectly fine — the lower-level, which cannot be accessed or modified without proper permissions, is indeed responsible for properly implementing the invariants of the higher-level.</p>
 
 <h3 id="enforced-and-unenforced-abstractions">Enforced and Unenforced Abstractions</h3>
 
@@ -245,7 +249,7 @@
 
 <p>Houyhnhnm computing systems do not possess a one single Kernel; instead they possess as many &ldquo;kernels&rdquo; as there are computing subsystems and subsubsystems, each written in as high-level a language as makes sense for its purpose; and the set of those &ldquo;kernels&rdquo; continually changes as new processes are started, modified or stopped. Resource management is decentralized using linear logic and meta-level brokers, linking, unlinking and relinking. Invariant enforcement, though it may involve runtime checks, including hardware-assisted ones, is driven primarily by compile-time and link-time processes. Overriding invariants, while possible, requires special privileges and will be logged; unlike with Human computer systems, processes can&rsquo;t casually interfere with each other &ldquo;just&rdquo; because they run with the same coarse &ldquo;user&rdquo; privilege.</p>
 
-<p>Humans try to identify an artifact to buy or sell; Houyhnhnms look for processes to partake in. Humans have static understanding of relations between artifacts; Houyhnhnms have a dynamic understanding of interactions between processes. Humans use metaphors of centralized control; Houyhnhnms use metaphors of decentralized ownership. Humans think of enforcement as done by a superior third-party; Houyhnhnms think of enforcement as achieved through mutually agreeable contracts between equally free parties. Humans see all resources as ultimately owned by the Central entity and delegated to users; Houyhnhnms see resources as being used, shared or exchanged by independent processes. I could see a lot of ways that the paradigm of Human computer systems fit in a wider trend of patterns in which to conceive of social and political interactions. Yet, I resisted the temptation of asking Ngnghm about the social and political context in which Houyhnhnm computing systems were being designed; at least for now, I was too deeply interested in figuring out the ins and outs of Houyhnhnm computing to be bothered by a digression into these far ranging matters. However, I did take stock that there was a lot of context that led towards the architecture of Human computer systems; and I saw that this context and its metaphors didn&rsquo;t apply to Houyhnhnm computing, and that I needed to escape from them if I wanted to better understand it.</p>
+<p>Humans try to identify an artifact to buy or sell; Houyhnhnms look for processes to partake in. Humans have static understanding of relations between artifacts; Houyhnhnms have a dynamic understanding of interactions between processes. Humans use metaphors of centralized control; Houyhnhnms use metaphors of decentralized ownership. Humans think of enforcement as done by a superior third-party; Houyhnhnms think of enforcement as achieved through mutually agreeable contracts between equally free parties. Humans see all resources as ultimately owned by the Central entity and delegated to users; Houyhnhnms see resources as being used, shared or exchanged by independent processes. I could see a lot of ways that the paradigm of Human computer systems fit in a wider trend of patterns in which to conceive of social and political interactions. Yet, I resisted the temptation of asking Ann about the social and political context in which Houyhnhnm computing systems were being designed; at least for now, I was too deeply interested in figuring out the ins and outs of Houyhnhnm computing to be bothered by a digression into these far ranging matters. However, I did take stock that there was a lot of context that led towards the architecture of Human computer systems; and I saw that this context and its metaphors didn&rsquo;t apply to Houyhnhnm computing, and that I needed to escape from them if I wanted to better understand it.</p>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){

@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <title>Chapter 7: Platforms not Applications</title>
-    <meta name="description" content="My previous discussion with Ngnghm left me baffled: I could somehow understand that Houyhnhnms don't have the concept of an Operating System Kernel; and I could vaguely guess how each of the many aspects of a Human kernel could correspond to a family of s...">
+    <meta name="description" content="My previous discussion with Ngnghm (or Ann as I call her) left me baffled: I could somehow understand that Houyhnhnms don't have the concept of an Operating System Kernel (note that I pronounce &quot;Houyhnhnm&quot; &quot;Hunam&quot;); and I could vaguely guess how each of t...">
     <meta name="author"      content="Ngnghm">
     <meta name="keywords"    content="Meta, Application, Autistic, Platform, Extension, Language, Expertise, Economics, Incentives, Division of Labor, Specialization">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -93,6 +93,8 @@
 
 <li><a href="/tags/Free-Software.html">Free Software</a></li>
 
+<li><a href="/tags/Impedance-Mismatch.html">Impedance Mismatch</a></li>
+
 <li><a href="/tags/Implicit.html">Implicit</a></li>
 
 <li><a href="/tags/In-The-Large.html">In The Large</a></li>
@@ -106,6 +108,8 @@
 <li><a href="/tags/Language.html">Language</a></li>
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
+
+<li><a href="/tags/Martian.html">Martian</a></li>
 
 <li><a href="/tags/Meta.html">Meta</a></li>
 
@@ -141,6 +145,8 @@
 
 <li><a href="/tags/Upgrade.html">Upgrade</a></li>
 
+<li><a href="/tags/Urbit.html">Urbit</a></li>
+
 <li><a href="/tags/Versioning.html">Versioning</a></li>
               </ul>
             </li>
@@ -170,14 +176,14 @@
 <time datetime="2015-12-25" pubdate="true">2015-12-25</time> :: <span class="tags"><a href="/tags/Meta.html">Meta</a>, <a href="/tags/Application.html">Application</a>, <a href="/tags/Autistic.html">Autistic</a>, <a href="/tags/Platform.html">Platform</a>, <a href="/tags/Extension.html">Extension</a>, <a href="/tags/Language.html">Language</a>, <a href="/tags/Expertise.html">Expertise</a>, <a href="/tags/Economics.html">Economics</a>, <a href="/tags/Incentives.html">Incentives</a>, <a href="/tags/Division-of-Labor.html">Division of Labor</a>, <a href="/tags/Specialization.html">Specialization</a></span></p>
   </header>
 
-<p>My previous discussion with Ngnghm left me baffled: I could somehow understand that <a href="/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/">Houyhnhnms don&rsquo;t have the concept of an Operating System Kernel</a>; and I could vaguely guess how each of the many aspects of a Human kernel could correspond to a family of software patterns in a Houyhnhnm computing system, at various levels of abstractions. But while I could visualize these patterns individually, it was less clear to me what the big picture was when these smaller compile-time, link-time and runtime abstractions were put together. So I decided to approach their software architecture from the other end: what do end-user applications look like in Houyhnhnm computing systems?</p>
+<p>My previous discussion with Ngnghm (or Ann as I call her) left me baffled: I could somehow understand that <a href="/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/">Houyhnhnms don&rsquo;t have the concept of an Operating System Kernel</a> (note that I pronounce &ldquo;Houyhnhnm&rdquo; &ldquo;Hunam&rdquo;); and I could vaguely guess how each of the many aspects of a Human kernel could correspond to a family of software patterns in a Houyhnhnm computing system, at various levels of abstractions. But while I could visualize these patterns individually, it was less clear to me what the big picture was when these smaller compile-time, link-time and runtime abstractions were put together. So I decided to approach their software architecture from the other end: what do end-user applications look like in Houyhnhnm computing systems?</p>
 
 <p>I was baffled again, but not surprised anymore, to find that Houyhnhnms don&rsquo;t have a notion of application. Granted, there are simple cases where Human applications have direct counterparts in Houyhnhnm computing systems. But in the general case, Houyhnhnms don&rsquo;t think in terms of standalone applications; they think in terms of platforms that they extend with new functionality.</p>
 <!-- more-->
 
 <h3 id="autistic-applications">Autistic Applications</h3>
 
-<p>Ngnghm was starting to get familiar with Human computer systems, and the few end-user applications that he was using daily. He noticed that a certain class of applications was quite reminiscent of software that existed in Houyhnhnm computing systems, at least superficially: self-contained end-user applications, such as games, interactive art, audiovisual performances, showroom displays, news and other writings, etc. These applications had in common that they are made to be explored by the user but not modified in any significant way; they mostly didn&rsquo;t communicate much, if at all, with any other application in any way that the end-user cared to control; they had no significant input and no output beside the user experience. I dubbed the concept <em>autistic applications</em>. But when Ngnghm tried to translate the Houyhnhnm expression for the concept, it was more like <em>interactive documents</em>.</p>
+<p>Ann was starting to get familiar with Human computer systems, and the few end-user applications that he was using daily. She noticed that a certain class of applications was quite reminiscent of software that existed in Houyhnhnm computing systems, at least superficially: self-contained end-user applications, such as games, interactive art, audiovisual performances, showroom displays, news and other writings, etc. These applications had in common that they are made to be explored by the user but not modified in any significant way; they mostly didn&rsquo;t communicate much, if at all, with any other application in any way that the end-user cared to control; they had no significant input and no output beside the user experience. I dubbed the concept <em>autistic applications</em>. But when Ann tried to translate the Houyhnhnm expression for the concept, it sounded more like <em>interactive documents</em>.</p>
 
 <p>In any case, these things look pretty much the same in Houyhnhnm computing systems and Human computer systems: You somehow get ahold of the software; installing it automatically installs its dependencies, if any; you run it in a sandbox (at least Houyhnhnms do); and you interact with it. It doesn&rsquo;t matter too much what the program does (if anything), precisely because the information flow is essentially one way, from the application to the user.</p>
 
@@ -187,9 +193,9 @@
 
 <h3 id="typical-applications">Typical Applications</h3>
 
-<p>Now, most applications are not autistic; they do involve exchanging data with other applications: using data produced by other applications, and producing data that will be used by other applications. In other words, the information processes they partake in may directly involve other automated programs; they do not require a Sentient being&rsquo;s brain (Human or Houyhnhnm) as an exclusive intermediate between their processing and further automated processing; the sentient being doesn&rsquo;t have to recreate the entirety of the next program&rsquo;s input based on what it sees or remembers of the previous program&rsquo;s output. And there we see that even &ldquo;autistic applications&rdquo; are not &ldquo;autistic processes&rdquo;: An autistic application does not communicate with other automated programs but does interact with sentient users; its implementation might also interact with other programs below the abstraction provided to the user, but that&rsquo;s mostly invisible to the user. An &ldquo;autistic process&rdquo; that communicates with no other process whatsoever, not even those in a sentient being&rsquo;s brain, can and will be wholly optimized away.</p>
+<p>Now, most applications are not autistic; they do involve exchanging data with other applications: using data produced by other applications, and producing data that will be used by other applications. In other words, the information processes they partake in may directly involve other automated programs; they do not require a Sentient being&rsquo;s brain (Human or Houyhnhnm) as an exclusive intermediate between their processing and further automated processing; the sentient being doesn&rsquo;t have to recreate the entirety of the next program&rsquo;s input based on what it sees or remembers of the previous program&rsquo;s output. And there we see that even &ldquo;autistic applications&rdquo; are not &ldquo;autistic processes&rdquo;: An autistic application does not communicate with other automated programs but does interact with sentient users; its implementation might also interact with other programs below the abstraction provided to the user, though that&rsquo;s mostly invisible to the user. An &ldquo;autistic process&rdquo; that communicates with no other process whatsoever, not even those in a sentient being&rsquo;s brain, can and will be wholly optimized away.</p>
 
-<p>Ngnghm then explained that the situation differs sharply between Human and Houyhnhnm systems regarding all these typical, non-autistic, applications — to the point that Houyhnhnms don&rsquo;t really have a notion of application. For technical reasons with historical roots in marketing, Human computer systems tend to organize software into neatly separated, standalone, black-box &ldquo;applications&rdquo;; communication between different applications is very difficult, and must be explicitly handled by each of these applications; every application must include an implementation of all these modes of communication it will partake in. Instead, Houyhnhnm computing systems consider such communication the heart of the system, and make it comparatively easy; they do not usually have self-contained &ldquo;applications&rdquo;; they start from a common platform that handles all the communication; and they extend this platform to handle new kinds of situations, until they include all the interesting situations that the &ldquo;application&rdquo; would have covered.</p>
+<p>Ann then explained that the situation differs sharply between Human and Houyhnhnm systems regarding all these typical, non-autistic, applications — to the point that Houyhnhnms don&rsquo;t really have a notion of application. For technical reasons with historical roots in marketing, Human computer systems tend to organize software into neatly separated, standalone, black-box &ldquo;applications&rdquo;; communication between different applications is very difficult, and must be explicitly handled by each of these applications; every application must include an implementation of all these modes of communication it will partake in. Instead, Houyhnhnm computing systems consider such communication the heart of the system, and make it comparatively easy; they do not usually have self-contained &ldquo;applications&rdquo;; they start from a common platform that handles all the communication; and they extend this platform to handle new kinds of situations, until they include all the interesting situations that the &ldquo;application&rdquo; would have covered.</p>
 
 <p>A first obstacle to inter-application communication in Human computer systems, is that the only common abstractions are very low-level, in terms of arrays of bytes. Any higher-level objects have to be encoded into sequences of bytes, shipped across costly runtime virtual process boundaries, then decoded back into objects on the other side by a matching algorithm. Applications thus have to agree on complex, expensive, bug-prone yet inexpressive low-level communication protocols that are big security liabilities. Having to deal with such protocols is a huge barrier to entry that explains why few programmers endeavour to try it. A lot of this work can be completely automated using type-directed code-generation; and the better Human systems do it to a point (see Protocol Buffers, Cap&rsquo;n&rsquo;Proto, piqi, etc.); but the integration with types of actual programming languages remains generally lackluster. What types can be used for generally shareable data remain very limited and inexpressive, whereas whatever types they can use for manipulating data within a given program remain generally oblivious of any sharing constraints, ownership rights, access restrictions, etc.</p>
 
