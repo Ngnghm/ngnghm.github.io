@@ -13,50 +13,52 @@ by the ways that best knew how to survive, whether they actually "worked" or not
 In any case, I trusted "evolution", that is, ultimately, _other people_,
 to have figured out the best way that software could and should be written.
 But everything I knew about computing changed when one day I met a
-[Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm),
-who told me how things were done in his faraway land.
-He made me think in terms of computing systems rather than computer systems;
+[Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm) (pronounced "Hunam"),
+who told me how things were done in her faraway land.
+She made me think in terms of computing systems rather than computer systems;
 and from my newly found understanding, I could see clearly how computing systems could and should be,
 that today's (mainstream) Human computer systems aren't.
-But mostly, he taught me how to _think_, by myself, about computing.
+But mostly, she taught me how to _think_, by myself, about computing.
 And so let me take you through my story of computing enlightenment.
 
 <!-- more -->
 
 ### Beyond the Sea of Potentiality
 
-This adventurous Houyhnhnm, whose name was [Ngnghm](https://twitter.com/Ngnghm),
-had heard of a stranger who long ago visited his home country.
+This adventurous Houyhnhnm,
+whose name was [Ngnghm](https://twitter.com/Ngnghm) (but I call her "Ann")
+had heard of a stranger who long ago visited her home country.
 So the legend said, the traveler, called
 [Gulliver](https://www.gutenberg.org/files/17157/17157-h/17157-h.htm),
 was a "Human": a paradoxical creature that looked just like a Yahoo,
-yet who like a Houyhnhnm (to a point) possessed the ability to reason and speak.
+yet who like a Houyhnhnm (at least to a point) possessed the ability to reason and speak.
 There were fantastic tales of a planet full of such Humans,
 as attributed to this Gulliver;
 and the stories went that in the land of Humans,
 there were animals known as "Horses" that looked just like Houyhnhnms,
-but like Yahoos couldn't speak any language and were likely not fully sentient.
-Ngnghm, immensely curious, had embarked on a journey of discovery
+yet who like Yahoos couldn't speak any language and were likely not fully sentient.
+Ann, immensely curious, had embarked on a journey of discovery
 to find and visit this fantasy land of Humans and Horses, if it existed at all.
-But while sailing the Sea of Potentiality, his transdimensional ship
-collided with débris caused by Human (or was it Yahoo?) pollution — and he was shipwrecked.
-Now he was stranded onto our plane of existence (actually a sphere).
+But while sailing the Sea of Potentiality, her transdimensional ship
+collided with débris caused by Human (or was it Yahoo?) pollution — and she was shipwrecked.
+Now she was stranded onto our plane of existence (actually a sphere).
 Not being able to communicate in Human language,
-he was initially mistaken for an old horse; and he had but narrowly
-escaped being sent to the knacker — or worse, to a government research facility.
+she was initially mistaken for a wild and dangerous mare;
+and she had but narrowly escaped being sent to the knacker —
+or worse, to a government research facility.
 
-By the time I met him through a friend, though,
-Ngnghm had already learned to read and write our language, albeit imperfectly.
-He was desperately looking for parts to build a new ship,
-so that he may some day sail back home.
+By the time I met her through a friend, though,
+Ann had already learned to read and write our language, albeit imperfectly.
+She was desperately looking for parts to build a new ship,
+so that she may some day sail back home.
 Since I know nothing of transdimensional travel,
-I instead showed him how to use the Internet
-to find all the support that mankind could offer him.
-He was stupefied by how similar yet how different
+I instead showed her how to use the Internet
+to find all the support that mankind could offer her.
+She was stupefied by how similar yet how different
 our Human computer systems were from those of the Houyhnhnms;
 in some way, ours were so much more advanced,
 yet in other ways they were so desperately primitive.
-And as he was telling me of how Computing was done amongst Houyhnhnms,
+And as she was telling me of how Computing was done amongst Houyhnhnms,
 I was suddenly reminded of how I had always felt that
 there had to be better ways to engage in computing,
 but couldn't pin point exactly what was wrong.
@@ -83,7 +85,7 @@ Houyhnhnms do not possess a different kind of logic, nor mathematics, nor physic
 though they have discovered how to travel through many dimensions,
 they do not have quantum computers, logical oracles,
 or any magic means of computation beyond our own capabilities.
-But they approach computing in a way that is foreign to us Humans,
+However they approach computing in a way that is foreign to us Humans,
 and that leads to very different results.
 
 Whereas Humans view computers as tools below them
@@ -115,17 +117,18 @@ It may all be but _just so stories_, but
 
 ### Simplicity
 
-What made me most aware of this difference was when Ngnghm
-discovered that, like him in his own world, I was trained in writing software,
+What made me most aware of this difference was when Ann
+discovered that, like her in her own world, I was trained in writing software,
 and then asked me to demonstrate the working of some Human computing systems,
 starting with the simplest I could find.
-So I showed him simple programs I was writing in C;
+So I showed her simple programs I was writing in C;
 C is a relatively simple programming language
-with a somewhat familiar syntax and well defined enough formal semantics,
-but nevertheless a universal programming language capable of doing everything,
-and indeed used almost everywhere that Humans have computers.
-Yet, after he painfully assimilated enough of what I showed him, struggling all the way,
-his conclusion was that, no, I was obviously not programming in C,
+with a somewhat familiar syntax;
+its formal semantics is simple and well defined in theory,
+and in practice it is a universal programming language capable of doing everything;
+indeed it is used almost everywhere that Humans have computers.
+Yet, after she painfully assimilated enough of what I showed her, struggling all the way,
+her conclusion was that, no, I was obviously not programming in C,
 and that I couldn't possibly be programming in C,
 because C was not a universal programming system at all,
 but could do next to nothing, and only very inefficiently so.
@@ -198,7 +201,9 @@ So if you've never met a Houyhnhnm, just imagine one of them whinnying
 in a way that you'd transcribe like that if you had to.
 Or don't. Personally, I have stopped trying to mimic the way Ngnghm neighs,
 and if I have to pronounce one of these two names when talking to a friend,
-I just say the initial "N." or "H.".
-Importantly, though, I am careful to avoid the H-word when talking about Ngnghm and his kin:
-he deeply dislikes and vehemently objects to being assimilated to these stupid creatures, Horses
+I just call my friend "Ann", and pronounce "Houyhnhnm" as "Hunam"
+— like "Human", but exchanging the "n" and the "m".
+Importantly, though, I am careful to avoid the H-o-r-s-e word
+when talking about Ann and her kin:
+she deeply dislikes and vehemently objects to being assimilated to these stupid creatures, Horses
 — just like you probably wouldn't want to be taken for (and treated as) a Yahoo.

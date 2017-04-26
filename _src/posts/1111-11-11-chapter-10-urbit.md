@@ -2,8 +2,9 @@
     Date: 2016-06-11T20:34:38
     Tags: Urbit, Martian, Impedance Mismatch, Orthogonal Persistence, Persistence, Meta, In The Large, Autistic
 
-What did Ngnghm think of [Urbit](http://urbit.org/)?
-Some elements in Ngnghm's descriptions of Houyhnhnm computing
+What did Ngnghm (which I pronounce "Ann") think of [Urbit](http://urbit.org/)?
+Some elements in Ann's descriptions of Houyhnhnm computing
+(which I pronounce "Hunam computing")
 were remindful of the famous Martian system software stack Urbit:
 both computing worlds were alien to Human Computing;
 both had Orthogonal Persistence;
@@ -15,9 +16,9 @@ to compute and display answers to end-users).
 What else did Houyhnhnm computing have in common with Martian software?
 How did it crucially differ?
 How did they equally or differently resemble Human systems or differ from them?
-Ngnghm took a long look at Urbit;
-while he concluded that indeed the three approaches were quite distinct,
-he also helped me identify the principles
+Ann took a long look at Urbit;
+while she concluded that indeed the three approaches were quite distinct,
+she also helped me identify the principles
 underlying their mutual differences and commonalities.
 
 <!-- more -->
@@ -390,7 +391,7 @@ they could implement a Hoon backend for their favorite language;
 if not, they can probably more easily reimplement persistence on their platform
 based on the Urbit experience than try to evolve Urbit to suit their needs.
 
-Finally, in their common reject of metaprogramming,
+Finally, in their common rejection of metaprogramming,
 both the Human and Martian computing approaches lack
 first-class notions of meta-levels at runtime.
 Therefore, all their software is built and distributed

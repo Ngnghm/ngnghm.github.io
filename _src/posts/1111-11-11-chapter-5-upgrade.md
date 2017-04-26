@@ -2,19 +2,21 @@
     Date: 2015-09-08T23:54:23
     Tags: Live Upgrade, Upgrade, Types, Schema
 
-[Ngnghm](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/)
-decided that while stranded among us Humans, he would conduct
+[Ngnghm](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/),
+or Ann for her human friends,
+decided that while stranded among us Humans, she would conduct
 an ethnographical study of Human computer systems,
 and took to heart to examining my programming habits.
-In return, I was more and more curious of how Houyhnhnm systems worked, or failed to work.
+In return, I was more and more curious of how Houyhnhnm (pronounced "Hunam") systems
+worked, or failed to work.
 That's when, trying to imagine what the Houyhnhnm computing systems might keel over,
 with their making everything persistent, I had this a-ha moment:
 surely, they must have extreme trouble with live upgrade of their data schema,
 and their programmers must spend their time in hell trying to reconcile modifications
 in what amounts to an unrestricted distributed database, that anyone can modify at any time.
-Ngnghm wasn't sure what I was talking about that could be a major issue,
+Ann wasn't sure what I was talking about that could be a major issue,
 and so interrogated me as to the Human practices with respect to handling change in persistent data.
-And he found that many of the issues
+And she found that many of the issues
 stemmed from limitations with how Humans approached them;
 these issues were not intrinsic with the problem of ensuring persistence of data,
 and all but disappeared if you considered code change transactions as first-class objects.
@@ -24,11 +26,11 @@ and all but disappeared if you considered code change transactions as first-clas
 
 ### The Best Laid Schemas of Houyhnhnms and Men
 
-I challenged Ngngnhm to explain to me how Houyhnhnm systems dealt with code and data upgrade,
+I challenged Ann to explain to me how Houyhnhnm systems dealt with code and data upgrade,
 because they were some of the hardest problems I had faced
 while working with Human computer systems.
-Ngnghm wasn't sure what I meant, or
-why whatever he suspected I meant would be particularly difficult.
+Ann wasn't sure what I meant, or
+why whatever she suspected I meant would be particularly difficult.
 That surprised me, so I started by stating that any software that survives long enough
 has to change its code as the software became obsolete, in a phenomenon humorously known as
 [_bitrot_](http://www.jargon.net/jargonfile/b/bitrot.html):
@@ -37,8 +39,8 @@ as if it were being degraded by some kind of rot;
 of course, and that's the joke, no external force can possibly cause
 the bits that compose the software to change and degrade
 — on the contrary, the problem is precisely that the software fails to change
-when the world around does and requires the software to adapt so as to remain relevant.
-Ngnghm told me that the analogy makes sense to Houyhnhnms but isn't as humorous:
+when the world around does change and requires the software to adapt so as to remain relevant.
+Ann told me that the analogy makes sense to Houyhnhnms but isn't as humorous:
 it isn't the software, but the _relationship of the software with the world_, that rots;
 the degradation thus applies not to the _computer_ system, but to the _computing_ system,
 as constituted not just by the computer, but also by the sentient programmers and users,
@@ -87,19 +89,20 @@ and plenty of corner cases that are never considered, much less tested.
 Surely, by persisting everything all the time, Houyhnhnm computing systems
 were forced to deal with this hard issue all the time,
 which of necessity must have made all programming difficult and tedious.
-Yet Ngnghm claimed that he didn't know data upgrade to be particularly tedious on Houyhnhnm systems.
+Yet Ann claimed that she didn't know data upgrade to be particularly tedious on Houyhnhnm systems.
 
 
 ### Afterthought or Forethought
 
-First, he said, the case that is easy in Human computer systems,
+First, she said, the case that is easy in Human computer systems,
 namely eschewing any upgrade and dropping the old data
 is just as easy in Houyhnhnm computing systems:
-just don't upgrade the data, and drop it, as you modify the code.
+just don't upgrade the data, and instead drop it, as you modify the code.
 If you don't care about data, then by definition you don't care whatever
 automation the system provides to upgrade it for you, and don't care to fix it;
 if you know that for sure in advance, you can even tell the system,
-so it won't bother saving the data, and you might get a nice speed up for it.
+so it won't bother saving the data, and you might get a nice speed up for it,
+and a reduced monthly bill for your globally replicated persistent data.
 However, in the cases the data actually matters and you do care about it,
 that's when you'll miss system support for data persistence,
 and that's also when you'll miss system support for upgrading your data.
@@ -120,7 +123,8 @@ such as a system becoming unusable due to failure in the middle of an upgrade,
 what more with missing or incomplete backups so you cannot downgrade, cannot upgrade,
 and must reinstall and reconstitute all local configuration from scratch.
 
-Second, since the "canonical" representation of data is not low-level bytes, but high-level data types,
+Second, since the "canonical" representation of data
+is not low-level bytes, but high-level data types,
 a whole lot of the extrinsic complexity that Human computer systems have to deal with
 can instead be automated away:
 When the schema change is merely a change in low-level representation
@@ -147,14 +151,14 @@ because it is part and parcel of how they conceive software development.
 ### Change Comes from the Inside
 
 To Humans, change happens _outside_ the computer system that is changed:
-A program is an immutable object, especially so after it has invoked to start
+A program is an immutable object, especially so after it was invoked to start
 a process (a limited virtualized computer system).
 To change a program thus requires shutting down the processes
 started with the old program and starting new processes with the new program,
 although doing it naively can cause an interruption of service.
 
 As for changing a program's data types and having to preserve data,
-that's an exceptional situation to be dealt with using exceptional tools.
+that to Humans is an exceptional situation to be dealt with using exceptional tools.
 Such a catastrophic event happens every so many months or years,
 when releasing a new "major" version of the program.
 
@@ -225,8 +229,8 @@ Erlang's heritage and ambitions are very different from those of Lisp,
 and in many ways it is much more primitive — but as an upside its primitives are better defined.
 Through a reinvention decades later, Erlang embodies the Actor model of the early 1970s,
 which is what the "Object Oriented" utterly failed to be despite its own hype:
-a programming model where many well-encapsulated entities,
-called "processes" in Erlang rather than "objects" because they are _active_,
+a programming model where many well-encapsulated entities
+— called "processes" in Erlang rather than "objects" because they are _active_ —
 communicate with each other by passing _messages_.
 Processes can be distributed, and reliability is achieved by assuming that
 individual processes will fail eventually, letting them fail, and restarting them,
@@ -239,9 +243,10 @@ which function calls will go to the old version of the code,
 and which function calls will go to the new version.
 And the strict evaluation model in terms of processes and messages makes it possible to reason
 about what state each process is in, how it will update its state,
-and and how it will handle old or new messages.
+and how it will handle old or new messages.
 All in all, Erlang feels like a low-level language,
-but not a Human low-level language, that tries to track the underlying computer hardware for efficiency,
+but not a Human low-level language,
+that tries to track the underlying computer hardware for efficiency,
 and more like a Houyhnhnm low-level language,
 that tries to track the underlying computing model for correct and reliable behavior;
 what makes it less than a high-level language is that it isn't easy enough
@@ -256,7 +261,8 @@ of a full-fledged Houyhnhnm computing system.
 
 ### Automating Live Upgrade
 
-So what do Houyhnhnm programming languages look like when it comes to supporting
+So, I asked Ann,
+what do Houyhnhnm programming languages look like when it comes to supporting
 live upgrade of code and data in a running program?
 
 First, Houyhnhnm programming languages have
@@ -268,8 +274,8 @@ when two mutually dependent entities are being redefined.
 Of course, while developing, Houyhnhnm programmers will want to experiment and explore
 with upgrades of some part of the code or data only, that lack overall system coherence;
 such exploratory modifications are doomed to fail, but that's alright,
-because until they are properly vetted,
-all changes are always run each in its own virtual fork of the system,
+because until it is are properly vetted,
+each change is always run in its own virtual fork of the system,
 where failure is quite acceptable.
 
 Houyhnhnm type systems track how incoherent the system is, and maintain for the programmer
@@ -296,15 +302,17 @@ to ensure that when writing an upgrade operator,
 you must _explicitly_ drop any data that you don't care about anymore,
 so you can't lose information by mistake or omission
 (old versions of the data will persist by default,
-as with all data in a Houyhnhnm system, but upgrade mistakes will still make further fixes harder,
-so it is very valuable that Houyhnhnm systems support writing correct upgrade procedures easily).
+as for all data in a Houyhnhnm system,
+but upgrade mistakes will still make further fixes harder,
+so it is very valuable that Houyhnhnm systems support
+writing correct upgrade procedures easily).
 Because the same function doesn't necessarily apply to all data of a given type,
 upgrade functions can be overridden at the granularity of individual variables,
 and they may take some contextual information as extra parameters.
 
 The system also tracks the difference between on the one hand renaming some variable,
-and on the other hand deleting some variable and adding another;
-indeed though the two lead to identical source code from the limited Human point of view,
+and on the other hand deleting some variable and adding another:
+though the two lead to identical source code from the limited Human point of view,
 they imply very different upgrade behavior from the wider Houyhnhnm point of view,
 and are represented differently in a Houyhnhm computing system.
 Branching and merging are similarly supported.

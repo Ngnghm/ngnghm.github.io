@@ -2,9 +2,10 @@
     Date: 2015-12-25T22:33:44
     Tags: Meta, Application, Autistic, Platform, Extension, Language, Expertise, Economics, Incentives, Division of Labor, Specialization
 
-My previous discussion with Ngnghm left me baffled:
+My previous discussion with Ngnghm (or Ann as I call her) left me baffled:
 I could somehow understand that
-[Houyhnhnms don't have the concept of an Operating System Kernel](/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/);
+[Houyhnhnms don't have the concept of an Operating System Kernel](/blog/2015/11/28/chapter-6-kernel-is-as-kernel-does/)
+(note that I pronounce "Houyhnhnm" "Hunam");
 and I could vaguely guess how each of the many aspects of a Human kernel
 could correspond to a family of software patterns in a Houyhnhnm computing system,
 at various levels of abstractions.
@@ -26,9 +27,9 @@ they think in terms of platforms that they extend with new functionality.
 
 ### Autistic Applications ###
 
-Ngnghm was starting to get familiar with Human computer systems,
+Ann was starting to get familiar with Human computer systems,
 and the few end-user applications that he was using daily.
-He noticed that a certain class of applications
+She noticed that a certain class of applications
 was quite reminiscent of software that existed in Houyhnhnm computing systems,
 at least superficially:
 self-contained end-user applications, such as
@@ -40,8 +41,8 @@ they mostly didn't communicate much, if at all, with any other application
 in any way that the end-user cared to control;
 they had no significant input and no output beside the user experience.
 I dubbed the concept _autistic applications_.
-But when Ngnghm tried to translate the Houyhnhnm expression for the concept,
-it was more like _interactive documents_.
+But when Ann tried to translate the Houyhnhnm expression for the concept,
+it sounded more like _interactive documents_.
 
 In any case, these things look pretty much the same
 in Houyhnhnm computing systems and Human computer systems:
@@ -110,11 +111,12 @@ And there we see that even "autistic applications" are not "autistic processes":
 An autistic application does not communicate with other automated programs
 but does interact with sentient users;
 its implementation might also interact with other programs
-below the abstraction provided to the user, but that's mostly invisible to the user.
+below the abstraction provided to the user,
+though that's mostly invisible to the user.
 An "autistic process" that communicates with no other process whatsoever,
 not even those in a sentient being's brain, can and will be wholly optimized away.
 
-Ngnghm then explained that the situation differs sharply between Human and Houyhnhnm systems
+Ann then explained that the situation differs sharply between Human and Houyhnhnm systems
 regarding all these typical, non-autistic, applications —
 to the point that Houyhnhnms don't really have a notion of application.
 For technical reasons with historical roots in marketing,

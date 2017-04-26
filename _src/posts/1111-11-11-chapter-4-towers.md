@@ -3,9 +3,9 @@
     Tags: Persistence, Transience, Quality, Meta, Strategies, Turtles
 
 
-Ngnghm examined how manual persistence was managed underneath Human computer systems,
-and contrasted with how Houyhnhnms automated its implementation.
-This led him to more general remarks about the compared architectures of
+Ngnghm, or Ann, examined how manual persistence was managed underneath Human computer systems,
+and contrasted with how Houyhnhnms (pronounced "Hunams") automated its implementation.
+This led her to more general remarks about the compared architectures of
 Human computer systems and Houyhnhnm computing systems:
 Houyhnhnm computing systems can and do go meta,
 which to them is notionally _down_ (not _up_, as some Humans would have it).
@@ -16,9 +16,9 @@ qualities not found in Human computer systems, that can't go meta.
 
 ### Stacked up against Quality
 
-Ngnghm wanted to know how Humans dealt with
+Ann wanted to know how Humans dealt with
 [manual persistence](/blog/2015/08/03/chapter-2-save-our-souls/).
-He found that we were using an large quantity of mutually incompatible and often fragile "libraries"
+She found that we were using a large quantity of mutually incompatible and often fragile "libraries"
 in each of many loose categories that each implement some aspect of persistence:
 "I/O", "file formats", "serialization", "marshalling", "markup languages", "XML schemas",
 "communication protocols", "interchange formats", "memory layout",
@@ -148,7 +148,7 @@ in constant time for small values, and polylog time for big ones
 — rather than exponential time, with a naive implementation.
 
 Formally speaking, if you wrote a program in abstract language _A_,
-and specify a given implementation _I_ of language _A_ generating code in concrete language _C_,
+and specified a given implementation _I_ of language _A_ generating code in concrete language _C_,
 then you actually specified a program in language _C_.
 And as long as you don't proceed to make modifications at the lower level of language _C_
 that invalidate the abstraction to language _A_, then you can remove the constraint,

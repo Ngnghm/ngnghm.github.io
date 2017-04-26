@@ -3,15 +3,16 @@
     Tags: Implicit, Declarative, Communication, Copy-Paste, Meta, Free Software, Abstraction, Enforcement, Security, Meta
 
 In our discussion about the difference between
-[Human applications and their Houyhnhnm counterparts](/blog/2015/12/25/chapter-7-platforms-not-applications/),
-I was intrigued by claims Ngnghm made that communication
-was much easier between activities of a Houyhnhnm computing system
+[Human applications and their Houyhnhnm counterparts](/blog/2015/12/25/chapter-7-platforms-not-applications/)
+(I often pronounce "Houyhnhnm" as "Hunam"),
+I was intrigued by claims Ngnghm made (I usually call her "Ann")
+that communication was much easier between activities of a Houyhnhnm computing system
 than between applications of a Human computer system.
-I asked Ngnghm to elaborate on this topic.
+I asked Ann to elaborate on this topic.
 
 It was easy to agree that Human computer systems made communication
 something much lower level than it could be.
-But Ngnghm also argued that Humans had very poor algebras and interfaces
+But Ann also argued that Humans had very poor algebras and interfaces
 for users to combine processes.
 Just what _kinds_ of communication could there even exist
 besides the ones that already existed on Human computer systems?
@@ -20,7 +21,7 @@ besides the ones that already existed on Human computer systems?
 
 ### Implicit Communication ###
 
-From my discussions with Ngnghm emerged the notion communications being explicit or implicit.
+From my discussions with Ann emerged the notion communications being explicit or implicit.
 
 In the case of explicit communication,
 a process specifically names another process,
@@ -100,7 +101,9 @@ The overall graphical environment will in turn inherit the unreliability
 of the applications that partake in it.
 And despite all this complexity, often some application will fail to support
 copying for some of the information it displays (e.g. an error message);
-the feature is then sorely missed as the user needs to copy said information by hand.
+the feature is then sorely missed as the user needs to copy said information by hand,
+or falls back to some low-level means of information capture such as screen copy
+(or memory dump, for more advanced developers).
 
 An interesting exception to the rule of the above paragraph
 is the case of "console" applications:
@@ -180,7 +183,7 @@ all of them properly typed according to some high-level object schema,
 rather than always low-level sequences of bytes.
 (Note that low-level sequences of bytes do constitute an acceptable type;
 they are just rarely used in practice except in a few low-level programs.)
-These typed inputs, outputs all provide natural communication points
+These typed inputs and outputs all provide natural communication points
 that can be used to compose programs together.
 
 Unlike the typical parent processes of Human computer systems,

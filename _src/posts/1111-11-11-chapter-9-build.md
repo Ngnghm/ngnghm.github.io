@@ -2,93 +2,98 @@
     Date: 2016-04-26T04:05:06
     Tags: Build, Meta, Developing, Division of Labor, In The Large
 
-In my various professional endeavors, I had to deal a lot with build
-systems: programs like Unix
-[Make](https://en.wikipedia.org/wiki/Make%20%28software%29), Common
-Lisp's [ASDF](http://common-lisp.net/project/asdf/), or Google's
-[Bazel](http://bazel.io/), but also package managers like
-[rpm](https://en.wikipedia.org/wiki/RPM_Package_Manager),
+In my various professional endeavors,
+I had to deal a lot with build systems:
+programs like Unix [Make](https://en.wikipedia.org/wiki/Make%20%28software%29),
+Common Lisp's [ASDF](http://common-lisp.net/project/asdf/),
+or Google's [Bazel](http://bazel.io/), but also
+package managers like [rpm](https://en.wikipedia.org/wiki/RPM_Package_Manager),
 [dpkg](https://en.wikipedia.org/wiki/Dpkg) or
-[Nix](http://nixos.org/nix/), with which developers describe how to
-build executable software from source files. As the builds grew larger
-and more complex and had to fit a wider diversity of configurations, I
-particularly had to deal with configuration scripts to configure the
-builds, configuration script generation systems, build extensions to
-abstract over build complexity, and build extension languages to write
-these build extensions. Since the experience had left me confused,
-frustrated, and yearning for a better solution, I asked Ngnghm how
-Houyhnhnms dealt with these issues. Could they somehow keep their
-builds always simple, or did they have some elegant solution to deal
-with large complex builds?
+[Nix](http://nixos.org/nix/),
+with which developers describe how to build executable software from source files.
+As the builds grew larger and more complex and had to fit a wider diversity of configurations,
+I particularly had to deal with configuration scripts to configure the builds,
+configuration script generation systems,
+build extensions to abstract over build complexity, and
+build extension languages to write these build extensions.
+Since the experience had left me confused, frustrated, and yearning for a better solution,
+I asked Ngnghm (or "Ann" as I call her)
+how Houyhnhnms (or "Hunams" as I call them) dealt with these issues.
+Could they somehow keep their builds always simple, or
+did they have some elegant solution to deal with large complex builds?
 
-Once again, Ngnghm wasn't sure what I meant, and I had to explain him
-at length the kind of situations I had to deal with and the kind of
-actions I took, before Ngnghm could map them to processes and
-interactions that happened in Houyhnhnm computing systems. And his
-conclusion was that while Houyhnhnms computing systems certainly could
-express large builds, they didn't possess a "build system" separate
-and distinguished from their normal development system; rather their
-"build system" was simply to use their regular development system at
-the meta-level, while respecting certain common constraints usually
-enforced on meta-programs.
+Once again, Ann wasn't sure what I meant, and
+I had to explain her at length the kind of situations I had to deal with
+and the kind of actions I took,
+before Ann could map them to processes and interactions
+that happened in Houyhnhnm computing systems.
+And her conclusion was that
+while Houyhnhnms computing systems certainly could express large builds,
+they didn't possess a "build system" separate and distinguished
+from their normal development system;
+rather their "build system" was simply
+to use their regular development system at the meta-level,
+while respecting certain common constraints usually enforced on meta-programs.
 
 <!-- more -->
 
 ### Division of labor
 
-From what Ngnghm understood, the fundamental interaction supported by
-what I called a build system was _division of labor_ while _developing
-software_: The entire point of it all is that large software endeavors
-can be broken down in smaller pieces, such that each piece is small
-enough to fit in a mindful, and can be hacked into shape by a sentient
-developer. Thus, a complex process way too large to be tackled by any
-single sentient being has been reduced to a number of processes simple
-enough to be addressed by one or more sentients; and thus the reach of
-what sentient beings can achieve through automation has been extended.
+From what Ann understood,
+the fundamental interaction supported by what I called a build system
+was _division of labor_ while _developing software_:
+The entire point of it all is that large software endeavors
+can be broken down in smaller pieces, such that
+each piece is small enough to fit in a mindful,
+and can be hacked into shape by a sentient developer.
+Thus, a complex process way too large to be tackled by any single sentient being
+has been reduced to a number of processes simple enough
+to be addressed by one or more sentients;
+and thus the reach of what sentient beings can achieve through automation has been extended.
 
 Also note this division of labor takes place in a larger process of
-_developing software_: unlike many Humans, Houyhnhnms do not think of
-software as a _solution_ to a "problem", that comes into existence by
-a single act of creation _ex nihilo_; they see developing software as
-an interactive process of iterative
-[evolution](http://fare.tunes.org/computing/evolutionism.html), that
-_addresses_ on-going "issues" that sentients experience. Sentient
-developers will thus continually modify, grow and shrink existing
-software, in ways not completely random yet mostly not predictable —
-at least, not predictable in advance by those same sentients, who
-can't have written the software before they have written it, and have
-written it as soon as they have written it.
+_developing software_:
+unlike many Humans, Houyhnhnms do not think of software as a _solution_ to a "problem",
+that comes into existence by a single act of creation _ex nihilo_;
+they see developing software as an interactive process
+of iterative [evolution](http://fare.tunes.org/computing/evolutionism.html),
+that _addresses_ on-going "issues" that sentients experience.
+Sentient developers will thus continually modify, grow and shrink existing software,
+in ways not completely random yet mostly not predictable —
+at least, not predictable in advance by those same sentients,
+who can't have written the software before they have written it,
+and have written it as soon as they have written it.
 
 A build system is thus just a part or aspect of a larger interaction.
-Therefore, a good build system will integrate smoothly with the rest
-of this interaction; and a better build system will be one that
-further simplifies the overall interaction, rather than one that
-displaces complexity from what is somehow counted as "part of the
-build" to other unaccounted parts of the overall software development
-process (such as e.g. "configuration", or "distribution").
+Therefore, a good build system will integrate smoothly with the rest of this interaction;
+and a better build system will be one that further simplifies the overall interaction,
+rather than one that displaces complexity
+from what is somehow counted as "part of the build"
+to other unaccounted parts of the overall software development process
+(such as e.g. "configuration", or "distribution").
 
 
 ### Modularity
 
-The smaller pieces into which software is broken are typically called
-_modules_. A notable unit of modularity is often the _source file_,
-which groups together related software definitions (we'll leave aside
-for now the question of
+The smaller pieces into which software is broken are typically called _modules_.
+A notable unit of modularity is often the _source file_,
+which groups together related software definitions
+(we'll leave aside for now the question of
 [what a file is or should be](/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/)).
-Source files can sometimes be subdivided into smaller modules (every
-definition, every syntactic entity, can be viewed as a software
-module); and source files can often be grouped into ever larger
-modules: directories, libraries, systems, projects, repositories,
-distributions, etc. The names and specifics vary depending on the
-programming languages and software communities that deal with those
-modules; but generally, a _module_ can be composed of _submodules_ and
-be part of larger _supermodules_.
+Source files can sometimes be subdivided into smaller modules
+(every definition, every syntactic entity, can be viewed as a software module);
+and source files can often be grouped into ever larger modules:
+directories, libraries, systems, projects, repositories, distributions, etc.
+The names and specifics vary depending on
+the programming languages and software communities that deal with those modules;
+but generally, a _module_ can be composed of _submodules_ and be part of larger _supermodules_.
 
-Each of these _modules_ partakes in three quite distinct interactions:
-authoring the module, using it (and its submodules) from another
-module, and integrating it together with other modules into a complete
-application. In each interaction the sentient developer has one of
-three distinct roles:
+Each of these _modules_ partakes in four quite distinct interactions:
+authoring the module, using it (and its submodules) from another module,
+integrating it together with other modules into a complete application,
+or interacting with the complete system as a non-technical end-user.
+In each interaction the sentient being interacting with the system
+has one of four distinct roles:
 
   1. _Authors_ write and modify the code ("authors" is meant in a
     broad sense, including maintainers and contributors).
@@ -100,15 +105,22 @@ three distinct roles:
 
   3. _Integrators_ assemble a collection of modules into an
     overall application, set of applications, virtual machine image, or
-	other deliverable ("integrators" is meant in a broad sense, including
-	developers who put together their development environment).
+    other deliverable ("integrators" is meant in a broad sense, including
+    developers who put together their development environment).
 
-Note that for the purpose of his own applications, as well as for his
-personal testing needs, a _user_ may himself be an _integrator_ of
-many modules (though he may rely on other people such as team members
-to handle integration for him); but his personal integration usually
-doesn't bind other integrators, who may use different versions of the
-same modules, or different combinations of modules altogether.
+  4. _End-Users_ use a software assembly while remaining blissfully unaware
+    of the complex techniques and many modules that had to be mobilized
+    to make their experience possible.
+
+Note that for the purpose of his own applications,
+as well as for his personal testing needs,
+a _user_ may himself be an _integrator_ and an _end-user_ of many modules
+(though he may not be, and rely on other people such as team members
+to handle integration for him or to test and run the software).
+However his personal integration and end-use usuall
+doesn't bind other integrators who may use
+different versions of the same modules,
+or different combinations of modules altogether.
 
 
 ### Pure Functional Reactive Programming
@@ -378,68 +390,75 @@ or source control namespaces, etc.
 
 ### Out of DLL Hell
 
-When building _in the large_, you have to integrate together many
-modules that each evolve at their own pace. Unhappily, they do not
-always work well together. Actually, most versions of most modules may
-not even work well by themselves: they do not behave as they are
-intended to.
+When building _in the large_, you have to integrate together
+many modules that each evolve at their own pace.
+Unhappily, they do not always work well together.
+Actually, most versions of most modules
+may not even work well by themselves:
+they do not behave as they are intended to.
 
-One naive approach to development is to let each module author be his
-own integrator, and have to release his software with a set of other
-modules at exact versions known to work together with it. Not only is
-it more work for each author to release their software, it also leads
-to multiple copies of the same modules being present on each machine,
-in tens of subtly different versions. Precious space resources are
-wasted; important security bug fixes are not propagated in a timely
-fashion; sometimes some software uses the wrong version of a module;
+One naive approach to development is
+to let each module author be his own integrator,
+and have to release his software with a set of other modules
+at exact versions known to work together with it.
+Not only is it more work for each author to release their software,
+it also leads to multiple copies of the same modules being present on each machine,
+in tens of subtly different versions.
+Precious space resources are wasted;
+important security bug fixes are not propagated in a timely fashion;
+sometimes some software uses the wrong version of a module;
 or multiple subtly incompatible versions get to share the same data
-and corrupt it or do the wrong thing based on it. This is called _DLL
-hell_.
+and corrupt it or do the wrong thing based on it.
+This is called _DLL hell_.
 
-Proprietary software, such as Windows or MacOS, encourages this hell,
-because they make any coordination impossible: each author is also an
-integrator and distributor — a vendor. And vendors have to deal with
-all the active versions of the operating system, but can't rely on the
-end-user either having or not having installed any other software from
-anyone else. A few vendors might coordinate with each other, but it
-would be an overall liability where the modest benefits in terms of
-sharing space would be dwarfed by the costs in terms of having to
-significantly complexify your release process to synchronize with
-others, without saving on the overall costs of being a vendor or
-being able to promise much additional reliability to users who install
-any software from a vendor outside the cartel.
+Proprietary software, such as Windows or macOS, encourages this hell,
+because they make any coordination impossible:
+each author is also an integrator and distributor — a vendor.
+And vendors have to deal with all the active versions of the operating system,
+but can't rely on the end-user either having or not having installed
+any other software from anyone else.
+A few vendors might coordinate with each other, but
+it would be an overall liability where the modest benefits in terms of sharing space
+would be dwarfed by the costs in terms of having to significantly complexify your release process
+to synchronize with others,
+without saving on the overall costs of being a vendor or
+of being able to promise much additional reliability
+to users who install any software from a vendor outside the cartel.
 
-Free software, by decoupling the roles of author and integrator, make
-it possible to solve DLL hell. Authors just don't have to worry about
-integration, whereas integrators can indeed gather software from all
-authors and beat it into shape as required to make it work with the
-rest of the system. Integrators can also manage the basic safety of
-the system, and even those remaining proprietary software vendors have
+Free software, by decoupling the roles of author and integrator,
+make it possible to solve DLL hell.
+Authors just don't have to worry about integration,
+whereas integrators can indeed gather software from all authors
+and beat it into shape as required to make it work with the rest of the system.
+Integrators can also manage the basic safety of the system,
+and even those remaining proprietary software vendors have
 less to worry about as most of the system is well-managed.
 
-Houyhnhnms understand that software is better built not just from
-source code, but from source control. Indeed they reject the Human
-focus on a static artifact being build from source that can be
-audited, and instead insist on focusing on the dynamic process of
-continually building software; and that process includes importing
-changes, making local changes, merging changes, sending some
-improvements upstream, and auditing the changes, etc.
+Houyhnhnms understand that software is better built
+not just from source code, but from source control.
+Indeed they reject the Human focus on
+a static artifact being build from source that can be audited,
+and instead insist on focusing on
+the dynamic process of continually building software;
+and that process includes importing changes, making local changes,
+merging changes, sending some improvements upstream, and auditing the changes, etc.
 
-They thus realize that whereas a module name denotes a global
-_intent_, the value it will be bound to reflects some local context,
-which is characterized by the set of branches or tags that the
-integrator follows. Within these branches, each new version committed
-says "use me, not any previous version"; but then branches are subject
-to filtering at the levels of various modules and their supermodules:
-a module that doesn't pass its test doesn't get promoted to the
-certified branch; if a module does pass its tests, then supermodules
-containing that module can in turn be tested and hopefully certified,
-etc. Now note that, to solve the DLL hell, modules present in several
-supermodules must all be chosen at the same version; therefore, all
-tests must happen based on a coherent snapshot of all modules.
+They thus realize that whereas a module name denotes a global _intent_,
+the value it will be bound to reflects some local context,
+which is characterized by the set of branches or tags that the integrator follows.
+Within these branches, each new version committed says
+"use me, not any previous version";
+but then branches are subject to filtering
+at the levels of various modules and their supermodules:
+a module that doesn't pass its test doesn't get promoted to the certified branch;
+if a module does pass its tests, then supermodules containing that module
+can in turn be tested and hopefully certified, etc.
+Now note that, to solve the DLL hell, modules present in several supermodules
+must all be chosen at the same version;
+therefore, all tests must happen based on a coherent snapshot of all modules.
 
-This approach can be seen as a generalization of Google's official
-strategy of "building from HEAD", where what Google calls "HEAD" would
+This approach can be seen as a generalization of Google's official strategy
+of "building from HEAD", where what Google calls "HEAD" would
 be the collection of branches for modules that pass their unit tests.
 In this more general approach, "HEAD" is just one step in a larger
 network of branches, where some development branches feed into HEAD

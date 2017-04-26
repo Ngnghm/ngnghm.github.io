@@ -3,7 +3,8 @@
     Tags: Persistence, Orthogonal Persistence, Files, Versioning, Monitor
 
 Following our [discussion on persistence](/blog/2015/08/03/chapter-2-save-our-souls/),
-Ngnghm had plenty of questions about how Human computer systems held together
+Ngnghm, or Ann as I call her,
+had plenty of questions about how Human computer systems held together
 when they can't seem to get basic persistence right.
 But in return, I had even more questions about what Houyhnhnm computing systems could even be like,
 when all data persisted by default:
@@ -18,9 +19,9 @@ How did you test potentially dangerous changes?
 
 ### When Data Persists
 
-Thus, on a first approach, the interface to a Houyhnhnm computing system
+Thus, on a first approach, the interface to a Houyhnhnm (pronounced "Hunam") computing system
 may look very similar to that of a Human computer system
-— and that's how Ngnghm had been fooled at first
+— and that's how Ann had been fooled at first
 into thinking they were designed along the same principles.
 If you have a Human laptop that you usually put to sleep and don't turn off or restart,
 your setup might be similar to what it would be on a Houyhnhnm muzzletop.
@@ -109,7 +110,7 @@ to external processes and systems (whether disks or clouds of servers),
 all data they hold is ultimately defined in terms of sequences of bytes, or files;
 when persisting these files, they are identified by file paths
 that themselves are short sequences of bytes interpreted as a series of names
-separated by slashes `/` (or on some systems, backslashes `\`, or something else).
+separated by slashes `/` (or on some systems, backslashes `\`, or yet something else).
 Because persistence in Houyhnhnm Computing Systems applies to any data
 in whichever high-level language it was defined,
 all Houyhnhnm computing data is defined in terms of
@@ -171,7 +172,7 @@ is text files that are compiled, disconnected from the state of the system.
 
 But, I inquired, if they log everything and almost never forget anything,
 don't Houyhnhnm computing system quickly get filled with garbage?
-No, replied Ngnghm. The amount of information that users enter
+No, replied Ann. The amount of information that users enter
 through a keyboard and mouse (or their Houyhnhnm counterparts)
 is minute compared to the memory of modern computers,
 yet, starting from a well-determined state of the system,

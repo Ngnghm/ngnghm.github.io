@@ -2,8 +2,10 @@
     Date: 2015-11-28T23:34:45
     Tags: Kernel, Resource Management, Abstraction, Enforcement, Security, Meta
 
-I admitted to Ngnghm that I was perplexed by Houyhnhnm computing systems;
-to better understand them, I wanted to know
+I admitted to Ngnghm (whom I call "Ann")
+that I was perplexed by Houyhnhnm computing systems
+(I pronounce "Houyhnhnm" like "Hunam").
+To better understand them, I wanted to know
 what their kernels, libraries and applications looked like.
 There again, he surprised me by having no notion of what I called kernel or application:
 the way Houyhnhnm systems are architected leads to widely different concepts;
@@ -17,8 +19,8 @@ what in Human computer systems is embodied by the operating system kernel.
 ### Kernels ###
 
 "What does an Operating System Kernel look like in a Houyhnhnm computing system?"
-I asked Ngnghm.
-He wasn't sure what I was calling either Operating System or Kernel.
+I asked Ann.
+She wasn't sure what I was calling either Operating System or Kernel.
 
 I explained that in a Human computer system,
 the kernel is a piece of software that handled the hardware resources,
@@ -32,11 +34,11 @@ The kernel can also use this hardware support to provide low-level isolation bet
 it allows multiple user programs to run at the same time while ensuring that
 none may interfere with other programs except through said abstractions.
 
-Ngnghm however had trouble distinguishing the kernel from any other program based on my description.
+Ann however had trouble distinguishing the kernel from any other program based on my description.
 The notion of kernel, like most concepts of Human computer systems, was too artifact-oriented
 and didn't fit the grid of interaction-oriented Houyhnhnm computing systems.
-"What is it that a kernel _does_?" Ngnghm asked me;
-when he'd know that, he could tell me how their systems implement analogous _interactions_.
+"What is it that a kernel _does_?" Ann asked me;
+when she'd know that, she could tell me how their systems implement analogous _interactions_.
 And then I was at loss to distinguish exactly what kinds of interaction a kernel does
 that other pieces of software don't.
 
@@ -167,7 +169,7 @@ Of course, when turtling down the tower of implementations,
 what is a completely opaque full abstraction at a higher level
 may be a fully transparent partial abstraction at a lower level;
 that's perfectly fine —
-the lower-level, which requires proper permissions to access and modify,
+the lower-level, which cannot be accessed or modified without proper permissions,
 is indeed responsible for properly implementing the invariants of the higher-level.
 
 
@@ -368,7 +370,7 @@ Humans see all resources as ultimately owned by the Central entity and delegated
 Houyhnhnms see resources as being used, shared or exchanged by independent processes.
 I could see a lot of ways that the paradigm of Human computer systems
 fit in a wider trend of patterns in which to conceive of social and political interactions.
-Yet, I resisted the temptation of asking Ngnghm about the social and political context
+Yet, I resisted the temptation of asking Ann about the social and political context
 in which Houyhnhnm computing systems were being designed;
 at least for now, I was too deeply interested in figuring out the ins and outs
 of Houyhnhnm computing to be bothered by a digression into these far ranging matters.

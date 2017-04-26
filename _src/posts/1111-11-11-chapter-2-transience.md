@@ -2,23 +2,24 @@
     Date: 2015-08-03T01:10:00
     Tags: Persistence, Automation, Orthogonal Persistence, Domains
 
-[Ngnghm](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/) was fascinated by our keyboards:
+[Ngnghm](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/), whom I call Ann,
+was fascinated by our keyboards:
 because of physiological differences between our races, similar devices had never been imagined
 by [Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm) computing engineers.
-Now, as he was watching me closely, Ngnghm noticed that I was punctuating most of my typing
+Now, as she was watching me closely, Ann noticed that I was punctuating most of my typing
 with recurring combinations of key chords.
-I told him I had no idea what he meant;
-and so he had me record and review how, after every sentence or so, or before changing activities,
+I told her I had no idea what she meant;
+and so she had me record and review how, after every sentence or so, or before changing activities,
 I was composing the sequence <kbd>Ctrl-X Ctrl-S</kbd>, or <kbd>Command-S</kbd>,
 or some other mantra that varied slightly with the application I was using.
-Interestingly, I wasn't even aware that I was doing that before he told me!
-What was this mantra doing, he inquired?
+Interestingly, I wasn't even aware that I was doing that before she told me!
+What was this mantra doing, she inquired?
 How could I possibly repeat it without even noticing — and why would I?
-I told him that depending on the application,
+I told her that depending on the application,
 each of these mantra _saved_ the current file,
 and that typing it had become ingrained in me as a subconscious habit,
 because I used it so often, out of necessity.
-What does "_saved_" mean wondered Ngnghm, and what made it a necessity?
+What does "_saved_" mean wondered Ann, and what made it a necessity?
 
 <!-- more -->
 
@@ -26,8 +27,9 @@ What does "_saved_" mean wondered Ngnghm, and what made it a necessity?
 
 I explained that Human computer software and hardware are prone to crashing,
 or to losing battery power, and other unexpected failures
-— there he sighed with sympathy, for
-Houyhnhnms were just as frustrated as Humans with how unreliable their computers were.
+— there she sighed with sympathy, for
+Houyhnhnms (pronounced "Hunams") were just as frustrated as Humans
+with how unreliable their computers were.
 I continued that the solution universally adopted for Human computer systems
 was therefore that Humans had to explicitly _save_ each file
 for its contents to be later recoverable in the event of such a crash.
@@ -36,20 +38,20 @@ I had grown the habit of saving often, and
 doing it unconsciously at every pause in my thought process;
 thus I didn't have to think hard to predict when the computer was at risk
 and explicitly decide when I ought to save.
-Ngnghm was properly appalled.
+Ann was properly appalled.
 Didn't the system just automatically save everything I typed?
 Why was human thought and habit involved at all in a task
 that could have been fully automated long ago
 — and indeed had been automated in all
 but the earliest and most primitive Houyhnhnm computing systems?
 
-Although, he remarked,
+Although, she remarked,
 considering the overall computing system containing both Sapient and Computer,
 the task had been automated indeed.
 Indeed, if you came to think of it, this task couldn't possibly _not_ be automated,
 unless the computing system were only used
 but to produce worthless data never worth keeping
-— at which point it would thus be itself worthless.
+— at which point it would thus itself be mostly worthless.
 However, the task had been imperfectly automated at great cost
 by creating a habit in my brain and hands,
 rather than automated both perfectly and cheaply by having it done by the computer.
@@ -59,21 +61,22 @@ At least in this instance and for this concern, the very purpose of computers ha
 As went the _Sacred Motto_ of the Guild of Houyhnhnm Programmers:
 [_I object to doing things that computers can do_](http://www.wanderings.net/notebook/Main/BitterAcknowledgmentsOfOlinShivers).
 
-And then, suddenly, Ngnghm became worried about his journal.
-He had been consigning his observations on a computer
-ever since he had learned to use a mouse to draw Houyhnhnm symbols in a paint application.
-(Ngnghm once remarked that a one-button mouse is an exquisite input device for a Houyhnhnm's hoof,
+And then, suddenly, Ann became worried about her journal.
+She had been consigning her observations on a computer
+ever since she had learned to use a mouse to draw Houyhnhnm symbols in a paint application.
+(Ann once remarked that a one-button mouse is an exquisite input device for a Houyhnhnm's hoof,
 but that it takes a Yahoo to believe it is suited to a Yahoo's hand.)
-Now, he admitted that he could never retrieve his old notes;
-but he just thought that it was due to
-his not understanding the Houyhnhnm-Computer Interface properly,
-and to his not knowing how to search back in time what he had previously drawn.
+Now, she admitted that she could never retrieve her old notes;
+but she just thought that it was due to
+her not understanding the Houyhnhnm-Computer Interface properly,
+to said interface not having proper automated recognition for hoof-written Houyhnhnm scribblings,
+and to her not knowing how to search back in time what she had previously drawn.
 He assumed that Human computers were probably not geared
-to properly index his observations for easy retrieval,
-but that they would otherwise all be logged in the computer's memory.
-Was I implying that all his notes were lost,
-including some of the finest poetry he had ever written,
-as inspired both by the suffering from his predicament and the marvel at his discoveries?
+to properly index her observations for easy retrieval,
+but that of course they would otherwise all be logged in the computer's memory.
+Was I implying that all her notes were lost,
+including some of the finest poetry she had ever written,
+as inspired both by the suffering from her predicament and the marvel at her discoveries?
 I won't claim any proficiency at judging Houyhnhnm poetry
 — it all sounds like nickering and whickering to me —
 but to this day, I fear that one of the greatest pieces of Houyhnhnm literature
@@ -82,7 +85,7 @@ has been lost to the world, due to the failings of Human computer systems.
 
 ### Orthogonal Persistence
 
-Ngnghm explained to me that Houyhnhnm computing systems
+Ann explained to me that Houyhnhnm computing systems
 make data persistence the default, at every level of abstraction.
 Whether you open the canvas of a graphical interface and start drawing freely,
 or you open an interactive evaluation prompt and bind a value to a variable,
@@ -196,15 +199,16 @@ Desktop apps still tend to display a counter-productive "recovery" menu at start
 And more annoyingly, this apparent persistence still doesn't cover
 the most frequent case these days of people typing things:
 input forms and message boxes in web pages.
-Also, the "catastrophic" events are covered include
-so predictable the event as is the eventual death
-of each and every piece of hardware
-— and of each and every software project and service-providing business.
+Also, the "catastrophic" events that may cause data loss
+include perfectly predictable events,
+such as the eventual death of each and every piece of hardware
+and of each and every software project and service-providing business,
+in a mere matter of years.
 Yet, content with expectations from this _apparent_ persistence,
-users can easily be fooled, like Ngnghm was initially,
+users can easily be fooled, like Ann was initially,
 into believing that Human computer systems
 are just as good as Houyhnhnm computing systems in this regard;
-and just like Ngnghm, they can be led to believe that failures
+and just like Ann, they can be led to believe that failures
 are due to incompetence on their part,
 rather than on the part of the computing system developers.
 
@@ -225,7 +229,7 @@ to actually make it "rotware as a racket" — they offer
 [bitrotting](http://www.jargon.net/jargonfile/b/bitrot.html) bad expensive service,
 oriented towards the vendor's interests to the detriment of the users',
 with no enforceable service level agreement,
-no way to extract your data in a state usable by any competing service,
+with no way to extract your data in a state usable by any competing service,
 with the promise that the service _will_ grow even more inadequate
 and eventually die (being cancelled, bankrupted, or bungled),
 yet that you _will_ have to keep paying,
@@ -241,12 +245,12 @@ or all (if they aren't) of their systems
 to competing providers who are held individually liable in case of failure,
 and aren't granted monopolies by a centralized privilege-doling entity.
 
-Now, after Ngnghm made this painful first hoof experience
+Now, after Ann made this painful first hoof experience
 of the persistence failure of Human computer systems,
-he started investigating how Human computer systems implemented persistence, or failed to.
-And he discovered to his dismay that beneath the
+she started investigating how Human computer systems implemented persistence, or failed to.
+And she discovered to her dismay that beneath the
 [veneer of persistence](http://www.www.loper-os.org/?p=448),
-there was transience at every level he was looking at — not just transience,
+there was transience at every level she was looking at — not just transience,
 but [fractal transience](http://rationalwiki.org/wiki/Fractal_wrongness):
 this fundamental design difference between Human and Houyhnhnm computing systems
 is observable at every level of these systems.
@@ -270,10 +274,10 @@ you pretty much have to rewrite the entire software "stack"
 above whichever level you are hoping to improve
 — in other words this requires a significant world-changing event.
 
-And yet, it runs! Ngnghm was in awe that Human computer systems could run at all;
+And yet, it runs! Ann was in awe that Human computer systems could run at all;
 they clearly demonstrated some emerging order so powerful
 that it could survive despite ubiquitous design flaws
 — or could it possibly be surviving _thanks_ to what to this Houyhnhnm appeared as flaws?
-Ngnghm decided to pursue his investigations…
+Ann decided to pursue her investigations…
 
 <!-- http://j.mp/NgnghmPersist -->
