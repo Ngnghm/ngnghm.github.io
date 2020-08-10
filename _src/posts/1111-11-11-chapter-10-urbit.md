@@ -77,7 +77,7 @@ forever fixed, totally defined, deterministic, and therefore _future-proof_.
 
 _Hoon_ is a pure functional applicative programming language. Its syntax is terse,
 where the core syntax is specified using non-alphanumeric characters and digraphs thereof
-(or equivalent for letter keywords);
+(or equivalent for letter keywords).
 The syntax allows to write expressions as one liners using parentheses, but
 it is colloquial to break functions onto many lines where indentation is meaningful;
 as contrasted with other indentation-sensitive languages, however, the indentation rules
@@ -174,8 +174,8 @@ Most importantly, the Martian's Urbit is actually available for humans to experi
 By contrast, no implementation of Houyhnhnm Computing system
 is available to humans (at the same date),
 though the ideas may be older.
-This alone make Urbit superior in a non-negligible way;
-yet it is in all the other ways that we will examine it.
+This alone make Urbit superior in one, non-negligible, way.
+Yet, we will hereon examine it in all the _other_ ways.
 
 Superficially, both Martian and Houyhnhnm Computing provide Orthogonal Persistence.
 But the way they do it is very different.
@@ -245,7 +245,7 @@ A global consensus on deterministic computation semantics only matters
 if you want to replay and verify other random people's computations,
 i.e. for crypto-currencies with "smart contracts" like [Ethereum](https://www.ethereum.org/);
 but that's not at all what Urbit is about, and such computation replay in a hostile environment
-indeed has issues of its own (such as misincentives or for resource abuse)
+indeed has issues of its own (such as misincentives, or resource abuse)
 that Urbit doesn't even try to address.
 If you only want to replay your own computations (or those of friends),
 you don't need a global consensus on a deterministic function;
@@ -296,7 +296,8 @@ solving one issue (e.g. persistence) at the system level is enough.
 But onerous local "persistence" of low-level data can actually be counter-productive
 when what users require is distributed persistence of high-level data
 at some level of service involving enough replicas yet low-enough latency:
-it costs a lot and for no actual benefit may cause a large increase in latency.
+local persistence costs a lot, and for no actual benefit to distributed persistence
+may cause a large increase in latency.
 The entire point of computing is to support user programs,
 and solving an issue for some underlying system at a lower-level of abstraction
 without solving it at the higher-level that the user cares about
@@ -445,7 +446,7 @@ One class of issues that Nock itself makes unexpressible yet that
 any programmer developing non-trivial programs has to care for is resource management:
 the programmer has no control over how much time or memory operations _really_ take.
 Yet resources such as speed and memory matter, a lot:
-"Speed has always been important otherwise one wouldn't need the computer." — Seymour Cray
+"Speed has always been important otherwise one wouldn't need the computer." — Seymour Cray.
 There _is_ a resource model in Urbit, but it's all defined and hidden in u3,
 out of sight and out of control of the Martian programmer
 (unless we lift the lid on u3, at which point Urbiters leave Martian computing
@@ -550,8 +551,8 @@ I can relate to the difficulty of explaining ideas to people whose _paradigm_
 makes it unexpressible.
 This difficulty was beautifully evidenced and argued by Richard P. Gabriel in his article
 [The Structure of a Programming Language Revolution](https://www.dreamsongs.com/Files/Incommensurability.pdf).
-But the Urbit authors are not trying to be understood, trying their best not to be,
-and that's a shame, because whatever good and bad ideas exist in their paradigm
+But the Urbit authors are not trying to be understood—they are trying their best not to be.
+That's a shame, because whatever good and bad ideas exist in their paradigm
 deserve to be debated, which first requires that they should be understood.
 Instead they lock themselves into their own autistic planet.
 
@@ -567,7 +568,7 @@ and its forced abstraction makes programs slower to run.
 
 If that abstraction came "naturally" when factoring some programs,
 then it could make writing these programs easier;
-but the Urbit VM looks very little like what Humans use for anything,
+but the Urbit VM looks very little like what either Humans or machines use for anything,
 and offers no "killer app" that can't be implemented more simply.
 Its applicative functional machine with no cycles exchanging messages
 is reminiscent of the Erlang VM;
@@ -584,16 +585,16 @@ without being able to reuse much of other people's code,
 except at a very high cost both in terms of
 implementation effort (doing things both in Nock and in u3)
 and integrity (ensuring the two things are equivalent, or cheating).
-For instance, it looks like the Urbit authors wrote a markdown processor in Hoon, for instance,
-and have a "jet" recognizing it and replacing it by some common Markdown library in C.
-Except the two pieces of code are not bug compatible, so it's all a lie.
+For instance, the Urbit authors wrote a markdown processor in Hoon,
+and have a "jet" recognizing it and replacing it by some common Markdown library in C;
+however the two pieces of code are not bug compatible, so it's all a lie.
 
 
 ### Urbit as a demo ###
 
 Urbit has none of the support for modular design necessary for programming
 ["in the large"](https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small).
-But its superficial simplicity of Nock makes it suitable
+But the superficial simplicity of Nock makes it suitable
 as a cool demo of orthogonally persistent system.
 
 Of course, the demo only "works" by sweeping under the rug the difficult issues,
@@ -601,7 +602,7 @@ to be solved by u3, the metasystem of Urbit;
 and unlike Nock, u3, where most of the interesting things happen,
 remains informal in its all-important side-effects,
 and not actually bound to behave as a faithful implementation
-as for the parts specified by the Nock machine.
+of the parts specified by the Nock machine.
 In other words, the pretense of having fully formalized
 the state of the system and its state function,
 and of putting the end-user in control of it,
@@ -611,7 +612,7 @@ centralized implementation of the metaprogram that implements Nock
 and issues real-world side-effects.
 
 There is no one-size fits all way to handle all the issues with
-connection to real-world devices, and policies that resolve tradeoffs
+connection to real-world devices, and with policies that resolve tradeoffs
 regarding persistence, privacy, latency, efficiency, safety, etc.
 A centralized implementation for the metaprogram that handles them
 is not a universal solution.

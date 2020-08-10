@@ -118,7 +118,7 @@ It may all be but _just so stories_, but
 ### Simplicity
 
 What made me most aware of this difference was when Ann
-discovered that, like her in her own world, I was trained in writing software,
+discovered that, like she was in her own world, I was trained in writing software,
 and then asked me to demonstrate the working of some Human computing systems,
 starting with the simplest I could find.
 So I showed her simple programs I was writing in C;
@@ -186,7 +186,7 @@ by which more complex systems are built in a way that is
 [auditably _secure_](http://fare.tunes.org/computing/reclaim_your_computer.html).
 
 In any case, a change in point of view led to a completely different metric
-to assess the simplicity of computing systems.
+to assess the [simplicity](https://youtu.be/NdSD07U5uBs) of computing systems.
 It would also change how to judge other qualities of computing systems in general
 — and thus change the approach to how computing is done and what artifacts it yields.
 And next on the block was something as basic as Persistence...

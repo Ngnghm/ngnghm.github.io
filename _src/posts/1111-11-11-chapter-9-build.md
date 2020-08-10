@@ -117,8 +117,8 @@ as well as for his personal testing needs,
 a _user_ may himself be an _integrator_ and an _end-user_ of many modules
 (though he may not be, and rely on other people such as team members
 to handle integration for him or to test and run the software).
-However his personal integration and end-use usuall
-doesn't bind other integrators who may use
+However his personal integration and end-use usually
+do not bind other integrators and their end-users who may use
 different versions of the same modules,
 or different combinations of modules altogether.
 

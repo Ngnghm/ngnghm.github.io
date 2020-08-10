@@ -11,7 +11,7 @@
     <link rel="icon"      href="/img/favicon.ico">
     <link rel="canonical" href="http://ngnghm.github.io/blog/2016/06/11/chapter-10-houyhnhnms-vs-martians/">
     <link rel="next" href="/blog/2016/04/26/chapter-9-build-systems/">
-
+    <link rel="prev" href="/blog/2020/08/10/chapter-11-a-work-horse-and-its-tools/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -109,6 +109,10 @@
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
 
+<li><a href="/tags/Long-Run.html">Long Run</a></li>
+
+<li><a href="/tags/Long-Term.html">Long Term</a></li>
+
 <li><a href="/tags/Martian.html">Martian</a></li>
 
 <li><a href="/tags/Meta.html">Meta</a></li>
@@ -123,6 +127,10 @@
 
 <li><a href="/tags/Point-of-View.html">Point of View</a></li>
 
+<li><a href="/tags/Principles.html">Principles</a></li>
+
+<li><a href="/tags/Programming-Language.html">Programming Language</a></li>
+
 <li><a href="/tags/Quality.html">Quality</a></li>
 
 <li><a href="/tags/Resource-Management.html">Resource Management</a></li>
@@ -136,6 +144,12 @@
 <li><a href="/tags/Specialization.html">Specialization</a></li>
 
 <li><a href="/tags/Strategies.html">Strategies</a></li>
+
+<li><a href="/tags/Strategy.html">Strategy</a></li>
+
+<li><a href="/tags/Time-Preference.html">Time Preference</a></li>
+
+<li><a href="/tags/Tools.html">Tools</a></li>
 
 <li><a href="/tags/Transience.html">Transience</a></li>
 
@@ -189,7 +203,7 @@
 
 <p>Therefore, it is the C runtime system <em>u3</em> that specifies the operational semantics of programs, whereas Nock only specifies their denotational semantics as arbitrary recursive functions. By recognizing and efficiently implementing specific Nock programs and subprograms, u3, like any efficient implementation of the JVM or of any other standardized virtual machine, can decompile VM programs (in this case Nock programs) into an AST and recompile them into machine code using the usual compilation techniques. At that point, like every VM, Nock is just a standardized though extremely awkward representation of programming language semantics (usually all the more awkward since such VM standards are often decided early on, at the point when the least is known about what makes a good representation). Where Urbit distinguishes itself from other VM-based systems, however, is that the semantics of its virtual machine Nock is forever fixed, totally defined, deterministic, and therefore <em>future-proof</em>.</p>
 
-<p><em>Hoon</em> is a pure functional applicative programming language. Its syntax is terse, where the core syntax is specified using non-alphanumeric characters and digraphs thereof (or equivalent for letter keywords); The syntax allows to write expressions as one liners using parentheses, but it is colloquial to break functions onto many lines where indentation is meaningful; as contrasted with other indentation-sensitive languages, however, the indentation rules are cleverly designed to prevent extraneous indentation to the right as you nest expressions, by deindenting the last, tail position in a function call. Whereas Nock is trivially typed (some would say untyped or dynamically typed), Hoon has a static type system, although quite a primitive one, with a type inferencer that requires more type hints than a language with e.g. Hindley-Milner type inference (such as ML), yet less than one without type inference (such as Java).</p>
+<p><em>Hoon</em> is a pure functional applicative programming language. Its syntax is terse, where the core syntax is specified using non-alphanumeric characters and digraphs thereof (or equivalent for letter keywords). The syntax allows to write expressions as one liners using parentheses, but it is colloquial to break functions onto many lines where indentation is meaningful; as contrasted with other indentation-sensitive languages, however, the indentation rules are cleverly designed to prevent extraneous indentation to the right as you nest expressions, by deindenting the last, tail position in a function call. Whereas Nock is trivially typed (some would say untyped or dynamically typed), Hoon has a static type system, although quite a primitive one, with a type inferencer that requires more type hints than a language with e.g. Hindley-Milner type inference (such as ML), yet less than one without type inference (such as Java).</p>
 
 <p><em>Arvo</em> is the operating system of Urbit. The Urbit model is that the state of the system (a noun) encodes a function that will be applied to the next communication event received by the system. If the processing of the event terminates, then the event is transactionally appended to the event journal making it persistent. The value returned specifies the next state of the system and any messages to be sent to the world. Arvo is just the initial state of the system, a universal function that depending on the next event, may do anything, but in particular provides a standard library including anything from basic arithmetics to virtualization of the entire system. The core of Arvo is typically preserved when processing a message, even as the state of the system changes to reflect the computations controlled by the user; as long as this core keeps running (as it should), Arvo remains the operating system of Urbit; but users who insist may upgrade and replace Arvo with a new version, or with another system of their own creation, if they dare.</p>
 
@@ -201,7 +215,7 @@
 
 <h3 id="houyhnhnms-vs-martians">Houyhnhnms vs Martians</h3>
 
-<p>Most importantly, the Martian&rsquo;s Urbit is actually available for humans to experiment with (as of May 2016, its authors describe its status as post-alpha and pre-beta). By contrast, no implementation of Houyhnhnm Computing system is available to humans (at the same date), though the ideas may be older. This alone make Urbit superior in a non-negligible way; yet it is in all the other ways that we will examine it.</p>
+<p>Most importantly, the Martian&rsquo;s Urbit is actually available for humans to experiment with (as of May 2016, its authors describe its status as post-alpha and pre-beta). By contrast, no implementation of Houyhnhnm Computing system is available to humans (at the same date), though the ideas may be older. This alone make Urbit superior in one, non-negligible, way. Yet, we will hereon examine it in all the <em>other</em> ways.</p>
 
 <p>Superficially, both Martian and Houyhnhnm Computing provide Orthogonal Persistence. But the way they do it is very different. Martians provide a single mechanism for persistence at a very low-level in their system, separately on each virtual machine in their network. But Houyhnhnms recognize that there is no one size fits all in matter of Persistence: for performance reasons, the highest level of abstraction is desired for the persistence journal; at the same time, transient or loosely-persisted caches are useful for extra indices; and for robustness, a number of replicas are required, with a continuum of potential synchronization policies. Therefore, Houyhnhnms provide a general framework for first-class computations, based on which users may select what to persist under what modalities.</p>
 
@@ -215,13 +229,13 @@
 
 <p>Both Martians and Houyhnhnms rely heavily on pure deterministic computations to minimize the amount of data to log in the persistence journal to describe issues (as contrasted for instance with the amount of data to manipulate to compute and display answers to end-users). But Martians rely on Nock, and to a lesser extent, Hoon, Arvo, Ames, etc., having a constant deterministic semantics, cast in stone for all users at all time; Houyhnhnms frown at the notion: they consider that constraint as unnecessary as it is onerous. Martians justify the constraint as making it possible to have robust, future-proof persistence. Houyhnhnms contend that this constant semantics doesn&rsquo;t actually make for robust persistence, and that on the contrary, it prevents future improvements and fixes while encouraging bad practice. Also, Houyhnhms claim that requiring the function to be the same for everyone introduces an extraordinary coordination problem where none existed, without helping any of the real coordination problems that users actually have.</p>
 
-<p>A global consensus on deterministic computation semantics only matters if you want to replay and verify other random people&rsquo;s computations, i.e. for crypto-currencies with &ldquo;smart contracts&rdquo; like <a href="https://www.ethereum.org/">Ethereum</a>; but that&rsquo;s not at all what Urbit is about, and such computation replay in a hostile environment indeed has issues of its own (such as misincentives or for resource abuse) that Urbit doesn&rsquo;t even try to address. If you only want to replay your own computations (or those of friends), you don&rsquo;t need a global consensus on a deterministic function; you only need to know what you&rsquo;re talking about, and write it down.</p>
+<p>A global consensus on deterministic computation semantics only matters if you want to replay and verify other random people&rsquo;s computations, i.e. for crypto-currencies with &ldquo;smart contracts&rdquo; like <a href="https://www.ethereum.org/">Ethereum</a>; but that&rsquo;s not at all what Urbit is about, and such computation replay in a hostile environment indeed has issues of its own (such as misincentives, or resource abuse) that Urbit doesn&rsquo;t even try to address. If you only want to replay your own computations (or those of friends), you don&rsquo;t need a global consensus on a deterministic function; you only need to know what you&rsquo;re talking about, and write it down.</p>
 
 <p>Houyhnhnms always consider first the interactions that are supposed to be supported by computing activities. In the case of Persistence, Houyhnhnms are each interested in persisting their own code and data. There is no global entity interested in simultaneously looking at the persistence logs of everyone; there is no &ldquo;collective&rdquo; will, no magically coordinated knowledge. Each individual Houyhnhnm wants to ensure the persistence of their own data and that data only, or of that entrusted to them personally; and even if they want more, that&rsquo;s both the only thing they must do and the only thing they can do. Now, they each want the most adequate technology for their purpose, taking costs and benefits into account. If they somehow had to coordinate together to find a common solution, the coordination would be extraordinarily costly and would take a lot of time; they would have to settle on some old technology devised when people knew least, and could never agree on improvements. And if the technology were frozen in time at the beginning, as in Urbit, nothing short of retroactive agreement using a time machine could improve it. If on the contrary each individual is allowed to choose his own persistence solution, then those who can devise improved solutions can use them without having to convince anyone; they can also compete to have their improvements adopted, whereas users compete to not be left behind, until they all adopt the improvements that make sense. In the end, in matters of persistence <a href="http://common-lisp.net/project/asdf/ilc2010draft.pdf">as of build systems</a>, <em>allowing for divergence creates an incentive towards convergence</em>, reaching better solutions, through competition.</p>
 
 <p>Urbit incorrectly formulates the problem as being a social problem requiring a central solution, when it is actually a technical problem for which a decentralized social arrangement is much better. Persistence doesn&rsquo;t require anyone to agree with other people on a low-level protocol; it only requires each person to maintain compatibility with their own previous data. To decode the data they persisted, users don&rsquo;t need a one deterministic function forever, much less one they agree on with everyone else: what they need is to remember the old code and data, and to be able to express the new code (generator) in terms of the old one (to upgrade the code) and able to interpret the old data schema in terms of the new data schema (to upgrade the data). Indeed, even the <a href="http://media.urbit.org/whitepaper.pdf">Urbit whitepaper</a> acknowledges that as far as data above the provided abstraction matters, such schema changes happen (see section 2.0.3 Arvo).</p>
 
-<p>Where Martians get it just as wrong as Humans is in believing that solving one issue (e.g. persistence) at the system level is enough. But onerous local &ldquo;persistence&rdquo; of low-level data can actually be counter-productive when what users require is distributed persistence of high-level data at some level of service involving enough replicas yet low-enough latency: it costs a lot and for no actual benefit may cause a large increase in latency. The entire point of computing is to support user programs, and solving an issue for some underlying system at a lower-level of abstraction without solving it at the higher-level that the user cares about is actually no solution at all. It can sometimes be <em>part</em> of a solution, but only if (1) the desired property can also be expressed in a composable way so that higher layers of software may benefit from it, and (2) the lower layers don&rsquo;t impose specific policy choices that will be detrimental to the higher layers of software. And this is what Houyhnhnm systems uniquely enable that Human and Martian systems can&rsquo;t express because it goes against their paradigm.</p>
+<p>Where Martians get it just as wrong as Humans is in believing that solving one issue (e.g. persistence) at the system level is enough. But onerous local &ldquo;persistence&rdquo; of low-level data can actually be counter-productive when what users require is distributed persistence of high-level data at some level of service involving enough replicas yet low-enough latency: local persistence costs a lot, and for no actual benefit to distributed persistence may cause a large increase in latency. The entire point of computing is to support user programs, and solving an issue for some underlying system at a lower-level of abstraction without solving it at the higher-level that the user cares about is actually no solution at all. It can sometimes be <em>part</em> of a solution, but only if (1) the desired property can also be expressed in a composable way so that higher layers of software may benefit from it, and (2) the lower layers don&rsquo;t impose specific policy choices that will be detrimental to the higher layers of software. And this is what Houyhnhnm systems uniquely enable that Human and Martian systems can&rsquo;t express because it goes against their paradigm.</p>
 
 <h3 id="neglect-for-the-meta-level">Neglect for the Meta-level</h3>
 
@@ -249,7 +263,7 @@
 
 <p>Unhappily Martians seem to miss both points of view. The Nock virtual machine is justified neither by sophisticated high-level concepts that allow to easily compose and decompose high-level applications, nor by efficient low-level concepts that allow to cost-effectively build software as layers on top of existing hardware. It sits in the middle; and not as a flexible and adaptable piece of scaffolding that helps connect the top to the bottom; but as a fixed detour you have to make along the way, as a bottleneck in your semantic tower, a floor the plan of which was designed by aliens yet compulsorily included in your architecture, that everything underneath has to support and everything above has to rest upon.</p>
 
-<p>Thus, if you want your high-level programs to deal with some low-level concept that isn&rsquo;t expressible in Nock (hint: it probably won&rsquo;t be), then you&rsquo;re in big trouble. One class of issues that Nock itself makes unexpressible yet that any programmer developing non-trivial programs has to care for is resource management: the programmer has no control over how much time or memory operations <em>really</em> take. Yet resources such as speed and memory matter, a lot: &ldquo;Speed has always been important otherwise one wouldn&rsquo;t need the computer.&rdquo; — Seymour Cray There <em>is</em> a resource model in Urbit, but it&rsquo;s all defined and hidden in u3, out of sight and out of control of the Martian programmer (unless we lift the lid on u3, at which point Urbiters leave Martian computing to go back to all too Human computing — and certainly not Houyhnhnm computing). At best, you have to consider evaluation of Nock programs as happening in a big fat ugly <a href="https://wiki.haskell.org/Monad">Monad</a> whereby programs compute functions that chain state implicitly managed by u3.</p>
+<p>Thus, if you want your high-level programs to deal with some low-level concept that isn&rsquo;t expressible in Nock (hint: it probably won&rsquo;t be), then you&rsquo;re in big trouble. One class of issues that Nock itself makes unexpressible yet that any programmer developing non-trivial programs has to care for is resource management: the programmer has no control over how much time or memory operations <em>really</em> take. Yet resources such as speed and memory matter, a lot: &ldquo;Speed has always been important otherwise one wouldn&rsquo;t need the computer.&rdquo; — Seymour Cray. There <em>is</em> a resource model in Urbit, but it&rsquo;s all defined and hidden in u3, out of sight and out of control of the Martian programmer (unless we lift the lid on u3, at which point Urbiters leave Martian computing to go back to all too Human computing — and certainly not Houyhnhnm computing). At best, you have to consider evaluation of Nock programs as happening in a big fat ugly <a href="https://wiki.haskell.org/Monad">Monad</a> whereby programs compute functions that chain state implicitly managed by u3.</p>
 
 <p>Of course, you could write a resource-aware language as a slow interpreter on top of Nock, then reimplement it efficiently under u3 as &ldquo;jets&rdquo;. Sure you could. That&rsquo;s exactly what a Houyhnhnm would do if forced to use Urbit. But of course, every time you make a change to your design, you must implement things twice, where you used to do it only once on Human or Houyhnhnm systems: you must implement your logic once as a slow interpreter in Nock; and you must implement it a second time in the Human system in which u3 jets are written. And how do you ensure the equivalence between those two implementations? You can fail to, or lie, and then Urbit is all a sham; or you can spend a lot of time doing it, at which point you wasted a lot of effort, but didn&rsquo;t win anything as compared to implementing the human code without going through Urbit. What did the detour through Nock buy you? Nothing. Maybe the persistence — but only if persistence with the exact modalities offered by u3 are what you want. If you aim at a different tradeoff between latency, coherency, replication, etc., you lose. And even if perchance you aimed at the exact very same tradeoff, you might be better off duplicating the general persistence design of u3 without keeping any of Nock and Urbit above it.</p>
 
@@ -267,21 +281,21 @@
 
 <p>Still, those who bring Martian technology to Earth fail their public every time they use esoteric terms that make it harder for Humans to understand Martian computing. The excuse given for using esoteric terms is that using terms familiar to Human programmers would come with the <em>wrong</em> connotations, and would lead Humans to an incorrect conceptual map that doesn&rsquo;t fit the delineations relevant to Martians. But that&rsquo;s a cop out. Beginners will start with an incorrect map anyway, and experts will have a correct map anyway, whichever terms are chosen. Using familiar terms would speed up learning and would crucially make it easier to pin point the similarities as well as dissimilarities in the two approaches, as you reuse a familiar term then explain how the usage differs.</p>
 
-<p>As someone who tries to translate alien ideas into Human language, I can relate to the difficulty of explaining ideas to people whose <em>paradigm</em> makes it unexpressible. This difficulty was beautifully evidenced and argued by Richard P. Gabriel in his article <a href="https://www.dreamsongs.com/Files/Incommensurability.pdf">The Structure of a Programming Language Revolution</a>. But the Urbit authors are not trying to be understood, trying their best not to be, and that&rsquo;s a shame, because whatever good and bad ideas exist in their paradigm deserve to be debated, which first requires that they should be understood. Instead they lock themselves into their own autistic planet.</p>
+<p>As someone who tries to translate alien ideas into Human language, I can relate to the difficulty of explaining ideas to people whose <em>paradigm</em> makes it unexpressible. This difficulty was beautifully evidenced and argued by Richard P. Gabriel in his article <a href="https://www.dreamsongs.com/Files/Incommensurability.pdf">The Structure of a Programming Language Revolution</a>. But the Urbit authors are not trying to be understood—they are trying their best not to be. That&rsquo;s a shame, because whatever good and bad ideas exist in their paradigm deserve to be debated, which first requires that they should be understood. Instead they lock themselves into their own autistic planet.</p>
 
 <p>There is a natural tradeoff when designing computing systems, whereby a program can be easy to write, be easy to read, be fast to run, and can even be two of these, but not three. Or at least, there is a &ldquo;triangle&rdquo; of a tradeoff (as with Zooko&rsquo;s triangle), and you can only improve a dimension so much before the other dimensions suffer. But Urbit seems to fail in all these dimensions. Its alien grammar, vocabulary, primitives, paradigm, etc., make it both hard to read and hard to write; and its forced abstraction makes programs slower to run.</p>
 
-<p>If that abstraction came &ldquo;naturally&rdquo; when factoring some programs, then it could make writing these programs easier; but the Urbit VM looks very little like what Humans use for anything, and offers no &ldquo;killer app&rdquo; that can&rsquo;t be implemented more simply. Its applicative functional machine with no cycles exchanging messages is reminiscent of the Erlang VM; but then it&rsquo;s not obvious what advantages Nock brings for the applications that currently use the Erlang VM, and all too obvious what it costs. It would be much easier to make an Erlang VM persistent or to teach Erlang Ames-style authentication than to teach u3 to do anything useful.</p>
+<p>If that abstraction came &ldquo;naturally&rdquo; when factoring some programs, then it could make writing these programs easier; but the Urbit VM looks very little like what either Humans or machines use for anything, and offers no &ldquo;killer app&rdquo; that can&rsquo;t be implemented more simply. Its applicative functional machine with no cycles exchanging messages is reminiscent of the Erlang VM; but then it&rsquo;s not obvious what advantages Nock brings for the applications that currently use the Erlang VM, and all too obvious what it costs. It would be much easier to make an Erlang VM persistent or to teach Erlang Ames-style authentication than to teach u3 to do anything useful.</p>
 
-<p>Yet, by having deliberately cut themselves from the rest of the world in so many ways, Urbit programmers find themselves forced to reinvent the world from scratch without being able to reuse much of other people&rsquo;s code, except at a very high cost both in terms of implementation effort (doing things both in Nock and in u3) and integrity (ensuring the two things are equivalent, or cheating). For instance, it looks like the Urbit authors wrote a markdown processor in Hoon, for instance, and have a &ldquo;jet&rdquo; recognizing it and replacing it by some common Markdown library in C. Except the two pieces of code are not bug compatible, so it&rsquo;s all a lie.</p>
+<p>Yet, by having deliberately cut themselves from the rest of the world in so many ways, Urbit programmers find themselves forced to reinvent the world from scratch without being able to reuse much of other people&rsquo;s code, except at a very high cost both in terms of implementation effort (doing things both in Nock and in u3) and integrity (ensuring the two things are equivalent, or cheating). For instance, the Urbit authors wrote a markdown processor in Hoon, and have a &ldquo;jet&rdquo; recognizing it and replacing it by some common Markdown library in C; however the two pieces of code are not bug compatible, so it&rsquo;s all a lie.</p>
 
 <h3 id="urbit-as-a-demo">Urbit as a demo</h3>
 
-<p>Urbit has none of the support for modular design necessary for programming <a href="https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small">&ldquo;in the large&rdquo;</a>. But its superficial simplicity of Nock makes it suitable as a cool demo of orthogonally persistent system.</p>
+<p>Urbit has none of the support for modular design necessary for programming <a href="https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small">&ldquo;in the large&rdquo;</a>. But the superficial simplicity of Nock makes it suitable as a cool demo of orthogonally persistent system.</p>
 
-<p>Of course, the demo only &ldquo;works&rdquo; by sweeping under the rug the difficult issues, to be solved by u3, the metasystem of Urbit; and unlike Nock, u3, where most of the interesting things happen, remains informal in its all-important side-effects, and not actually bound to behave as a faithful implementation as for the parts specified by the Nock machine. In other words, the pretense of having fully formalized the state of the system and its state function, and of putting the end-user in control of it, is ultimately a <em>sham</em>, a corruption. The power remains in the opaque and totally unspecified centralized implementation of the metaprogram that implements Nock and issues real-world side-effects.</p>
+<p>Of course, the demo only &ldquo;works&rdquo; by sweeping under the rug the difficult issues, to be solved by u3, the metasystem of Urbit; and unlike Nock, u3, where most of the interesting things happen, remains informal in its all-important side-effects, and not actually bound to behave as a faithful implementation of the parts specified by the Nock machine. In other words, the pretense of having fully formalized the state of the system and its state function, and of putting the end-user in control of it, is ultimately a <em>sham</em>, a corruption. The power remains in the opaque and totally unspecified centralized implementation of the metaprogram that implements Nock and issues real-world side-effects.</p>
 
-<p>There is no one-size fits all way to handle all the issues with connection to real-world devices, and policies that resolve tradeoffs regarding persistence, privacy, latency, efficiency, safety, etc. A centralized implementation for the metaprogram that handles them is not a universal solution. Only a general purpose platform for people to build their own metaprograms can enable them to each solve the issues to their satisfaction. And once you have this platform, you don&rsquo;t need any of the Urbit operating system, because you already have a Houyhnhnm computing system.</p>
+<p>There is no one-size fits all way to handle all the issues with connection to real-world devices, and with policies that resolve tradeoffs regarding persistence, privacy, latency, efficiency, safety, etc. A centralized implementation for the metaprogram that handles them is not a universal solution. Only a general purpose platform for people to build their own metaprograms can enable them to each solve the issues to their satisfaction. And once you have this platform, you don&rsquo;t need any of the Urbit operating system, because you already have a Houyhnhnm computing system.</p>
 
 <p>Houyhnhnms have no ill feelings towards either Martians or Humans. They hope that Urbit will be a great success, and demonstrate a lot of cool things and inspire people to adopt orthogonal persistence. However, Houyhnhnms believe that Urbit won&rsquo;t be able to outgrow being a cool demo unless it embraces a more general purpose metaprogramming architecture.</p>
   <footer>
@@ -303,19 +317,32 @@
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <g:plusone size="medium" href="http://ngnghm.github.io/blog/2016/06/11/chapter-10-houyhnhnms-vs-martians/"></g:plusone>
+    <div id="disqus_thread"></div>
     <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.identifier = undefined;
+        this.page.url = undefined;
+        this.page.title = undefined;
+        this.page.category_id = undefined;
+      };
       var disqus_shortname = 'ngnghm';
       (function() {
           var dsq = document.createElement('script');
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          dsq.setAttribute('data-timestamp', +new Date());
+          (document.head || document.body).appendChild(dsq);
       })();
     </script>
-    <div id="disqus_thread"></div>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
     <ul class="pager">
-
+    <li class="previous">
+      <a href="/blog/2020/08/10/chapter-11-a-work-horse-and-its-tools/">&larr; <em>Chapter 11: A Work-Horse and its Tools</em></a>
+    </li>
     <li class="next">
       <a href="/blog/2016/04/26/chapter-9-build-systems/"><em>Chapter 9: Build Systems</em> &rarr;</a>
     </li>

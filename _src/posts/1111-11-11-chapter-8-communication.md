@@ -21,7 +21,7 @@ besides the ones that already existed on Human computer systems?
 
 ### Implicit Communication ###
 
-From my discussions with Ann emerged the notion communications being explicit or implicit.
+From my discussions with Ann emerged the notion of communications being explicit or implicit.
 
 In the case of explicit communication,
 a process specifically names another process,
@@ -119,7 +119,7 @@ or have an end-of-line marker or escape character inserted;
 selecting more than a screenful may be an issue,
 though you can sometimes work around it by resizing the terminal or by switching to tiny fonts;
 standard output and error output may be mixed, and interspersed with output from background programs;
-layout artefacts may be included (such as spaces to end-of-line,
+layout artifacts may be included (such as spaces to end-of-line,
 or graphic characters that draw boxes in which text is displayed); etc.
 Still, the principle of a meta-program to handle display already exists
 in some Human computer systems;
@@ -237,7 +237,7 @@ or deal with hard concurrency issues.
 Unhappily, Human mainstream programming languages
 have no linguistic support for decentralized event loops,
 and make concurrency really hard
-because of side-effects in threads can all too easily mess things up.
+because side-effects in threads can all too easily mess things up.
 Libraries that implement a centralized event loop are _ipso facto_ incompatible with each other;
 those that rely on concurrency and a locking discipline are still hard to mix and match,
 and to avoid deadlocks they require an improbable global consensus

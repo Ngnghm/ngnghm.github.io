@@ -109,6 +109,10 @@
 
 <li><a href="/tags/Live-Upgrade.html">Live Upgrade</a></li>
 
+<li><a href="/tags/Long-Run.html">Long Run</a></li>
+
+<li><a href="/tags/Long-Term.html">Long Term</a></li>
+
 <li><a href="/tags/Martian.html">Martian</a></li>
 
 <li><a href="/tags/Meta.html">Meta</a></li>
@@ -123,6 +127,10 @@
 
 <li><a href="/tags/Point-of-View.html">Point of View</a></li>
 
+<li><a href="/tags/Principles.html">Principles</a></li>
+
+<li><a href="/tags/Programming-Language.html">Programming Language</a></li>
+
 <li><a href="/tags/Quality.html">Quality</a></li>
 
 <li><a href="/tags/Resource-Management.html">Resource Management</a></li>
@@ -136,6 +144,12 @@
 <li><a href="/tags/Specialization.html">Specialization</a></li>
 
 <li><a href="/tags/Strategies.html">Strategies</a></li>
+
+<li><a href="/tags/Strategy.html">Strategy</a></li>
+
+<li><a href="/tags/Time-Preference.html">Time Preference</a></li>
+
+<li><a href="/tags/Tools.html">Tools</a></li>
 
 <li><a href="/tags/Transience.html">Transience</a></li>
 
@@ -199,7 +213,7 @@
 
 <h3 id="simplicity">Simplicity</h3>
 
-<p>What made me most aware of this difference was when Ann discovered that, like her in her own world, I was trained in writing software, and then asked me to demonstrate the working of some Human computing systems, starting with the simplest I could find. So I showed her simple programs I was writing in C; C is a relatively simple programming language with a somewhat familiar syntax; its formal semantics is simple and well defined in theory, and in practice it is a universal programming language capable of doing everything; indeed it is used almost everywhere that Humans have computers. Yet, after she painfully assimilated enough of what I showed her, struggling all the way, her conclusion was that, no, I was obviously not programming in C, and that I couldn&rsquo;t possibly be programming in C, because C was not a universal programming system at all, but could do next to nothing, and only very inefficiently so. Instead, what I was programming in was not just C, but a C compilation toolchain plus an IDE and an Operating System plus plenty of libraries and utilities, that all together constituted a very large computing system with incredibly complex formal semantics; what more, a large part of the interaction between these components depended on a large number of completely informal semi-conventions about how the filesystem was or wasn&rsquo;t used by which process, and how these system and user processes themselves were managed. What to Humans looked simple because our <em>point of view</em> focuses on some aspects and neglects others, to the Houyhnhnms was an unmanaged and unmanageable mess because they see things from a different angle.</p>
+<p>What made me most aware of this difference was when Ann discovered that, like she was in her own world, I was trained in writing software, and then asked me to demonstrate the working of some Human computing systems, starting with the simplest I could find. So I showed her simple programs I was writing in C; C is a relatively simple programming language with a somewhat familiar syntax; its formal semantics is simple and well defined in theory, and in practice it is a universal programming language capable of doing everything; indeed it is used almost everywhere that Humans have computers. Yet, after she painfully assimilated enough of what I showed her, struggling all the way, her conclusion was that, no, I was obviously not programming in C, and that I couldn&rsquo;t possibly be programming in C, because C was not a universal programming system at all, but could do next to nothing, and only very inefficiently so. Instead, what I was programming in was not just C, but a C compilation toolchain plus an IDE and an Operating System plus plenty of libraries and utilities, that all together constituted a very large computing system with incredibly complex formal semantics; what more, a large part of the interaction between these components depended on a large number of completely informal semi-conventions about how the filesystem was or wasn&rsquo;t used by which process, and how these system and user processes themselves were managed. What to Humans looked simple because our <em>point of view</em> focuses on some aspects and neglects others, to the Houyhnhnms was an unmanaged and unmanageable mess because they see things from a different angle.</p>
 
 <p>What Houyhnhnms considered to be a simple system was one that has a short description when you take into account the entire software system, including the compiler, interactive editor, formal verification tools, libraries, operating system, drivers, hardware blueprints, etc., and including the informal conventions used by isolated or cooperating users, or the chaotic lack thereof. C, because its underlying development environment necessitated huge and largely informal support structures, constituted a very complex computing system, even though it looked small and simple once the support system was assumed. Functional programming languages like ML or Haskell yield much simpler systems if you take into account the verification tools and the development process; yet they still neglected entire swaths of what makes a complete computing system, such as IDE, Operating System, persistent storage usage conventions, schema upgrade, etc., and so they ended up being overall still pretty complex.</p>
 
@@ -207,7 +221,7 @@
 
 <p>Houyhnhnms certainly don&rsquo;t restrict themselves to using systems that are simple (according to their metric). But these simple systems do play an essential role in the Houyhnhnm computing ecology: first, they are an essential part of computing curricula, so programmers can get a grasp of all the parts that make a complete system; second, the ways to factor and evolve such systems is also studied by designers and managers so they may think in terms of overall system architecture (including the Houyhnhnm factor, of course); last but not least, they are also instrumental in the bootstrapping process by which more complex systems are built in a way that is <a href="http://fare.tunes.org/computing/reclaim_your_computer.html">auditably <em>secure</em></a>.</p>
 
-<p>In any case, a change in point of view led to a completely different metric to assess the simplicity of computing systems. It would also change how to judge other qualities of computing systems in general — and thus change the approach to how computing is done and what artifacts it yields. And next on the block was something as basic as Persistence&hellip;</p>
+<p>In any case, a change in point of view led to a completely different metric to assess the <a href="https://youtu.be/NdSD07U5uBs">simplicity</a> of computing systems. It would also change how to judge other qualities of computing systems in general — and thus change the approach to how computing is done and what artifacts it yields. And next on the block was something as basic as Persistence&hellip;</p>
 
 <h3 id="post-scriptum-pronounciation">Post-Scriptum: Pronounciation</h3>
 
@@ -231,17 +245,28 @@
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <g:plusone size="medium" href="http://ngnghm.github.io/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/"></g:plusone>
+    <div id="disqus_thread"></div>
     <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.identifier = undefined;
+        this.page.url = undefined;
+        this.page.title = undefined;
+        this.page.category_id = undefined;
+      };
       var disqus_shortname = 'ngnghm';
       (function() {
           var dsq = document.createElement('script');
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          dsq.setAttribute('data-timestamp', +new Date());
+          (document.head || document.body).appendChild(dsq);
       })();
     </script>
-    <div id="disqus_thread"></div>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
     <ul class="pager">
     <li class="previous">
       <a href="/blog/2015/08/03/chapter-2-save-our-souls/">&larr; <em>Chapter 2: Save Our Souls</em></a>

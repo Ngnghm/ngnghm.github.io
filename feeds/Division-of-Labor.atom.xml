@@ -43,7 +43,7 @@
  &lt;li&gt;
   &lt;p&gt;&lt;em&gt;End-Users&lt;/em&gt; use a software assembly while remaining blissfully unaware  of the complex techniques and many modules that had to be mobilized  to make their experience possible.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
 
-&lt;p&gt;Note that for the purpose of his own applications, as well as for his personal testing needs, a &lt;em&gt;user&lt;/em&gt; may himself be an &lt;em&gt;integrator&lt;/em&gt; and an &lt;em&gt;end-user&lt;/em&gt; of many modules (though he may not be, and rely on other people such as team members to handle integration for him or to test and run the software). However his personal integration and end-use usuall doesn&amp;rsquo;t bind other integrators who may use different versions of the same modules, or different combinations of modules altogether.&lt;/p&gt;
+&lt;p&gt;Note that for the purpose of his own applications, as well as for his personal testing needs, a &lt;em&gt;user&lt;/em&gt; may himself be an &lt;em&gt;integrator&lt;/em&gt; and an &lt;em&gt;end-user&lt;/em&gt; of many modules (though he may not be, and rely on other people such as team members to handle integration for him or to test and run the software). However his personal integration and end-use usually do not bind other integrators and their end-users who may use different versions of the same modules, or different combinations of modules altogether.&lt;/p&gt;
 
 &lt;h3 id="pure-functional-reactive-programming"&gt;Pure Functional Reactive Programming&lt;/h3&gt;
 
