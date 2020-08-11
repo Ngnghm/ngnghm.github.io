@@ -1,7 +1,7 @@
 Houyhnhnm Computing
 ===================
 
-<img src="/images/Ngnghm.jpg"
+<img src="/img/Ngnghm.jpg"
 alt="Ngnghm" title="Ngnghm" align="right" />
 
 > If you want to build a ship, don’t drum up the men to gather wood, divide the work,
@@ -29,4 +29,3 @@ and then regenerate the website with:
     raco frog -bp
 
 When it's all ready, just `git commit` and `git push` to github.
-
