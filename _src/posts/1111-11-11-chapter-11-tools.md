@@ -126,11 +126,22 @@ Thus, whenever a catastrophe happens that could have been avoided through the us
 then he is also culpable — not because his casual mistake caused the catastrophe,
 but because his choice of a bad tool made the catastrophe likely or inevitable*.
 And this culpability only increases, both (a) the more the user was an expert in the field,
-and also (b) the more he had a say in the decision, at which point it was his greater responsibility
-to seek from others the expertise that he didn't possess personally.
+and also (b) the more he had a say in the decision, even if not an expert.
+
+Indeed, the more empowered you are in making a decision,
+the more you are responsible for making it a good one;
+at that point it is your responsibility to seek from others
+whatever necessary expertise you don't possess personally.
+If a child under your care is sick, and you fail to consult a competent doctor
+who would have prescribed a proper treatment,
+but instead poison him dead with a "cure" you plain made up,
+then you are fully guilty of murder, and your lack of medical education is no excuse.
+Same if the "cure" was prescribed by a quack doctor whom you chose to trust
+against due diligence (that you may have, criminally, neglected).
+The argument applies just as well to the failure of a software project.
 
 A novice at the bottom of the programming hierarchy, who lacks either knowledge or power,
-has little blame (or praise) to receive in the positive or negative outcomes of the software
+has little praise or blame to receive in the positive or negative outcomes of the software
 he partook in building.
 But a seasoned programmer who, through the use of a bad programming language, partakes in a catastrophe,
 is largely to blame for having accepted to write in said programming language.
@@ -166,9 +177,9 @@ and so on, with even the most junior permanent developer having more than 50% bl
 and interns and novices having over 25% blame,
 many shareholders at more than 10% each,
 and millions of casual users at more than 1% each.
-Anyone who could have spoken out or walked away when their action
-could have had influence in averting the catastrophe, is to blame.
-This blame is major or minor depending on how much influence this would have been.
+Anyone who could have acted to avert the catastrophe,
+be it by speaking out or walking away, is to blame.
+This blame increases with how much their action would have been likely to influence the outcome.
 The sum of all those blames is well over 100%.
 The ones' greater culpability is no excuse for the others' lesser culpability.
 
@@ -190,8 +201,8 @@ Quite the contrary, the shame will rightfully reflect on your skill and power.
 
 ### Expertise and Meta-Expertise
 
-Now that we understand it is an important responsibility,
-let us examine how to exercise it by making a good choice of tools.
+Now that we understand that making a good choice of tools is an important responsibility,
+let us examine how to exercise it.
 What tools should you be using for your next project?
 When can you tell the tools used for the current project are inadequate after all and need to be changed?
 Of course there is no one-size-fits-all answer to these questions.
@@ -240,10 +251,10 @@ until you find people highly recommended by multiple sources;
 and this can be enough in case the expertise is itself considered uncontroversial,
 or you somehow trust the meta-expertise of the referrers themselves.
 
-For important decisions on topics where the expertise ceases to be uncontroversial,
+For important decisions on specialized topics where the expertise ceases to be obvious and uncontroversial,
 or when you can't defer your meta-expertise to other experts,
 you will want to follow some meta-principles that will help you
-identifying actual experts while rejecting frauds who disguise as experts.
+identify actual experts while rejecting frauds who disguise as experts.
 One technique is to ask the potential expert to explain to you the issues at stake,
 and counter the objections that you may have gleaned from various sources.
 Lacking the expertise yourself, you may not be able to fully judge
@@ -338,5 +349,3 @@ but that will require careful thought and preparation—a long-term *strategy*.
 
 We thus discussed software strategy with Ann, and she inquired about the life arcs
 of the technologies we were considering. But that is another story...
-
-*If you enjoy this series of writing, support me on [https://github.com/sponsors/fare](GitHub sponsors).*
