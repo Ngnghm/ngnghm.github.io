@@ -151,7 +151,7 @@ are to blame, culminating with whatever CEO or bureaucrat had executive powers.
 ### The Blame Game
 
 As my human friend and I were trying to pin down blame on one person to try to exonerate the other,
-Ann was astonished. She noticed that we were play the "Blame Game" as if blame were *additive*:
+Ann was astonished. She noticed that we were playing the "Blame Game" as if blame were *additive*:
 that is, we were supposing that blame is distributed amongst participants,
 such that the sum of all shares of the blame add up to 100%.
 Actually, Houyhnhnms well understand that blame is *subadditive*,
@@ -312,7 +312,7 @@ but will have to be continuously deployed, maintained and updated:
   * to respond to the changing demands of an ever changing world,
   * to interface with a moving set of external systems,
   * to keep satisfying a growing number of users in ever renewed ways,
-  * to withhold attacks by ever determined and sophisticated enemies,
+  * to withhold attacks by ever more determined and more sophisticated enemies,
   * to satisfy ever higher standards, whether imposed by market pressure or government regulations,
   * to fix issues that didn't use to matter much but now have become important,
   * to evolve in unforeseen ways, as new technological possibilities and constraints are discovered,
