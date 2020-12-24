@@ -648,7 +648,7 @@ environment, that can never fully address all build issues. To
 Houyhnhnms, the build system is just the regular system used at the
 meta-level, and what we learn by analyzing what a build system should
 do is the structure of the regular system's programming language, or
-what it evolves toward as it matures. Once again, a different in
+what it evolves toward as it matures. Once again, a difference in
 _point of view_ leads to completely different software architecture,
 with very different results.
 
