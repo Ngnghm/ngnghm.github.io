@@ -71,7 +71,7 @@ but she just thought that it was due to
 her not understanding the Houyhnhnm-Computer Interface properly,
 to said interface not having proper automated recognition for hoof-written Houyhnhnm scribblings,
 and to her not knowing how to search back in time what she had previously drawn.
-He assumed that Human computers were probably not geared
+She assumed that Human computers were probably not geared
 to properly index her observations for easy retrieval,
 but that of course they would otherwise all be logged in the computer's memory.
 Was I implying that all her notes were lost,
@@ -98,7 +98,7 @@ providing several layers of availability and of latency —
 kept private using several layers of cryptography.
 
 Of course, you can control what does or doesn't get backed up where,
-by defining domains each with its own privacy policy that may differ from the reasonable defaults.
+by defining domains each with its own privacy policy that may differ from the (reasonable) defaults.
 The user interface is aware of these domains, and
 makes it clear at all times which domain you're currently working with.
 It also prevents you from inadvertently copying data from a more private domain
@@ -204,7 +204,7 @@ include perfectly predictable events,
 such as the eventual death of each and every piece of hardware
 and of each and every software project and service-providing business,
 in a mere matter of years.
-Yet, content with expectations from this _apparent_ persistence,
+Yet, satisfied with expectations from this _apparent_ persistence,
 users can easily be fooled, like Ann was initially,
 into believing that Human computer systems
 are just as good as Houyhnhnm computing systems in this regard;
@@ -249,7 +249,7 @@ Now, after Ann made this painful first hoof experience
 of the persistence failure of Human computer systems,
 she started investigating how Human computer systems implemented persistence, or failed to.
 And she discovered to her dismay that beneath the
-[veneer of persistence](http://www.www.loper-os.org/?p=448),
+[veneer of persistence](http://www.loper-os.org/?p=448),
 there was transience at every level she was looking at — not just transience,
 but [fractal transience](http://rationalwiki.org/wiki/Fractal_wrongness):
 this fundamental design difference between Human and Houyhnhnm computing systems
@@ -257,7 +257,7 @@ is observable at every level of these systems.
 The user, the programmer, the library developer,
 the compiler writer, the operating system implementer,
 everyone, all the time, has to assume the software and hardware layers below him are fragile,
-supposed to work only a single computing domain;
+supposed to work only in a single computing domain;
 everyone will in turn provide a similarly fragile and non-transportable device
 to the users above him.
 All the manual handling of persistence costs a significant fraction of software development

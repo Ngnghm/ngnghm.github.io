@@ -82,7 +82,7 @@ with which we will sail together to the land of Houyhnhnm computing.
 The fundamental difference between Human computer systems and
 Houyhnhnm computing systems is one of _point of view_.
 Houyhnhnms do not possess a different kind of logic, nor mathematics, nor physics;
-though they have discovered how to travel through many dimensions,
+though they have discovered how to travel across dimensions to other potential universes,
 they do not have quantum computers, logical oracles,
 or any magic means of computation beyond our own capabilities.
 However they approach computing in a way that is foreign to us Humans,
@@ -112,7 +112,7 @@ with role delineations according to very different criteria,
 resulting in a very different variety of artifacts of very different sizes,
 but most importantly, connected in very different ways.
 It may all be but _just so stories_, but
-[stories have consequences](http://fare.tunes.org/computing/bal2009.pdf).
+[stories have consequences](https://github.com/fare/better-stories).
 
 
 ### Simplicity
