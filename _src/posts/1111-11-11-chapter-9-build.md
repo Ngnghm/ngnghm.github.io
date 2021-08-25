@@ -324,17 +324,19 @@ robustness, debuggability and extensibility, for free.
 
 ### Global Namespace
 
-When you start to build _in the large_, you realize that the names
-people give to their modules constitute a _Global Namespace_, or
-rather, a collection of global namespaces, one per build system:
-indeed, the whole point of module names is that authors, users and
-integrators can refer to the same thing without being part of the same
-project, without one-to-one coordination, but precisely picking
-modules written largely by other people whom you don't know, and who don't
-know you. Global namespaces enable division of labor on a large scale,
-where there is no local context for names. Each namespace corresponds
-to a _community_ that uses that namespace and has its own rules to
-avoid or resolve any conflicts in naming.
+When you start to build _in the large_, you realize that
+the names people give to their modules constitute a _Global Namespace_,
+or rather, a collection of global namespaces, one per build system:
+indeed, the whole point of module names is that
+authors, users and integrators can refer to the same thing
+without being part of the same project,
+without one-to-one coordination,
+but precisely picking modules written largely by other people
+whom you don't know, and who don't know you.
+Global namespaces enable division of labor on a large scale,
+where there is no local context for names.
+Each namespace corresponds to a _community_ that uses that namespace
+and has its own rules to avoid or resolve any conflicts in naming.
 
 Thus, for instance, when Humans build Java software in the small,
 they deal with the hierarchical namespace of Java packages;
@@ -461,17 +463,21 @@ Now note that, to solve the DLL hell, modules present in several supermodules
 must all be chosen at the same version;
 therefore, all tests must happen based on a coherent snapshot of all modules.
 
-This approach can be seen as a generalization of Google's official strategy
-of "building from HEAD", where what Google calls "HEAD" would
-be the collection of branches for modules that pass their unit tests.
-In this more general approach, "HEAD" is just one step in a larger
-network of branches, where some development branches feed into HEAD
-when they pass their narrow unit tests, and HEAD feeds into more
-widely tested integration branches. The testing and vetting process
-can be fully automated, tests at each level being assumed sufficient
-to assess the quality of the wider module; actually, from the point of
-view of the process, manual tests can also be considered part of
-the automation, just a slow, unreliable part implemented in wetware:
+This approach can be seen as a generalization of
+Google's official strategy of "building from HEAD",
+where what Google calls "HEAD" would be
+the collection of branches for modules that pass their unit tests.
+In this more general approach,
+"HEAD" is just one step in a larger network of branches,
+where some development branches feed into HEAD
+when they pass their narrow unit tests, and
+HEAD feeds into more widely tested integration branches.
+The testing and vetting process can be fully automated,
+tests at each level being assumed sufficient
+to assess the quality of the wider module;
+actually, from the point of view of the process,
+manual tests can also be considered part of the automation,
+just a slow, unreliable part implemented in wetware:
 _from a programmer's point of view, the user is a peripheral that
 types when you issue a read request._ (P. Williams).
 
@@ -564,7 +570,7 @@ they can reach without any consideration for an end goal.
 Admittedly, that's probably the correct approach
 for the pioneers who don't yet know where they tread.
 But for those who come after the pioneers,
-it's actually wilful blindness, the refusal to open one's eyes and see.
+it's actually wilful blindness, the refusal to open one's eyes and to see.
 
 Human programmers thus devise some _ad hoc_ domain specific language
 for build configuration; this language can barely express simple builds,
@@ -673,7 +679,7 @@ the regular system used at the meta-level, and
 what we learn by analyzing what a build system should do
 is the structure of the regular system's programming language,
 or what it evolves toward as it matures.
-Once again, a different in _point of view_ leads to
+Once again, a difference in _point of view_ leads to
 completely different software architecture, with very different results.
 
 [propositions as filenames]: # (http://bentnib.org/posts/2015-04-17-propositions-as-filenames-essence-of-make.html)
