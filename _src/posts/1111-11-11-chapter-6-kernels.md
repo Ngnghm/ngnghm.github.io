@@ -82,7 +82,7 @@ for instance, you have to login as a _user_ to access the system;
 then you can only access those files owned by said user,
 or explicitly shared by other users.
 
-But there again so does any system manage access to resources.
+But there again so does any system-managed access to resources.
 Moreover, whichever access control a Human Computer System kernel provides
 is often so primitive that it's both too slow to be in any code's critical path
 and yet too coarse and too inexpressive to match

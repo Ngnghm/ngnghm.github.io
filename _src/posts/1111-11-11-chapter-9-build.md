@@ -56,7 +56,7 @@ _developing software_:
 unlike many Humans, Houyhnhnms do not think of software as a _solution_ to a "problem",
 that comes into existence by a single act of creation _ex nihilo_;
 they see developing software as an interactive process
-of iterative [evolution](http://fare.tunes.org/computing/evolutionism.html),
+of incremental [evolution](http://fare.tunes.org/computing/evolutionism.html),
 that _addresses_ on-going "issues" that sentients experience.
 Sentient developers will thus continually modify, grow and shrink existing software,
 in ways not completely random yet mostly not predictable —
@@ -83,7 +83,7 @@ which groups together related software definitions
 Source files can sometimes be subdivided into smaller modules
 (every definition, every syntactic entity, can be viewed as a software module);
 and source files can often be grouped into ever larger modules:
-directories, libraries, systems, projects, repositories, distributions, etc.
+directories, libraries, components, systems, projects, repositories, distributions, etc.
 The names and specifics vary depending on
 the programming languages and software communities that deal with those modules;
 but generally, a _module_ can be composed of _submodules_ and be part of larger _supermodules_.
@@ -336,29 +336,32 @@ where there is no local context for names. Each namespace corresponds
 to a _community_ that uses that namespace and has its own rules to
 avoid or resolve any conflicts in naming.
 
-Thus, for instance, when Humans build Java software in the small, they
-deal with the hierarchical namespace of Java packages; and when they
-build it in the large, they _also_ deal with the namespace of maven
-jar files. In Common Lisp, in the small they deal with hierarchical
-modules and files within a system, whereas in the large they deal with
-the global namespace of ASDF systems (but at least here these two
-naming are mostly orthogonal). In C, there is the namespace of
-symbols, and the namespace of libraries you may link against. But in
-the larger than all these languages' respective build systems, there
-is the namespace of packages managed by the "operating system
-distribution" (whether via `rpm`, `dpkg`, `nix` or otherwise). Note
-how these many namespaces often overlap somewhat, with more or less
-complex partial mappings or hierarchical inclusions between them.
+Thus, for instance, when Humans build Java software in the small,
+they deal with the hierarchical namespace of Java packages;
+and when they build it in the large, they _also_ deal
+with the namespace of maven jar files.
+In Common Lisp, they first deal with the namespace of symbols and packages,
+then with that of hierarchical modules and files within a system, and
+finally with the global namespace of ASDF systems.
+In C, there is the namespace of symbols, and
+the namespace of libraries you may link against.
+But in the larger, beyond all these languages' respective build systems,
+there is the namespace of packages managed by
+the "operating system distribution"
+(whether via `rpm`, `dpkg`, `nix` or otherwise).
+Note how all these many namespaces often overlap somewhat,
+with more or less complex partial mappings or hierarchical inclusions
+between them.
 
-The name of a module carries _intent_ that is supposed to remain as
-its _content_ varies with time or with configuration. Humans, who like
-to see _things_ even where there aren't, tend to look at intent as a
-platonic ideal state of what the module "should" be doing; but
-Houyhnhnms, who prefer to see _processes_, see intent as a
+The name of a module carries _intent_ that is supposed to remain
+as its _content_ varies with time or with configuration.
+Humans, who like to see _things_ even where there aren't,
+tend to look at intent as a platonic ideal state
+of what the module "should" be doing;
+but Houyhnhnms, who prefer to see _processes_, see intent as a
 [Schelling point](https://en.wikipedia.org/wiki/Focal%20point%20%28game%20theory%29)
-where the plans of sentient beings meet with the fewest coordination
-issues, based on which they can divide their own and each other's
-labor.
+where the plans of sentient beings meet with the fewest coordination issues,
+based on which they can divide their own and each other's labor.
 
 Note that a name, which denotes a fixed _intent_, may refer to varying _content_.
 Indeed, the entire point of having a name is to abstract away from those changes
@@ -372,20 +375,21 @@ some "virtual" module to be determined from context
 (such as a choice of compiler, or of `libc`, etc.).
 In this and other cases, there may be mutually incompatible modules,
 that cannot be present in a same build at the same time
-(for instance, `glibc`, `uclibc` and `klibc` are mutually exclusive in a same program,
-and so are `libgif` and `libungif`).
-And yet, a "same" larger build may recursively include multiple virtualized system images
+(for instance, `glibc`, `uclibc` and `klibc` are mutually exclusive
+in a same program, and so are `libgif` and `libungif`).
+And yet, a "same" larger build may recursively include
+multiple virtualized system images
 that are each built while binding some common names to different contents:
 for instance, as part of a same installation, a boot disk might be generated
 using the lightweight `uclibc` whereas the main image would use the full-fledged `glibc`.
 
-A good build system makes it easy to manage its global namespaces. To
-remain simple, it will not unnecessarily multiply namespaces; instead
-it will leverage existing namespaces and their communities, starting
-with the namespace of identifiers in the FRP language; it will thus
-hierarchically include other namespaces into its main namespace, and
-in particular it will adequately map its namespaces to the filesystem
-or source control namespaces, etc.
+A good build system makes it easy to manage its global namespaces.
+To remain simple, it will not unnecessarily multiply namespaces;
+instead it will leverage existing namespaces and their communities,
+starting with the namespace of identifiers in the FRP language;
+it will thus hierarchically include other namespaces into its main namespace,
+and in particular it will adequately map its namespaces
+to the filesystem or source control namespaces, etc.
 
 
 ### Out of DLL Hell
@@ -505,15 +509,15 @@ when building software), the instrumentation and tracking can even be
 done after the fact, with the system redoing parts of the computation
 in an instrumented context when it is asked to extract a build script.
 
-Instrumenting code on demand also offers solution for debugging. When
-a build or test error is found, the system can automatically re-run
+Instrumenting code on demand also offers solution for debugging.
+When a build or test error is found, the system can automatically re-run
 the failing action with a variant of the failing code generated with
 higher instrumentation settings, possibly
 [omniscient debugging](http://www.drdobbs.com/tools/omniscient-debugging/184406101),
 enabled shortly before the failure. The developer can then easily
-track down the chain of causes of the failure in his code.  Now,
-omniscient debugging might be too slow or too big for some tests; then
-the developer may have to start with instrumentation at some coarse
+track down the chain of causes of the failure in his code.
+Now, omniscient debugging might be too slow or too big for some tests;
+then the developer may have to start with instrumentation at some coarse
 granularity, and explicitly zoom in and out to determine with more
 precision the location of the bug. There again, using deterministic
 programming languages means that bugs are inherently reproducible, and
@@ -526,132 +530,151 @@ because a line of comment was added.
 
 ### Reinventing the Wheel and Making it Square
 
-At that point, it may become obvious that what we've been calling "a
-good build system" has all the advanced features of a complete
-development system, and more: It includes features ranging from a
-reactive programming core to general purpose extension languages to
-control support for targets in arbitrary new programming languages or
-mappings between arbitrary namespaces. It has higher-order structures
-for control flow and data flow, staged evaluation with hygiene across
-multiple namespaces. It supports modularity at various granularities
-in tight cooperation with the source control system. It has a rich set
-of instrumentation strategies for programs used while building, and
-another rich set of instrumentation strategies for target programs
-being tested. It scales from small interactive programs in a process's
-memory to large distributed software with a global cache. How can such
-a thing even exist?
+At that point, it may become obvious that
+what we've been calling "a good build system" has
+all the advanced features of a complete development system, and more:
+It includes features ranging from a reactive programming core
+to general purpose extension languages
+to control support for targets in arbitrary new programming languages
+or mappings between arbitrary namespaces.
+It has higher-order structures for control flow and data flow,
+staged evaluation with hygiene across multiple namespaces.
+It supports modularity at various granularities
+in tight cooperation with the source control system.
+It has a rich set of instrumentation strategies
+for programs used while building, and
+another rich set of instrumentation strategies
+for target programs being tested.
+It scales from small interactive programs in a process's memory
+to large distributed software with a global cache.
+How can such a thing even exist?
 
-Human programmers might think that such a system is a practical
-impossibility, out of reach of even the bestest and largest software
-companies, that can't afford the development of such a software
-Behemoth — and indeed demonstrate as much by their actual choice of
-build systems. So Human programmers would typically set their
-expectations lower, whenever they'd start writing a new build system,
-they would just pick one more of the properties above than the
-competition possesses, and develop around it a "minimal viable
-product", then keep reaching for whichever low-hanging fruits they can
-reach without any consideration for an end goal. Admittedly, that's
-probably the correct approach for the pioneers who don't yet know
-where they tread. But for those who come after the pioneers, it's
-actually wilful blindness, the refusal to open one's eyes and to see.
+Human programmers might think that such a system
+is a practical impossibility,
+out of reach of even the bestest and largest software companies,
+that can't afford the development of such a software Behemoth —
+and indeed demonstrate as much by their actual choice of build systems.
+So Human programmers would typically set their expectations lower,
+whenever they'd start writing a new build system,
+they would just pick one more of the properties above
+than the competition possesses, and
+develop around it a "minimal viable product",
+then keep reaching for whichever low-hanging fruits
+they can reach without any consideration for an end goal.
+Admittedly, that's probably the correct approach
+for the pioneers who don't yet know where they tread.
+But for those who come after the pioneers,
+it's actually wilful blindness, the refusal to open one's eyes and see.
 
 Human programmers thus devise some _ad hoc_ domain specific language
-for build configuration; this language can barely express simple
-builds, and the underlying execution infrastructure can barely build
-incrementally, either through timestamps (like `Make`) or through
-content digests (like `Bazel`). Then, Humans painstakingly tuck new
-_ad hoc_ DSLs and DSL modifications to it to support more advanced
-features: add a string substitution preprocessing phase or two to
-`Make`, or an extension mechanism or two to `Bazel`; call external
-programs (or reimplement them internally) to extract dependency
-information from programs in each supported language; etc. However,
-because each feature is added without identifying the full envelope of
-the interactions that their system ought to address, each new feature
-that Humans add introduces its own layer of complexity and badly
-interacts with past and future features, making further progress
-exponentially harder as the product progresses. Humans thus tend to
-reinvent the wheel all the time, and most of the time they make it
-square — because they are not wheel specialists but in this case build
-specialists looking for an expedient that happens to be wheelish.
+for build configuration; this language can barely express simple builds,
+and the underlying execution infrastructure can barely build incrementally,
+either through timestamps (like `Make`)
+or through content digests (like `Bazel`).
+Then, Humans painstakingly tuck new _ad hoc_ DSLs and DSL modifications
+to it to support more advanced features:
+add a string substitution preprocessing phase or two to `Make`,
+or an extension mechanism or two to `Bazel`;
+call external programs (or reimplement them internally) to extract
+dependency information from programs in each supported language; etc.
+However, because each feature is added without identifying
+the full envelope of the interactions that their system ought to address,
+each new feature that Humans add introduces its own layer of complexity
+and badly interacts with past and future features,
+making further progress exponentially harder as the product progresses.
+Humans thus tend to reinvent the wheel all the time, and
+most of the time they make it square — because
+they are not wheel specialists but in this case build specialists
+looking for an expedient that happens to be wheelish.
 
-Houyhnhnms have a completely different approach to developing a build
-system (or any software project). They don't think of build software
-as a gadget separate from the rest of the programming system, with its
-own evaluation infrastructure, its own _ad hoc_ programming languages;
-rather it is a library for meta-level build activities, written in an
-appropriate deterministic reactive style, in the same general purpose
-programming language as the rest of the system. At the same time, most
-build activities are actually trivial: one module depends on a few
-other modules, the dependency is obvious from a cursory look at the
-module's source; and it all can be compiled without any non-default
-compiler option. But of course, the activities are only trivial after
-the build infrastructure was developed, and support for the language
-properly added.
+Houyhnhnms have a completely different approach
+to developing a build system (or any software project).
+They don't think of build software as a gadget separate
+from the rest of the programming system,
+with its own evaluation infrastructure,
+its own _ad hoc_ programming languages;
+rather it is a library for meta-level build activities,
+written in an appropriate deterministic reactive style,
+in the same general purpose programming language as the rest of the system.
+At the same time, most build activities are actually trivial:
+one module depends on a few other modules,
+the dependency is obvious from a cursory look at the module's source;
+and it all can be compiled without any non-default compiler option.
+But of course, the activities are only trivial
+after the build infrastructure was developed,
+and support for the language properly added.
 
 Thus, Houyhnhnms also start small (there is no other way to start),
 but early on (or at least some time after pioneering new territories
-but before going to production on a very large scale) they seek to
-identify the interactions they want to address, and obtain a big
-picture of where the software will go. Thus, when they grow their
-software, they do it in ways that do not accumulate new complexity,
-but instead improve the overall simplicity of the interaction, by
-integrating into their automation aspects that were previously dealt
-with manually. Also, what counts as "small" to Houyhnhnms is not the
-same as for Humans: as
-[previously discussed](/blog/2015/12/25/chapter-7-platforms-not-applications/),
-they do not write "standalone programs", but natural extensions to
-their programming platform. Therefore each extension itself is small,
-but it can reuse and leverage the power of the entire platform. Thus,
-Houyhnhnmms do not need to invent new _ad hoc_ programming languages
-for configuration and extension, then face the dilemma of either
-investing a lot in tooling and support using these languages or leave
-developers having to deal with these aspects of their software without
-much tooling, if at all. Instead, they refine their "normal"
-programming languages, and any improvement made while working on the
-"application" becomes available to programs at large, whereas in the
-other way around any improvement made available to programs at large
-becomes available when modifying the application (in this case, a
-build system).
+but before going to production on a very large scale)
+they seek to identify the interactions they want to address,
+and obtain a big picture of where the software will go.
+Thus, when they grow their software, they do it in ways
+that do not accumulate new complexity, but instead
+improve the overall simplicity of the interaction,
+by integrating into their automation aspects
+that were previously dealt with manually.
 
-Consequently, a Houyhnhnm develops a build system by making sure his
-normal language can express modules in arbitrary target languages,
-programmable mapping between language identifiers and filesystem
-objects, pure functional computations, determinism, reactive
-programming paradigm with push and pull, dynamic execution flow,
-higher-order functions, virtualization of execution, staged
-evaluation, hygiene, etc. Not all features may be available to begin
-with; but growing the system happens by enriching the normal
-programming language with these features not by building a new
-minilanguage from scratch for each combination of feature, whereby
-build programs won't be able to interoperate when new features are
-added.
+Also, what counts as "small" to Houyhnhnms is not the same as for Humans:
+as [previously discussed](/blog/2015/12/25/chapter-7-platforms-not-applications/),
+they do not write "standalone programs", but
+natural extensions to their programming platform.
+Therefore each extension itself is small,
+but it can reuse and leverage the power of the entire platform.
+Thus, Houyhnhnmms do not need to invent new _ad hoc_ programming languages
+for configuration and extension,
+then face the dilemma of either investing a lot in tooling and support
+using these languages or leave developers having to deal with
+these aspects of their software without much tooling, if at all.
+Instead, they refine their "normal" programming languages, and
+any improvement made while working on the "application"
+becomes available to programs at large, whereas in the other way around
+any improvement made available to programs at large
+becomes available when modifying the application
+(in this case, a build system).
 
-Another advantage of the Houyhnhnm platform approach is that since
-programming language features are themselves largely modular, they can
-be reused independently in different combinations and with future
-replacements of other features. Thus, if you realize you made a design
-mistake, that you can improve some feature at the cost of some
-incompatibility, etc., then you don't have to throw away the entire
-code base: you can reuse most of the code, and you might even build
-bridges to keep supporting users of the old code until they migrate to
-the new one, while sharing a common base that enforces shared
-invariants. Thus, for instance you might start with a system that does
-not provide proper hygiene, add hygiene later, and keep the
-non-hygienic bits running while you migrate your macros to support the
-new system, and maybe even still afterwards. Each time, writing "the
-next" build system does not involve starting an even larger behemoth
-from scratch, but adding a feature to the existing code base.
+Consequently, a Houyhnhnm develops a build system by making sure
+his normal language can express modules in arbitrary target languages,
+programmable mapping between language identifiers and filesystem objects,
+pure functional computations, determinism,
+reactive programming paradigm with push and pull, dynamic execution flow,
+higher-order functions, virtualization of execution,
+staged evaluation, hygiene, etc.
+Not all features may be available to begin with;
+but growing the system happens by enriching the normal programming language
+with these features not by building a new minilanguage
+from scratch for each combination of feature, whereby
+build programs won't be able to interoperate when new features are added.
 
-In conclusion: to Humans, a build system is a complex collection of
-build utilities disconnected from the rest of the development
-environment, that can never fully address all build issues. To
-Houyhnhnms, the build system is just the regular system used at the
-meta-level, and what we learn by analyzing what a build system should
-do is the structure of the regular system's programming language, or
-what it evolves toward as it matures. Once again, a difference in
-_point of view_ leads to completely different software architecture,
-with very different results.
+Another advantage of the Houyhnhnm platform approach is that
+since programming language features are themselves largely modular,
+they can be reused independently in different combinations
+and with future replacements of other features.
+Thus, if you realize you made a design mistake,
+that you can improve some feature at the cost of some incompatibility, etc.,
+then you don't have to throw away the entire code base:
+you can reuse most of the code, and you might even build bridges
+to keep supporting users of the old code until they migrate to the new one,
+while sharing a common base that enforces shared invariants.
+Thus, for instance you might start with a system
+that does not provide proper hygiene, add hygiene later, and
+keep the non-hygienic bits running while you migrate your macros
+to support the new system, and maybe even still afterwards.
+Each time, writing "the next" build system does not involve
+starting an even larger behemoth from scratch, but
+adding a feature to the existing code base.
 
+In conclusion: to Humans, a build system is
+a complex collection of build utilities
+disconnected from the rest of the development environment,
+that can never fully address all build issues.
+To Houyhnhnms, the build system is just
+the regular system used at the meta-level, and
+what we learn by analyzing what a build system should do
+is the structure of the regular system's programming language,
+or what it evolves toward as it matures.
+Once again, a different in _point of view_ leads to
+completely different software architecture, with very different results.
 
 [propositions as filenames]: # (http://bentnib.org/posts/2015-04-17-propositions-as-filenames-essence-of-make.html)
 [gittup]: # (http://gittup.org/
