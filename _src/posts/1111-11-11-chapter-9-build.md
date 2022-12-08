@@ -46,10 +46,11 @@ The entire point of it all is that large software endeavors
 can be broken down in smaller pieces, such that
 each piece is small enough to fit in a mindful,
 and can be hacked into shape by a sentient developer.
-Thus, a complex process way too large to be tackled by any single sentient being
+Thus, a complex process way too large to be tackled
+by any single sentient being in a single programming session,
 has been reduced to a number of processes simple enough
-to be addressed by one or more sentients;
-and thus the reach of what sentient beings can achieve through automation has been extended.
+to be addressed by one or more sentients in a large number of programming sessions.
+Hence, the reach of what sentient beings can achieve through automation has been extended.
 
 Also note this division of labor takes place in a larger process of
 _developing software_:
@@ -88,25 +89,48 @@ The names and specifics vary depending on
 the programming languages and software communities that deal with those modules;
 but generally, a _module_ can be composed of _submodules_ and be part of larger _supermodules_.
 
-Each of these _modules_ partakes in four quite distinct interactions:
+For a given division of software in modules to lead to effective division of labor,
+modules should be such that
+most changes to a module should not necessitate changes outside the module, and vice versa.
+Thus, you should be able to use a module without understanding and having in mind its innards,
+and you should be able to modify a module without understanding a having in mind its users.
+In other words, the inside and outside of a module are separated, by some _interface_,
+whether it is partially formalized or left wholly informal, that is much smaller and simpler
+than the complete contents of the module itself, also called its _implementation_.
+As long as module developers make no “backward-incompatible” changes to a module's interface,
+they shouldn't have to worry about breaking things for the module users;
+and as long as module users stick to the properties promised by the module's interface,
+they shouldn't have to worry about module developers breaking things for them.
+
+Of course, sometimes, informal interfaces or erroneous modules lead to divergent expectations
+from users and developers, with a painful reconciliation or lack thereof.
+Code may be moved from a module to another;
+modules may be created or deleted, split or fused, used or unused anymore,
+maintained or abandoned, forked or merged, adapted to new contexts or made into counter-examples.
+The division of code into modules is not static, cast in stone;
+it is itself a dynamic aspect of the software development process.
+
+
+### Social Roles in Module Interactions
+
+There are four quite distinct interactions to be had with any given _module_:
 authoring the module, using it (and its submodules) from another module,
 integrating it together with other modules into a complete application,
-or interacting with the complete system as a non-technical end-user.
+or interacting as a non-technical end-user with a complete system that includes the module.
 In each interaction the sentient being interacting with the system
 has one of four distinct roles:
 
-  1. _Authors_ write and modify the code ("authors" is meant in a
+  1. _Authors_ write and modify the code ("authors" here is meant in a
     broad sense, including maintainers and contributors).
 
   2. _Users_ refer to the code by name while abstracting over its
-    exact contents ("users" is meant in a narrow sense, including only
-    programmers of modules that use the referred module, not
-    end-users).
+    exact contents ("users" here is meant in a narrow sense, including only
+    programmers of modules that use the referred module, not end-users).
 
   3. _Integrators_ assemble a collection of modules into an
     overall application, set of applications, virtual machine image, or
-    other deliverable ("integrators" is meant in a broad sense, including
-    developers who put together their development environment).
+    other deliverable ("integrators" here is meant in a broad sense,
+    including developers who put together their development environment).
 
   4. _End-Users_ use a software assembly while remaining blissfully unaware
     of the complex techniques and many modules that had to be mobilized
@@ -121,6 +145,16 @@ However his personal integration and end-use usually
 do not bind other integrators and their end-users who may use
 different versions of the same modules,
 or different combinations of modules altogether.
+
+In any case, understanding the distinction between these four roles
+is essential when designing module systems,
+build systems, module naming conventions,
+versioning conventions and version constraints specifications,
+or any software supposed to deal with modularity:
+if it fails to serve one or more of the roles, or requires
+a person having a role to specify information
+that only people with other roles may know,
+then it is a dysfunctional design.
 
 
 ### Pure Functional Reactive Programming

@@ -40,7 +40,7 @@ about some notable mistakes that people made while operating software,
 that each time were leading to catastrophic results:
 deleting a lot of data, destroying billions of dollars worth of assets,
 crashing an airplane and killing people, etc.
-As we laughing at the users misusing the software, Ann stopped us,
+As we were laughing at the users misusing the software, Ann stopped us,
 and pointed out this piece of Houyhnhnm wisdom, that isn't specific to software:
 *When a casual user mistake causes a tool to fail catastrophically, fools blame the user who operated the tool; wise men blame the toolsmiths who built the tool.*
 
@@ -162,7 +162,9 @@ then we are each 80% for the outcome, though our joint blame is only 100%, which
 More generally, each participant or set of participants is assigned an amount of blame corresponding to
 the probability that a good decision of theirs could have avoided the bad outcome;
 then, whenever you partition a set of participants into subsets (possibly reduced to a singleton),
-the amount of blame assigned to the total set is *less* than the sum of the amounts of blame of the parts.
+the amount of blame assigned to the whole set is *less* than the sum of the amounts of blame of the parts.
+Looking at it in the other direction, the sum of the amounts of blame of the parts will be *more*
+than the amount of blame of the whole (160% vs 100% in the example above).
 
 This blame game applies as well to all decisions in all aspects of life.
 But let us narrow it down to the outcome of choosing bad (software) tools.
@@ -255,8 +257,8 @@ For important decisions on specialized topics where the expertise ceases to be o
 or when you can't defer your meta-expertise to other experts,
 you will want to follow some meta-principles that will help you
 identify actual experts while rejecting frauds who disguise as experts.
-One technique is to ask the potential expert to explain to you the issues at stake,
-and counter the objections that you may have gleaned from various sources.
+One technique is to ask the potential expert to explain the issues at stake to you and other meta-experts,
+and to counter the objections that you may have gleaned from various sources.
 Lacking the expertise yourself, you may not be able to fully judge
 their expert knowledge and opinion on the topic;
 yet, their ability to cogently explain the issues and address objections
@@ -269,8 +271,8 @@ to see how well they address these issues, and can argue the pros and cons of av
 
 ### Time-Preference for Better Tools
 
-As we were exploring how humans and Houyhnhnms choose tools in particular,
-Ann and I came noticed that one aspect that humans often neglected,
+As we were exploring how Humans and Houyhnhnms choose tools in particular,
+Ann and I came to notice that one aspect that Humans often neglected,
 but that Houyhnhnms seemed to care about a lot,
 was to look at their choice of tools *through time*,
 
@@ -307,7 +309,8 @@ a piece of automation on which you are betting your company's future,
 one that will still exist in some form or other in ten, twenty years, maybe more,
 on which you and your successors shall be working for all that time and beyond.
 This project won't be written once, run once, then thrown away,
-but will have to be continuously deployed, maintained and updated:
+but will have to be continuously deployed, maintained, updated, each
+part of it rewritten many times over its life time:
 
   * to respond to the changing demands of an ever changing world,
   * to interface with a moving set of external systems,
@@ -321,7 +324,7 @@ but will have to be continuously deployed, maintained and updated:
 With this larger horizon, you will have
 [Low Time-Preference](https://wiki.mises.org/wiki/Time_preference),
 i.e. the desire to maximize long-term value, even at the cost of
-large (but affordable) short-term inconvenience.
+some large (but affordable) short-term inconvenience.
 You won't have all the information to plan the whole project for its entire duration.
 You will have to discover all the particulars as time unfolds, and to continuously
 be capable of acquiring this information and ready to process it.
@@ -349,3 +352,8 @@ but that will require careful thought and preparation—a long-term *strategy*.
 
 We thus discussed software strategy with Ann, and she inquired about the life arcs
 of the technologies we were considering. But that is another story...
+
+<!--
+Contrapoint: "A defense of boring languages" by Dan Luu
+https://danluu.com/boring-languages/
+-->

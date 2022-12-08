@@ -5,7 +5,7 @@
 [Ngnghm](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/), whom I call Ann,
 was fascinated by our keyboards:
 because of physiological differences between our races, similar devices had never been imagined
-by [Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm) computing engineers.
+by [Houyhnhnm](http://en.wikipedia.org/wiki/Houyhnhnm) computing engineers (I pronounce that like Hunam).
 Now, as she was watching me closely, Ann noticed that I was punctuating most of my typing
 with recurring combinations of key chords.
 I told her I had no idea what she meant;

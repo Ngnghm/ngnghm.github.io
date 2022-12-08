@@ -55,3 +55,8 @@ and the posts should be weaved with good storytelling to keep the audience inter
 And that's when I met Ngnghm the Houyhnhnm...
 
 > — [Faré](http://twitter.com/fare)
+
+PS: This [2016 presentation](https://vimeo.com/155517248)
+(see accompanying [slides](http://fare.tunes.org/computing/ngnghm-slides.html))
+is based on the first few chapters of this blog.
+See also my [PhD thesis (undefended)](http://fare.tunes.org/tmp/phd/thesis.pdf)

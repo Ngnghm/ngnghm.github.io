@@ -189,7 +189,11 @@ In any case, a change in point of view led to a completely different metric
 to assess the [simplicity](https://youtu.be/NdSD07U5uBs) of computing systems.
 It would also change how to judge other qualities of computing systems in general
 — and thus change the approach to how computing is done and what artifacts it yields.
-And next on the block was something as basic as Persistence...
+Alan Kay said that _A change of perspective is worth 80 IQ points_.
+The way we humans build and use computing devices may have a lot to gain
+from considering the Houyhnhnm perspective.
+And next quality of computing systems that Ann made me reconsidered
+was something as basic as Persistence...
 
 
 ### Post-Scriptum: Pronounciation
