@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Houyhnhnm Computing: Posts tagged 'Build'</title>
- <link rel="self" href="http://ngnghm.github.io/feeds/Build.atom.xml" />
- <link href="http://ngnghm.github.io/tags/Build.html" />
- <id>urn:http-ngnghm-github-io:-tags-Build-html</id>
+ <title type="text">Houyhnhnm Computing: Posts tagged 'Modularity'</title>
+ <link rel="self" href="http://ngnghm.github.io/feeds/Modularity.atom.xml" />
+ <link href="http://ngnghm.github.io/tags/Modularity.html" />
+ <id>urn:http-ngnghm-github-io:-tags-Modularity-html</id>
  <updated>2016-04-26T08:05:06Z</updated>
  <entry>
   <title type="text">Chapter 9: Build Systems and Modularity</title>
-  <link rel="alternate" href="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems-and-modularity/?utm_source=Build&amp;utm_medium=Atom" />
+  <link rel="alternate" href="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems-and-modularity/?utm_source=Modularity&amp;utm_medium=Atom" />
   <id>urn:http-ngnghm-github-io:-blog-2016-04-26-chapter-9-build-systems-and-modularity</id>
   <published>2016-04-26T08:05:06Z</published>
   <updated>2016-04-26T08:05:06Z</updated>

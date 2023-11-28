@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Houyhnhnm Computing: Posts tagged 'Build'</title>
- <link rel="self" href="http://ngnghm.github.io/feeds/Build.atom.xml" />
- <link href="http://ngnghm.github.io/tags/Build.html" />
- <id>urn:http-ngnghm-github-io:-tags-Build-html</id>
- <updated>2016-04-26T08:05:06Z</updated>
- <entry>
-  <title type="text">Chapter 9: Build Systems and Modularity</title>
-  <link rel="alternate" href="http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems-and-modularity/?utm_source=Build&amp;utm_medium=Atom" />
-  <id>urn:http-ngnghm-github-io:-blog-2016-04-26-chapter-9-build-systems-and-modularity</id>
-  <published>2016-04-26T08:05:06Z</published>
-  <updated>2016-04-26T08:05:06Z</updated>
-  <author>
-   <name>Ngnghm</name></author>
-  <content type="html">
+<rss version="2.0">
+ <channel>
+  <title>Houyhnhnm Computing: Posts tagged 'Modularity'</title>
+  <description>Houyhnhnm Computing: Posts tagged 'Modularity'</description>
+  <link>http://ngnghm.github.io/tags/Modularity.html</link>
+  <lastBuildDate>Tue, 26 Apr 2016 08:05:06 UT</lastBuildDate>
+  <pubDate>Tue, 26 Apr 2016 08:05:06 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Chapter 9: Build Systems and Modularity</title>
+   <link>http://ngnghm.github.io/blog/2016/04/26/chapter-9-build-systems-and-modularity/?utm_source=Modularity&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:http-ngnghm-github-io:-blog-2016-04-26-chapter-9-build-systems-and-modularity</guid>
+   <pubDate>Tue, 26 Apr 2016 08:05:06 UT</pubDate>
+   <author>Ngnghm</author>
+   <description>
 &lt;p&gt;In my various professional endeavors, I had to deal a lot with build systems: programs like Unix &lt;a href="https://en.wikipedia.org/wiki/Make%20%28software%29"&gt;Make&lt;/a&gt;, Common Lisp&amp;rsquo;s &lt;a href="http://common-lisp.net/project/asdf/"&gt;ASDF&lt;/a&gt;, or Google&amp;rsquo;s &lt;a href="http://bazel.io/"&gt;Bazel&lt;/a&gt;, but also package managers like &lt;a href="https://en.wikipedia.org/wiki/RPM_Package_Manager"&gt;rpm&lt;/a&gt;, &lt;a href="https://en.wikipedia.org/wiki/Dpkg"&gt;dpkg&lt;/a&gt; or &lt;a href="http://nixos.org/nix/"&gt;Nix&lt;/a&gt;, with which developers describe how to build executable software from source files. As the builds grew larger and more complex and had to fit a wider diversity of configurations, I particularly had to deal with configuration scripts to configure the builds, configuration script generation systems, build extensions to abstract over build complexity, and build extension languages to write these build extensions. Since the experience had left me confused, frustrated, and yearning for a better solution, I asked Ngnghm (or &amp;ldquo;Ann&amp;rdquo; as I call her) how Houyhnhnms (or &amp;ldquo;Hunams&amp;rdquo; as I call them) dealt with these issues. Could they somehow keep their builds always simple, or did they have some elegant solution to deal with large complex builds?&lt;/p&gt;
 
 &lt;p&gt;Once again, Ann wasn&amp;rsquo;t sure what I meant, and I had to explain her at length the kind of situations I had to deal with and the kind of actions I took, before Ann could map them to processes and interactions that happened in Houyhnhnm computing systems. And her conclusion was that while Houyhnhnms computing systems certainly could express large builds, they didn&amp;rsquo;t possess a “build system” separate and distinguished from their normal development system; rather their “build system” was simply to use their regular development system at the meta-level, while respecting certain common constraints usually enforced on meta-programs.&lt;/p&gt;
@@ -171,4 +171,4 @@
 
 &lt;p&gt;Another advantage of the Houyhnhnm platform approach is that since programming language features are themselves largely modular, they can be reused independently in different combinations and with future replacements of other features. Thus, if you realize you made a design mistake, that you can improve some feature at the cost of some incompatibility, etc., then you don&amp;rsquo;t have to throw away the entire code base: you can reuse most of the code, and you might even build bridges to keep supporting users of the old code until they migrate to the new one, while sharing a common base that enforces shared invariants. Thus, for instance you might start with a system that does not provide proper hygiene, add hygiene later, and keep the non-hygienic bits running while you migrate your macros to support the new system, and maybe even still afterwards. Each time, writing &amp;ldquo;the next&amp;rdquo; build system does not involve starting an even larger behemoth from scratch, but adding a feature to the existing code base.&lt;/p&gt;
 
-&lt;p&gt;In conclusion: to Humans, a build system is a complex collection of build utilities disconnected from the rest of the development environment, that can never fully address all build issues. To Houyhnhnms, the build system is just the regular system used at the meta-level, and what we learn by analyzing what a build system should do is the structure of the regular system&amp;rsquo;s programming language, or what it evolves toward as it matures. Once again, a difference in &lt;em&gt;point of view&lt;/em&gt; leads to completely different software architecture, with very different results.&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;In conclusion: to Humans, a build system is a complex collection of build utilities disconnected from the rest of the development environment, that can never fully address all build issues. To Houyhnhnms, the build system is just the regular system used at the meta-level, and what we learn by analyzing what a build system should do is the structure of the regular system&amp;rsquo;s programming language, or what it evolves toward as it matures. Once again, a difference in &lt;em&gt;point of view&lt;/em&gt; leads to completely different software architecture, with very different results.&lt;/p&gt;</description></item></channel></rss>
