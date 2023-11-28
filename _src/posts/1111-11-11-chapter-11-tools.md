@@ -125,7 +125,8 @@ Thus, whenever a catastrophe happens that could have been avoided through the us
 *inasmuch as the tool user had a say about which tool to use or not use,
 then he is also culpable — not because his casual mistake caused the catastrophe,
 but because his choice of a bad tool made the catastrophe likely or inevitable*.
-And this culpability only increases, both (a) the more the user was an expert in the field,
+And this culpability only increases, both
+(a) the more the user was an expert in the field, even if he did not make the call,
 and also (b) the more he had a say in the decision, even if not an expert.
 
 Indeed, the more empowered you are in making a decision,

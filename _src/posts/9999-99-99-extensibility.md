@@ -128,3 +128,60 @@ But unless the meta-level is universal, you cannot express everything.
 And unless you actually implement other languages (DSLs),
 then _in practice_, the restricted subset of your language that you actually use
 is _not Turing-equivalent_.
+
+
+
+### See ngnghm's branching reactions to a Bob Harper article
+https://twitter.com/debasishg/status/1711717155811860621
+https://existentialtype.wordpress.com/2011/04/16/modules-matter-most/
+https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html
+Bob Harper is completely wrongheaded in identifying *modularity* and *parametric polymorphism*.
+
+Modularity is about division of labor, and plenty of languages enable it without parametric polymorphism—trivial proof that the two are distinct.
+
+Harper is a sad one trick pony.
+
+Don't get me wrong, parametric polymorphism is great.
+
+But Harper's conflation of parametric polymorphism with modularity is as brain-damaged as Java's conflation of modularity with ad hoc polymorphism.
+
+Disgusting.
+
+And in both cases, misleading entire generations of programmers and computer scientists into utter confusion, false beliefs, bad science, terrible designs, and countless bugs.
+
+Bob Harper has had an outsize influence in Academia, both good and bad. His SML work is notable.
+
+And elders in the Lisp community still remember how he took over the Lisp and Functional Programming conference to merge it into ICFP only to exclude Lisp from it.
+
+Has the industry listened to Harper much? No.
+Has academia? Lots.
+[He's very well published, very well cited, was on many publication committees many of which he presided,
+received rare prizes, had countless students, a great number of which are now themselves professors.]
+
+And by confusions such as above, he greatly contributed to the miscommunication gap between FP and OO communities—thus making FP less relevant, and its industry adoption slower.
+
+Conflating two distinct concepts only introduces confusion, introduces parasitic semantics you don't want, and extra syntax for semantics you do want.
+
+Haskell has parametric polymorphism and doesn't confuse it with modularity.
+
+Is Java right in conflating modules and classes?
+
+*Even if* somehow *conflation* of two concepts is a correct design choice in some context (... and I have emphatically argued *it is* in the past, see my paper on prototype OO), *confusion* NEVER is. It is a mind-killer. And it is what Harper is doing in that post. Sad.
+
+Bene Gesserit and Jedi masters: fear is the mind killer.
+
+Me: "The"? No way! Confusion is another mind killer. There are plenty of ways to kill a mind.
+
+He starts with assumptions that there should be a header file, that types are the one and only information in that header, that the semantics of using a module is one of substitution with parametric polymorphism, that racketeers agree with him about it, etc.
+
+And then he blames others for not having the same inconsistent world-view as himself, instead of either fixing his own world-view, or helping them fix inconsistencies in their own.
+
+Medice, cura te ipsum.
+
+Dumb and sad.
+
+Look, I appreciate that by inhabiting some narrow constraints with a limited domain of validity, some people can get immensely creative.
+
+But it's profoundly dumb and sad when they start believing their assumptions are universally valid.
+
+And it's only dumber and sadder when they become gurus with disciples who blindly repeat the misguided assumptions without inhabiting them and gaining the creativity in exchange, instead just sowing confusion and strife in the world. A closing of minds instead of an opening.

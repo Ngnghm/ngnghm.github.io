@@ -1,6 +1,6 @@
-    Title: Chapter 9: Build Systems
+    Title: Chapter 9: Build Systems and Modularity
     Date: 2016-04-26T04:05:06
-    Tags: Build, Meta, Developing, Division of Labor, In The Large
+    Tags: Build, Meta, Developing, Division of Labor, In The Large, Modularity
 
 In my various professional endeavors,
 I had to deal a lot with build systems:
@@ -29,9 +29,9 @@ before Ann could map them to processes and interactions
 that happened in Houyhnhnm computing systems.
 And her conclusion was that
 while Houyhnhnms computing systems certainly could express large builds,
-they didn't possess a "build system" separate and distinguished
+they didn't possess a “build system” separate and distinguished
 from their normal development system;
-rather their "build system" was simply
+rather their “build system” was simply
 to use their regular development system at the meta-level,
 while respecting certain common constraints usually enforced on meta-programs.
 
@@ -103,10 +103,11 @@ and as long as module users stick to the properties promised by the module's int
 they shouldn't have to worry about module developers breaking things for them.
 
 Of course, sometimes, informal interfaces or erroneous modules lead to divergent expectations
-from users and developers, with a painful reconciliation or lack thereof.
+between users and developers, with a painful reconciliation or lack thereof.
 Code may be moved from a module to another;
-modules may be created or deleted, split or fused, used or unused anymore,
-maintained or abandoned, forked or merged, adapted to new contexts or made into counter-examples.
+modules may be extended or reduced, created or deleted, split or fused,
+used no longer or used anew, maintained or abandoned, forked or merged,
+adapted to new contexts or made into counter-examples.
 The division of code into modules is not static, cast in stone;
 it is itself a dynamic aspect of the software development process.
 
@@ -405,19 +406,24 @@ that necessarily occur to adapt to various contingencies as the context changes.
 Even if a module ever reaches its "perfect" ideal, final, state,
 no one may ever be fully certain when this has actually happened,
 for an unexpected future change in its wider usage context
-may make it imperfect again and it may still have to change due to "bitrot".
+may make it imperfect again and it may still have to change due to "bitrot"
+(the Houyhnhnm name for which would better translate to "fitrot":
+the bits themselves don't rot, though it makes for an amusing paradoxical expression,
+it is the fitness of those bits that degrades as the context evolves).
+
 Not only will content vary with time, an intent may deliberately name
 some "virtual" module to be determined from context
-(such as a choice of compiler, or of `libc`, etc.).
+(such as the choice of a C compiler between `gcc`, `clang` or `tcc`, etc.).
 In this and other cases, there may be mutually incompatible modules,
 that cannot be present in a same build at the same time
-(for instance, `glibc`, `uclibc` and `klibc` are mutually exclusive
-in a same program, and so are `libgif` and `libungif`).
+(for instance, `glibc`, `uclibc`, `musl` and `klibc` are mutually exclusive
+in a same executable, and so are `libgif` and `libungif`).
 And yet, a "same" larger build may recursively include
 multiple virtualized system images
 that are each built while binding some common names to different contents:
 for instance, as part of a same installation, a boot disk might be generated
-using the lightweight `uclibc` whereas the main image would use the full-fledged `glibc`.
+using the lightweight `uclibc`
+whereas the main image would use the full-fledged `glibc`.
 
 A good build system makes it easy to manage its global namespaces.
 To remain simple, it will not unnecessarily multiply namespaces;
@@ -518,8 +524,8 @@ types when you issue a read request._ (P. Williams).
 
 ### Code Instrumentation
 
-To assess the quality of your tests, an important tool is _code
-coverage_: code is instrumented to track which parts are exercised;
+To assess the quality of your tests, an important tool is _code coverage_:
+code is instrumented to track which parts are exercised;
 then after running all tests, you can determine that some parts of the
 code weren't tested, and improve your tests to cover more of your
 code, or to remove or replace redundant tests that slow down the
@@ -529,7 +535,7 @@ exist because the type system can't express that it's provably
 impossible, or redundant protections against internal errors and
 security vulnerabilities; a good development system will let
 developers express such assumption, and it will, conversely, raise a
-flag if those parts of the system are exercised during test.
+flag if those parts of the system are exercised during tests.
 
 Sometimes, proofs are used instead of tests; they make it possible to
 verify a property of the code as applies to an infinite set of
@@ -567,6 +573,138 @@ stripped of debugging information is likely to be more stable than
 with it, and thus a lot of code won't have to be re-tested just
 because a line of comment was added.
 
+Finally, "hot-patching" is a form of code instrumentation that is essential
+to fix critical issues in modules that one doesn't maintain, or even that one maintains,
+but have different release cycles than the other modules or integrations that use them.
+Thus, one will not have to do emergency releases, or worse, forks and use of forks,
+followed by complete builds from scratch of entire software distributions to
+issue emergency fixes to security alerts or blocking problems.
+While hot-patching is rightfully regarded as very bad as a permanent solution,
+it is wonderful as a readily available venue for temporary solutions:
+Hot-patching effectively *decouples* the release cycle of
+multiple pieces of software—a necessity for large systems.
+Developers need never be blocked by slow compilation,
+a release cycle (their own or someone else's)—or worse,
+by the difficulty of searching for a perfect solution or negotiating a mutually acceptable one.
+Just do it!
+Ecosystems without hot-patching just *cannot* scale—or end up reinventing it
+in ugly low-level ways without language support:
+at the very worst, special system upgrade tools will reboot the entire machine
+after upgrading libraries, which might require first waiting for the entire distribution to rebuild,
+or accepting subtle breakage due to library mismatches.
+
+
+### The Elusive Formalization of Modularity
+
+The entire point of a “module” and its “interface” is
+to isolate module usage from module authoring,
+so that users need not know or understand the implementation details,
+and authors may indeed change those details without users having to know or change their code.
+This property of modules was once dubbed “information hiding” by some humans,
+an atrocious name that evokes someone preventing someone else from knowing,
+when no such thing happens, and the software may be all open source.
+Modules do not solve a problem of information to show or hide,
+but of responsibilities to negotiate, of incentives to align.
+The problem they solve is not logical, but *social*.
+
+(Interestingly, the social aspect is valid even when there is a single programmer,
+with no other collaborator, albeit one with a limited mind:
+to build programs larger than fit in his mind at once,
+the programmer must still negotiate between the many occurrences
+of his single “self” across time,
+each being able to hold but limited amount of information in active memory,
+so that each module fits with the interfaces it depends on in a single mindful.)
+
+Functional programmers sometimes try to identify this modularity with functional abstraction,
+with linguistic notions of modules (whether first-class or not) and existential types,
+which can indeed internalize the notion of modularity.
+Object-Oriented programmers may “just” identify “modules” with “classes”.
+But modularity happens with or without internal notions of module and interface in a language;
+and sometimes modularity happens by working *around* such internal notions,
+when they don’t fit social reality.
+For instance, in the ubiquitous language C in which most human software “interfaces” are written,
+there is no internal entity for either an interface or a module;
+there are “header file” handled externally by a preprocessor,
+subject to various linguistic and extra-linguistic conventions,
+and have no internal representation and no language-enforced one-to-one mapping
+to either individual files, or “libraries”, or the recent notion of “namespace”.
+Even in OCaml where every file is a “module”, or in Java where every file is a “class”,
+a “library” is an informal collection of such modules, that has no internal entity;
+the internal abstraction mechanism is defeated
+by exporting identifiers for testing, debugging or instrumentation purposes;
+and inasmuch as a file may conform to an internal “interface” entity,
+that entity is used once and only once, for that file,
+and provides no actual meaningful “abstraction”.
+
+Attempts to identify modularity with the use of internal language entities
+miss the point that modularity is first and foremost *meta-linguistic*.
+In any language, the actual “interface” is the semi-formal datum of
+whatever “identifiers” (or “handles” of any kind) are defined and made visible
+by a “module”, together with the types or shapes through which
+these identifiers can be used, and a lot of informal documentation,
+tests and examples that explain how to use the functionality inside.
+Beyond any notion of module “internal” to the language, there will also be
+external instructions for how to download, install, import, use, deploy and
+configure the “module” outside of the language itself, which may further depend
+on which “system”, “platform” or “distribution” the developer uses.
+Internal notions of “modules”, while they might be useful,
+are never either sufficient nor necessary for actual modularity.
+
+Most of the time, within a given “program”, “application”, “system”,
+“deployment”, “configuration”, or whatever unit of development
+a given developer works in, there will be a single module implementing
+each interface at stake, whether internal or external to the language.
+Any “abstraction” achieved through modularity, wherein a given interface
+is actually implemented multiple times by different modules,
+seldom if ever happens within a program, and instead happens *across* “programs”:
+different “programs”, different “versions” of the same “program”,
+different “deployments” of a same “application”,
+different “configurations”, used by different people, or at times by
+the same developer in different roles at different times, etc.
+In any given internal state of a program as seen by a language processor
+or evaluator, the modularity is devoid of such abstraction.
+
+Attempts by some researchers to “measure” the utility or impact of modularity
+by examining snapshots of source trees of software projects,
+are thus doomed to bring nonsensical results.
+The relative utility or disutility of modularizations
+(ways to organize software into modules) relates to all those variations
+that happen across source trees in time (as the software evolves) and
+in space (multiple different uses of the software by same or different people).
+On the cost side, has effort been saved through division of labor?
+Has there been much sharing of code, and did it cost less
+than for each developer to make his own variant?
+On the benefit side, has modularization enabled software
+that was not possible or affordable before?
+Have developers been able to specialize in their tasks
+and go further and deeper in topics they could not have explored as much?
+Have new configurations of software been made possible?
+Has the division in modules inspired new collaborations and created synergies,
+or have they shut down creativity, diverted energy, and introduced friction?
+
+Answers about the costs and benefits of modularization, as well as
+of any software development techniques, require *economic reasoning*
+about costs of opportunities, comparing one universe to parallel universes
+where different techniques are used.
+It is not usually possible to run experiments.
+Even “natural experiments” where different teams use different techniques
+involve different people with different abilities
+and thousands of confounding factors;
+if a same team develops the “same” software twice (which few can afford),
+the two variants are still different software with many different choices,
+and even the team learns as it develops and doesn’t actually stay the same.
+
+Yet lack of measurable experiments doesn’t mean that informed guesses
+are impossible. Indeed, many developers can quite predict beforehand
+that a particular factorization will or won’t,
+or agree after the fact that it did or didn’t.
+And when they disagree—they may part ways, fork the code,
+and each use different modules and interfaces.
+Software development has an intrinsically entrepreneurial aspect
+as well as a community-building aspect.
+Not every formula works for everyone, and many niche ecosystems
+will form, grow and wither, based on many technical and non-technical choices.
+
 
 ### Reinventing the Wheel and Making it Square
 
@@ -579,14 +717,14 @@ to control support for targets in arbitrary new programming languages
 or mappings between arbitrary namespaces.
 It has higher-order structures for control flow and data flow,
 staged evaluation with hygiene across multiple namespaces.
-It supports modularity at various granularities
+It supports meta-linguistic modularity at various granularities
 in tight cooperation with the source control system.
 It has a rich set of instrumentation strategies
-for programs used while building, and
-another rich set of instrumentation strategies
-for target programs being tested.
-It scales from small interactive programs in a process's memory
+used while building, testing and deploying programs.
+It scales from small interactive programs within a process' memory
 to large distributed software with a global cache.
+It encompasses entire software ecosystems, wherein the “same” pieces of software
+evolve and are used by many people in many different combinations and configurations.
 How can such a thing even exist?
 
 Human programmers might think that such a system
