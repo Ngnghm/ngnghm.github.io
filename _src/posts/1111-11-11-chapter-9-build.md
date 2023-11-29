@@ -385,7 +385,8 @@ the namespace of libraries you may link against.
 But in the larger, beyond all these languages’ respective build systems,
 there is the namespace of packages managed by
 the "operating system distribution"
-(whether via `rpm`, `dpkg`, `nix` or otherwise).
+(whether via `rpm`, `dpkg`, `nix` or otherwise),
+and the namespace of filesystem paths on each given machine.
 Note how all these many namespaces often overlap somewhat,
 with more or less complex partial mappings or hierarchical inclusions
 between them.
@@ -661,8 +662,8 @@ is actually implemented multiple times by different modules,
 seldom if ever happens within a program, and instead happens *across* “programs”:
 different “programs”, different “versions” of the same “program”,
 different “deployments” of a same “application”,
-different “configurations”, used by different people, or at times by
-the same developer in different roles at different times, etc.
+different “configurations”, used by different people, or
+by the same developer in different roles at different times, etc.
 In any given internal state of a program as seen by a language processor
 or evaluator, the modularity is devoid of such abstraction;
 modularity takes place externally to the language,
