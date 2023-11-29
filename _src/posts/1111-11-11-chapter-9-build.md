@@ -589,12 +589,13 @@ a release cycle (their own or someone else’s)—or worse,
 by the difficulty of searching for a perfect solution or negotiating a mutually acceptable one.
 Just do it!
 Ecosystems without hot-patching just *cannot* scale—or end up reinventing it
-in ugly low-level ways without language support:
+in ugly low-level ways with coarser granularity without language support:
 at the very worst, special system upgrade tools will reboot the entire machine
-after upgrading libraries, which might require first waiting for the entire distribution to rebuild,
-or accepting subtle breakage due to library mismatches,
-and sometimes installations and configurations that end up stuck in bad states,
-or “bricked” devices after an internal or external system service becomes unavailable.
+after upgrading libraries;
+these tools must first wait for the entire distribution to rebuild,
+or introduce subtle occasional breakage due to library mismatches;
+sometimes installations and configurations end up stuck in bad states,
+and devices get “bricked” after an internal or external system service becomes unavailable.
 
 
 ### The Elusive Formalization of Modularity
@@ -605,7 +606,7 @@ so that users need not know or understand the implementation details,
 and authors may indeed change those details without users having to know or change their code.
 This property of modules was once dubbed “information hiding” by some humans,
 an atrocious name that evokes someone preventing someone else from knowing,
-when no such thing happens, and the software may be all open source.
+when no such thing happens, and the software might be all open source.
 Modules do not solve a problem of information to show or hide,
 but of responsibilities to negotiate, of incentives to align.
 The problem they solve is not logical, but *social*.
@@ -804,9 +805,11 @@ improve the overall simplicity of the interaction,
 by integrating into their automation aspects
 that were previously dealt with manually.
 
-Also, what counts as "small" to Houyhnhnms is not the same as for Humans:
+Also, what counts as "small" or
+["simple"](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/) to Houyhnhnms
+is not the same as for Humans:
 as [previously discussed](/blog/2015/12/25/chapter-7-platforms-not-applications/),
-they do not write "standalone programs", but
+Houyhnhnms do not write "standalone programs", but
 natural extensions to their programming platform.
 Therefore each extension itself is small,
 but it can reuse and leverage the power of the entire platform.
@@ -866,7 +869,7 @@ Once again, a difference in _point of view_ leads to
 completely different software architecture, with very different results.
 
 [propositions as filenames]: # (http://bentnib.org/posts/2015-04-17-propositions-as-filenames-essence-of-make.html)
-[gittup]: # (http://gittup.org/
+[gittup]: # (http://gittup.org/)
 [jsonnet]: # (http://jsonnet.org/)
 [GNOME OSTree]: # (https://people.gnome.org/~walters/ostree/doc/ostree-intro.html)
 [RedHat project atomic]: # (http://www.projectatomic.io/)
