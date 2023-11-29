@@ -5,8 +5,8 @@
 In my various professional endeavors,
 I had to deal a lot with build systems:
 programs like Unix [Make](https://en.wikipedia.org/wiki/Make%20%28software%29),
-Common Lisp's [ASDF](http://common-lisp.net/project/asdf/),
-or Google's [Bazel](http://bazel.io/), but also
+Common Lisp’s [ASDF](http://common-lisp.net/project/asdf/),
+or Google’s [Bazel](http://bazel.io/), but also
 package managers like [rpm](https://en.wikipedia.org/wiki/RPM_Package_Manager),
 [dpkg](https://en.wikipedia.org/wiki/Dpkg) or
 [Nix](http://nixos.org/nix/),
@@ -22,14 +22,14 @@ how Houyhnhnms (or "Hunams" as I call them) dealt with these issues.
 Could they somehow keep their builds always simple, or
 did they have some elegant solution to deal with large complex builds?
 
-Once again, Ann wasn't sure what I meant, and
+Once again, Ann wasn’t sure what I meant, and
 I had to explain her at length the kind of situations I had to deal with
 and the kind of actions I took,
 before Ann could map them to processes and interactions
 that happened in Houyhnhnm computing systems.
 And her conclusion was that
 while Houyhnhnms computing systems certainly could express large builds,
-they didn't possess a “build system” separate and distinguished
+they didn’t possess a “build system” separate and distinguished
 from their normal development system;
 rather their “build system” was simply
 to use their regular development system at the meta-level,
@@ -62,7 +62,7 @@ that _addresses_ on-going "issues" that sentients experience.
 Sentient developers will thus continually modify, grow and shrink existing software,
 in ways not completely random yet mostly not predictable —
 at least, not predictable in advance by those same sentients,
-who can't have written the software before they have written it,
+who can’t have written the software before they have written it,
 and have written it as soon as they have written it.
 
 A build system is thus just a part or aspect of a larger interaction.
@@ -79,7 +79,7 @@ to other unaccounted parts of the overall software development process
 The smaller pieces into which software is broken are typically called _modules_.
 A notable unit of modularity is often the _source file_,
 which groups together related software definitions
-(we'll leave aside for now the question of
+(we’ll leave aside for now the question of
 [what a file is or should be](/blog/2015/08/09/chapter-3-the-houyhnhnm-version-of-salvation/)).
 Source files can sometimes be subdivided into smaller modules
 (every definition, every syntactic entity, can be viewed as a software module);
@@ -97,10 +97,10 @@ and you should be able to modify a module without understanding a having in mind
 In other words, the inside and outside of a module are separated, by some _interface_,
 whether it is partially formalized or left wholly informal, that is much smaller and simpler
 than the complete contents of the module itself, also called its _implementation_.
-As long as module developers make no “backward-incompatible” changes to a module's interface,
-they shouldn't have to worry about breaking things for the module users;
-and as long as module users stick to the properties promised by the module's interface,
-they shouldn't have to worry about module developers breaking things for them.
+As long as module developers make no “backward-incompatible” changes to a module’s interface,
+they shouldn’t have to worry about breaking things for the module users;
+and as long as module users stick to the properties promised by the module’s interface,
+they shouldn’t have to worry about module developers breaking things for them.
 
 Of course, sometimes, informal interfaces or erroneous modules lead to divergent expectations
 between users and developers, with a painful reconciliation or lack thereof.
@@ -190,7 +190,7 @@ takes into account _all_ inputs necessary and sufficient to reproduce
 the computation; no source file outside of source-control should be
 used, even less so an opaque binary file, or worst of all, an external
 service beyond the control of the people responsible for the build.
-Thus, when caching results from previous builds, there won't be false
+Thus, when caching results from previous builds, there won’t be false
 positives whereby some relevant hidden input has changed but the build
 system fails to notice.
 
@@ -205,12 +205,12 @@ etc. To make this easier, all (or most) metaprograms should be written
 in a language where all computations are deterministic _by
 construction_. For instance, concurrency if allowed should only be
 offered through _convergent_ abstractions that guarantee that the
-final result doesn't depend on the order of concurrent effects.
+final result doesn’t depend on the order of concurrent effects.
 
 
 ### Demanding Quality
 
-Computing power is limited, and it doesn't make sense to rebuild
+Computing power is limited, and it doesn’t make sense to rebuild
 further artifacts from defective pieces known to fail their tests;
 therefore, computation of artifacts generally follows a _pull_ model
 where computations happen lazily when demanded by some client reading
@@ -237,7 +237,7 @@ fast quality can improve in a software development process is the
 duration from feature request or bug report to user report after use
 of the released feature, not the distance between two releases. Closer
 releases can pipeline multiple changes and reduce latency due to the
-release process itself, but don't as such make the overall feedback
+release process itself, but don’t as such make the overall feedback
 loop shorter. In other words, the release process introduces latency
 and granularity in the overall development loop that adds up to other
 factors; the delays it contributes can be reduced, but they will
@@ -329,7 +329,7 @@ tools "package managers". The first modern package managers, like
 [dpkg](https://en.wikipedia.org/wiki/Dpkg), pick a single compile-time
 configuration and try to guide the end-users through a restricted
 number of runtime configuration knobs while leaving advanced system
-administrators able to use each "package"'s full configuration
+administrators able to use each "package"’s full configuration
 language. But administrators who manage large installations with many
 machines still have to use tools on top of that to actually deal with
 configuration, all the while being susceptible to discrepancies
@@ -349,7 +349,7 @@ that gap.
 Houyhnhnms understand that their build systems have to scale, and can
 be kept much simpler by adopting the correct paradigm early on: in
 this case, FRP, etc. Humans have a collection of build systems that
-don't interoperate well, that each cost a lot of effort to build from
+don’t interoperate well, that each cost a lot of effort to build from
 scratch yet ends up under powered in terms of robustness,
 debuggability and extensibility. Houyhnhnms grow one build system as
 an extension to their platform, and with much fewer efforts achieve a
@@ -367,7 +367,7 @@ authors, users and integrators can refer to the same thing
 without being part of the same project,
 without one-to-one coordination,
 but precisely picking modules written largely by other people
-whom you don't know, and who don't know you.
+whom you don’t know, and who don’t know you.
 Global namespaces enable division of labor on a large scale,
 where there is no local context for names.
 Each namespace corresponds to a _community_ that uses that namespace
@@ -382,7 +382,7 @@ then with that of hierarchical modules and files within a system, and
 finally with the global namespace of ASDF systems.
 In C, there is the namespace of symbols, and
 the namespace of libraries you may link against.
-But in the larger, beyond all these languages' respective build systems,
+But in the larger, beyond all these languages’ respective build systems,
 there is the namespace of packages managed by
 the "operating system distribution"
 (whether via `rpm`, `dpkg`, `nix` or otherwise).
@@ -392,13 +392,13 @@ between them.
 
 The name of a module carries _intent_ that is supposed to remain
 as its _content_ varies with time or with configuration.
-Humans, who like to see _things_ even where there aren't,
+Humans, who like to see _things_ even where there aren’t,
 tend to look at intent as a platonic ideal state
 of what the module "should" be doing;
 but Houyhnhnms, who prefer to see _processes_, see intent as a
 [Schelling point](https://en.wikipedia.org/wiki/Focal%20point%20%28game%20theory%29)
 where the plans of sentient beings meet with the fewest coordination issues,
-based on which they can divide their own and each other's labor.
+based on which they can divide their own and each other’s labor.
 
 Note that a name, which denotes a fixed _intent_, may refer to varying _content_.
 Indeed, the entire point of having a name is to abstract away from those changes
@@ -408,7 +408,7 @@ no one may ever be fully certain when this has actually happened,
 for an unexpected future change in its wider usage context
 may make it imperfect again and it may still have to change due to "bitrot"
 (the Houyhnhnm name for which would better translate to "fitrot":
-the bits themselves don't rot, though it makes for an amusing paradoxical expression,
+the bits themselves don’t rot, though it makes for an amusing paradoxical expression,
 it is the fitness of those bits that degrades as the context evolves).
 
 Not only will content vary with time, an intent may deliberately name
@@ -461,7 +461,7 @@ Proprietary software, such as Windows or macOS, encourages this hell,
 because they make any coordination impossible:
 each author is also an integrator and distributor — a vendor.
 And vendors have to deal with all the active versions of the operating system,
-but can't rely on the end-user either having or not having installed
+but can’t rely on the end-user either having or not having installed
 any other software from anyone else.
 A few vendors might coordinate with each other, but
 it would be an overall liability where the modest benefits in terms of sharing space
@@ -473,7 +473,7 @@ to users who install any software from a vendor outside the cartel.
 
 Free software, by decoupling the roles of author and integrator,
 make it possible to solve DLL hell.
-Authors just don't have to worry about integration,
+Authors just don’t have to worry about integration,
 whereas integrators can indeed gather software from all authors
 and beat it into shape as required to make it work with the rest of the system.
 Integrators can also manage the basic safety of the system,
@@ -496,7 +496,7 @@ Within these branches, each new version committed says
 "use me, not any previous version";
 but then branches are subject to filtering
 at the levels of various modules and their supermodules:
-a module that doesn't pass its test doesn't get promoted to the certified branch;
+a module that doesn’t pass its test doesn’t get promoted to the certified branch;
 if a module does pass its tests, then supermodules containing that module
 can in turn be tested and hopefully certified, etc.
 Now note that, to solve the DLL hell, modules present in several supermodules
@@ -504,7 +504,7 @@ must all be chosen at the same version;
 therefore, all tests must happen based on a coherent snapshot of all modules.
 
 This approach can be seen as a generalization of
-Google's official strategy of "building from HEAD",
+Google’s official strategy of "building from HEAD",
 where what Google calls "HEAD" would be
 the collection of branches for modules that pass their unit tests.
 In this more general approach,
@@ -518,7 +518,7 @@ to assess the quality of the wider module;
 actually, from the point of view of the process,
 manual tests can also be considered part of the automation,
 just a slow, unreliable part implemented in wetware:
-_from a programmer's point of view, the user is a peripheral that
+_from a programmer’s point of view, the user is a peripheral that
 types when you issue a read request._ (P. Williams).
 
 
@@ -527,11 +527,11 @@ types when you issue a read request._ (P. Williams).
 To assess the quality of your tests, an important tool is _code coverage_:
 code is instrumented to track which parts are exercised;
 then after running all tests, you can determine that some parts of the
-code weren't tested, and improve your tests to cover more of your
+code weren’t tested, and improve your tests to cover more of your
 code, or to remove or replace redundant tests that slow down the
 release process or over-constrain the codebase. Some parts of the
 code might be _supposed_ not to be tested, such as cases that only
-exist because the type system can't express that it's provably
+exist because the type system can’t express that it’s provably
 impossible, or redundant protections against internal errors and
 security vulnerabilities; a good development system will let
 developers express such assumption, and it will, conversely, raise a
@@ -570,28 +570,30 @@ programming languages means that bugs are inherently reproducible, and
 tracking them can be semi-automated. Separating code and debug
 information can also make caching more useful, since code once
 stripped of debugging information is likely to be more stable than
-with it, and thus a lot of code won't have to be re-tested just
+with it, and thus a lot of code won’t have to be re-tested just
 because a line of comment was added.
 
 Finally, "hot-patching" is a form of code instrumentation that is essential
-to fix critical issues in modules that one doesn't maintain, or even that one maintains,
+to fix critical issues in modules that one doesn’t maintain, or even that one maintains,
 but have different release cycles than the other modules or integrations that use them.
-Thus, one will not have to do emergency releases, or worse, forks and use of forks,
+Thus, one will not have to do emergency releases, or worse, forks and uses of forks and branches,
 followed by complete builds from scratch of entire software distributions to
 issue emergency fixes to security alerts or blocking problems.
-While hot-patching is rightfully regarded as very bad as a permanent solution,
+While hot-patching is rightfully regarded as a very bad permanent solution,
 it is wonderful as a readily available venue for temporary solutions:
 Hot-patching effectively *decouples* the release cycle of
 multiple pieces of software—a necessity for large systems.
 Developers need never be blocked by slow compilation,
-a release cycle (their own or someone else's)—or worse,
+a release cycle (their own or someone else’s)—or worse,
 by the difficulty of searching for a perfect solution or negotiating a mutually acceptable one.
 Just do it!
 Ecosystems without hot-patching just *cannot* scale—or end up reinventing it
 in ugly low-level ways without language support:
 at the very worst, special system upgrade tools will reboot the entire machine
 after upgrading libraries, which might require first waiting for the entire distribution to rebuild,
-or accepting subtle breakage due to library mismatches.
+or accepting subtle breakage due to library mismatches,
+and sometimes installations and configurations that end up stuck in bad states,
+or “bricked” devices after an internal or external system service becomes unavailable.
 
 
 ### The Elusive Formalization of Modularity
@@ -615,13 +617,13 @@ of his single “self” across time,
 each being able to hold but limited amount of information in active memory,
 so that each module fits with the interfaces it depends on in a single mindful.)
 
-Functional programmers sometimes try to identify this modularity with functional abstraction,
-with linguistic notions of modules (whether first-class or not) and existential types,
+Functional programmers sometimes try to identify modularity with functional abstraction,
+with linguistic notions of modules (whether first-class or not) as records with existential types,
 which can indeed internalize the notion of modularity.
-Object-Oriented programmers may “just” identify “modules” with “classes”.
+Object-Oriented programmers may “just” identify “modules” with “classes”, that do as well.
 But modularity happens with or without internal notions of module and interface in a language;
 and sometimes modularity happens by working *around* such internal notions,
-when they don’t fit social reality.
+when they don’t fit the social reality.
 For instance, in the ubiquitous language C in which most human software “interfaces” are written,
 there is no internal entity for either an interface or a module;
 there are “header file” handled externally by a preprocessor,
@@ -662,7 +664,9 @@ different “deployments” of a same “application”,
 different “configurations”, used by different people, or at times by
 the same developer in different roles at different times, etc.
 In any given internal state of a program as seen by a language processor
-or evaluator, the modularity is devoid of such abstraction.
+or evaluator, the modularity is devoid of such abstraction;
+modularity takes place externally to the language,
+between the many states of many programs.
 
 Attempts by some researchers to “measure” the utility or impact of modularity
 by examining snapshots of source trees of software projects,
@@ -684,9 +688,12 @@ or have they shut down creativity, diverted energy, and introduced friction?
 
 Answers about the costs and benefits of modularization, as well as
 of any software development techniques, require *economic reasoning*
-about costs of opportunities, comparing one universe to parallel universes
+about opportunity costs, comparing one universe to alternate potential universes
 where different techniques are used.
-It is not usually possible to run experiments.
+And it is [a fallacy](http://fare.tunes.org/liberty/economic_reasoning.html)
+to claim any *accounting* of what happened within a single universe
+can yield any conclusion whatsoever about that *economic* reality.
+Also, it is not usually possible to run repeatable experiments.
 Even “natural experiments” where different teams use different techniques
 involve different people with different abilities
 and thousands of confounding factors;
@@ -698,18 +705,21 @@ Yet lack of measurable experiments doesn’t mean that informed guesses
 are impossible. Indeed, many developers can quite predict beforehand
 that a particular factorization will or won’t,
 or agree after the fact that it did or didn’t.
-And when they disagree—they may part ways, fork the code,
+But those guesses are not objective, and only stay relevant
+because those who make them have *skin in the game*.
+When developers disagree—they may part ways,
+fork the code (or rewrite it from scratch),
 and each use different modules and interfaces.
 Software development has an intrinsically entrepreneurial aspect
 as well as a community-building aspect.
 Not every formula works for everyone, and many niche ecosystems
-will form, grow and wither, based on many technical and non-technical choices.
+will form, grow and wither, based on many choices technical and non-technical.
 
 
 ### Reinventing the Wheel and Making it Square
 
 At that point, it may become obvious that
-what we've been calling "a good build system" has
+what we’ve been calling “a good build system” has
 all the advanced features of a complete development system, and more:
 It includes features ranging from a reactive programming core
 to general purpose extension languages
@@ -721,7 +731,7 @@ It supports meta-linguistic modularity at various granularities
 in tight cooperation with the source control system.
 It has a rich set of instrumentation strategies
 used while building, testing and deploying programs.
-It scales from small interactive programs within a process' memory
+It scales from small interactive programs within a process’ memory
 to large distributed software with a global cache.
 It encompasses entire software ecosystems, wherein the “same” pieces of software
 evolve and are used by many people in many different combinations and configurations.
@@ -730,30 +740,30 @@ How can such a thing even exist?
 Human programmers might think that such a system
 is a practical impossibility,
 out of reach of even the bestest and largest software companies,
-that can't afford the development of such a software Behemoth —
+that can’t afford the development of such a software Behemoth —
 and indeed demonstrate as much by their actual choice of build systems.
 So Human programmers would typically set their expectations lower,
-whenever they'd start writing a new build system,
+whenever they’d start writing a new build system,
 they would just pick one more of the properties above
 than the competition possesses, and
-develop around it a "minimal viable product",
+develop around it a “minimal viable product”,
 then keep reaching for whichever low-hanging fruits
 they can reach without any consideration for an end goal.
-Admittedly, that's probably the correct approach
-for the pioneers who don't yet know where they tread.
+Admittedly, that’s probably the correct approach
+for the pioneers who don’t yet know where they tread.
 But for those who come after the pioneers,
-it's actually wilful blindness, the refusal to open one's eyes and to see.
+it’s actually wilful blindness, the refusal to open one’s eyes and to see.
 
-Human programmers thus devise some _ad hoc_ domain specific language
+Human programmers thus devise some _ad hoc_ Domain Specific Language (DSL)
 for build configuration; this language can barely express simple builds,
 and the underlying execution infrastructure can barely build incrementally,
 either through timestamps (like `Make`)
 or through content digests (like `Bazel`).
 Then, Humans painstakingly tuck new _ad hoc_ DSLs and DSL modifications
 to it to support more advanced features:
-add a string substitution preprocessing phase or two to `Make`,
+they add a string substitution preprocessing phase or two to `Make`,
 or an extension mechanism or two to `Bazel`;
-call external programs (or reimplement them internally) to extract
+they call external programs (or reimplement them internally) to extract
 dependency information from programs in each supported language; etc.
 However, because each feature is added without identifying
 the full envelope of the interactions that their system ought to address,
@@ -767,7 +777,7 @@ looking for an expedient that happens to be wheelish.
 
 Houyhnhnms have a completely different approach
 to developing a build system (or any software project).
-They don't think of build software as a gadget separate
+They don’t think of build software as a gadget separate
 from the rest of the programming system,
 with its own evaluation infrastructure,
 its own _ad hoc_ programming languages;
@@ -776,7 +786,7 @@ written in an appropriate deterministic reactive style,
 in the same general purpose programming language as the rest of the system.
 At the same time, most build activities are actually trivial:
 one module depends on a few other modules,
-the dependency is obvious from a cursory look at the module's source;
+the dependency is obvious from a cursory look at the module’s source;
 and it all can be compiled without any non-default compiler option.
 But of course, the activities are only trivial
 after the build infrastructure was developed,
@@ -799,7 +809,7 @@ they do not write "standalone programs", but
 natural extensions to their programming platform.
 Therefore each extension itself is small,
 but it can reuse and leverage the power of the entire platform.
-Thus, Houyhnhnmms do not need to invent new _ad hoc_ programming languages
+Thus, Houyhnhnms do not need to invent new _ad hoc_ programming languages
 for configuration and extension,
 then face the dilemma of either investing a lot in tooling and support
 using these languages or leave developers having to deal with
@@ -822,7 +832,7 @@ Not all features may be available to begin with;
 but growing the system happens by enriching the normal programming language
 with these features not by building a new minilanguage
 from scratch for each combination of feature, whereby
-build programs won't be able to interoperate when new features are added.
+build programs won’t be able to interoperate when new features are added.
 
 Another advantage of the Houyhnhnm platform approach is that
 since programming language features are themselves largely modular,
@@ -830,7 +840,7 @@ they can be reused independently in different combinations
 and with future replacements of other features.
 Thus, if you realize you made a design mistake,
 that you can improve some feature at the cost of some incompatibility, etc.,
-then you don't have to throw away the entire code base:
+then you don’t have to throw away the entire code base:
 you can reuse most of the code, and you might even build bridges
 to keep supporting users of the old code until they migrate to the new one,
 while sharing a common base that enforces shared invariants.
@@ -849,7 +859,7 @@ that can never fully address all build issues.
 To Houyhnhnms, the build system is just
 the regular system used at the meta-level, and
 what we learn by analyzing what a build system should do
-is the structure of the regular system's programming language,
+is the structure of the regular system’s programming language,
 or what it evolves toward as it matures.
 Once again, a difference in _point of view_ leads to
 completely different software architecture, with very different results.
