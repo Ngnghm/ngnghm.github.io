@@ -173,6 +173,9 @@ which according to Houyhnhnm criteria make the resulting system overall more com
 especially so if multiple people are supposed to work on the same system.
 Still, such simplistic systems make sense for isolated resource-starved programmers.
 
+
+### Why Simplicity Matters
+
 Houyhnhnms certainly don't restrict themselves
 to using systems that are simple (according to their metric).
 But these simple systems do play an essential role in the Houyhnhnm computing ecology:
@@ -193,7 +196,7 @@ Alan Kay said that _A change of perspective is worth 80 IQ points_.
 The way we humans build and use computing devices may have a lot to gain
 from considering the Houyhnhnm perspective.
 And next quality of computing systems that Ann made me reconsidered
-was something as basic as Persistence...
+was something as basic as [Persistence](/blog/2015/08/03/chapter-2-save-our-souls/)...
 
 
 ### Post-Scriptum: Pronounciation
