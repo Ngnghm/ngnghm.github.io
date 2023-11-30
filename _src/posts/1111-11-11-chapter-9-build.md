@@ -17,8 +17,8 @@ configuration script generation systems,
 build extensions to abstract over build complexity, and
 build extension languages to write these build extensions.
 Since the experience had left me confused, frustrated, and yearning for a better solution,
-I asked Ngnghm (or "Ann" as I call her)
-how Houyhnhnms (or "Hunams" as I call them) dealt with these issues.
+I asked Ngnghm (or “Ann” as I call her)
+how Houyhnhnms (or “Hunams” as I call them) dealt with these issues.
 Could they somehow keep their builds always simple, or
 did they have some elegant solution to deal with large complex builds?
 
@@ -54,11 +54,11 @@ Hence, the reach of what sentient beings can achieve through automation has been
 
 Also note this division of labor takes place in a larger process of
 _developing software_:
-unlike many Humans, Houyhnhnms do not think of software as a _solution_ to a "problem",
+unlike many Humans, Houyhnhnms do not think of software as a _solution_ to a “problem”,
 that comes into existence by a single act of creation _ex nihilo_;
 they see developing software as an interactive process
 of incremental [evolution](http://fare.tunes.org/computing/evolutionism.html),
-that _addresses_ on-going "issues" that sentients experience.
+that _addresses_ on-going “issues” that sentients experience.
 Sentient developers will thus continually modify, grow and shrink existing software,
 in ways not completely random yet mostly not predictable —
 at least, not predictable in advance by those same sentients,
@@ -69,9 +69,9 @@ A build system is thus just a part or aspect of a larger interaction.
 Therefore, a good build system will integrate smoothly with the rest of this interaction;
 and a better build system will be one that further simplifies the overall interaction,
 rather than one that displaces complexity
-from what is somehow counted as "part of the build"
+from what is somehow counted as “part of the build”
 to other unaccounted parts of the overall software development process
-(such as e.g. "configuration", or "distribution").
+(such as e.g. “configuration”, or “distribution”).
 
 
 ### Modularity
@@ -121,16 +121,16 @@ or interacting as a non-technical end-user with a complete system that includes 
 In each interaction the sentient being interacting with the system
 has one of four distinct roles:
 
-  1. _Authors_ write and modify the code ("authors" here is meant in a
+  1. _Authors_ write and modify the code (“authors” here is meant in a
     broad sense, including maintainers and contributors).
 
   2. _Users_ refer to the code by name while abstracting over its
-    exact contents ("users" here is meant in a narrow sense, including only
+    exact contents (“users” here is meant in a narrow sense, including only
     programmers of modules that use the referred module, not end-users).
 
   3. _Integrators_ assemble a collection of modules into an
     overall application, set of applications, virtual machine image, or
-    other deliverable ("integrators" here is meant in a broad sense,
+    other deliverable (“integrators” here is meant in a broad sense,
     including developers who put together their development environment).
 
   4. _End-Users_ use a software assembly while remaining blissfully unaware
@@ -138,14 +138,29 @@ has one of four distinct roles:
     to make their experience possible.
 
 Note that for the purpose of his own applications,
-as well as for his personal testing needs,
-a _user_ may himself be an _integrator_ and an _end-user_ of many modules
-(though he may not be, and rely on other people such as team members
-to handle integration for him or to test and run the software).
-However his personal integration and end-use usually
-do not bind other integrators and their end-users who may use
-different versions of the same modules,
-or different combinations of modules altogether.
+as well as for his personal testing needs, a same person may (or may not) be
+an _author_ of some modules, a _user_ of other another set of modules
+an _integrator_ of various sets of modules into one or several different assemblies
+(including his own personal development environments),
+and an _end-user_ of many applications made of as many sets of modules.
+It is also possible to be none of these, or one and not the other:
+A person may delegate his authoring, using, integrating and end-using of software
+to other more qualified or daring people.
+
+Importantly, one author’s or integrator’s choice of which sets of which modules to use
+in which specific version does not and cannot bind anyone else’s.
+Some misguided build systems confuse authors and integrators, and force authors
+to specify exact versions of other modules their modules will use;
+but actual integrators will have to deal with security emergencies, bug fixes,
+missing features and module updates;
+they cannot wait for every author of every module in every integration
+to partake in a successful and timely consensus
+on which coherent set of all modules to use.
+If anything, any consensus on a coherent set of modules should happen
+_after_ the set is defined then successfully tested
+(as with [Quicklisp](https://quicklisp.org/)),
+and not as a prerequisite to even trying to test modules together
+(as used to be the case with [Hackage](https://hackage.haskell.org/)).
 
 In any case, understanding the distinction between these four roles
 is essential when designing module systems,
@@ -155,57 +170,62 @@ or any software supposed to deal with modularity:
 if it fails to serve one or more of the roles, or requires
 a person having a role to specify information
 that only people with other roles may know,
-then it is a dysfunctional design.
+then it is a deeply dysfunctional design.
 
 
 ### Pure Functional Reactive Programming
 
 Given this context, a good build system at heart is a _Pure_
 [_Functional Reactive Programming_](https://en.wikipedia.org/wiki/Functional_Reactive_programming)
-(FRP) language: its input signals are source files in the version
-control system and intermediate outputs, and its output signals are
-intermediate or final build artifacts. Computations from inputs to
-outputs constitute a _build graph_: a directed acyclic graph where
-individual nodes are called _actions_, and arcs are called
-_dependencies_. The signals are called _artifacts_, and, by extension,
-the inputs to the action that generate one of them are also called its
-dependencies.
+(FRP) language: its input signals are
+source files in the version control system and intermediate outputs,
+and its output signals are intermediate or final build artifacts.
+Computations from inputs to outputs constitute a _build graph_:
+a directed acyclic graph where individual nodes are called _actions_,
+and arcs are called _dependencies_. The signals are called _artifacts_,
+and, by extension, the inputs to the action that generate one of them
+are also called its dependencies.
 
-Actions in a good build system happen without side-effects: no action
-may interfere with another action, even less so with event sources
-outside the declared inputs. Actions are thus _reproducible_. Thence
-it follows that they can be parallelized and distributed, and their
-results can be cached and shared. A good build system is thus
-integrated with the version-control system that manages the changes in
-source files and the deployment systems that controls the changes in
-running artifacts. By analogy with content-addressed storage where the
-name for a file is the digest of its contents, the cache of a good
-build system can then be said to be _source-addressed_: the name of a
-file is a digest of source code sufficient to rebuild the cached
-value.
+Actions in a good build system happen without side-effects:
+no action may interfere with another action, even less so
+with event sources outside the declared inputs.
+Actions are thus _reproducible_.
+Thence it follows that they can be parallelized and distributed,
+and their results can be cached and shared.
+A good build system is thus integrated with the version-control system
+that manages the changes in source files and
+the deployment systems that controls the changes in running artifacts.
+By analogy with content-addressed storage
+where the name for a file is the digest of its contents,
+the cache of a good build system can then be said to be _source-addressed_:
+the name of a file is a digest of source code
+sufficient to rebuild the cached value.
 
 For the sake of reproducibility, a good build system must therefore be
-_hermetic_: when designating and caching a computation, the system
-takes into account _all_ inputs necessary and sufficient to reproduce
-the computation; no source file outside of source-control should be
-used, even less so an opaque binary file, or worst of all, an external
-service beyond the control of the people responsible for the build.
-Thus, when caching results from previous builds, there won’t be false
-positives whereby some relevant hidden input has changed but the build
-system fails to notice.
+_hermetic_: when designating and caching a computation,
+the system takes into account _all_ inputs necessary and sufficient
+to reproduce the computation;
+no source file outside of source-control should be used,
+even less so an opaque binary file, or worst of all,
+an external service beyond the control of the people responsible for the build.
+Thus, when caching results from previous builds,
+there won’t be false positives whereby some relevant hidden input has changed
+but the build system fails to notice.
 
-Ideally, all computations should also be _deterministic_: repeating
-the same computation on two different computers at different times
-should yield equivalent result. Ideally that result should be bit for
-bit identical; any noise that could cause some discrepancy should be
-eliminated before it happens or normalized away after it does: this
-noise notably includes timestamps, PRNGs (unless with a controlled
-deterministic initial state), race conditions, address-based hashing,
-etc. To make this easier, all (or most) metaprograms should be written
-in a language where all computations are deterministic _by
-construction_. For instance, concurrency if allowed should only be
-offered through _convergent_ abstractions that guarantee that the
-final result doesn’t depend on the order of concurrent effects.
+Ideally, all computations should also be _deterministic_:
+repeating the same computation on two different computers at different times
+should yield equivalent result.
+Ideally that result should be bit for bit identical;
+any noise that could cause some discrepancy should be eliminated
+before it happens or normalized away after it does:
+this noise notably includes timestamps,
+PRNGs (unless with a controlled deterministic initial state),
+race conditions, address-based hashing, etc.
+To make this easier, all (or most) metaprograms should be written
+in a language where all computations are deterministic _by construction_.
+For instance, concurrency if allowed should only be offered
+through _convergent_ abstractions that guarantee that
+the final result doesn’t depend on the order of concurrent effects.
 
 
 ### Demanding Quality
@@ -272,7 +292,7 @@ build system will scale along the entire range of possible builds and
 offer _higher order_ reactive programming where the build information
 itself in its full generality can be computed as the result of
 previous build actions. In particular the build system can be
-"extended" with the full power of a general purpose programming
+“extended” with the full power of a general purpose programming
 language, and for simplicity and robustness might as well be
 completely implemented in that same language.
 
@@ -309,52 +329,55 @@ limitations.
 Humans often start growing their build system
 [_in the small_](https://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small),
 so it initially is only designed to work (at a time) only on one
-module, in one company, out of one source repository. They thus tend
-not to realize the nature of the larger build of software; they cope
-with the complexities of a larger build separately in each module by
-having it use some kind of configuration mechanism: a `./configure`
-script, sometimes itself generated by tools like `autoconf`, that may
-use _ad hoc_ techniques to probe the environment for various bits of
-meta-information. However, these solutions of course utterly fail as
-systems get built with hundreds or thousands of such individual
-modules, where each build-time configuration item contributes to a
-combinatorial explosion of configurations and superlinear increase in
-the amount of work for each developer, integrator, system
-administrator or end-user who has to deal with this complexity.
+module, in one company, out of one source repository.
+They thus tend not to realize the nature of the larger build of software;
+they cope with the complexities of a larger build separately in each module
+by having it use some kind of configuration mechanism:
+a `./configure` script, sometimes itself generated by tools like `autoconf`,
+that may use _ad hoc_ techniques to probe the environment
+for various bits of meta-information.
+However, these solutions of course utterly fail as systems get built
+with hundreds or thousands of such individual modules, where
+each build-time configuration item contributes to
+a combinatorial explosion of configurations and
+superlinear increase in the amount of work for each
+developer, integrator, system administrator or end-user
+who has to deal with this complexity.
 
 Humans then create completely separate tools for those larger builds:
-they call these larger builds "software distributions", and these
-tools "package managers". The first modern package managers, like
+they call these larger builds “software distributions”,
+and these tools “package managers”. The first modern package managers, like
 [rpm](https://en.wikipedia.org/wiki/RPM_Package_Manager) and
-[dpkg](https://en.wikipedia.org/wiki/Dpkg), pick a single compile-time
-configuration and try to guide the end-users through a restricted
-number of runtime configuration knobs while leaving advanced system
-administrators able to use each "package"’s full configuration
-language. But administrators who manage large installations with many
-machines still have to use tools on top of that to actually deal with
-configuration, all the while being susceptible to discrepancies
-manually introduced in system configuration.
+[dpkg](https://en.wikipedia.org/wiki/Dpkg),
+pick a single compile-time configuration and try to guide the end-users
+through a restricted number of runtime configuration knobs
+while leaving advanced system administrators able to use
+each “package”’s full configuration language.
+But administrators who manage large installations with many machines
+still have to use tools on top of that to actually deal with configuration,
+all the while being susceptible to discrepancies manually introduced
+in each machine's configuration.
 
-More advanced package managers, like [Nix](http://nixos.org/nix/), its
-variant [Guix](https://www.gnu.org/software/guix/), or its extension
-[Disnix](https://nixos.org/disnix/), lets administrators direct the
-entire build and configuration of one or many machines from one master
-configuration file, that can import code from other files, all of
-which can all be kept under source control. Systems like that are
+More advanced package managers, like [Nix](http://nixos.org/nix/),
+its variant [Guix](https://www.gnu.org/software/guix/),
+or its extension [Disnix](https://nixos.org/disnix/) or
+[NixOps](https://nixos.wiki/wiki/NixOps), lets administrators direct
+the entire build and configuration of one or many machines
+from one master configuration file, that can import code from other files,
+all of which can all be kept under source control. Systems like that are
 probably the way of the future, but the current incarnations still
 introduce a gap between how people build software _in the small_ and
-how they build it _in the large_, with a high price to pay to cross
-that gap.
+how they build it _in the large_, with a high price to pay to cross that gap.
 
 Houyhnhnms understand that their build systems have to scale, and can
-be kept much simpler by adopting the correct paradigm early on: in
-this case, FRP, etc. Humans have a collection of build systems that
-don’t interoperate well, that each cost a lot of effort to build from
-scratch yet ends up under powered in terms of robustness,
-debuggability and extensibility. Houyhnhnms grow one build system as
-an extension to their platform, and with much fewer efforts achieve a
-unified system that inherits from the rest of the platform its
-robustness, debuggability and extensibility, for free.
+be kept much simpler by adopting the correct paradigm early on:
+in this case, FRP, etc.
+Humans have a collection of build systems that don’t interoperate well,
+that each cost a lot of effort to build from scratch yet ends up under powered
+in terms of robustness, debuggability and extensibility.
+Houyhnhnms grow one build system as an extension to their platform, and
+with much fewer efforts achieve a unified system that inherits from the rest of
+the platform its robustness, debuggability and extensibility, for free.
 
 
 ### Global Namespace
@@ -384,7 +407,7 @@ In C, there is the namespace of symbols, and
 the namespace of libraries you may link against.
 But in the larger, beyond all these languages’ respective build systems,
 there is the namespace of packages managed by
-the "operating system distribution"
+the “operating system distribution”
 (whether via `rpm`, `dpkg`, `nix` or otherwise),
 and the namespace of filesystem paths on each given machine.
 Note how all these many namespaces often overlap somewhat,
@@ -395,7 +418,7 @@ The name of a module carries _intent_ that is supposed to remain
 as its _content_ varies with time or with configuration.
 Humans, who like to see _things_ even where there aren’t,
 tend to look at intent as a platonic ideal state
-of what the module "should" be doing;
+of what the module “should” be doing;
 but Houyhnhnms, who prefer to see _processes_, see intent as a
 [Schelling point](https://en.wikipedia.org/wiki/Focal%20point%20%28game%20theory%29)
 where the plans of sentient beings meet with the fewest coordination issues,
@@ -404,22 +427,22 @@ based on which they can divide their own and each other’s labor.
 Note that a name, which denotes a fixed _intent_, may refer to varying _content_.
 Indeed, the entire point of having a name is to abstract away from those changes
 that necessarily occur to adapt to various contingencies as the context changes.
-Even if a module ever reaches its "perfect" ideal, final, state,
+Even if a module ever reaches its “perfect” ideal, final, state,
 no one may ever be fully certain when this has actually happened,
 for an unexpected future change in its wider usage context
-may make it imperfect again and it may still have to change due to "bitrot"
-(the Houyhnhnm name for which would better translate to "fitrot":
+may make it imperfect again and it may still have to change due to “bitrot”
+(the Houyhnhnm name for which would better translate to “fitrot”:
 the bits themselves don’t rot, though it makes for an amusing paradoxical expression,
 it is the fitness of those bits that degrades as the context evolves).
 
 Not only will content vary with time, an intent may deliberately name
-some "virtual" module to be determined from context
+some “virtual” module to be determined from context
 (such as the choice of a C compiler between `gcc`, `clang` or `tcc`, etc.).
 In this and other cases, there may be mutually incompatible modules,
 that cannot be present in a same build at the same time
 (for instance, `glibc`, `uclibc`, `musl` and `klibc` are mutually exclusive
 in a same executable, and so are `libgif` and `libungif`).
-And yet, a "same" larger build may recursively include
+And yet, a “same” larger build may recursively include
 multiple virtualized system images
 that are each built while binding some common names to different contents:
 for instance, as part of a same installation, a boot disk might be generated
@@ -494,7 +517,7 @@ They thus realize that whereas a module name denotes a global _intent_,
 the value it will be bound to reflects some local context,
 which is characterized by the set of branches or tags that the integrator follows.
 Within these branches, each new version committed says
-"use me, not any previous version";
+“use me, not any previous version”;
 but then branches are subject to filtering
 at the levels of various modules and their supermodules:
 a module that doesn’t pass its test doesn’t get promoted to the certified branch;
@@ -505,11 +528,11 @@ must all be chosen at the same version;
 therefore, all tests must happen based on a coherent snapshot of all modules.
 
 This approach can be seen as a generalization of
-Google’s official strategy of "building from HEAD",
-where what Google calls "HEAD" would be
+Google’s official strategy of “building from HEAD”,
+where what Google calls “HEAD” would be
 the collection of branches for modules that pass their unit tests.
 In this more general approach,
-"HEAD" is just one step in a larger network of branches,
+“HEAD” is just one step in a larger network of branches,
 where some development branches feed into HEAD
 when they pass their narrow unit tests, and
 HEAD feeds into more widely tested integration branches.
@@ -548,7 +571,7 @@ Interestingly, a variant of this coverage instrumentation can be used
 to automatically track which dependencies are used by an action (as
 [vestasys](http://www.vestasys.org/) used to do). In other words,
 dependency tracking is a form of code coverage at the meta-level for
-the build actions. A developer can thus "just" build his code
+the build actions. A developer can thus “just” build his code
 interactively, and automatically extract from the session log a build
 script properly annotated with the dependencies actually used.
 Assuming the developer is using a deterministic dialect (as he should
@@ -574,7 +597,7 @@ stripped of debugging information is likely to be more stable than
 with it, and thus a lot of code won’t have to be re-tested just
 because a line of comment was added.
 
-Finally, "hot-patching" is a form of code instrumentation that is essential
+Finally, “hot-patching” is a form of code instrumentation that is essential
 to fix critical issues in modules that one doesn’t maintain, or even that one maintains,
 but have different release cycles than the other modules or integrations that use them.
 Thus, one will not have to do emergency releases, or worse, forks and uses of forks and branches,
@@ -805,11 +828,11 @@ improve the overall simplicity of the interaction,
 by integrating into their automation aspects
 that were previously dealt with manually.
 
-Also, what counts as "small" or
-["simple"](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/) to Houyhnhnms
+Also, what counts as “small” or
+[“simple”](/blog/2015/08/02/chapter-1-the-way-houyhnhnms-compute/) to Houyhnhnms
 is not the same as for Humans:
 as [previously discussed](/blog/2015/12/25/chapter-7-platforms-not-applications/),
-Houyhnhnms do not write "standalone programs", but
+Houyhnhnms do not write “standalone programs”, but
 natural extensions to their programming platform.
 Therefore each extension itself is small,
 but it can reuse and leverage the power of the entire platform.
@@ -818,8 +841,8 @@ for configuration and extension,
 then face the dilemma of either investing a lot in tooling and support
 using these languages or leave developers having to deal with
 these aspects of their software without much tooling, if at all.
-Instead, they refine their "normal" programming languages, and
-any improvement made while working on the "application"
+Instead, they refine their “normal” programming languages, and
+any improvement made while working on the “application”
 becomes available to programs at large, whereas in the other way around
 any improvement made available to programs at large
 becomes available when modifying the application
@@ -834,8 +857,8 @@ higher-order functions, virtualization of execution,
 staged evaluation, hygiene, etc.
 Not all features may be available to begin with;
 but growing the system happens by enriching the normal programming language
-with these features not by building a new minilanguage
-from scratch for each combination of feature, whereby
+with these features, not by building a new minilanguage
+from scratch for each combination of feature whereby
 build programs won’t be able to interoperate when new features are added.
 
 Another advantage of the Houyhnhnm platform approach is that
@@ -852,7 +875,7 @@ Thus, for instance you might start with a system
 that does not provide proper hygiene, add hygiene later, and
 keep the non-hygienic bits running while you migrate your macros
 to support the new system, and maybe even still afterwards.
-Each time, writing "the next" build system does not involve
+Each time, writing “the next” build system does not involve
 starting an even larger behemoth from scratch, but
 adding a feature to the existing code base.
 
