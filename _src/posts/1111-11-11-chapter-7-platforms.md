@@ -71,9 +71,10 @@ Then you can go back in time and replay
 according to a protocol that is uniform across applications;
 and not only is it no additional burden on application programmers,
 it is something they can't get subtly wrong, and that users can thus casually rely upon.
-There is never any loss of any session state, disappearing tabs or windows,
-games where you can't both pause and save your game, etc.
-There are no messages you have to enter twice
+There is never any loss of any session state;
+there are no disappearing tabs or windows,
+no games where you can't both pause and save your game;
+no messages you have to enter twice
 because they were cleared between two page loads or browser crash and restart,
 or that reappear because the clearing failed to be recorded.
 
@@ -358,7 +359,7 @@ cannot focus on doing it in a way that will benefit everyone,
 but must instead improve a single application at a time.
 And because hiring is application-based rather than specialty-based,
 even specialists are seldom funded to do what they are good at,
-instead being paid to badly writing yet another implementation
+instead being paid to badly write yet another implementation
 of a feature at which they are mediocre, for whichever application they were hired about.
 Cultivating a platform is an afterthought to application growth;
 which platforms happen to succeed depends not at all on its good design,
