@@ -162,7 +162,7 @@ than 10 functions on 10 data structures._](http://www.cs.yale.edu/homes/perlis-a
 Now, it is important to understand the distinction between a representation and the real thing;
 the text being presented is not "canonical", it is not usually "source".
 In Houyhnhnm computing systems, the source is the semantic state of the system,
-on which change happens, and from which the text is extracted if and when needed;
+on which change happens, and from which the textual representation is rendered if and when needed;
 this is in sharp contrast with typical Human computer systems,
 where the source (that is, the locus of modification by sentients)
 is text files that are compiled, disconnected from the state of the system.
