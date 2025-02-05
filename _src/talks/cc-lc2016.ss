@@ -43,6 +43,8 @@ they are the regular way programs are built and combined, at runtime as well as 
 A relatively simple switch in how you look at programming will lead to
 vastly different conclusions on what software architecture should look like,
 on what software development best practices are, on what software business can be.
+
+Video at https://youtu.be/KsswTN2cCSc
 |#
 
 (set-margin! 0)
@@ -85,7 +87,7 @@ on what software development best practices are, on what software business can b
  (para #:align 'center @t{François-René Rideau,} @it{TUNES Project})
  (text " " 'default 66)
  @t{LambdaConf 2016, 2016-05-28}
- @url{http://ngnghm.github.io/talks/cc-lc2016.pdf}
+ @url{https://ngnghm.github.io/talks/cc-lc2016.pdf}
 
  (comment "\
 Hi, I am François-René Rideau, and today I'm here to tell you about

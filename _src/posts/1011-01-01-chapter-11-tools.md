@@ -246,11 +246,11 @@ And finding experts on topics where you aren't yourself an expert is its own sep
 Titles and diplomas and low or high job positions can help you identify the best experts.
 But they can also hide quacks, frauds and social climbers,
 who prey on those who are too keen at deferring to authority
-— or just not-so-good experts whose actual specialty is only so close
-to the topic you're interested in, yet who may fail to disqualify themselves from giving you advice
-and refer you to better experts.
+— or just not-so-good and over-confident experts whose actual specialty is only so close
+to the topic you're interested in, yet who may fail to disqualify themselves from giving you advice,
+when they instead should admit incompetence and refer you to better experts.
 One way to identify experts can be indeed to ask for referrals from multiple experts on close topics,
-until you find people highly recommended by multiple sources;
+until you find people highly recommended by multiple independent sources;
 and this can be enough in case the expertise is itself considered uncontroversial,
 or you somehow trust the meta-expertise of the referrers themselves.
 

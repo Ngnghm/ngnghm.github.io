@@ -93,7 +93,7 @@ For a given division of software in modules to lead to effective division of lab
 modules should be such that
 most changes to a module should not necessitate changes outside the module, and vice versa.
 Thus, you should be able to use a module without understanding and having in mind its innards,
-and you should be able to modify a module without understanding a having in mind its users.
+and you should be able to modify a module without understanding and having in mind its users.
 In other words, the inside and outside of a module are separated, by some _interface_,
 whether it is partially formalized or left wholly informal, that is much smaller and simpler
 than the complete contents of the module itself, also called its _implementation_.
